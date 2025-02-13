@@ -112,7 +112,7 @@ export const PricingCalculator = () => {
                       min={1}
                     />
                   </div>
-                  <button className="flex h-8 px-4 pl-3 items-center justify-center gap-2 text-[#FF6B00] border-[1.5px] border-[#EBEBEB] rounded hover:bg-gray-50">
+                  <button className="flex h-[32px] px-4 pl-3 items-center justify-center gap-[8px] text-[#FF6B00] border-[1.5px] border-[#EBEBEB] rounded">
                     <span className="text-2xl font-light leading-none">+</span>
                     <span>Add site</span>
                   </button>
@@ -122,7 +122,7 @@ export const PricingCalculator = () => {
 
             <div className="flex flex-col w-full mt-8">
               {/* Save strip */}
-              <div className="flex h-16 px-8 items-center justify-between bg-[#FFF7ED] w-full">
+              <div className="flex h-[64px] px-8 items-center justify-between bg-[#FFF7ED] w-full">
                 <div className="flex items-center gap-2">
                   <img
                     src="https://cdn.builder.io/api/v1/image/assets/4b8bee12bead4b66b573187d8e419c5d/eefecd56a897a32835976d67c57d09015a18ddd1b5685d7a336048586db07823"
