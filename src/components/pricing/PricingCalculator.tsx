@@ -112,15 +112,17 @@ export const PricingCalculator = () => {
                       min={1}
                     />
                   </div>
-                  <button className="text-[#FF6B00] flex items-center gap-2 hover:underline">
-                    <span className="text-2xl font-light">+</span> Add site
+                  <button className="flex h-8 px-4 pl-3 items-center justify-center gap-2 text-[#FF6B00] border-[1.5px] border-[#EBEBEB] rounded hover:bg-gray-50">
+                    <span className="text-2xl font-light leading-none">+</span>
+                    <span>Add site</span>
                   </button>
                 </div>
               </div>
             </div>
 
-            <div className="bg-[#FFF8F3] mt-8 p-6 rounded-lg w-full">
-              <div className="flex items-center gap-3 mb-6">
+            <div className="flex flex-col w-full mt-8">
+              {/* Save strip */}
+              <div className="flex h-16 px-8 items-center justify-between bg-[#FFF7ED] w-full">
                 <div className="flex items-center gap-2">
                   <img
                     src="https://cdn.builder.io/api/v1/image/assets/4b8bee12bead4b66b573187d8e419c5d/eefecd56a897a32835976d67c57d09015a18ddd1b5685d7a336048586db07823"
@@ -129,13 +131,14 @@ export const PricingCalculator = () => {
                   />
                   <span className="text-[#222222] font-semibold">Save 60% today</span>
                 </div>
-                <div className="ml-auto text-sm text-[#464646]">
+                <div className="text-sm text-[#464646]">
                   <span>Offer ends in </span>
                   <CountdownTimer targetDate={new Date("2025-06-30")} />
                 </div>
               </div>
 
-              <div className="space-y-4">
+              {/* Pricing data section */}
+              <div className="flex flex-col p-8 gap-8 bg-[#FFFCF9] w-full">
                 <div>
                   <div className="text-sm text-[#6D6D6D]">Total annual price</div>
                   <div className="flex justify-between items-baseline">
