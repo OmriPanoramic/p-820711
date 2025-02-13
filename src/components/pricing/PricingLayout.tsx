@@ -1,4 +1,5 @@
 import { PricingCard } from "./PricingCard";
+import { PricingCalculator } from "./PricingCalculator";
 
 const optimizeFeatures = [
   {
@@ -154,6 +155,7 @@ export const PricingLayout = () => {
           </div>
         </div>
       </div>
+      <PricingCalculator />
     </div>
   );
 };
