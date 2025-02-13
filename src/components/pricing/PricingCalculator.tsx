@@ -1,4 +1,3 @@
-
 import { Input } from "@/components/ui/input";
 import { Slider } from "@/components/ui/slider";
 import { useState } from "react";
@@ -120,7 +119,7 @@ export const PricingCalculator = () => {
               </div>
             </div>
 
-            <div className="flex flex-col w-full mt-8">
+            <div className="flex flex-col w-full mt-8 -mx-8">
               {/* Save strip */}
               <div className="flex h-[64px] px-8 items-center justify-between bg-[#FFF7ED] w-full">
                 <div className="flex items-center gap-2">
