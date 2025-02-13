@@ -76,10 +76,10 @@ export const PricingCalculator = () => {
         </div>
 
         <div className="flex-1">
-          <div className="bg-white rounded-2xl border border-[#EBEBEB] p-8">
+          <div className="flex flex-col items-start w-[579px] max-w-full rounded-xl border border-[#FFEDD4] bg-white shadow-[0px_-2px_8px_-1px_rgba(23,23,23,0.04),0px_14px_40px_-4px_rgba(23,23,23,0.06)] p-8">
             <h3 className="text-xl font-medium mb-8">Configure your plan</h3>
 
-            <div className="space-y-8">
+            <div className="space-y-8 w-full">
               <div>
                 <label className="text-sm mb-2 block">Number of sites</label>
                 <Input
@@ -119,15 +119,17 @@ export const PricingCalculator = () => {
               </div>
             </div>
 
-            <div className="bg-[#FFF8F3] mt-8 p-4 rounded-lg">
-              <div className="flex items-center gap-2 mb-4">
-                <img
-                  src="https://cdn.builder.io/api/v1/image/assets/4b8bee12bead4b66b573187d8e419c5d/eefecd56a897a32835976d67c57d09015a18ddd1b5685d7a336048586db07823"
-                  alt=""
-                  className="w-5 h-5"
-                />
-                <span className="font-semibold">Save 60% today</span>
-                <div className="ml-auto text-[#464646]">
+            <div className="bg-[#FFF8F3] mt-8 p-6 rounded-lg w-full">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="flex items-center gap-2">
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets/4b8bee12bead4b66b573187d8e419c5d/eefecd56a897a32835976d67c57d09015a18ddd1b5685d7a336048586db07823"
+                    alt=""
+                    className="w-5 h-5"
+                  />
+                  <span className="text-[#222222] font-semibold">Save 60% today</span>
+                </div>
+                <div className="ml-auto text-sm text-[#464646]">
                   <span>Offer ends in </span>
                   <CountdownTimer targetDate={new Date("2025-06-30")} />
                 </div>
@@ -169,4 +171,3 @@ export const PricingCalculator = () => {
     </div>
   );
 };
-
