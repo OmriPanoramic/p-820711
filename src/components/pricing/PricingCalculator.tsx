@@ -45,7 +45,7 @@ export const PricingCalculator = () => {
         </div>
 
         <div className="flex-1">
-          <div className="flex flex-col items-start w-[579px] max-w-full rounded-xl border border-[#FFEDD4] bg-white shadow-[0px_-2px_8px_-1px_rgba(23,23,23,0.04),0px_14px_40px_-4px_rgba(23,23,23,0.06)] p-8">
+          <div className="flex flex-col items-start w-full rounded-xl border border-[#FFEDD4] bg-white shadow-[0px_-2px_8px_-1px_rgba(23,23,23,0.04),0px_14px_40px_-4px_rgba(23,23,23,0.06)] p-8">
             <h3 className="text-xl font-medium mb-8">Configure your plan</h3>
 
             <div className="space-y-8 w-full">
