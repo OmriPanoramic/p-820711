@@ -1,3 +1,4 @@
+
 import { Input } from "@/components/ui/input";
 import { Slider } from "@/components/ui/slider";
 import { useState } from "react";
@@ -128,7 +129,7 @@ export const PricingCalculator = () => {
                     alt=""
                     className="w-5 h-5"
                   />
-                  <span className="text-[#222222] font-semibold">Save 60% today</span>
+                  <span className="text-[#FF6B00] font-semibold">Save 60% today</span>
                 </div>
                 <div className="text-sm text-[#464646]">
                   <span>Offer ends in </span>
