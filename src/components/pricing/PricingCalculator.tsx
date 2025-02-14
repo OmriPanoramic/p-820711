@@ -1,7 +1,9 @@
+
 import { Input } from "@/components/ui/input";
 import { Slider } from "@/components/ui/slider";
 import { useState } from "react";
 import { CountdownTimer } from "./CountdownTimer";
+
 export const PricingCalculator = () => {
   const [sites, setSites] = useState([1]);
   const [inputs, setInputs] = useState(10);
@@ -10,6 +12,7 @@ export const PricingCalculator = () => {
   const totalMonthlyPrice = Math.max(basePrice, sites[0] * inputs * pricePerInput);
   const totalAnnualPrice = totalMonthlyPrice * 12;
   const discountedAnnualPrice = totalAnnualPrice * 0.4;
+
   return <div className="flex flex-col items-center w-full max-w-[1440px] px-20 pb-20 max-md:px-5">
       <div className="flex w-full gap-20 max-md:flex-col">
         <div className="flex-1">
@@ -72,7 +75,7 @@ export const PricingCalculator = () => {
 
             <div className="flex flex-col w-full mt-8 -mx-8">
               {/* Save strip */}
-              <div className="flex h-[64px]  justify-between bg-[#FFF7ED] w-full px-[32px]">
+              <div className="flex h-[64px] px-8 items-center justify-between bg-[#FFF7ED] w-full">
                 <div className="flex items-center gap-2">
                   <img src="https://cdn.builder.io/api/v1/image/assets/4b8bee12bead4b66b573187d8e419c5d/eefecd56a897a32835976d67c57d09015a18ddd1b5685d7a336048586db07823" alt="" className="w-5 h-5" />
                   <span className="text-[#FF6B00] font-semibold">Save 60% today</span>
@@ -84,7 +87,7 @@ export const PricingCalculator = () => {
               </div>
 
               {/* Pricing data section */}
-              <div className="flex flex-col p-8 gap-8 bg-[#FFFCF9] w-full">
+              <div className="flex flex-col px-[32px] gap-8 bg-[#FFFCF9] w-full">
                 <div>
                   <div className="text-sm text-[#6D6D6D]">Total annual price</div>
                   <div className="flex justify-between items-baseline">
