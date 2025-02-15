@@ -169,6 +169,12 @@ export const PricingLayout = () => {
                                     variant: "section-title" as const,
                                     className: "text-xl font-medium mt-6 mb-6"
                                 },
+                                {
+                                    text: "",
+                                    icon: "",
+                                    variant: "section-title" as const,
+                                    className: "h-[1px] bg-[#EBEBEB] w-full"
+                                },
                                 ...visualizeAddons,
                             ]}
                             variant="secondary"
