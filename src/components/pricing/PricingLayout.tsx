@@ -3,8 +3,8 @@ import {PricingCard} from "./PricingCard";
 import {PricingCalculator} from "./PricingCalculator";
 
 const PlusIcon = () => (
-  <div className="w-6 h-6 rounded-full bg-[#F2FCE2] flex items-center justify-center">
-    <span className="text-[#6D6D6D] text-lg">+</span>
+  <div className="w-5 h-5 rounded-full bg-[#F2FCE2] flex items-center justify-center">
+    <span className="text-[#6D6D6D] text-sm">+</span>
   </div>
 );
 
@@ -158,10 +158,16 @@ export const PricingLayout = () => {
                             features={[
                                 ...visualizeFeatures,
                                 {
+                                    text: "",
+                                    icon: "",
+                                    variant: "section-title" as const,
+                                    className: "h-[1px] bg-[#EBEBEB] w-full mt-8"
+                                },
+                                {
                                     text: "Paid add-ons",
                                     icon: "",
                                     variant: "section-title" as const,
-                                    className: "text-xl font-medium mt-8 mb-6"
+                                    className: "text-xl font-medium mt-6 mb-6"
                                 },
                                 ...visualizeAddons,
                             ]}
