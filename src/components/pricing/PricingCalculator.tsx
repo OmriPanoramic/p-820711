@@ -22,15 +22,15 @@ export const PricingCalculator = () => {
                     </h2>
 
                     <div className="mt-6">
-                        <div className="flex items-baseline gap-1">
-        <span className="text-[#222] text-[40px] font-medium leading-[130%] font-jakarta" style={{ fontFeatureSettings: "'calt' off" }}>
-            $5
-        </span>
-                            <span className="text-[#222] text-[14px] font-normal leading-[150%] font-jakarta" style={{ fontFeatureSettings: "'liga' off, 'calt' off" }}>
-            per device/month (billed annually)
-        </span>
+                        <div className="flex items-baseline">
+                            <span className="text-[#222] text-[40px] font-medium leading-[130%] font-jakarta" style={{ fontFeatureSettings: "'calt' off" }}>
+                                $5
+                            </span>
+                            <span className="text-[#222] text-[14px] font-normal leading-[150%] ml-1 self-end mb-1.5" style={{ fontFeatureSettings: "'liga' off, 'calt' off" }}>
+                                per device/month (billed annually)
+                            </span>
                         </div>
-                        <div className="text-[#909090] text-xs font-medium leading-[140%] font-jakarta mt-2">
+                        <div className="text-[#909090] text-xs font-normal leading-[140%] mt-2">
                             Min. $50/month
                         </div>
                     </div>
