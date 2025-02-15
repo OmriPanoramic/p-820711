@@ -2,6 +2,12 @@
 import {PricingCard} from "./PricingCard";
 import {PricingCalculator} from "./PricingCalculator";
 
+const PlusIcon = () => (
+  <div className="w-6 h-6 rounded-full bg-[#F2FCE2] flex items-center justify-center">
+    <span className="text-[#6D6D6D] text-lg">+</span>
+  </div>
+);
+
 const optimizeFeatures = [
     {
         text: "Real-time data readings",
@@ -112,12 +118,12 @@ const visualizeFeatures = [
 const visualizeAddons = [
     {
         text: "Auto data exports (HTTPS/FTP)",
-        icon: "https://cdn.builder.io/api/v1/image/assets/4b8bee12bead4b66b573187d8e419c5d/05f3e0c5e6b2601ccd4955eec7a8ecf2d8279cc3232517f49290c22f50450d3d",
+        icon: <PlusIcon />,
         variant: "highlight" as const,
     },
     {
         text: "Customized reports",
-        icon: "https://cdn.builder.io/api/v1/image/assets/4b8bee12bead4b66b573187d8e419c5d/05f3e0c5e6b2601ccd4955eec7a8ecf2d8279cc3232517f49290c22f50450d3d",
+        icon: <PlusIcon />,
         variant: "highlight" as const,
     },
 ];
@@ -151,7 +157,12 @@ export const PricingLayout = () => {
                             price="Free"
                             features={[
                                 ...visualizeFeatures,
-                                {text: "Paid add-ons", icon: "", variant: "inactive"},
+                                {
+                                    text: "Paid add-ons",
+                                    icon: "",
+                                    variant: "section-title" as const,
+                                    className: "text-xl font-medium mt-8 mb-6"
+                                },
                                 ...visualizeAddons,
                             ]}
                             variant="secondary"
