@@ -48,7 +48,7 @@ export const PricingCard = ({
                 <div className="flex w-full gap-2 flex-wrap">
                   <div className="flex min-w-60 gap-1 text-[#222] flex-wrap flex-1 shrink basis-[0%] items-end">
                     <span className="text-5xl font-medium leading-[1.3]">{price}</span>
-                    <span className="text-sm ml-1 font-normal margin-top:-4px">{priceSubtext}</span>
+                    <span className="text-sm ml-1 font-normal my-[6px]">{priceSubtext}</span>
                   </div>
                   {minPrice && <div className="text-[#6D6D6D] text-sm font-normal">{minPrice}</div>}
                 </div>
