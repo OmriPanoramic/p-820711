@@ -1,3 +1,4 @@
+
 import {PricingCard} from "./PricingCard";
 import {PricingCalculator} from "./PricingCalculator";
 
@@ -129,8 +130,8 @@ export const PricingLayout = () => {
                     Two ways to manage energy
                 </h2>
 
-                <div className="flex gap-6 max-md:flex-col">
-                    <div className="flex-1">
+                <div className="flex justify-center gap-6 max-md:flex-col">
+                    <div className="w-[734px] max-w-full">
                         <PricingCard
                             title="Optimize"
                             description="Ideal for professionals and for anyone who wants to track, manage, and gain insights into their energy usage"
@@ -142,7 +143,7 @@ export const PricingLayout = () => {
                             className="bg-[#FFF7ED]"
                         />
                     </div>
-                    <div className="flex-1">
+                    <div className="w-[516px] max-w-full">
                         <PricingCard
                             title="Visualize"
                             description="Suitable for small, basic businesses for simple daily electricity consumption tracking"
