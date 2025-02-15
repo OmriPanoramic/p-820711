@@ -1,4 +1,3 @@
-
 import { ReactNode } from "react";
 import { PricingFeature } from "./PricingFeature";
 import { BetaTag } from "../ui/beta-tag";
@@ -13,10 +12,11 @@ interface PricingCardProps {
   minPrice?: string;
   features: Array<{
     text: string;
-    variant?: "active" | "inactive" | "highlight";
-    icon: string;
+    variant?: "active" | "inactive" | "highlight" | "section-title";
+    icon: string | ReactNode;
     subFeatures?: string[];
     beta?: boolean;
+    className?: string;
   }>;
   variant?: "primary" | "secondary";
   className?: string;
