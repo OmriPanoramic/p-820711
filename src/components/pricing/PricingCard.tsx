@@ -41,12 +41,12 @@ export const PricingCard = ({
     <article className={`border w-full p-8 rounded-xl ${cardClasses} ${className}`}>
       <div className="w-full">
         <header className="flex w-full items-center gap-[16px] text-2xl text-[rgba(34,34,34,1)] font-medium whitespace-nowrap leading-[1.3]">
-          <div className="w-[56px] h-[56px] flex-shrink-0 flex items-center justify-center bg-white rounded-[10px]">
+          <div className="w-[56px] h-[56px] flex-shrink-0 flex items-center justify-center rounded-[10px]">
             <img 
               loading="lazy" 
               src={icon} 
               alt={`${title} icon`} 
-              className="max-w-[40px] max-h-[40px] w-auto h-auto object-contain" 
+              className="w-[56px] h-[56px] object-contain" 
             />
           </div>
           <h2 className="self-stretch flex-1 shrink basis-[0%] my-auto">{title}</h2>
