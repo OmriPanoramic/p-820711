@@ -1,3 +1,4 @@
+
 import { Input } from "@/components/ui/input";
 import { Slider } from "@/components/ui/slider";
 import { useState } from "react";
@@ -22,16 +23,18 @@ export const PricingCalculator = () => {
                     </h2>
 
                     <div className="mt-6">
-                        <div className="flex items-baseline">
-                            <span className="text-[#222] text-[40px] font-medium leading-[130%] font-jakarta" style={{ fontFeatureSettings: "'calt' off" }}>
-                                $5
-                            </span>
-                            <span className="text-[#222] text-[14px] font-normal leading-[150%] ml-1 self-end mb-1.5" style={{ fontFeatureSettings: "'liga' off, 'calt' off" }}>
-                                per device/month (billed annually)
-                            </span>
-                        </div>
-                        <div className="text-[#909090] text-xs font-normal leading-[140%] mt-2">
-                            Min. $50/month
+                        <div className="flex items-end gap-4">
+                            <div className="flex items-baseline">
+                                <span className="text-[#222] text-[40px] font-medium leading-[130%] font-jakarta" style={{ fontFeatureSettings: "'calt' off" }}>
+                                    $5
+                                </span>
+                                <span className="text-[#222] text-[14px] font-normal leading-[150%] ml-1 self-end mb-1.5" style={{ fontFeatureSettings: "'liga' off, 'calt' off" }}>
+                                    per device/month (billed annually)
+                                </span>
+                            </div>
+                            <div className="text-[#909090] text-xs font-normal leading-[140%] mb-1.5">
+                                Min. $50/month
+                            </div>
                         </div>
                     </div>
 
