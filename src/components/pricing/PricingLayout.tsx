@@ -135,7 +135,7 @@ export const PricingLayout = () => {
                         <PricingCard
                             title="Optimize"
                             description="Ideal for professionals and for anyone who wants to track, manage, and gain insights into their energy usage"
-                            icon="https://cdn.builder.io/api/v1/image/assets/4b8bee12bead4b66b573187d8e419c5d/c0a451b42bc778a35b18ef45f221269765f815341185438c8cbcab36cefbca5d"
+                            icon="optimize"
                             price="$5"
                             priceSubtext="per device/month (billed annually)"
                             minPrice="Min. $50/month"
@@ -147,7 +147,7 @@ export const PricingLayout = () => {
                         <PricingCard
                             title="Visualize"
                             description="Suitable for small, basic businesses for simple daily electricity consumption tracking"
-                            icon="https://cdn.builder.io/api/v1/image/assets/4b8bee12bead4b66b573187d8e419c5d/b48fa74d2f17e957fbc72a5119e164eb2fca5f296f75e6f5bfd1489ad7ae23b8"
+                            icon="visualize"
                             price="Free"
                             features={[
                                 ...visualizeFeatures,
