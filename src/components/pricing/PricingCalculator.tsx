@@ -287,7 +287,7 @@ const ConfigurationSection = ({
         </div>
       </div>
 
-      <div className="flex flex-col px-4 sm:px-8 pb-4 sm:pb-8 gap-6">
+      <div className="flex flex-col px-4 sm:px-8 pb-4 mt-3 sm:pb-8 gap-6">
         <label className="text-base text-[#171717]">
           Number of data inputs
         </label>
