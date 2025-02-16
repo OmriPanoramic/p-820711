@@ -46,8 +46,8 @@ export const PricingCalculator = () => {
     totalMonthlyPrice * PRICING_CONFIG.ANNUAL_DISCOUNT;
 
   return (
-    <div className="flex flex-col items-center w-full max-w-[1440px] px-20 pb-20 max-md:px-5">
-      <div className="flex w-full gap-20 max-md:flex-col">
+    <div className="flex flex-col items-center w-full max-w-[1440px] px-4 sm:px-6 lg:px-20 pb-10 sm:pb-20">
+      <div className="flex w-full gap-8 lg:gap-20 flex-col lg:flex-row">
         <PricingFeatures />
         <PricingConfigurator
           sites={sites}
@@ -66,7 +66,7 @@ export const PricingCalculator = () => {
 
 const PricingFeatures = () => (
   <div className="flex-1">
-    <h2 className="text-[40px] font-medium leading-[1.3]">
+    <h2 className="text-[32px] lg:text-[40px] font-medium leading-[1.3]">
       Calculate your <span className="text-[#FF6B00]">Optimize</span> package
     </h2>
 
@@ -248,17 +248,12 @@ const ConfigurationSection = ({
 
   return (
     <div className="flex flex-col w-full">
-      {/* Header */}
-      <h3
-        className="text-[16px] font-semibold text-[#222] font-jakarta leading-[150%] p-8"
-        style={{ fontFeatureSettings: "'liga' off, 'calt' off" }}
-      >
+      <h3 className="text-[16px] font-semibold text-[#222] font-jakarta leading-[150%] p-4 sm:p-8">
         Configure your plan
       </h3>
 
-      {/* Sites Section */}
-      <div className="flex flex-col px-8 gap-12">
-        <div className="flex justify-between items-center w-full">
+      <div className="flex flex-col px-4 sm:px-8 gap-8 sm:gap-12">
+        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center w-full gap-4 sm:gap-0">
           <label className="text-base text-[#171717]">Number of sites</label>
           <Input
             type="number"
@@ -272,7 +267,7 @@ const ConfigurationSection = ({
                 setInputs(Array(count).fill(10));
               }
             }}
-            className="w-[180px] h-[40px] text-right px-3 border-[#E5E5E5] rounded-lg"
+            className="w-full sm:w-[180px] h-[40px] text-right px-3 border-[#E5E5E5] rounded-lg"
             min={1}
           />
         </div>
@@ -294,57 +289,61 @@ const ConfigurationSection = ({
         </div>
       </div>
 
-      {/* Devices Section */}
-      <div className="flex flex-col px-8 pb-8 gap-6">
+      <div className="flex flex-col px-4 sm:px-8 pb-4 sm:pb-8 gap-6">
         <label className="text-base text-[#171717]">
           Number of data inputs
         </label>
         <div className="flex flex-col gap-6 w-full">
           {isMultiSite ? (
-            // Show individual site inputs when <= 10 sites
             sites.map((_, index) => (
-              <div key={index} className="flex items-center w-full">
-                <span className="text-[#171717] mr-auto">Site {index + 1}</span>
-                <Input
-                  type="number"
-                  value={inputs[index]}
-                  onChange={(e) =>
-                    handleInputChange(
-                      index,
-                      Math.max(1, Number(e.target.value))
-                    )
-                  }
-                  className="w-[180px] h-[40px] text-right px-3 border-[#E5E5E5] rounded-lg"
-                  min={1}
-                />
-                {sites.length > 1 && (
-                  <button
-                    onClick={() => handleRemoveSite(index)}
-                    className="text-[#6D6D6D] hover:text-[#222] transition-colors ml-4"
-                  >
-                    <svg
-                      width="20"
-                      height="20"
-                      viewBox="0 0 20 20"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
+              <div
+                key={index}
+                className="flex flex-col sm:flex-row sm:items-center w-full gap-4 sm:gap-0"
+              >
+                <span className="text-[#171717] sm:mr-auto">
+                  Site {index + 1}
+                </span>
+                <div className="flex items-center w-full sm:w-auto">
+                  <Input
+                    type="number"
+                    value={inputs[index]}
+                    onChange={(e) =>
+                      handleInputChange(
+                        index,
+                        Math.max(1, Number(e.target.value))
+                      )
+                    }
+                    className="w-full sm:w-[180px] h-[40px] text-right px-3 border-[#E5E5E5] rounded-lg"
+                    min={1}
+                  />
+                  {sites.length > 1 && (
+                    <button
+                      onClick={() => handleRemoveSite(index)}
+                      className="text-[#6D6D6D] hover:text-[#222] transition-colors ml-4"
                     >
-                      <path
-                        d="M15 5L5 15M5 5L15 15"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </button>
-                )}
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M15 5L5 15M5 5L15 15"
+                          stroke="currentColor"
+                          strokeWidth="1.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </button>
+                  )}
+                </div>
               </div>
             ))
           ) : (
-            // Show single total input when > 10 sites
-            <div className="flex items-center w-full">
-              <span className="text-[#171717] mr-auto">
+            <div className="flex flex-col sm:flex-row sm:items-center w-full gap-4 sm:gap-0">
+              <span className="text-[#171717] sm:mr-auto">
                 Total number of devices
               </span>
               <Input
@@ -353,7 +352,7 @@ const ConfigurationSection = ({
                 onChange={(e) =>
                   setInputs([Math.max(1, Number(e.target.value))])
                 }
-                className="w-[180px] h-[40px] text-right px-3 border-[#E5E5E5] rounded-lg"
+                className="w-full sm:w-[180px] h-[40px] text-right px-3 border-[#E5E5E5] rounded-lg"
                 min={1}
               />
             </div>
@@ -394,7 +393,7 @@ const PricingSummary = ({
   discountedAnnualPrice,
 }: PricingSummaryProps) => (
   <div className="w-full">
-    <div className="flex h-[64px] justify-between items-center bg-[#FFF7ED] w-full px-8">
+    <div className="flex flex-col sm:flex-row h-auto sm:h-[64px] justify-between items-start sm:items-center gap-4 sm:gap-0 bg-[#FFF7ED] w-full p-4 sm:px-8">
       <div className="flex items-center gap-2">
         <img
           src="https://cdn.builder.io/api/v1/image/assets/4b8bee12bead4b66b573187d8e419c5d/eefecd56a897a32835976d67c57d09015a18ddd1b5685d7a336048586db07823"
