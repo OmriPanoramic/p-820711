@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import NumberFormat from "@number-flow/react";
 interface CountdownTimerProps {
   targetDate: Date;
 }
@@ -31,26 +31,26 @@ export const CountdownTimer = ({ targetDate }: CountdownTimerProps) => {
   }, [targetDate]);
 
   return (
-      <div className="flex items-center gap-[2px] self-stretch">
-        <div className="flex h-[24px] px-[5px] justify-center items-center gap-[2px] rounded-[3px] bg-[rgba(37,31,31,0.05)]">
-          <span>{timeLeft.days}</span>
-          <span className="text-[#6D6D6D]">d</span>
-        </div>
-        <span className="text-[#6D6D6D]">:</span>
-        <div className="flex h-[24px] px-[5px] justify-center items-center gap-[2px] rounded-[3px] bg-[rgba(37,31,31,0.05)]">
-          <span>{timeLeft.hours.toString().padStart(2, '0')}</span>
-          <span className="text-[#6D6D6D]">h</span>
-        </div>
-        <span className="text-[#6D6D6D]">:</span>
-        <div className="flex h-[24px] px-[5px] justify-center items-center gap-[2px] rounded-[3px] bg-[rgba(37,31,31,0.05)]">
-          <span>{timeLeft.minutes.toString().padStart(2, '0')}</span>
-          <span className="text-[#6D6D6D]">m</span>
-        </div>
-        <span className="text-[#6D6D6D]">:</span>
-        <div className="flex h-[24px] px-[5px] justify-center items-center gap-[2px] rounded-[3px] bg-[rgba(37,31,31,0.05)]">
-          <span>{timeLeft.seconds.toString().padStart(2, '0')}</span>
-          <span className="text-[#6D6D6D]">s</span>
-        </div>
+    <div className="flex items-center gap-[2px] self-stretch">
+      <div className="flex h-[24px] px-[5px] justify-center items-center gap-[2px] rounded-[3px] bg-[rgba(37,31,31,0.05)]">
+        <NumberFormat value={timeLeft.days} />
+        <span className="text-[#6D6D6D]">d</span>
       </div>
+      <span className="text-[#6D6D6D]">:</span>
+      <div className="flex h-[24px] px-[5px] justify-center items-center gap-[2px] rounded-[3px] bg-[rgba(37,31,31,0.05)]">
+        <NumberFormat value={timeLeft.hours} />
+        <span className="text-[#6D6D6D]">h</span>
+      </div>
+      <span className="text-[#6D6D6D]">:</span>
+      <div className="flex h-[24px] px-[5px] justify-center items-center gap-[2px] rounded-[3px] bg-[rgba(37,31,31,0.05)]">
+        <NumberFormat value={timeLeft.minutes} />
+        <span className="text-[#6D6D6D]">m</span>
+      </div>
+      <span className="text-[#6D6D6D]">:</span>
+      <div className="flex h-[24px] px-[5px] justify-center items-center gap-[2px] rounded-[3px] bg-[rgba(37,31,31,0.05)]">
+        <NumberFormat value={timeLeft.seconds} />
+        <span className="text-[#6D6D6D]">s</span>
+      </div>
+    </div>
   );
 };
