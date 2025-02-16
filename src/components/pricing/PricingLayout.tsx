@@ -15,19 +15,42 @@ const optimizeFeatures = [
         icon: "https://cdn.builder.io/api/v1/image/assets/4b8bee12bead4b66b573187d8e419c5d/aee02f786175f73269924ea5986d4a4f1ba8cf1583827e54d4eccfe46315e209",
     },
     {
-        text: "Energy over time",
-        icon: "https://cdn.builder.io/api/v1/image/assets/4b8bee12bead4b66b573187d8e419c5d/aee02f786175f73269924ea5986d4a4f1ba8cf1583827e54d4eccfe46315e209",
-    },
-    {
-        text: "5-year historical data",
-        icon: "https://cdn.builder.io/api/v1/image/assets/4b8bee12bead4b66b573187d8e419c5d/aee02f786175f73269924ea5986d4a4f1ba8cf1583827e54d4eccfe46315e209",
-    },
-    {
         text: "Unlimited users",
         icon: "https://cdn.builder.io/api/v1/image/assets/4b8bee12bead4b66b573187d8e419c5d/aee02f786175f73269924ea5986d4a4f1ba8cf1583827e54d4eccfe46315e209",
     },
     {
+        text: "Time-view PRO",
+        icon: "https://cdn.builder.io/api/v1/image/assets/4b8bee12bead4b66b573187d8e419c5d/0d40ab35d1d5f21d0d59c96d9ac96abecb187574f20f95510aa8b6610d0984cc",
+        beta: true,
+        subFeatures: [
+            { text: "Advanced presets", showBullet: true },
+            { text: "Multiple views", showBullet: true },
+            { text: "Better device comparison and benchmarking", showBullet: true },
+            { text: "Full support for non-electrical meters of ALL kinds", showBullet: true },
+            { text: "Multi-axis support", showBullet: true },
+            { text: "Open multiple time-view instances using 'Tabs'", showBullet: true },
+            { text: "and more...", showBullet: false },
+        ],
+        subFeaturesClassName: "pl-[24px]"
+    },
+    {
         text: "Unlimited customizable dashboards",
+        icon: "https://cdn.builder.io/api/v1/image/assets/4b8bee12bead4b66b573187d8e419c5d/aee02f786175f73269924ea5986d4a4f1ba8cf1583827e54d4eccfe46315e209",
+    },
+    {
+        text: "Events & Alerts tagging and annotations",
+        icon: "https://cdn.builder.io/api/v1/image/assets/4b8bee12bead4b66b573187d8e419c5d/aee02f786175f73269924ea5986d4a4f1ba8cf1583827e54d4eccfe46315e209",
+    },
+    {
+        text: "Unlimited Custom Device Categories & types",
+        icon: "https://cdn.builder.io/api/v1/image/assets/4b8bee12bead4b66b573187d8e419c5d/0d40ab35d1d5f21d0d59c96d9ac96abecb187574f20f95510aa8b6610d0984cc",
+    },
+    {
+        text: "Brand new 'Groups' application",
+        icon: "https://cdn.builder.io/api/v1/image/assets/4b8bee12bead4b66b573187d8e419c5d/aee02f786175f73269924ea5986d4a4f1ba8cf1583827e54d4eccfe46315e209",
+    },
+    {
+        text: "5-year historical data",
         icon: "https://cdn.builder.io/api/v1/image/assets/4b8bee12bead4b66b573187d8e419c5d/aee02f786175f73269924ea5986d4a4f1ba8cf1583827e54d4eccfe46315e209",
     },
     {
@@ -39,31 +62,8 @@ const optimizeFeatures = [
         icon: "https://cdn.builder.io/api/v1/image/assets/4b8bee12bead4b66b573187d8e419c5d/aee02f786175f73269924ea5986d4a4f1ba8cf1583827e54d4eccfe46315e209",
     },
     {
-        text: "Auto data exports (HTTPS/FTP)",
-        icon: "https://cdn.builder.io/api/v1/image/assets/4b8bee12bead4b66b573187d8e419c5d/aee02f786175f73269924ea5986d4a4f1ba8cf1583827e54d4eccfe46315e209",
-    },
-    {
         text: "Customized reports",
         icon: "https://cdn.builder.io/api/v1/image/assets/4b8bee12bead4b66b573187d8e419c5d/aee02f786175f73269924ea5986d4a4f1ba8cf1583827e54d4eccfe46315e209",
-    },
-    {
-        text: "Events & Alerts tagging and annotations",
-        icon: "https://cdn.builder.io/api/v1/image/assets/4b8bee12bead4b66b573187d8e419c5d/aee02f786175f73269924ea5986d4a4f1ba8cf1583827e54d4eccfe46315e209",
-    },
-    {
-        text: "Time-view PRO",
-        icon: "https://cdn.builder.io/api/v1/image/assets/4b8bee12bead4b66b573187d8e419c5d/0d40ab35d1d5f21d0d59c96d9ac96abecb187574f20f95510aa8b6610d0984cc",
-        beta: true,
-        subFeatures: [
-            { text: "Advanced presets", showBullet: true },
-            { text: "Multiple views", showBullet: true },
-            { text: "Better device comparison and benchmarking", showBullet: true },
-            { text: "Full support for non-electrical meters", showBullet: true },
-            { text: "Multi-axis support", showBullet: true },
-            { text: "Open multiple time-view instances using 'Tabs'", showBullet: true },
-            { text: "and more...", showBullet: false },
-        ],
-        subFeaturesClassName: "pl-[24px]"
     },
     {
         text: "New platform infrastructure & user interface",
@@ -86,9 +86,18 @@ const visualizeFeatures = [
         variant: "inactive" as const,
     },
     {
-        text: "Energy over time - limited basic view",
+        text: "Unlimited users",
         icon: "https://cdn.builder.io/api/v1/image/assets/4b8bee12bead4b66b573187d8e419c5d/5b10347c479ee733405ce46a25c05587ba7090ab9905f0df0eb4c3f1b39759fe",
         variant: "inactive" as const,
+    },
+    {
+        text: "Energy over time - LIMITED view",
+        icon: "https://cdn.builder.io/api/v1/image/assets/4b8bee12bead4b66b573187d8e419c5d/5b10347c479ee733405ce46a25c05587ba7090ab9905f0df0eb4c3f1b39759fe",
+        variant: "inactive" as const,
+        subFeatures: [
+            { text: "Basic view of current, power and voltage for Panoramic sensors only. Limited to up to 4 devices at a time", showBullet: false },
+        ],
+        subFeaturesClassName: "pl-[24px]"
     },
     {
         text: "1 year historical data",
@@ -96,14 +105,13 @@ const visualizeFeatures = [
         variant: "inactive" as const,
     },
     {
-        text: "Unlimited users",
-        icon: "https://cdn.builder.io/api/v1/image/assets/4b8bee12bead4b66b573187d8e419c5d/5b10347c479ee733405ce46a25c05587ba7090ab9905f0df0eb4c3f1b39759fe",
-        variant: "inactive" as const,
-    },
-    {
         text: "1 pre-defined dashboard",
         icon: "https://cdn.builder.io/api/v1/image/assets/4b8bee12bead4b66b573187d8e419c5d/5b10347c479ee733405ce46a25c05587ba7090ab9905f0df0eb4c3f1b39759fe",
         variant: "inactive" as const,
+        subFeatures: [
+            { text: "Not editable", showBullet: false },
+        ],
+        subFeaturesClassName: "pl-[24px]"
     },
     {
         text: "Energy flow application",

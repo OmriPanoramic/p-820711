@@ -23,7 +23,7 @@ interface PricingCardProps {
 }
 
 const VisualizeIcon = () => (
-  <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg width="32" height="32" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
     <g clipPath="url(#clip0_57_7289)">
       <rect width="56" height="56" rx="10" fill="white"/>
       <circle cx="7.87262" cy="41.0919" r="41.5381" transform="rotate(-0.403168 7.87262 41.0919)" fill="url(#paint0_linear_57_7289)" stroke="url(#paint1_linear_57_7289)" strokeWidth="0.085853"/>
