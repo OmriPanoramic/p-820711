@@ -1,5 +1,6 @@
 import { Input } from "@/components/ui/input";
-import { Slider } from "@/components/ui/slider";
+import Slider from "@/components/ui/slider-flow";
+
 import {
   Tooltip,
   TooltipContent,
@@ -256,7 +257,7 @@ const ConfigurationSection = ({
       </h3>
 
       {/* Sites Section */}
-      <div className="flex flex-col px-8 pb-6">
+      <div className="flex flex-col px-8 gap-12">
         <div className="flex justify-between items-center w-full">
           <label className="text-base text-[#171717]">Number of sites</label>
           <Input
@@ -275,10 +276,26 @@ const ConfigurationSection = ({
             min={1}
           />
         </div>
+        <div className="flex items-center">
+          <Slider
+            className="w-full"
+            min={1}
+            max={100}
+            value={[sites.length]}
+            onValueChange={(value) => {
+              setSites(Array(value[0]).fill(1));
+              if (value[0] > 10) {
+                setInputs([inputs[0] || 10]);
+              } else {
+                setInputs(Array(value[0]).fill(10));
+              }
+            }}
+          />
+        </div>
       </div>
 
       {/* Devices Section */}
-      <div className="flex flex-col p-8 gap-6">
+      <div className="flex flex-col px-8 pb-8 gap-6">
         <label className="text-base text-[#171717]">
           Number of data inputs
         </label>
