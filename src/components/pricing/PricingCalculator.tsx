@@ -141,21 +141,19 @@ const PricingConfigurator = ({
   discountedMonthlyPrice,
   discountedAnnualPrice,
 }: PricingConfiguratorProps) => (
-  <div className="flex-1">
-    <div className="flex flex-col items-start w-full rounded-xl border border-[#FFEDD4] bg-white shadow-[0px_-2px_8px_-1px_rgba(23,23,23,0.04),0px_14px_40px_-4px_rgba(23,23,23,0.06)] overflow-hidden">
-      <ConfigurationSection
-        sites={sites}
-        setSites={setSites}
-        inputs={inputs}
-        setInputs={setInputs}
-      />
-      <PricingSummary
-        totalMonthlyPrice={totalMonthlyPrice}
-        totalAnnualPrice={totalAnnualPrice}
-        discountedMonthlyPrice={discountedMonthlyPrice}
-        discountedAnnualPrice={discountedAnnualPrice}
-      />
-    </div>
+  <div className="flex flex-col items-start w-full rounded-xl border max-w-[665px] min-w-[480px] border-[#FFEDD4] bg-white shadow-[0px_-2px_8px_-1px_rgba(23,23,23,0.04),0px_14px_40px_-4px_rgba(23,23,23,0.06)] overflow-hidden">
+    <ConfigurationSection
+      sites={sites}
+      setSites={setSites}
+      inputs={inputs}
+      setInputs={setInputs}
+    />
+    <PricingSummary
+      totalMonthlyPrice={totalMonthlyPrice}
+      totalAnnualPrice={totalAnnualPrice}
+      discountedMonthlyPrice={discountedMonthlyPrice}
+      discountedAnnualPrice={discountedAnnualPrice}
+    />
   </div>
 );
 
