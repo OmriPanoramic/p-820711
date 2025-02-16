@@ -425,12 +425,11 @@ const PricingSummary = ({
         <div className="text-[#171717] text-base">Total annual price</div>
         <div className="flex justify-between items-baseline mt-1">
           <div className="text-[#6D6D6D] text-base line-through">
-            <NumberFlow value={totalMonthlyPrice} />
-            /month
+            <NumberFlow value={totalMonthlyPrice} suffix="/month" />
           </div>
           <div className="flex items-center gap-1">
             <span className="text-[#6D6D6D] text-xl line-through">
-              <NumberFlow value={totalAnnualPrice} />
+              <NumberFlow value={totalAnnualPrice} suffix="/year" style={{}} />
             </span>
             <span className="text-[#6D6D6D] text-sm">/year</span>
           </div>
