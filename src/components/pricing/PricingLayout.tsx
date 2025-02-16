@@ -55,14 +55,15 @@ const optimizeFeatures = [
         icon: "https://cdn.builder.io/api/v1/image/assets/4b8bee12bead4b66b573187d8e419c5d/0d40ab35d1d5f21d0d59c96d9ac96abecb187574f20f95510aa8b6610d0984cc",
         beta: true,
         subFeatures: [
-            "Advanced presets",
-            "Multiple views",
-            "Better device comparison and benchmarking",
-            "Full support for non-electrical meters",
-            "Multi-axis support",
-            "Open multiple time-view instances using 'Tabs'",
-            "and more...",
+            { text: "Advanced presets", showBullet: true },
+            { text: "Multiple views", showBullet: true },
+            { text: "Better device comparison and benchmarking", showBullet: true },
+            { text: "Full support for non-electrical meters", showBullet: true },
+            { text: "Multi-axis support", showBullet: true },
+            { text: "Open multiple time-view instances using 'Tabs'", showBullet: true },
+            { text: "and more...", showBullet: false },
         ],
+        subFeaturesClassName: "pl-[24px]"
     },
     {
         text: "New platform infrastructure & user interface",
@@ -168,7 +169,8 @@ export const PricingLayout = () => {
                                     text: "Paid add-ons",
                                     icon: "",
                                     variant: "section-title" as const,
-                                    className: "text-xl font-medium mt-6 mb-6"
+                                    className: "text-[#222] text-base font-[600] leading-[150%] font-jakarta mt-6 mb-6",
+                                    style: { fontFeatureSettings: "'liga' off, 'calt' off" }
                                 },
                                 {
                                     text: "",

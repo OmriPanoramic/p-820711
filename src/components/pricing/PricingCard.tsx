@@ -14,7 +14,7 @@ interface PricingCardProps {
     text: string;
     variant?: "active" | "inactive" | "highlight" | "section-title";
     icon: string | ReactNode;
-    subFeatures?: string[];
+    subFeatures?: { text: string; showBullet: boolean }[];
     beta?: boolean;
     className?: string;
   }>;
@@ -126,7 +126,7 @@ export const PricingCard = ({
 
   return (
     <article className={`border w-full p-8 rounded-xl ${cardClasses} ${className}`}>
-      <div className="w-full">
+      <div className="w-full flex flex-col">
         <header className="flex w-full items-center gap-[16px] text-2xl text-[rgba(34,34,34,1)] font-medium whitespace-nowrap leading-[1.3]">
           <div className="w-[56px] h-[56px] flex-shrink-0 flex items-center justify-center">
             {title.toLowerCase().includes('visualize') ? <VisualizeIcon /> : <OptimizeIcon />}
@@ -134,18 +134,22 @@ export const PricingCard = ({
           <h2 className="self-stretch flex-1 shrink basis-[0%] my-auto">{title}</h2>
         </header>
 
-        <p className="text-[rgba(109,109,109,1)] text-base font-normal leading-7 mt-4">
-          {description}
-        </p>
+        <div className={variant === 'secondary' ? 'flex flex-col h-[100px]' : ''}>
+          <p className="text-[rgba(109,109,109,1)] text-base font-normal leading-7 mt-4">
+            {description}
+          </p>
+        </div>
 
         {price && (
           <div className="w-full mt-5">
-            <div className="flex w-full gap-2 flex-wrap">
-              <div className="flex min-w-60 gap-1 text-[#222] flex-wrap flex-1 shrink basis-[0%] items-end">
-                <span className="text-5xl font-medium leading-[1.3]">{price}</span>
-                <span className="text-sm ml-1 font-normal my-[6px]">{priceSubtext}</span>
+            <div className="flex w-full items-end">
+              <div className="flex gap-1 text-[#222] items-end">
+                <span className={`font-medium leading-[1.3] ${variant === 'secondary' ? 'text-2xl' : 'text-5xl'}`}>
+                  {price}
+                </span>
+                <span className="text-sm ml-1 font-normal mb-[6px]">{priceSubtext}</span>
               </div>
-              {minPrice && <div className="text-[#6D6D6D] text-sm font-normal">{minPrice}</div>}
+              {minPrice && <div className="text-[#6D6D6D] text-sm font-normal mb-[6px] ml-auto">{minPrice}</div>}
             </div>
 
             {variant === "primary" && (
@@ -178,11 +182,13 @@ export const PricingCard = ({
               </div>
             </PricingFeature>
             {feature.subFeatures && (
-              <div className="pl-6 text-gray-500 text-sm mt-1">
+              <div className="pl-[42px] text-gray-500 text-sm mt-1">
                 {feature.subFeatures.map((subFeature, subIndex) => (
-                  <div key={subIndex} className="flex items-center gap-2">
-                    <span>•</span>
-                    <span>{subFeature}</span>
+                  <div key={subIndex} className="flex items-center">
+                    <div className="w-[16px]">
+                      {subFeature.showBullet && <span>•</span>}
+                    </div>
+                    <span>{subFeature.text}</span>
                   </div>
                 ))}
               </div>

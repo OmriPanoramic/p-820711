@@ -200,7 +200,7 @@ const ConfigurationSection = ({
             </h3>
 
             {/* Sites Section */}
-            <div className="flex flex-col px-8 pb-8">
+            <div className="flex flex-col px-8 pb-6">
                 <div className="flex justify-between items-center w-full">
                     <label className="text-base text-[#171717]">Number of sites</label>
                     <Input
@@ -210,7 +210,7 @@ const ConfigurationSection = ({
                             const count = Math.max(1, Number(e.target.value));
                             setSites(Array(count).fill(1));
                             if (count > 10) {
-                                setInputs([inputs[0] || 10]); // Keep only first input or set default
+                                setInputs([inputs[0] || 10]);
                             } else {
                                 setInputs(Array(count).fill(10));
                             }
@@ -265,9 +265,9 @@ const ConfigurationSection = ({
                     {isMultiSite && sites.length < 10 && (
                         <button 
                             onClick={handleAddSite}
-                            className="flex h-[32px] px-[16px] pl-[12px] items-center justify-center gap-[8px] text-[#0073BA] border-[1.5px] border-[#EBEBEB] rounded-[4px] hover:bg-[#F5F5F5] transition-colors self-start"
+                            className="flex h-[40px] px-[16px] pl-[12px] items-center justify-center gap-[8px] text-[#0073BA] border-[1.5px] border-[#EBEBEB] rounded-[4px] hover:bg-[#F5F5F5] transition-colors self-start"
                         >
-                            <span className="text-[#0073BA] text-2xl font-light leading-[0] translate-y-[-1px] flex items-center justify-center">+</span>
+                            <span className="text-[#0073BA] text-2xl font-light leading-none translate-y-[-2px] inline-flex">+</span>
                             <span className="text-[#0073BA] text-[14px] font-semibold leading-[150%] font-jakarta" style={{ fontFeatureSettings: "'liga' off, 'calt' off" }}>
                                 Add site
                             </span>
