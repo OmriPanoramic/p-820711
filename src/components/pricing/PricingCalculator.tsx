@@ -20,11 +20,17 @@ const PRICING_CONFIG = {
 
 export const PricingCalculator = () => {
     const [sites, setSites] = useState([1]);
-    const [inputs, setInputs] = useState(10);
+    const [inputs, setInputs] = useState<number[]>([10]);
+
+    const handleInputChange = (index: number, value: number) => {
+        const newInputs = [...inputs];
+        newInputs[index] = value;
+        setInputs(newInputs);
+    };
 
     const totalMonthlyPrice = Math.max(
         PRICING_CONFIG.BASE_PRICE, 
-        sites[0] * inputs * PRICING_CONFIG.PRICE_PER_INPUT
+        inputs.reduce((sum, input) => sum + input, 0) * PRICING_CONFIG.PRICE_PER_INPUT
     );
     const totalAnnualPrice = totalMonthlyPrice * 12;
     const discountedAnnualPrice = totalAnnualPrice * PRICING_CONFIG.ANNUAL_DISCOUNT;
@@ -91,8 +97,8 @@ const PricingFeatures = () => (
 interface PricingConfiguratorProps {
     sites: number[];
     setSites: (sites: number[]) => void;
-    inputs: number;
-    setInputs: (inputs: number) => void;
+    inputs: number[];
+    setInputs: (inputs: number[]) => void;
     totalMonthlyPrice: number;
     totalAnnualPrice: number;
     discountedMonthlyPrice: number;
@@ -154,8 +160,8 @@ const FeatureList = ({ features }: { features: readonly string[] }) => (
 interface ConfigurationSectionProps {
     sites: number[];
     setSites: (sites: number[]) => void;
-    inputs: number;
-    setInputs: (inputs: number) => void;
+    inputs: number[];
+    setInputs: (inputs: number[]) => void;
 }
 
 const ConfigurationSection = ({
@@ -165,12 +171,25 @@ const ConfigurationSection = ({
     setInputs
 }: ConfigurationSectionProps) => {
     const handleAddSite = () => {
-        // Implementation for adding a site
+        if (sites.length >= 10) return; // Prevent adding more than 10 sites
+        setSites([...sites, 1]);
+        setInputs([...inputs, 10]);
     };
 
     const handleRemoveSite = (index: number) => {
-        // Implementation for removing a site
+        const newSites = sites.filter((_, i) => i !== index);
+        const newInputs = inputs.filter((_, i) => i !== index);
+        setSites(newSites);
+        setInputs(newInputs);
     };
+
+    const handleInputChange = (index: number, value: number) => {
+        const newInputs = [...inputs];
+        newInputs[index] = value;
+        setInputs(newInputs);
+    };
+
+    const isMultiSite = sites.length <= 10;
 
     return (
         <div className="flex flex-col w-full">
@@ -186,8 +205,16 @@ const ConfigurationSection = ({
                     <label className="text-base text-[#171717]">Number of sites</label>
                     <Input
                         type="number"
-                        value={sites[0]}
-                        onChange={e => setSites([Number(e.target.value)])}
+                        value={sites.length}
+                        onChange={e => {
+                            const count = Math.max(1, Number(e.target.value));
+                            setSites(Array(count).fill(1));
+                            if (count > 10) {
+                                setInputs([inputs[0] || 10]); // Keep only first input or set default
+                            } else {
+                                setInputs(Array(count).fill(10));
+                            }
+                        }}
                         className="w-[180px] h-[40px] text-right px-3 border-[#E5E5E5] rounded-lg"
                         min={1}
                     />
@@ -196,39 +223,56 @@ const ConfigurationSection = ({
 
             {/* Devices Section */}
             <div className="flex flex-col p-8 gap-6">
-                <label className="text-base text-[#171717]">Number of devices</label>
+                <label className="text-base text-[#171717]">Number of data inputs</label>
                 <div className="flex flex-col gap-6 w-full">
-                    {sites.map((_, index) => (
-                        <div key={index} className="flex items-center w-full">
-                            <span className="text-[#171717] mr-auto">Site {index + 1}</span>
+                    {isMultiSite ? (
+                        // Show individual site inputs when <= 10 sites
+                        sites.map((_, index) => (
+                            <div key={index} className="flex items-center w-full">
+                                <span className="text-[#171717] mr-auto">Site {index + 1}</span>
+                                <Input
+                                    type="number"
+                                    value={inputs[index]}
+                                    onChange={e => handleInputChange(index, Math.max(1, Number(e.target.value)))}
+                                    className="w-[180px] h-[40px] text-right px-3 border-[#E5E5E5] rounded-lg"
+                                    min={1}
+                                />
+                                {sites.length > 1 && (
+                                    <button 
+                                        onClick={() => handleRemoveSite(index)}
+                                        className="text-[#6D6D6D] hover:text-[#222] transition-colors ml-4"
+                                    >
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M15 5L5 15M5 5L15 15" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                                        </svg>
+                                    </button>
+                                )}
+                            </div>
+                        ))
+                    ) : (
+                        // Show single total input when > 10 sites
+                        <div className="flex items-center w-full">
+                            <span className="text-[#171717] mr-auto">Total number of devices</span>
                             <Input
                                 type="number"
-                                value={inputs}
-                                onChange={e => setInputs(Number(e.target.value))}
+                                value={inputs[0]}
+                                onChange={e => setInputs([Math.max(1, Number(e.target.value))])}
                                 className="w-[180px] h-[40px] text-right px-3 border-[#E5E5E5] rounded-lg"
                                 min={1}
                             />
-                            {sites.length > 1 && (
-                                <button 
-                                    onClick={() => handleRemoveSite(index)}
-                                    className="text-[#6D6D6D] hover:text-[#222] transition-colors ml-4"
-                                >
-                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M15 5L5 15M5 5L15 15" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                                    </svg>
-                                </button>
-                            )}
                         </div>
-                    ))}
-                    <button 
-                        onClick={handleAddSite}
-                        className="flex h-[32px] px-[16px] pl-[12px] items-center justify-center gap-[8px] text-[#0073BA] border-[1.5px] border-[#EBEBEB] rounded-[4px] hover:bg-[#F5F5F5] transition-colors self-start"
-                    >
-                        <span className="text-[#0073BA] text-2xl font-light leading-[0] translate-y-[-1px] flex items-center justify-center">+</span>
-                        <span className="text-[#0073BA] text-[14px] font-semibold leading-[150%] font-jakarta" style={{ fontFeatureSettings: "'liga' off, 'calt' off" }}>
-                            Add site
-                        </span>
-                    </button>
+                    )}
+                    {isMultiSite && sites.length < 10 && (
+                        <button 
+                            onClick={handleAddSite}
+                            className="flex h-[32px] px-[16px] pl-[12px] items-center justify-center gap-[8px] text-[#0073BA] border-[1.5px] border-[#EBEBEB] rounded-[4px] hover:bg-[#F5F5F5] transition-colors self-start"
+                        >
+                            <span className="text-[#0073BA] text-2xl font-light leading-[0] translate-y-[-1px] flex items-center justify-center">+</span>
+                            <span className="text-[#0073BA] text-[14px] font-semibold leading-[150%] font-jakarta" style={{ fontFeatureSettings: "'liga' off, 'calt' off" }}>
+                                Add site
+                            </span>
+                        </button>
+                    )}
                 </div>
             </div>
         </div>
