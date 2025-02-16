@@ -34,6 +34,11 @@ const optimizeFeatures = [
         subFeaturesClassName: "pl-[24px]"
     },
     {
+        text: "Mobile Time-view",
+        beta: true,
+        icon: "https://cdn.builder.io/api/v1/image/assets/4b8bee12bead4b66b573187d8e419c5d/0d40ab35d1d5f21d0d59c96d9ac96abecb187574f20f95510aa8b6610d0984cc",
+    },
+    {
         text: "Unlimited customizable dashboards",
         icon: "https://cdn.builder.io/api/v1/image/assets/4b8bee12bead4b66b573187d8e419c5d/aee02f786175f73269924ea5986d4a4f1ba8cf1583827e54d4eccfe46315e209",
     },
@@ -91,7 +96,7 @@ const visualizeFeatures = [
         variant: "inactive" as const,
     },
     {
-        text: "Energy over time - LIMITED view",
+        text: "Energy over time - limited view",
         icon: "https://cdn.builder.io/api/v1/image/assets/4b8bee12bead4b66b573187d8e419c5d/5b10347c479ee733405ce46a25c05587ba7090ab9905f0df0eb4c3f1b39759fe",
         variant: "inactive" as const,
         subFeatures: [
@@ -150,46 +155,23 @@ export const PricingLayout = () => {
                     <div className="w-[734px] max-w-full">
                         <PricingCard
                             title="Optimize"
-                            description="Ideal for professionals and for anyone who wants to track, manage, and gain insights into their energy usage"
-                            icon="optimize"
+                            description="Optimize your energy consumption and reduce your costs with our advanced optimization tools"
+                            icon="/src/img/Opt.png"
                             price="$5"
-                            priceSubtext="per device/month (billed annually)"
-                            minPrice="Min. $50/month"
+                            priceSubtext="per device/month"
+                            minPrice="Min. $50/mo"
+                            variant="primary"
                             features={optimizeFeatures}
-                            className="bg-[#FFF7ED]"
                         />
                     </div>
                     <div className="w-[516px] max-w-full">
                         <PricingCard
                             title="Visualize"
-                            description="Suitable for small, basic businesses for simple daily electricity consumption tracking"
-                            icon="visualize"
+                            description="Visualize your data in a way that makes sense to you"
+                            icon="/src/img/Vis.png"
                             price="Free"
-                            features={[
-                                ...visualizeFeatures,
-                                {
-                                    text: "",
-                                    icon: "",
-                                    variant: "section-title" as const,
-                                    className: "h-[1px] bg-[#EBEBEB] w-full mt-8"
-                                },
-                                {
-                                    text: "Paid add-ons",
-                                    icon: "",
-                                    variant: "section-title" as const,
-                                    className: "text-[#222] text-base font-[600] leading-[150%] font-jakarta mt-6 mb-6",
-                                    style: { fontFeatureSettings: "'liga' off, 'calt' off" }
-                                },
-                                {
-                                    text: "",
-                                    icon: "",
-                                    variant: "section-title" as const,
-                                    className: "h-[1px] bg-[#EBEBEB] w-full"
-                                },
-                                ...visualizeAddons,
-                            ]}
                             variant="secondary"
-                            className="border border-[#EBEBEB]"
+                            features={visualizeFeatures}
                         />
                     </div>
                 </div>
