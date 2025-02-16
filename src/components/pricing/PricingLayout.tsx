@@ -1,5 +1,6 @@
 import { PricingCard } from "./PricingCard";
 import { PricingCalculator } from "./PricingCalculator";
+import { motion } from "motion/react";
 
 const PlusIcon = () => (
   <div className="w-8 h-8 rounded-full bg-[#F2FCE2] flex items-center justify-center">
@@ -152,7 +153,13 @@ const visualizeAddons = [
 
 export const PricingLayout = () => {
   return (
-    <div className="flex flex-col items-center px-[70px] py-[110px] max-md:px-5 container mx-auto">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="flex flex-col items-center px-[70px] py-[110px] max-md:px-5 container mx-auto"
+    >
       <div className="w-full max-w-[1440px]">
         <h2 className="text-center text-[28px] font-medium text-[#222] mb-12">
           Two ways to manage energy
@@ -186,6 +193,6 @@ export const PricingLayout = () => {
       <div className="mt-[180px] w-full flex justify-center">
         <PricingCalculator />
       </div>
-    </div>
+    </motion.div>
   );
 };
