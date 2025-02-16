@@ -1,6 +1,8 @@
 import { PricingCard } from "./PricingCard";
 import { PricingCalculator } from "./PricingCalculator";
 import { motion } from "motion/react";
+import Opt from "@/img/Opt.png";
+import Vis from "@/img/Vis.png";
 
 const PlusIcon = () => (
   <div className="w-8 h-8 rounded-full bg-[#F2FCE2] flex items-center justify-center">
@@ -170,7 +172,7 @@ export const PricingLayout = () => {
             <PricingCard
               title="Optimize"
               description="Optimize your energy consumption and reduce your costs with our advanced optimization tools"
-              icon="/src/img/Opt.png"
+              icon={Opt}
               price="$5"
               priceSubtext="per device/month"
               minPrice="Min. $50/mo"
@@ -182,7 +184,7 @@ export const PricingLayout = () => {
             <PricingCard
               title="Visualize"
               description="Visualize your data in a way that makes sense to you"
-              icon="/src/img/Vis.png"
+              icon={Vis}
               price="Free"
               variant="secondary"
               features={visualizeFeatures}
