@@ -1,10 +1,11 @@
-
 import {PricingCard} from "./PricingCard";
 import {PricingCalculator} from "./PricingCalculator";
 
 const PlusIcon = () => (
-  <div className="w-5 h-5 rounded-full bg-[#F2FCE2] flex items-center justify-center">
-    <span className="text-[#6D6D6D] text-sm">+</span>
+  <div className="w-8 h-8 rounded-full bg-[#F2FCE2] flex items-center justify-center">
+    <div className="w-[18px] h-[18px] flex items-center justify-center leading-none">
+      <span className="text-[#6D6D6D] text-lg translate-y-[-1px]">+</span>
+    </div>
   </div>
 );
 
