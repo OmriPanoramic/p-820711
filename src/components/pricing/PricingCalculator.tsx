@@ -1,5 +1,6 @@
 import { Input } from "@/components/ui/input";
 import Slider from "@/components/ui/slider-flow";
+import clsx from "clsx";
 
 import {
   Tooltip,
@@ -424,14 +425,20 @@ const PricingSummary = ({
       <div>
         <div className="text-[#171717] text-base">Total annual price</div>
         <div className="flex justify-between items-baseline mt-1">
-          <div className="text-[#6D6D6D] text-base line-through">
-            <NumberFlow value={totalMonthlyPrice} suffix="/month" />
+          <div className="text-[#6D6D6D] text-base relative">
+            <NumberFlow
+              value={totalMonthlyPrice}
+              suffix="/month"
+              className="line-through"
+            />
+            <div className="absolute inset-0 w-full h-[1px] top-1/2 -translate-y-1/2 bg-[#6D6D6D]" />
           </div>
-          <div className="flex items-center gap-1">
-            <span className="text-[#6D6D6D] text-xl line-through">
-              <NumberFlow value={totalAnnualPrice} suffix="/year" style={{}} />
+          <div className="flex items-center gap-1 relative">
+            <span className="text-[#6D6D6D] text-xl">
+              <NumberFlow value={totalAnnualPrice} />
             </span>
             <span className="text-[#6D6D6D] text-sm">/year</span>
+            <div className="absolute inset-0 w-full h-[1px] top-1/2 -translate-y-1/2 bg-[#6D6D6D]" />
           </div>
         </div>
       </div>
