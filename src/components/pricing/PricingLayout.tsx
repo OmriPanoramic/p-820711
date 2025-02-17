@@ -40,7 +40,7 @@ const optimizeFeatures = [
       },
       { text: "and more...", showBullet: false },
     ],
-    subFeaturesClassName: "pl-[24px]",
+    subFeaturesClassName: "pl-[48px]",
   },
   {
     text: "Mobile Time-view",
@@ -114,7 +114,7 @@ const visualizeFeatures = [
         showBullet: false,
       },
     ],
-    subFeaturesClassName: "pl-[24px]",
+    subFeaturesClassName: "pl-[40px]",
   },
   {
     text: "1 year historical data",
@@ -126,7 +126,7 @@ const visualizeFeatures = [
     icon: "https://cdn.builder.io/api/v1/image/assets/4b8bee12bead4b66b573187d8e419c5d/5b10347c479ee733405ce46a25c05587ba7090ab9905f0df0eb4c3f1b39759fe",
     variant: "inactive" as const,
     subFeatures: [{ text: "Not editable", showBullet: false }],
-    subFeaturesClassName: "pl-[24px]",
+    subFeaturesClassName: "pl-[32px]",
   },
   {
     text: "Energy flow application",

@@ -142,7 +142,7 @@ const PricingConfigurator = ({
   discountedMonthlyPrice,
   discountedAnnualPrice,
 }: PricingConfiguratorProps) => (
-  <div className="flex flex-col items-start w-full rounded-xl border max-w-[665px] min-w-[480px] border-[#FFEDD4] bg-white shadow-[0px_-2px_8px_-1px_rgba(23,23,23,0.04),0px_14px_40px_-4px_rgba(23,23,23,0.06)] overflow-hidden">
+  <div className="flex flex-col items-start w-full rounded-xl border max-w-[665px] min-w-[480px] border-[#FFEDD4] bg-white shadow-[0px_24px_40px_0px_rgba(104,75,37,0.04),0px_56px_56px_-32px_rgba(104,75,37,0.06),0px_32px_40px_-24px_rgba(104,75,37,0.05)] overflow-hidden">
     <ConfigurationSection
       sites={sites}
       setSites={setSites}
@@ -266,7 +266,7 @@ const ConfigurationSection = ({
                 setInputs(Array(count).fill(10));
               }
             }}
-            className="w-full sm:w-[180px] h-[40px] text-right px-3 border-[#E5E5E5] rounded-lg"
+            className="w-full sm:w-[180px] h-[40px] text-center px-8 border-[#E5E5E5] rounded-lg [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
             min={1}
           />
         </div>
@@ -288,7 +288,7 @@ const ConfigurationSection = ({
         </div>
       </div>
 
-      <div className="flex flex-col px-4 sm:px-8 pb-4 mt-3 sm:pb-8 gap-6">
+      <div className="flex flex-col px-4 sm:px-8 pb-4 mt-[32px] sm:pb-8 gap-6">
         <label className="text-base text-[#171717]">
           Number of data inputs
         </label>
@@ -312,7 +312,7 @@ const ConfigurationSection = ({
                         Math.max(1, Number(e.target.value))
                       )
                     }
-                    className="w-full sm:w-[180px] h-[40px] text-right px-3 border-[#E5E5E5] rounded-lg"
+                    className="w-full sm:w-[180px] h-[40px] text-center px-8 border-[#E5E5E5] rounded-lg [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                     min={1}
                   />
                   {sites.length > 1 && (
@@ -392,32 +392,20 @@ const PricingSummary = ({
   discountedAnnualPrice,
 }: PricingSummaryProps) => (
   <div className="w-full">
-    <div className="flex flex-col sm:flex-row h-auto sm:h-[64px] justify-between items-start sm:items-center gap-4 sm:gap-0 bg-[#FFF7ED] w-full p-4 sm:px-8">
-      <div className="flex items-center gap-2">
+    <div className="flex flex-col bg-[#FFF7ED] w-full px-6 py-4">
+      <div className="flex items-center gap-3">
         <img
           src="https://cdn.builder.io/api/v1/image/assets/4b8bee12bead4b66b573187d8e419c5d/eefecd56a897a32835976d67c57d09015a18ddd1b5685d7a336048586db07823"
           alt=""
-          className="w-5 h-5"
+          className="w-[44px] h-[44px]"
         />
-        <span className="text-[#FF6B00] font-semibold">Save 60% today</span>
-      </div>
-      <div className="text-sm flex items-center gap-1">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          viewBox="0 0 16 16"
-          fill="none"
-        >
-          <path
-            fillRule="evenodd"
-            clipRule="evenodd"
-            d="M6.0415 1.33337C6.0415 0.988196 6.32133 0.708374 6.6665 0.708374H9.33317C9.67835 0.708374 9.95817 0.988196 9.95817 1.33337C9.95817 1.67855 9.67835 1.95837 9.33317 1.95837H6.6665C6.32133 1.95837 6.0415 1.67855 6.0415 1.33337ZM10.4418 6.89143C10.6859 7.13551 10.6859 7.53124 10.4418 7.77532L8.44184 9.77532C8.19777 10.0194 7.80204 10.0194 7.55796 9.77532C7.31388 9.53124 7.31388 9.13551 7.55796 8.89143L9.55796 6.89143C9.80204 6.64736 10.1978 6.64736 10.4418 6.89143ZM3.2915 9.33331C3.2915 6.73297 5.3995 4.62498 7.99984 4.62498C10.6002 4.62498 12.7082 6.73297 12.7082 9.33331C12.7082 11.9336 10.6002 14.0416 7.99984 14.0416C5.3995 14.0416 3.2915 11.9336 3.2915 9.33331ZM7.99984 3.37498C4.70914 3.37498 2.0415 6.04261 2.0415 9.33331C2.0415 12.624 4.70914 15.2916 7.99984 15.2916C11.2905 15.2916 13.9582 12.624 13.9582 9.33331C13.9582 6.04261 11.2905 3.37498 7.99984 3.37498Z"
-            fill="#6D6D6D"
-          />
-        </svg>
-        <span className="text-[#6D6D6D]">Offer ends in </span>
-        <CountdownTimer targetDate={new Date("2025-06-30T23:59:59")} />
+        <div className="flex flex-col">
+          <span className="text-[#FF6B00] text-lg font-semibold">Save 60% today</span>
+          <span className="text-[#222222] text-sm">Price locked for 3 years after purchase!</span>
+        </div>
+        <div className="ml-auto">
+          <CountdownTimer targetDate={new Date("2025-06-30T23:59:59")} />
+        </div>
       </div>
     </div>
 

@@ -17,6 +17,7 @@ interface PricingCardProps {
     subFeatures?: { text: string; showBullet: boolean }[];
     beta?: boolean;
     className?: string;
+    subFeaturesClassName?: string;
   }>;
   variant?: "primary" | "secondary";
   className?: string;
@@ -132,7 +133,7 @@ export const PricingCard = ({
               </div>
             </PricingFeature>
             {feature.subFeatures && (
-              <div className="pl-[42px] text-gray-500 text-sm mt-1">
+              <div className={`text-gray-500 text-sm mt-1 ${feature.subFeaturesClassName || ''}`}>
                 {feature.subFeatures.map((subFeature, subIndex) => (
                   <div key={subIndex} className="flex items-center">
                     <div className="w-[16px]">
