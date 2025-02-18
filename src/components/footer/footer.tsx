@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import footerImage from "../../img/footer.jpg";
 
 export const Footer = () => {
     return (
@@ -11,13 +12,18 @@ export const Footer = () => {
         >
             <div 
                 className="w-full max-w-[1440px] rounded-[32px] flex flex-col items-center py-[120px] px-8 text-center relative overflow-hidden mb-20"
-                style={{
-                    backgroundImage: "url('/src/img/footer.jpg')",
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                }}
             >
-                <div className="absolute inset-0 bg-black/80" /> {/* Dark overlay */}
+                <div 
+                    className="absolute inset-0"
+                    style={{
+                        backgroundImage: `url(${footerImage})`,
+                        backgroundPosition: "50% 75%",
+                        backgroundSize: "cover",
+                        backgroundRepeat: "no-repeat",
+                        filter: "grayscale(100%)",
+                    }}
+                />
+                <div className="absolute inset-0 bg-black" style={{ mixBlendMode: "luminosity", opacity: 0.8 }} />
                 <div className="relative z-10"> {/* Content above the overlay */}
                     <h2 className="text-white text-[56px] font-medium leading-[1.2] mb-12">
                         Ready to Unlock the Full<br />Optimize Experience?
@@ -38,7 +44,7 @@ export const Footer = () => {
 
             {/* Footer links section */}
             <div className="w-full max-w-[1440px] flex flex-col gap-2">
-                <span className="text-[#FF6B2C] text-lg font-medium">Panoramic</span>
+                <span className="text-[#FF6B2C] text-lg font-medium">Panoramic Power</span>
                 <div className="flex justify-between items-center">
                     <span className="text-[#6D6D6D] text-sm">Copyright © 2025 Panoramic Power</span>
                     <div className="flex items-center gap-8">
