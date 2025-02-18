@@ -155,17 +155,15 @@ const visualizeAddons = [
 
 export const PricingLayout = () => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      className="flex flex-col items-center px-[70px] py-[110px] max-md:px-5 container mx-auto"
-    >
-      <div className="w-full max-w-[1440px]">
-        <h2 className="text-center text-[28px] font-medium text-[#222] mb-12">
-          Two ways to manage energy
-        </h2>
+    <div className="w-full flex flex-col items-center px-4">
+      <div className="w-full max-w-[1200px]">
+        {/* Header Section */}
+        <div className="text-center mb-16">
+          <span className="text-[#FF6B2C] text-lg block mb-3">Compare Your Options</span>
+          <h1 className="text-[#222] text-center text-[48px] font-medium leading-[72px] tracking-[-0.72px]">
+            What Upgrading Really Means
+          </h1>
+        </div>
 
         <div className="flex justify-center gap-6 max-md:flex-col">
           <div className="w-[734px] max-w-full">
@@ -195,6 +193,6 @@ export const PricingLayout = () => {
       <div className="mt-[180px] w-full flex justify-center">
         <PricingCalculator />
       </div>
-    </motion.div>
+    </div>
   );
 };

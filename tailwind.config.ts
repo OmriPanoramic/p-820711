@@ -97,6 +97,46 @@ export default {
                 "accordion-down": "accordion-down 0.2s ease-out",
                 "accordion-up": "accordion-up 0.2s ease-out",
             },
+            fontSize: {
+                // Headings
+                'h1': ['56px', {
+                    lineHeight: '76px',
+                    letterSpacing: '-0.84px',
+                    fontWeight: '500',
+                }],
+                'h2': ['48px', {
+                    lineHeight: '72px',
+                    letterSpacing: '-0.72px',
+                    fontWeight: '500',
+                }],
+                'h3': ['40px', {
+                    lineHeight: '140%',
+                    letterSpacing: '-0.4px',
+                    fontWeight: '500',
+                }],
+                'h5': ['24px', {
+                    lineHeight: '140%',
+                    letterSpacing: '-0.24px',
+                    fontWeight: '500',
+                }],
+                // Text styles
+                'text-sm': ['14px', {
+                    lineHeight: '150%',
+                    fontWeight: '400',
+                }],
+                'text-sm-accented': ['14px', {
+                    lineHeight: '150%',
+                    fontWeight: '600',
+                }],
+                'text-lg': ['16px', {
+                    lineHeight: '26px',
+                    fontWeight: '400',
+                }],
+                'text-lg-accented': ['16px', {
+                    lineHeight: '150%',
+                    fontWeight: '600',
+                }],
+            },
         },
     },
     plugins: [require("tailwindcss-animate")],
