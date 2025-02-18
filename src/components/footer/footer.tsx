@@ -55,8 +55,8 @@ export const Footer = () => {
                     <a href="#" className="text-[#6D6D6D] text-sm hover:text-[#171717] transition-colors">
                         Privacy Policy
                     </a>
-                    <a href="#" className="text-[#6D6D6D] text-sm hover:text-[#171717] transition-colors">
-                        Manage Cookies
+                    <a href="https://powerradar.energy" className="text-[#6D6D6D] text-sm hover:text-[#171717] transition-colors">
+                        Login to your account
                     </a>
                 </div>
             </div>
