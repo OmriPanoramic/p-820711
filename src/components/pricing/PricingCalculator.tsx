@@ -46,6 +46,10 @@ export const PricingCalculator = () => {
   const discountedMonthlyPrice =
     totalMonthlyPrice * PRICING_CONFIG.ANNUAL_DISCOUNT;
 
+  const endDate = new Date("2025-06-30T23:59:59");
+  const today = new Date();
+  const daysRemaining = Math.ceil((endDate.getTime() - today.getTime()) / (1000 * 60 * 60 * 24));
+
   return (
     <div className="flex flex-col items-center w-full max-w-[1440px] px-4 sm:px-6 lg:px-20 pb-10 sm:pb-20">
       <div className="flex w-full gap-8 lg:gap-20 flex-col lg:flex-row">
@@ -390,62 +394,70 @@ const PricingSummary = ({
   totalAnnualPrice,
   discountedMonthlyPrice,
   discountedAnnualPrice,
-}: PricingSummaryProps) => (
-  <div className="w-full">
-    <div className="flex flex-col bg-[#FFF7ED] w-full px-6 py-4">
-      <div className="flex items-center gap-3">
-        <img
-          src="https://cdn.builder.io/api/v1/image/assets/4b8bee12bead4b66b573187d8e419c5d/eefecd56a897a32835976d67c57d09015a18ddd1b5685d7a336048586db07823"
-          alt=""
-          className="w-[44px] h-[44px]"
-        />
-        <div className="flex flex-col">
-          <span className="text-[#FF6B00] text-lg font-semibold">Save 60% today</span>
-          <span className="text-[#222222] text-sm">Price locked for 3 years after purchase!</span>
-        </div>
-        <div className="ml-auto">
-          <CountdownTimer targetDate={new Date("2025-06-30T23:59:59")} />
-        </div>
-      </div>
-    </div>
+}: PricingSummaryProps) => {
+  const endDate = new Date("2025-06-30T23:59:59");
+  const today = new Date();
+  const daysRemaining = Math.ceil((endDate.getTime() - today.getTime()) / (1000 * 60 * 60 * 24));
 
-    <div className="flex flex-col p-8 gap-8 w-full bg-[#FFFCF9]">
-      <div>
-        <div className="text-[#171717] text-base">Total annual price</div>
-        <div className="flex justify-between items-baseline mt-1">
-          <div className="text-[#6D6D6D] text-base relative">
-            <NumberFlow
-              value={totalMonthlyPrice}
-              suffix="/month"
-              className="line-through"
-            />
-            <div className="absolute inset-0 w-full h-[1px] top-1/2 -translate-y-1/2 bg-[#6D6D6D]" />
-          </div>
-          <div className="flex items-center gap-1 relative">
-            <span className="text-[#6D6D6D] text-xl">
-              <NumberFlow value={totalAnnualPrice} />
+  return (
+    <div className="w-full">
+      <div className="flex flex-col bg-[#FFF7ED] w-full px-8 py-4">
+        <div className="flex items-center gap-3">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/4b8bee12bead4b66b573187d8e419c5d/eefecd56a897a32835976d67c57d09015a18ddd1b5685d7a336048586db07823"
+            alt=""
+            className="w-6 h-6"
+          />
+          <div className="flex flex-col">
+            <span className="text-[#FF6B00] text-lg font-semibold">Save 60% today</span>
+            <span className="text-[#222222] text-sm">
+              Decide in the next {daysRemaining} days and save!
             </span>
-            <span className="text-[#6D6D6D] text-sm">/year</span>
-            <div className="absolute inset-0 w-full h-[1px] top-1/2 -translate-y-1/2 bg-[#6D6D6D]" />
+          </div>
+          <div className="ml-auto">
+            <CountdownTimer targetDate={endDate} />
           </div>
         </div>
       </div>
 
-      <div>
-        <div className="text-[#171717] text-base">Your price</div>
-        <div className="flex justify-between items-baseline mt-1">
-          <div className="text-[#6D6D6D] text-base">
-            <NumberFlow value={discountedMonthlyPrice} />
-            /month
+      <div className="flex flex-col p-8 gap-8 w-full bg-[#FFFCF9]">
+        <div>
+          <div className="text-[#171717] text-base">Total annual price</div>
+          <div className="flex justify-between items-baseline mt-1">
+            <div className="text-[#6D6D6D] text-base relative">
+              <NumberFlow
+                value={totalMonthlyPrice}
+                suffix="/month"
+                className="line-through"
+              />
+              <div className="absolute inset-0 w-full h-[1px] top-1/2 -translate-y-1/2 bg-[#6D6D6D]" />
+            </div>
+            <div className="flex items-center gap-1 relative">
+              <span className="text-[#6D6D6D] text-xl">
+                <NumberFlow value={totalAnnualPrice} />
+              </span>
+              <span className="text-[#6D6D6D] text-sm">/year</span>
+              <div className="absolute inset-0 w-full h-[1px] top-1/2 -translate-y-1/2 bg-[#6D6D6D]" />
+            </div>
           </div>
-          <div className="flex items-baseline gap-1 ">
-            <span className="text-[#171717] text-[32px] font-medium">
-              <NumberFlow value={discountedAnnualPrice} />
-            </span>
-            <span className="text-[#6D6D6D] text-sm font-normal">/year</span>
+        </div>
+
+        <div>
+          <div className="text-[#171717] text-base">Your price</div>
+          <div className="flex justify-between items-baseline mt-1">
+            <div className="text-[#6D6D6D] text-base">
+              <NumberFlow value={discountedMonthlyPrice} />
+              /month
+            </div>
+            <div className="flex items-baseline gap-1 ">
+              <span className="text-[#171717] text-[32px] font-medium">
+                <NumberFlow value={discountedAnnualPrice} />
+              </span>
+              <span className="text-[#6D6D6D] text-sm font-normal">/year</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
