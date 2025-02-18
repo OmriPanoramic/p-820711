@@ -29,10 +29,10 @@ export const Footer = () => {
                         Ready to Unlock the Full<br />Optimize Experience?
                     </h2>
                     <div className="flex justify-center gap-4">
-                        <button className="bg-white/20 hover:bg-white/30 text-white px-6 py-3 rounded-lg font-medium transition-colors">
+                        <button className="flex h-[48px] px-[16px] justify-center items-center gap-[12px] rounded-[4px] border border-white/60 text-white hover:bg-white/30 transition-colors">
                             Book a demo
                         </button>
-                        <button className="bg-[#FF6B2C] hover:bg-[#ff5b15] text-white px-6 py-3 rounded-lg font-medium transition-colors">
+                        <button className="flex h-[48px] px-[20px] justify-center items-center gap-[12px] rounded-[4px] bg-[#FF7110] text-white hover:bg-[#ff5b15] transition-colors">
                             Upgrade now
                         </button>
                     </div>
