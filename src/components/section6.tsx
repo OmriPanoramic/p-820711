@@ -1,4 +1,5 @@
 import { PricingCard } from "./pricing/PricingCard";
+import { PricingCalculator } from "./pricing/PricingCalculator";
 import Opt from "@/img/Opt.png";
 import Vis from "@/img/Vis.png";
 
@@ -132,10 +133,12 @@ const visualizeFeatures = [
 
 export function Section6() {
   return (
-    <div className="flex flex-col gap-4 items-center">
-      <h3 className="text-sm text-primary">Compare your options</h3>
-      <h2 className="text-4xl font-bold mb-4">What upgrading really means</h2>
-      <div className="flex pb-20 relative">
+    <div className="flex flex-col gap-4 items-center pb-20">
+      <div className="flex flex-col gap-4 items-center">
+        <h3 className="text-sm text-primary">Compare your options</h3>
+        <h2 className="text-4xl font-bold mb-4">What upgrading really means</h2>
+      </div>
+      <div className="flex relative">
         <div className="flex-2 z-[1] -mr-5">
           <PricingCard
             title="Optimize"
@@ -158,6 +161,9 @@ export function Section6() {
             features={visualizeFeatures}
           />
         </div>
+      </div>
+      <div className="flex flex-col items-center pt-20">
+        <PricingCalculator />
       </div>
     </div>
   );
