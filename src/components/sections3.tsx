@@ -28,7 +28,6 @@ export const Section3 = () => {
   return (
     <div className="">
       <div className="space-y-16">
-        {/* Header */}
         <div className="space-y-4">
           <p className="text-primary">Effortless migration</p>
           <h2 className="text-5xl font-medium">
