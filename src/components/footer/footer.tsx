@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import footerImage from "../../assets/footer-image.png";
 import FooterContent from "./FooterContent";
 import FooterLinks from "./FooterLinks";
@@ -13,19 +13,19 @@ export const Footer = () => {
       className="container flex flex-col items-center max-md:px-5"
     >
       <div className="w-full rounded-[32px] flex flex-col items-center py-[120px] px-8 text-center relative overflow-hidden mb-20">
-        <div
-          className="absolute inset-0"
+        <motion.div
+          className="absolute inset-0 grayscale"
+          initial={{ backgroundPosition: "50% 0%" }}
+          whileInView={{ backgroundPosition: "50% 20%" }}
+          exit={{ backgroundPosition: "50% 0%" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
           style={{
             backgroundImage: `url(${footerImage})`,
-            backgroundPosition: "50% 0%",
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
-            //filter: "grayscale(100%)",
+            backgroundColor: "black",
+            backgroundBlendMode: "luminosity",
           }}
-        />
-        <div
-          className="absolute inset-0 bg-black"
-          //style={{ mixBlendMode: "luminosity", opacity: 1 }}
         />
         <FooterContent />
       </div>
