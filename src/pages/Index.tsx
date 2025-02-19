@@ -1,9 +1,12 @@
 import React, { useRef } from "react";
 import { motion, useScroll } from "motion/react";
+import { Header } from "@/components/Header";
+
 import { Section1 } from "@/components/section1";
 import { Section2 } from "@/components/section2";
-import { Header } from "@/components/Header";
-import { Section3 } from "@/components/Section3";
+import { Section3 } from "@/components/section3";
+import { Section4 } from "@/components/section4";
+import { Section5 } from "@/components/section5";
 
 const Section = ({
   color,
@@ -49,6 +52,12 @@ const Index = () => {
         </Section>
         <Section color="container">
           <Section3 />
+        </Section>
+        <Section color="container">
+          <Section4 />
+        </Section>
+        <Section color="container">
+          <Section5 />
         </Section>
       </main>
     </div>
