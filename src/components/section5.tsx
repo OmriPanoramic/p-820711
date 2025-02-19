@@ -1,4 +1,4 @@
-const Section5 = () => {
+export function Section5() {
   return (
     <div className="flex flex-col gap-4">
       <h2 className="text-4xl font-bold mb-4">
@@ -6,6 +6,4 @@ const Section5 = () => {
       </h2>
     </div>
   );
-};
-
-export default Section5;
+}
