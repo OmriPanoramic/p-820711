@@ -1,15 +1,14 @@
-import React from 'react';
-import HeaderText from './HeaderText';
-import HeaderButtons from './HeaderButtons';
+import React from "react";
+import HeaderText from "./HeaderText";
+import HeaderButtons from "./HeaderButtons";
 
 const HeaderSection: React.FC = () => {
-  const fetchUserData = async (userId: string) => {
-  };
+  const fetchUserData = async (userId: string) => {};
 
   return (
     <div
       className="flex items-center self-stretch"
-      style={{ padding: '250px 627px 351px 80px' }}
+      style={{ padding: "250px 627px 351px 80px" }}
     >
       <div>
         <HeaderText
