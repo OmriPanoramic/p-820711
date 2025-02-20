@@ -49,10 +49,9 @@ export const Section2 = () => {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-4xl font-bold mb-4">What's new in</h2>
-          <h1 className="text-4xl font-bold text-[#FF6B2C] mb-8">
-            Panoramic Optimize
-          </h1>
+          <h2 className="text-h2 mb-4">What's new in<br/>
+            <span className="text-primary">Panoramic Optimize</span>
+          </h2>
         </motion.div>
         <div className="space-y-2">
           {features.map((feature, index) => (

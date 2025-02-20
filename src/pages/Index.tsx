@@ -48,7 +48,7 @@ const Index = () => {
         style={{ scaleX: scrollYProgress }}
         className="fixed top-0 left-0 z-[51] right-0 h-0.5 bg-primary"
       />
-      <main className="pt-10">
+      <main className="">
         <Section color="container" id="section1">
           <Section1 />
         </Section>

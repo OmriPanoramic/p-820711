@@ -7,14 +7,14 @@ export function Section1() {
     <Card className="w-full bg-background border-none shadow-none">
       <CardContent className="p-0">
         <motion.div
-          className="max-w-2xl"
+          className="sm:max-w-3xl max-w-full"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false }}
           transition={{ duration: 0.5 }}
         >
           <motion.h1
-            className="text-4xl font-semibold tracking-tight mb-4"
+            className="text-h1 mb-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -24,7 +24,7 @@ export function Section1() {
           </motion.h1>
 
           <motion.p
-            className="text-lg text-muted-foreground mb-6"
+            className="text-xl text-muted-foreground mb-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
