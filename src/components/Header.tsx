@@ -3,10 +3,12 @@ import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { DemoModal } from "@/components/DemoModal";
+import { UpgradeModal } from "@/components/UpgradeModal";
 
 export const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
+  const [isUpgradeModalOpen, setIsUpgradeModalOpen] = useState(false);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -27,6 +29,11 @@ export const Header = () => {
   const handleDemoClick = (e: React.MouseEvent) => {
     e.preventDefault();
     setIsDemoModalOpen(true);
+  };
+
+  const handleUpgradeClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setIsUpgradeModalOpen(true);
   };
 
   return (
@@ -105,7 +112,9 @@ export const Header = () => {
               </a>
             </Button>
             <Button asChild>
-              <Link to="/upgrade">Upgrade Now</Link>
+              <a onClick={handleUpgradeClick} href="#">
+                Upgrade Now
+              </a>
             </Button>
           </div>
         </div>
@@ -157,7 +166,9 @@ export const Header = () => {
                   </a>
                 </Button>
                 <Button asChild className="w-full">
-                  <Link to="/upgrade">Upgrade Now</Link>
+                  <a onClick={handleUpgradeClick} href="#">
+                    Upgrade Now
+                  </a>
                 </Button>
               </div>
             </nav>
@@ -168,6 +179,10 @@ export const Header = () => {
       <DemoModal
         isOpen={isDemoModalOpen}
         onClose={() => setIsDemoModalOpen(false)}
+      />
+      <UpgradeModal
+        isOpen={isUpgradeModalOpen}
+        onClose={() => setIsUpgradeModalOpen(false)}
       />
     </>
   );
