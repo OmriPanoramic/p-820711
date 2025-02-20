@@ -18,9 +18,9 @@ const FeatureCard = ({
   <div className="flex flex-col gap-4">
     <div className="flex items-center gap-2">
       <div className="text-2xl">{icon}</div>
-      <h3 className="font-semibold text-xl">{title}</h3>
+      <h3 className="font-semibold text-lg">{title}</h3>
     </div>
-    <p className="text-gray-600">{description}</p>
+    <p className="text-lg text-muted-foreground">{description}</p>
   </div>
 );
 
@@ -29,13 +29,13 @@ export const Section3 = () => {
     <div className="">
       <div className="space-y-16">
         <div className="space-y-4">
-          <p className="text-primary">Effortless migration</p>
-          <h2 className="text-5xl font-medium">
+          <p className="text-sm text-primary">Effortless migration</p>
+          <h2 className="text-h2">
             Seamless transition,
             <br />
             maximum value
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl">
+          <p className="text-xl max-w-2xl">
             Your migration to Panoramic Optimize was automatic, secure, and
             effortless. Your experience with Optimize will be just as smooth and
             rewarding
