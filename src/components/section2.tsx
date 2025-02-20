@@ -10,9 +10,9 @@ const FeatureItem = ({ icon, title }: { icon: string; title: string }) => (
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.5 }}
-    className="flex items-center gap-6 py-8 border-b border-border/50 last:border-0"
+    className="flex items-center gap-6 border-b border-border/50 py-8 last:border-0"
   >
-    <img src={icon} alt={title} className="w-12 h-12" />
+    <img src={icon} alt={title} className="h-12 w-12" />
     <h3 className="text-xl text-muted-foreground">{title}</h3>
   </motion.div>
 );
@@ -43,13 +43,15 @@ export const Section2 = () => {
 
   return (
     <div className="w-full">
-      <div className="grid md:grid-cols-2 gap-12 items-center">
+      <div className="grid items-center gap-12 md:grid-cols-2">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-h2 mb-4">What's new in<br/>
+          <h2 className="mb-4 text-h2">
+            What's new in
+            <br />
             <span className="text-primary">Panoramic Optimize</span>
           </h2>
         </motion.div>

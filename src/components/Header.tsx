@@ -39,7 +39,7 @@ export const Header = () => {
               onClick={() => scrollToSection("section1")}
               className="flex items-center space-x-2"
             >
-              <div className="font-bold text-xl text-primary">
+              <div className="text-xl font-bold text-primary">
                 Panoramic Power
               </div>
             </button>
@@ -58,7 +58,7 @@ export const Header = () => {
           </button>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-6">
+          <nav className="hidden items-center gap-6 lg:flex">
             <button
               onClick={() => scrollToSection("section2")}
               className="text-sm text-muted-foreground transition-colors hover:text-primary"
@@ -98,9 +98,11 @@ export const Header = () => {
           </nav>
 
           {/* Desktop Action Buttons */}
-          <div className="hidden lg:flex items-center gap-4">
+          <div className="hidden items-center gap-4 lg:flex">
             <Button variant="ghost" asChild>
-              <a onClick={handleDemoClick} href="#">Book a Demo</a>
+              <a onClick={handleDemoClick} href="#">
+                Book a Demo
+              </a>
             </Button>
             <Button asChild>
               <Link to="/upgrade">Upgrade Now</Link>
@@ -111,28 +113,28 @@ export const Header = () => {
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className="lg:hidden">
-            <nav className="flex flex-col space-y-4 px-4 py-6 bg-background border-b">
+            <nav className="flex flex-col space-y-4 border-b bg-background px-4 py-6">
               <button
                 onClick={() => scrollToSection("section2")}
-                className="text-sm text-muted-foreground transition-colors hover:text-primary text-left"
+                className="text-left text-sm text-muted-foreground transition-colors hover:text-primary"
               >
                 What's New?
               </button>
               <button
                 onClick={() => scrollToSection("section3")}
-                className="text-sm text-muted-foreground transition-colors hover:text-primary text-left"
+                className="text-left text-sm text-muted-foreground transition-colors hover:text-primary"
               >
                 Effortless Migration
               </button>
               <button
                 onClick={() => scrollToSection("section4")}
-                className="text-sm text-muted-foreground transition-colors hover:text-primary text-left"
+                className="text-left text-sm text-muted-foreground transition-colors hover:text-primary"
               >
                 Testimonials
               </button>
               <button
                 onClick={() => scrollToSection("section5")}
-                className="text-sm text-muted-foreground transition-colors hover:text-primary text-left"
+                className="text-left text-sm text-muted-foreground transition-colors hover:text-primary"
               >
                 Optimize Experience
               </button>
@@ -150,7 +152,9 @@ export const Header = () => {
               </button>
               <div className="flex flex-col space-y-4 pt-4">
                 <Button variant="ghost" asChild className="w-full">
-                  <a onClick={handleDemoClick} href="#">Book a Demo</a>
+                  <a onClick={handleDemoClick} href="#">
+                    Book a Demo
+                  </a>
                 </Button>
                 <Button asChild className="w-full">
                   <Link to="/upgrade">Upgrade Now</Link>

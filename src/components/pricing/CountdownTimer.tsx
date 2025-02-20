@@ -32,22 +32,22 @@ export const CountdownTimer = ({ targetDate }: CountdownTimerProps) => {
 
   return (
     <div className="flex items-center gap-[2px] self-stretch">
-      <div className="flex h-[24px] px-[5px] justify-center items-center gap-[2px] rounded-[3px] bg-[rgba(37,31,31,0.05)]">
+      <div className="flex h-[24px] items-center justify-center gap-[2px] rounded-[3px] bg-[rgba(37,31,31,0.05)] px-[5px]">
         <NumberFormat value={timeLeft.days} />
         <span className="text-[#6D6D6D]">d</span>
       </div>
       <span className="text-[#6D6D6D]">:</span>
-      <div className="flex h-[24px] px-[5px] justify-center items-center gap-[2px] rounded-[3px] bg-[rgba(37,31,31,0.05)]">
+      <div className="flex h-[24px] items-center justify-center gap-[2px] rounded-[3px] bg-[rgba(37,31,31,0.05)] px-[5px]">
         <NumberFormat value={timeLeft.hours} />
         <span className="text-[#6D6D6D]">h</span>
       </div>
       <span className="text-[#6D6D6D]">:</span>
-      <div className="flex h-[24px] px-[5px] justify-center items-center gap-[2px] rounded-[3px] bg-[rgba(37,31,31,0.05)]">
+      <div className="flex h-[24px] items-center justify-center gap-[2px] rounded-[3px] bg-[rgba(37,31,31,0.05)] px-[5px]">
         <NumberFormat value={timeLeft.minutes} />
         <span className="text-[#6D6D6D]">m</span>
       </div>
       <span className="text-[#6D6D6D]">:</span>
-      <div className="flex h-[24px] px-[5px] justify-center items-center gap-[2px] rounded-[3px] bg-[rgba(37,31,31,0.05)]">
+      <div className="flex h-[24px] items-center justify-center gap-[2px] rounded-[3px] bg-[rgba(37,31,31,0.05)] px-[5px]">
         <NumberFormat value={timeLeft.seconds} />
         <span className="text-[#6D6D6D]">s</span>
       </div>

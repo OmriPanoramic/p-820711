@@ -3,14 +3,14 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 export function Section4() {
   return (
-    <div className="flex flex-col gap-4 w-full flex-1 shrink-0 self-stretch">
-      <div className="text-center mb-12">
-        <h3 className="text-sm text-primary mb-2">Success stories</h3>
-        <h2 className="text-h2 font-bold mb-4">Customers love Panoramic</h2>
+    <div className="flex w-full flex-1 shrink-0 flex-col gap-4 self-stretch">
+      <div className="mb-12 text-center">
+        <h3 className="mb-2 text-sm text-primary">Success stories</h3>
+        <h2 className="mb-4 text-h2 font-bold">Customers love Panoramic</h2>
       </div>
       <AspectRatio ratio={16 / 9}>
-        <div className="bg-[#D5D5D5] rounded-lg p-4 flex justify-center items-center w-full h-full ac">
-          <PlayCircle className="w-10 h-10 text-primary" />
+        <div className="ac flex h-full w-full items-center justify-center rounded-lg bg-[#D5D5D5] p-4">
+          <PlayCircle className="h-10 w-10 text-primary" />
         </div>
       </AspectRatio>
     </div>

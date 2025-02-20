@@ -46,7 +46,7 @@ const Index = () => {
       <Header />
       <motion.div
         style={{ scaleX: scrollYProgress }}
-        className="fixed top-0 left-0 z-[51] right-0 h-0.5 bg-primary"
+        className="fixed left-0 right-0 top-0 z-[51] h-0.5 bg-primary"
       />
       <main className="">
         <Section color="container" id="section1">

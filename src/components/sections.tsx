@@ -18,7 +18,7 @@ const FeatureCard = ({
   <div className="flex flex-col gap-4">
     <div className="flex items-center gap-2">
       <div className="text-2xl">{icon}</div>
-      <h3 className="font-semibold text-lg">{title}</h3>
+      <h3 className="text-lg font-semibold">{title}</h3>
     </div>
     <p className="text-lg text-muted-foreground">{description}</p>
   </div>
@@ -26,45 +26,46 @@ const FeatureCard = ({
 
 export const Section3 = () => {
   return (
-    <div className="flex flex-col gap-16">
-      <div className="space-y-16">
-        <div className="space-y-4">
-          <p className="text-sm text-primary">Effortless migration</p>
-          <h2 className="text-h2">
-            Seamless transition,
-            <br />
-            maximum value
-          </h2>
-          <p className="text-xl max-w-2xl">
-            Your migration to Panoramic Optimize was automatic, secure, and
-            effortless. Your experience with Optimize will be just as smooth and
-            rewarding
-          </p>
+    <div className="flex flex-1 shrink-0 flex-col self-stretch">
+      <div className="flex flex-1 shrink-0 flex-col self-stretch">
+        <div className="flex flex-col justify-center">
+          <div className="flex flex-1 flex-col gap-4 space-y-4">
+            <p className="text-sm text-primary">Effortless migration</p>
+            <div className="text-h2">
+              Seamless transition,
+              <br />
+              maximum value
+            </div>
+            <p className="max-w-2xl text-xl">
+              Your migration to Panoramic Optimize was automatic, secure, and
+              effortless. Your experience with Optimize will be just as smooth
+              and rewarding
+            </p>
+          </div>
         </div>
-       <div className="flex-1 flex">
-        {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <FeatureCard
-            icon={<UserRoundCog />}
-            title="All set, all yours"
-            description="Processes, benchmarks, and alerts from PowerRadar are already active"
-          />
-          <FeatureCard
-            icon={<Lightbulb />}
-            title="Guided transformation"
-            description="Access tips and guides to maximize your Optimize experience"
-          />
-          <FeatureCard
-            icon={<MonitorCheck />}
-            title="Zero learning curve"
-            description="Enjoy an intuitive UI designed for ease and efficiency"
-          />
-          <FeatureCard
-            icon={<MessageCircleQuestion />}
-            title="Always supported"
-            description="Continuous help from your trusted partner every step of the way"
-          />
-        </div>
+        <div className="flex flex-1 shrink-0 items-center self-stretch">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+            <FeatureCard
+              icon={<UserRoundCog />}
+              title="All set, all yours"
+              description="Processes, benchmarks, and alerts from PowerRadar are already active"
+            />
+            <FeatureCard
+              icon={<Lightbulb />}
+              title="Guided transformation"
+              description="Access tips and guides to maximize your Optimize experience"
+            />
+            <FeatureCard
+              icon={<MonitorCheck />}
+              title="Zero learning curve"
+              description="Enjoy an intuitive UI designed for ease and efficiency"
+            />
+            <FeatureCard
+              icon={<MessageCircleQuestion />}
+              title="Always supported"
+              description="Continuous help from your trusted partner every step of the way"
+            />
+          </div>
         </div>
       </div>
     </div>

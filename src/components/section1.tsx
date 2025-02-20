@@ -4,17 +4,17 @@ import { motion } from "motion/react";
 
 export function Section1() {
   return (
-    <Card className="w-full bg-background border-none shadow-none">
+    <Card className="w-full border-none bg-background shadow-none">
       <CardContent className="p-0">
         <motion.div
-          className="sm:max-w-3xl max-w-full"
+          className="max-w-full sm:max-w-3xl"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false }}
           transition={{ duration: 0.5 }}
         >
           <motion.h1
-            className="text-h1 mb-4"
+            className="mb-4 text-h1"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -24,7 +24,7 @@ export function Section1() {
           </motion.h1>
 
           <motion.p
-            className="text-xl text-muted-foreground mb-6"
+            className="mb-6 text-xl text-muted-foreground"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -36,7 +36,7 @@ export function Section1() {
           </motion.p>
 
           <motion.div
-            className="flex flex-col sm:flex-row items-center gap-4"
+            className="flex flex-col items-center gap-4 sm:flex-row"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

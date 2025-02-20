@@ -67,7 +67,10 @@ export function DemoModal({ isOpen, onClose }: DemoModalProps) {
             Schedule a demo to see how our platform can help your business.
           </DialogDescription>
         </DialogHeader>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="grid gap-4 py-4">
+        <form
+          onSubmit={form.handleSubmit(onSubmit)}
+          className="grid gap-4 py-4"
+        >
           <div className="grid gap-2">
             <Label htmlFor="fullName">Full Name</Label>
             <Input
@@ -151,4 +154,4 @@ export function DemoModal({ isOpen, onClose }: DemoModalProps) {
       </DialogContent>
     </Dialog>
   );
-} 
+}

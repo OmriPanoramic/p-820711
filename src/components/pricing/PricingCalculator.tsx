@@ -38,7 +38,7 @@ export const PricingCalculator = () => {
   const totalMonthlyPrice = Math.max(
     PRICING_CONFIG.BASE_PRICE,
     inputs.reduce((sum, input) => sum + input, 0) *
-      PRICING_CONFIG.PRICE_PER_INPUT
+      PRICING_CONFIG.PRICE_PER_INPUT,
   );
   const totalAnnualPrice = totalMonthlyPrice * 12;
   const discountedAnnualPrice =
@@ -48,11 +48,13 @@ export const PricingCalculator = () => {
 
   const endDate = new Date("2025-06-30T23:59:59");
   const today = new Date();
-  const daysRemaining = Math.ceil((endDate.getTime() - today.getTime()) / (1000 * 60 * 60 * 24));
+  const daysRemaining = Math.ceil(
+    (endDate.getTime() - today.getTime()) / (1000 * 60 * 60 * 24),
+  );
 
   return (
-    <div className="flex flex-col items-center w-full max-w-[1440px] px-4 sm:px-6 lg:px-20 pb-10 sm:pb-20">
-      <div className="flex w-full gap-8 lg:gap-20 flex-col lg:flex-row">
+    <div className="flex w-full max-w-[1440px] flex-col items-center px-4 pb-10 sm:px-6 sm:pb-20 lg:px-20">
+      <div className="flex w-full flex-col gap-8 lg:flex-row lg:gap-20">
         <PricingFeatures />
         <PricingConfigurator
           sites={sites}
@@ -71,7 +73,7 @@ export const PricingCalculator = () => {
 
 const PricingFeatures = () => (
   <div className="flex-1">
-    <h2 className="text-[32px] lg:text-[40px] font-medium leading-[1.3]">
+    <h2 className="text-[32px] font-medium leading-[1.3] lg:text-[40px]">
       Calculate your <span className="text-[#FF6B00]">Optimize</span> package
     </h2>
 
@@ -79,20 +81,20 @@ const PricingFeatures = () => (
       <div className="flex flex-col">
         <div className="flex items-baseline">
           <span
-            className="text-[#222] text-[40px] font-medium leading-[130%] font-jakarta"
+            className="font-jakarta text-[40px] font-medium leading-[130%] text-[#222]"
             style={{ fontFeatureSettings: "'calt' off" }}
           >
             ${PRICING_CONFIG.PRICE_PER_INPUT}
           </span>
           <span
-            className="text-[#222] text-[14px] font-normal leading-[150%] ml-1"
+            className="ml-1 text-[14px] font-normal leading-[150%] text-[#222]"
             style={{ fontFeatureSettings: "'liga' off, 'calt' off" }}
           >
             per device/month (billed annually)
           </span>
         </div>
         <div className="flex items-center gap-1">
-          <span className="text-[#909090] text-xs font-normal leading-[140%] mt-1">
+          <span className="mt-1 text-xs font-normal leading-[140%] text-[#909090]">
             Min. ${PRICING_CONFIG.BASE_PRICE}/month
           </span>
           <Tooltip>
@@ -103,7 +105,7 @@ const PricingFeatures = () => (
                 viewBox="0 0 12 12"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                className="text-[#909090] mt-1"
+                className="mt-1 text-[#909090]"
               >
                 <path
                   d="M6 1C3.2385 1 1 3.2385 1 6C1 8.7615 3.2385 11 6 11C8.7615 11 11 8.7615 11 6C11 3.2385 8.7615 1 6 1ZM6.6 8.5H5.4V5.5H6.6V8.5ZM6.6 4.5H5.4V3.5H6.6V4.5Z"
@@ -146,7 +148,7 @@ const PricingConfigurator = ({
   discountedMonthlyPrice,
   discountedAnnualPrice,
 }: PricingConfiguratorProps) => (
-  <div className="flex flex-col items-start w-full rounded-xl border max-w-[665px] min-w-[480px] border-[#FFEDD4] bg-white shadow-[0px_24px_40px_0px_rgba(104,75,37,0.04),0px_56px_56px_-32px_rgba(104,75,37,0.06),0px_32px_40px_-24px_rgba(104,75,37,0.05)] overflow-hidden">
+  <div className="flex w-full min-w-[480px] max-w-[665px] flex-col items-start overflow-hidden rounded-xl border border-[#FFEDD4] bg-white shadow-[0px_24px_40px_0px_rgba(104,75,37,0.04),0px_56px_56px_-32px_rgba(104,75,37,0.06),0px_32px_40px_-24px_rgba(104,75,37,0.05)]">
     <ConfigurationSection
       sites={sites}
       setSites={setSites}
@@ -164,7 +166,7 @@ const PricingConfigurator = ({
 
 const FeatureList = ({ features }: { features: readonly string[] }) => (
   <div className="mt-8">
-    <div className="text-sm font-medium text-[#171717] mb-5">
+    <div className="mb-5 text-sm font-medium text-[#171717]">
       Included features:
     </div>
     <div className="space-y-4">
@@ -184,7 +186,7 @@ const FeatureList = ({ features }: { features: readonly string[] }) => (
               />
             </svg>
           </div>
-          <span className="text-sm leading-5 text-[#171717] font-normal">
+          <span className="text-sm font-normal leading-5 text-[#171717]">
             {feature}
           </span>
         </div>
@@ -192,7 +194,7 @@ const FeatureList = ({ features }: { features: readonly string[] }) => (
     </div>
     <a
       href="#"
-      className="inline-flex items-center text-[#0073BA] mt-4 text-sm font-medium"
+      className="mt-4 inline-flex items-center text-sm font-medium text-[#0073BA]"
     >
       Full feature list
       <svg
@@ -250,13 +252,13 @@ const ConfigurationSection = ({
   const isMultiSite = sites.length <= 10;
 
   return (
-    <div className="flex flex-col w-full">
-      <h3 className="text-[16px] font-semibold text-[#222] font-jakarta leading-[150%] p-4 sm:p-8">
+    <div className="flex w-full flex-col">
+      <h3 className="font-jakarta p-4 text-[16px] font-semibold leading-[150%] text-[#222] sm:p-8">
         Configure your plan
       </h3>
 
-      <div className="flex flex-col px-4 sm:px-8 gap-8 sm:gap-12">
-        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center w-full gap-4 sm:gap-0">
+      <div className="flex flex-col gap-8 px-4 sm:gap-12 sm:px-8">
+        <div className="flex w-full flex-col gap-4 sm:flex-row sm:items-center sm:justify-between sm:gap-0">
           <label className="text-base text-[#171717]">Number of sites</label>
           <Input
             type="number"
@@ -270,7 +272,7 @@ const ConfigurationSection = ({
                 setInputs(Array(count).fill(10));
               }
             }}
-            className="w-full sm:w-[180px] h-[40px] text-center px-8 border-[#E5E5E5] rounded-lg [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+            className="h-[40px] w-full rounded-lg border-[#E5E5E5] px-8 text-center [appearance:textfield] sm:w-[180px] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
             min={1}
           />
         </div>
@@ -292,37 +294,37 @@ const ConfigurationSection = ({
         </div>
       </div>
 
-      <div className="flex flex-col px-4 sm:px-8 pb-4 mt-[32px] sm:pb-8 gap-6">
+      <div className="mt-[32px] flex flex-col gap-6 px-4 pb-4 sm:px-8 sm:pb-8">
         <label className="text-base text-[#171717]">
           Number of data inputs
         </label>
-        <div className="flex flex-col gap-6 w-full">
+        <div className="flex w-full flex-col gap-6">
           {isMultiSite ? (
             sites.map((_, index) => (
               <div
                 key={index}
-                className="flex flex-col sm:flex-row sm:items-center w-full gap-4 sm:gap-0"
+                className="flex w-full flex-col gap-4 sm:flex-row sm:items-center sm:gap-0"
               >
                 <span className="text-[#171717] sm:mr-auto">
                   Site {index + 1}
                 </span>
-                <div className="flex items-center w-full sm:w-auto">
+                <div className="flex w-full items-center sm:w-auto">
                   <Input
                     type="number"
                     value={inputs[index]}
                     onChange={(e) =>
                       handleInputChange(
                         index,
-                        Math.max(1, Number(e.target.value))
+                        Math.max(1, Number(e.target.value)),
                       )
                     }
-                    className="w-full sm:w-[180px] h-[40px] text-center px-8 border-[#E5E5E5] rounded-lg [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                    className="h-[40px] w-full rounded-lg border-[#E5E5E5] px-8 text-center [appearance:textfield] sm:w-[180px] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
                     min={1}
                   />
                   {sites.length > 1 && (
                     <button
                       onClick={() => handleRemoveSite(index)}
-                      className="text-[#6D6D6D] hover:text-[#222] transition-colors ml-4"
+                      className="ml-4 text-[#6D6D6D] transition-colors hover:text-[#222]"
                     >
                       <svg
                         width="20"
@@ -345,7 +347,7 @@ const ConfigurationSection = ({
               </div>
             ))
           ) : (
-            <div className="flex flex-col sm:flex-row sm:items-center w-full gap-4 sm:gap-0">
+            <div className="flex w-full flex-col gap-4 sm:flex-row sm:items-center sm:gap-0">
               <span className="text-[#171717] sm:mr-auto">
                 Total number of devices
               </span>
@@ -355,7 +357,7 @@ const ConfigurationSection = ({
                 onChange={(e) =>
                   setInputs([Math.max(1, Number(e.target.value))])
                 }
-                className="w-full sm:w-[180px] h-[40px] text-right px-3 border-[#E5E5E5] rounded-lg"
+                className="h-[40px] w-full rounded-lg border-[#E5E5E5] px-3 text-right sm:w-[180px]"
                 min={1}
               />
             </div>
@@ -363,13 +365,13 @@ const ConfigurationSection = ({
           {isMultiSite && sites.length < 10 && (
             <button
               onClick={handleAddSite}
-              className="flex h-[40px] px-[16px] pl-[12px] items-center justify-center gap-[8px] text-[#0073BA] border-[1.5px] border-[#EBEBEB] rounded-[4px] hover:bg-[#F5F5F5] transition-colors self-start"
+              className="flex h-[40px] items-center justify-center gap-[8px] self-start rounded-[4px] border-[1.5px] border-[#EBEBEB] px-[16px] pl-[12px] text-[#0073BA] transition-colors hover:bg-[#F5F5F5]"
             >
-              <span className="text-[#0073BA] text-2xl font-light leading-none translate-y-[-2px] inline-flex">
+              <span className="inline-flex translate-y-[-2px] text-2xl font-light leading-none text-[#0073BA]">
                 +
               </span>
               <span
-                className="text-[#0073BA] text-[14px] font-semibold leading-[150%] font-jakarta"
+                className="font-jakarta text-[14px] font-semibold leading-[150%] text-[#0073BA]"
                 style={{ fontFeatureSettings: "'liga' off, 'calt' off" }}
               >
                 Add site
@@ -397,20 +399,24 @@ const PricingSummary = ({
 }: PricingSummaryProps) => {
   const endDate = new Date("2025-06-30T23:59:59");
   const today = new Date();
-  const daysRemaining = Math.ceil((endDate.getTime() - today.getTime()) / (1000 * 60 * 60 * 24));
+  const daysRemaining = Math.ceil(
+    (endDate.getTime() - today.getTime()) / (1000 * 60 * 60 * 24),
+  );
 
   return (
     <div className="w-full">
-      <div className="flex flex-col bg-[#FFF7ED] w-full px-8 py-4">
+      <div className="flex w-full flex-col bg-[#FFF7ED] px-8 py-4">
         <div className="flex items-center gap-3">
           <img
             src="https://cdn.builder.io/api/v1/image/assets/4b8bee12bead4b66b573187d8e419c5d/eefecd56a897a32835976d67c57d09015a18ddd1b5685d7a336048586db07823"
             alt=""
-            className="w-6 h-6"
+            className="h-6 w-6"
           />
           <div className="flex flex-col">
-            <span className="text-[#FF6B00] text-lg font-semibold">Save 60% today</span>
-            <span className="text-[#222222] text-sm">
+            <span className="text-lg font-semibold text-[#FF6B00]">
+              Save 60% today
+            </span>
+            <span className="text-sm text-[#222222]">
               Decide in the next {daysRemaining} days and save!
             </span>
           </div>
@@ -420,40 +426,40 @@ const PricingSummary = ({
         </div>
       </div>
 
-      <div className="flex flex-col p-8 gap-8 w-full bg-[#FFFCF9]">
+      <div className="flex w-full flex-col gap-8 bg-[#FFFCF9] p-8">
         <div>
-          <div className="text-[#171717] text-base">Total annual price</div>
-          <div className="flex justify-between items-baseline mt-1">
-            <div className="text-[#6D6D6D] text-base relative">
+          <div className="text-base text-[#171717]">Total annual price</div>
+          <div className="mt-1 flex items-baseline justify-between">
+            <div className="relative text-base text-[#6D6D6D]">
               <NumberFlow
                 value={totalMonthlyPrice}
                 suffix="/month"
                 className="line-through"
               />
-              <div className="absolute inset-0 w-full h-[1px] top-1/2 -translate-y-1/2 bg-[#6D6D6D]" />
+              <div className="absolute inset-0 top-1/2 h-[1px] w-full -translate-y-1/2 bg-[#6D6D6D]" />
             </div>
-            <div className="flex items-center gap-1 relative">
-              <span className="text-[#6D6D6D] text-xl">
+            <div className="relative flex items-center gap-1">
+              <span className="text-xl text-[#6D6D6D]">
                 <NumberFlow value={totalAnnualPrice} />
               </span>
-              <span className="text-[#6D6D6D] text-sm">/year</span>
-              <div className="absolute inset-0 w-full h-[1px] top-1/2 -translate-y-1/2 bg-[#6D6D6D]" />
+              <span className="text-sm text-[#6D6D6D]">/year</span>
+              <div className="absolute inset-0 top-1/2 h-[1px] w-full -translate-y-1/2 bg-[#6D6D6D]" />
             </div>
           </div>
         </div>
 
         <div>
-          <div className="text-[#171717] text-base">Your price</div>
-          <div className="flex justify-between items-baseline mt-1">
-            <div className="text-[#6D6D6D] text-base">
+          <div className="text-base text-[#171717]">Your price</div>
+          <div className="mt-1 flex items-baseline justify-between">
+            <div className="text-base text-[#6D6D6D]">
               <NumberFlow value={discountedMonthlyPrice} />
               /month
             </div>
-            <div className="flex items-baseline gap-1 ">
-              <span className="text-[#171717] text-[32px] font-medium">
+            <div className="flex items-baseline gap-1">
+              <span className="text-[32px] font-medium text-[#171717]">
                 <NumberFlow value={discountedAnnualPrice} />
               </span>
-              <span className="text-[#6D6D6D] text-sm font-normal">/year</span>
+              <span className="text-sm font-normal text-[#6D6D6D]">/year</span>
             </div>
           </div>
         </div>

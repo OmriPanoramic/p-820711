@@ -133,12 +133,12 @@ const visualizeFeatures = [
 
 export function Section6() {
   return (
-    <div className="flex flex-col gap-4 items-center pb-20">
-      <div className="flex flex-col gap-4 items-center">
+    <div className="flex flex-col items-center gap-4 pb-20">
+      <div className="flex flex-col items-center gap-4">
         <h3 className="text-sm text-primary">Compare your options</h3>
-        <h2 className="text-4xl font-bold mb-4">What upgrading really means</h2>
+        <h2 className="mb-4 text-4xl font-bold">What upgrading really means</h2>
       </div>
-      <div className="flex relative">
+      <div className="relative flex">
         <div className="flex-2 z-[1] -mr-5">
           <PricingCard
             title="Optimize"
@@ -151,7 +151,7 @@ export function Section6() {
             features={optimizeFeatures}
           />
         </div>
-        <div className="flex-1 sticky top-4 self-start py-6 ml-3">
+        <div className="sticky top-4 ml-3 flex-1 self-start py-6">
           <PricingCard
             title="Visualize"
             description="Visualize your data in a way that makes sense to you"

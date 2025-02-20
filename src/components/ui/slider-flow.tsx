@@ -12,7 +12,7 @@ export default function Slider({
       value={value}
       className={clsx(
         className,
-        "relative flex h-5 w-full touch-none select-none items-center"
+        "relative flex h-5 w-full touch-none select-none items-center",
       )}
     >
       <RadixSlider.Track className="relative h-[4px] grow rounded-full bg-zinc-100 dark:bg-zinc-800">

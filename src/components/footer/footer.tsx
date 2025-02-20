@@ -12,7 +12,7 @@ export const Footer = () => {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className="container flex flex-col items-center max-md:px-5"
     >
-      <div className="w-full rounded-[32px] flex flex-col items-center py-[120px] px-8 text-center relative overflow-hidden mb-20">
+      <div className="relative mb-20 flex w-full flex-col items-center overflow-hidden rounded-[32px] px-8 py-[120px] text-center">
         <motion.div
           className="absolute inset-0 grayscale"
           initial={{ backgroundPosition: "50% 0%" }}

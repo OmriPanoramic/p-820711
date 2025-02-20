@@ -5,9 +5,9 @@ import Opt from "@/img/Opt.png";
 import Vis from "@/img/Vis.png";
 
 const PlusIcon = () => (
-  <div className="w-8 h-8 rounded-full bg-[#F2FCE2] flex items-center justify-center">
-    <div className="w-[18px] h-[18px] flex items-center justify-center leading-none">
-      <span className="text-[#6D6D6D] text-lg translate-y-[-1px]">+</span>
+  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#F2FCE2]">
+    <div className="flex h-[18px] w-[18px] items-center justify-center leading-none">
+      <span className="translate-y-[-1px] text-lg text-[#6D6D6D]">+</span>
     </div>
   </div>
 );
@@ -155,12 +155,14 @@ const visualizeAddons = [
 
 export const PricingLayout = () => {
   return (
-    <div className="w-full flex flex-col items-center px-4">
+    <div className="flex w-full flex-col items-center px-4">
       <div className="w-full max-w-[1200px]">
         {/* Header Section */}
-        <div className="text-center mb-16">
-          <span className="text-[#FF6B2C] text-lg block mb-3">Compare Your Options</span>
-          <h1 className="text-[#222] text-center text-[48px] font-medium leading-[72px] tracking-[-0.72px]">
+        <div className="mb-16 text-center">
+          <span className="mb-3 block text-lg text-[#FF6B2C]">
+            Compare Your Options
+          </span>
+          <h1 className="text-center text-[48px] font-medium leading-[72px] tracking-[-0.72px] text-[#222]">
             What Upgrading Really Means
           </h1>
         </div>
@@ -190,7 +192,7 @@ export const PricingLayout = () => {
           </div>
         </div>
       </div>
-      <div className="mt-[180px] w-full flex justify-center">
+      <div className="mt-[180px] flex w-full justify-center">
         <PricingCalculator />
       </div>
     </div>
