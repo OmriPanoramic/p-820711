@@ -26,7 +26,7 @@ const FeatureCard = ({
 
 export const Section3 = () => {
   return (
-    <div className="">
+    <div className="flex flex-col gap-16">
       <div className="space-y-16">
         <div className="space-y-4">
           <p className="text-sm text-primary">Effortless migration</p>
@@ -41,7 +41,7 @@ export const Section3 = () => {
             rewarding
           </p>
         </div>
-
+       <div className="flex-1 flex">
         {/* Features Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <FeatureCard
@@ -64,6 +64,7 @@ export const Section3 = () => {
             title="Always supported"
             description="Continuous help from your trusted partner every step of the way"
           />
+        </div>
         </div>
       </div>
     </div>
