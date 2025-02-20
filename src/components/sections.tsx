@@ -28,8 +28,8 @@ export const Section3 = () => {
   return (
     <div className="flex flex-1 shrink-0 flex-col self-stretch">
       <div className="flex flex-1 shrink-0 flex-col self-stretch">
-        <div className="flex flex-col justify-center">
-          <div className="flex flex-1 flex-col gap-4 space-y-4">
+        <div className="flex flex-1 shrink-0 items-center self-stretch">
+          <div className="flex flex-1 flex-col gap-4">
             <p className="text-sm text-primary">Effortless migration</p>
             <div className="text-h2">
               Seamless transition,

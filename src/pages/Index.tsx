@@ -42,13 +42,13 @@ const Index = () => {
   });
 
   return (
-    <div className="relative" ref={scrollRef}>
+    <div className="relative overflow-hidden" >
       <Header />
       <motion.div
         style={{ scaleX: scrollYProgress }}
         className="fixed left-0 right-0 top-0 z-[51] h-0.5 bg-primary"
       />
-      <main className="">
+      <main className="h-[calc(100vh-64px)] overflow-y-auto" ref={scrollRef}>
         <Section color="container" id="section1">
           <Section1 />
         </Section>
