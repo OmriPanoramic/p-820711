@@ -105,7 +105,7 @@ export function DemoModal({ isOpen, onClose }: DemoModalProps) {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3 }}
               >
-                You're on your way to Optimize!
+               Demo request locked in!
               </motion.h2>
               <motion.p
                 className="mb-6 text-muted-foreground"
@@ -113,8 +113,7 @@ export function DemoModal({ isOpen, onClose }: DemoModalProps) {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.4 }}
               >
-                Someone from our team will reach out shortly to get your upgrade
-                rolling
+                We’ll schedule your demo shortly and reveal what Optimize can do
               </motion.p>
               <motion.div
                 initial={{ opacity: 0 }}
