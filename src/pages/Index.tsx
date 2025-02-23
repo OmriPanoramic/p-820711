@@ -50,7 +50,7 @@ const Index = () => {
   }, [scrollRef.current]);
 
   const rightCirclePosY = useTransform(scrollYProgress, [0, .2], [200, -1000]);
-
+  const leftCirclePosY = useTransform(scrollYProgress, [0, .2], [-100, -500]);
   return (
     <div className="relative overflow-hidden" >
       <Header />
@@ -70,13 +70,16 @@ const Index = () => {
             transform: 'translateX(-30%)'
           }}
         />
-        {/* Left circle 
-        <div 
-          className="absolute -left-[883.872px] top-1/2 -translate-y-1/2 w-[1767.744px] h-[1767.744px] rounded-[1767.744px] border border-[#FFB45C]"
+        
+        <motion.div 
+          className="absolute w-[1767.744px] h-[1767.744px] rounded-[1767.744px] border border-[#FFB45C]"
           style={{
-            background: 'linear-gradient(180deg, rgba(255, 144, 55, 0.56) 0%, rgba(255, 247, 237, 0.20) 100%)'
+            background: 'linear-gradient(180deg, rgba(255, 144, 55, 0.56) 0%, rgba(255, 247, 237, 0.20) 100%)',
+            top: leftCirclePosY,
+            right: '50%',
+            transform: 'translateX(0%)'
           }}
-        />*/}
+        />
       </div>
       <main className="h-[calc(100vh-64px)] overflow-y-auto relative" ref={scrollRef} id="main">
       
