@@ -15,7 +15,6 @@ const emailTemplates = {
     return {
       subject: 'New Demo Request',
       html,
-      react: DemoRequestEmail(data)
     };
   },
   upgrade: async (data) => {
@@ -25,7 +24,6 @@ const emailTemplates = {
     return {
       subject: 'New Upgrade Request',
       html,
-      react: UpgradeRequestEmail(data)
     };
   }
 };
@@ -64,8 +62,8 @@ exports.handler = async function(event, context) {
       from: 'onboarding@resend.dev',
       to: 'guy.tzaban@centrica.com',
       subject: template.subject,
-      //html: template.html,
-      react: template.react,
+      html: template.html,
+      //react: template.react,
       reply_to: formData.email
     });
 
