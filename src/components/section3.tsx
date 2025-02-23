@@ -30,9 +30,9 @@ const FeatureCard = ({
 
 export const Section3 = () => {
   return (
-    <div className="flex flex-1 shrink-0 flex-col self-stretch">
+    <div className="flex flex-1 shrink-0 flex-col self-stretch w-full mb-20">
       <div className="flex flex-1 shrink-0 flex-col self-stretch">
-        <div className="flex flex-1 shrink-0 items-center self-stretch">
+        <div className="flex flex-1 shrink-0 items-center self-stretch flex-col lg:flex-row">
           <div className="flex flex-1 flex-col gap-4">
             <p className="text-sm text-primary">Effortless migration</p>
             <div className="text-h2">
@@ -47,7 +47,7 @@ export const Section3 = () => {
             </p>
           </div>
           <div className="relative flex flex-1 shrink-0 items-center justify-center self-stretch">
-            <div className="relative h-full w-[470px]">
+            <div className="relative h-[470px] w-[470px] lg:w-full lg:overflow-hidden lg:h-full">
               <motion.img
                 src={nodeGroupBg}
                 alt="bg"

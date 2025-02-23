@@ -138,7 +138,7 @@ export function Section6() {
         <h3 className="text-sm text-primary">Compare your options</h3>
         <h2 className="mb-4 text-4xl font-bold">What upgrading really means</h2>
       </div>
-      <div className="relative flex">
+      <div className="relative flex flex-col lg:flex-row">
         <div className="flex-2 z-[1] -mr-5">
           <PricingCard
             title="Optimize"

@@ -27,7 +27,7 @@ const Section = ({
       exit={{ opacity: 0, y: -50 }}
       transition={{ duration: 0.5 }}
       //viewport={{ amount: "all" }}
-      className={`min-h-screen ${color} flex items-center justify-center`}
+      className={`min-h-auto ${color} flex items-center justify-center lg:min-h-screen`}
     >
       {children}
     </motion.section>
