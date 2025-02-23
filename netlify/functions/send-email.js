@@ -1,5 +1,5 @@
 const { Resend } = require('resend');
-const { renderAsync } = require('@react-email/render');
+const { render } = require('@react-email/render');
 
 // Import the email templates
 const DemoRequestEmail = require('./emails/DemoRequestEmail');
@@ -9,17 +9,23 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 const emailTemplates = {
   demo: async (data) => {
-    const html = await renderAsync(DemoRequestEmail(data));
+    const html = await render(DemoRequestEmail(data), {
+        pretty: true,
+      });
     return {
       subject: 'New Demo Request',
-      html
+      html,
+      react: DemoRequestEmail(data)
     };
   },
   upgrade: async (data) => {
-    const html = await renderAsync(UpgradeRequestEmail(data));
+    const html = await render(UpgradeRequestEmail(data), {
+        pretty: true,
+      });
     return {
       subject: 'New Upgrade Request',
-      html
+      html,
+      react: UpgradeRequestEmail(data)
     };
   }
 };
@@ -59,6 +65,7 @@ exports.handler = async function(event, context) {
       to: 'guy.tzaban@centrica.com',
       subject: template.subject,
       html: template.html,
+      react: template.react,
       reply_to: formData.email
     });
 
