@@ -3,6 +3,7 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { DemoModal } from "@/components/DemoModal";
 import { UpgradeModal } from "@/components/UpgradeModal";
+import logo from '@/assets/logo-header.svg'
 
 export const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -43,10 +44,12 @@ export const Header = () => {
           <div className="flex items-center gap-2">
             <button
               onClick={() => scrollToSection("section1")}
-              className="flex items-center space-x-2"
+              className="flex items-center space-x-2 gap-2"
             >
-              <div className="text-xl font-bold text-primary">
-                Panoramic Power
+              <img src={logo} alt="logo"  />
+              <div className="w-[1px] h-[28px] bg-[#EBEBEB]" />
+              <div className="text-[16px] font-bold leading-[16px] text-primary text-start">
+                Panoramic<br />Power
               </div>
             </button>
           </div>
