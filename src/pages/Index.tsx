@@ -52,7 +52,7 @@ const Index = () => {
   const rightCirclePosY = useTransform(scrollYProgress, [0, .5], [200, -1000]);
   const leftCirclePosY = useTransform(scrollYProgress, [0, .5], [-100, -500]);
   return (
-    <div className="relative overflow-hidden" >
+    <div className="relative overflow-hidden h-screen" >
       <Header />
       <motion.div
         style={{ scaleX: scrollYProgress }}
@@ -81,7 +81,7 @@ const Index = () => {
           }}
         />
       </div>
-      <main className="h-[calc(100vh-64px)] overflow-y-auto relative" ref={scrollRef} id="main">
+      <main className="h-[calc(100vh)] absolute top-0 pt-[64px] overflow-y-auto w-full" ref={scrollRef} id="main">
       
 
         <Section color="container" id="section1">
