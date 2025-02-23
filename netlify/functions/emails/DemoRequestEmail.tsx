@@ -1,5 +1,5 @@
-const React = require("react");
-const {
+import * as React from "react";
+import {
   Html,
   Head,
   Body,
@@ -7,23 +7,30 @@ const {
   Section,
   Heading,
   Text,
-} = require("@react-email/components");
+} from "@react-email/components";
 
-const UpgradeRequestEmail = ({
+interface DemoRequestProps {
+  fullName: string;
+  phone: string;
+  email: string;
+  account: string;
+  partner: string;
+}
+
+const DemoRequestEmail: React.FC<DemoRequestProps> = ({
   fullName,
   phone,
   email,
-  accountName,
-  supportPartner,
-  moreInfo,
+  account,
+  partner,
 }) => {
   return (
-    <Html lang="en">
+    <Html>
       <Head />
       <Body style={main}>
         <Container>
           <Section>
-            <Heading style={heading}>New Upgrade Request</Heading>
+            <Heading style={heading}>New Demo Request</Heading>
             <Text style={text}>
               <strong>Full Name:</strong> {fullName}
             </Text>
@@ -34,13 +41,10 @@ const UpgradeRequestEmail = ({
               <strong>Email:</strong> {email}
             </Text>
             <Text style={text}>
-              <strong>Account/Site Name:</strong> {accountName}
+              <strong>Account:</strong> {account}
             </Text>
             <Text style={text}>
-              <strong>Support Partner:</strong> {supportPartner}
-            </Text>
-            <Text style={text}>
-              <strong>Additional Information:</strong> {moreInfo || "N/A"}
+              <strong>Partner:</strong> {partner}
             </Text>
           </Section>
         </Container>
@@ -67,4 +71,5 @@ const text = {
   margin: "12px 0",
 };
 
-module.exports = UpgradeRequestEmail;
+export default DemoRequestEmail;
+

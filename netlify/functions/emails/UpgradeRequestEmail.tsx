@@ -1,5 +1,5 @@
-const React = require("react");
-const {
+import * as React from "react";
+import {
   Html,
   Head,
   Body,
@@ -7,16 +7,32 @@ const {
   Section,
   Heading,
   Text,
-} = require("@react-email/components");
+} from "@react-email/components";
 
-const DemoRequestEmail = ({ fullName, phone, email, account, partner }) => {
+interface UpgradeRequestProps {
+  fullName: string;
+  phone: string;
+  email: string;
+  accountName: string;
+  supportPartner: string;
+  moreInfo?: string;
+}
+
+const UpgradeRequestEmail: React.FC<UpgradeRequestProps> = ({
+  fullName,
+  phone,
+  email,
+  accountName,
+  supportPartner,
+  moreInfo,
+}) => {
   return (
-    <Html>
+    <Html lang="en">
       <Head />
       <Body style={main}>
         <Container>
           <Section>
-            <Heading style={heading}>New Demo Request</Heading>
+            <Heading style={heading}>New Upgrade Request</Heading>
             <Text style={text}>
               <strong>Full Name:</strong> {fullName}
             </Text>
@@ -27,10 +43,13 @@ const DemoRequestEmail = ({ fullName, phone, email, account, partner }) => {
               <strong>Email:</strong> {email}
             </Text>
             <Text style={text}>
-              <strong>Account:</strong> {account}
+              <strong>Account/Site Name:</strong> {accountName}
             </Text>
             <Text style={text}>
-              <strong>Partner:</strong> {partner}
+              <strong>Support Partner:</strong> {supportPartner}
+            </Text>
+            <Text style={text}>
+              <strong>Additional Information:</strong> {moreInfo || "N/A"}
             </Text>
           </Section>
         </Container>
@@ -43,18 +62,18 @@ const main = {
   backgroundColor: "#ffffff",
   fontFamily:
     '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif',
-};
+} as const;
 
 const heading = {
   fontSize: "24px",
   fontWeight: "bold",
   marginBottom: "24px",
-};
+} as const;
 
 const text = {
   fontSize: "16px",
   lineHeight: "24px",
   margin: "12px 0",
-};
+} as const;
 
-module.exports = DemoRequestEmail;
+export default UpgradeRequestEmail;

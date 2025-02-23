@@ -1,26 +1,27 @@
-const { Resend } = require('resend');
-const { render } = require('@react-email/render');
-
-// Import the email templates
-const DemoRequestEmail = require('./emails/DemoRequestEmail.jsx');
-const UpgradeRequestEmail = require('./emails/UpgradeRequestEmail.jsx');
+import { Resend } from 'resend';
+import { render } from '@react-email/render';
+import DemoRequestEmail from './emails/DemoRequestEmail';
+import UpgradeRequestEmail from './emails/UpgradeRequestEmail';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+interface EmailTemplate {
+  subject: string;
+  html: string;
+}
+
+type FormTypes = 'demo' | 'upgrade';
+
 const emailTemplates = {
-  demo: async (data) => {
-    const html = await render(DemoRequestEmail(data), {
-        pretty: true,
-      });
+  demo: async (data): Promise<EmailTemplate>  => {
+    const html = await render(DemoRequestEmail(data));
     return {
       subject: 'New Demo Request',
       html,
     };
   },
-  upgrade: async (data) => {
-    const html = await render(UpgradeRequestEmail(data), {
-        pretty: true,
-      });
+  upgrade: async (data): Promise<EmailTemplate>  => {
+    const html = await render(UpgradeRequestEmail(data));
     return {
       subject: 'New Upgrade Request',
       html,
