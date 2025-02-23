@@ -41,7 +41,7 @@ export const PricingCalculator = () => {
 
 
   return (
-    <div className="flex w-full max-w-[1440px] flex-col items-center pb-10 sm:px-6 sm:pb-20 lg:px-20">
+    <div className="flex w-full max-w-container flex-col items-center pb-10 sm:pb-20">
       <div className="flex w-full flex-col gap-8 lg:flex-row lg:gap-20">
         <PricingFeatures />
         <PricingConfigurator
@@ -207,7 +207,7 @@ const ConfigurationSection = ({
   setInput,
 }: ConfigurationSectionProps) => {
   return (
-    <div className="flex w-full flex-col pb-6">
+    <div className="flex w-full flex-col pb-6 grow">
       <h3 className="font-jakarta p-4 text-[16px] font-semibold leading-[150%] text-[#222] sm:p-8">
         Configure your plan
       </h3>
