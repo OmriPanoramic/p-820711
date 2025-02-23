@@ -46,7 +46,7 @@ export const Section3 = () => {
               and rewarding
             </p>
           </div>
-          <div className="relative flex flex-1 shrink-0 items-center justify-center self-stretch">
+          <div className="relative flex flex-1 shrink-0 items-center justify-center self-stretch overflow-hidden">
             <div className="relative h-[470px] w-[470px] lg:w-full lg:overflow-hidden lg:h-full">
               <motion.img
                 src={nodeGroupBg}

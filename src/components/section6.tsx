@@ -133,10 +133,10 @@ const visualizeFeatures = [
 
 export function Section6() {
   return (
-    <div className="flex flex-col items-center gap-4 pb-20">
+    <div className="flex flex-col items-center gap-4 pb-20 w-full">
       <div className="flex flex-col items-center gap-4">
         <h3 className="text-sm text-primary">Compare your options</h3>
-        <h2 className="mb-4 text-4xl font-bold">What upgrading really means</h2>
+        <h2 className="mb-4 text-h2 text-center leading-[50px]">What upgrading really means</h2>
       </div>
       <div className="relative flex flex-col lg:flex-row">
         <div className="flex-2 z-[1] -mr-5">
@@ -162,7 +162,7 @@ export function Section6() {
           />
         </div>
       </div>
-      <div className="flex flex-col items-center pt-20">
+      <div className="flex flex-col items-center pt-20 w-full">
         <PricingCalculator />
       </div>
     </div>

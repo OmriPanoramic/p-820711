@@ -73,8 +73,8 @@ export const PricingCalculator = () => {
 
 const PricingFeatures = () => (
   <div className="flex-1">
-    <h2 className="text-[32px] font-medium leading-[1.3] lg:text-[40px]">
-      Calculate your <span className="text-[#FF6B00]">Optimize</span> package
+    <h2 className="text-h3 font-medium leading-[1.3] text-center lg:text-left lg:text-h2">
+      Calculate your <span className="text-primary">Optimize</span> package
     </h2>
 
     <div className="mt-6">
@@ -148,7 +148,7 @@ const PricingConfigurator = ({
   discountedMonthlyPrice,
   discountedAnnualPrice,
 }: PricingConfiguratorProps) => (
-  <div className="flex w-full min-w-[480px] max-w-[665px] flex-col items-start overflow-hidden rounded-xl border border-[#FFEDD4] bg-white shadow-[0px_24px_40px_0px_rgba(104,75,37,0.04),0px_56px_56px_-32px_rgba(104,75,37,0.06),0px_32px_40px_-24px_rgba(104,75,37,0.05)]">
+  <div className="flex w-full max-w-[665px] flex-col items-start overflow-hidden rounded-xl border border-[#FFEDD4] bg-white shadow-[0px_24px_40px_0px_rgba(104,75,37,0.04),0px_56px_56px_-32px_rgba(104,75,37,0.06),0px_32px_40px_-24px_rgba(104,75,37,0.05)]">
     <ConfigurationSection
       sites={sites}
       setSites={setSites}
