@@ -37,9 +37,11 @@ const Section = ({
 const Index = () => {
   const scrollRef = useRef(null);
   const { scrollYProgress } = useScroll({
-    target: scrollRef,
-    offset: ["start start", "end end"],
+      offset: ["start start", "end end"],
+    container: scrollRef,
   });
+
+  console.log(scrollYProgress);
 
   return (
     <div className="relative overflow-hidden" >
@@ -50,7 +52,7 @@ const Index = () => {
       />
       <main className="h-[calc(100vh-64px)] overflow-y-auto" ref={scrollRef}>
         <Section color="container" id="section1">
-          <Section1 />
+          <Section1 scrollRef={scrollRef} />
         </Section>
         <Section color="container" id="section2">
           <Section2 />

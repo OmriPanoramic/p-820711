@@ -1,10 +1,23 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { motion } from "motion/react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import mainDashboard from "@/assets/main-image-dashboard.png";
 import mainMobile from "@/assets/main-mobile-app.png";
 
-export function Section1() {
+export function Section1({ scrollRef }: { scrollRef: React.RefObject<HTMLDivElement> }) {
+  const { scrollYProgress } = useScroll({
+    offset: ["start start", "end end"],
+    container: scrollRef,
+  });
+
+  //console.log(scrollYProgress);
+  
+  const mobilePosY = useTransform(scrollYProgress, [0, .1], [0, 100]);
+  const mobileOpacity = useTransform(scrollYProgress, [0.1, 0.2], [1, 0]);
+  
+  const dashboardPosY = useTransform(scrollYProgress, [0, 0.1], [0, -100]);
+  const dashboardOpacity = useTransform(scrollYProgress, [0, 0.1], [1, 0]);
+
   return (
     <Card className="w-full border-none bg-background shadow-none">
       <CardContent className="p-0 flex flex-col items-center justify-center">
@@ -54,14 +67,30 @@ export function Section1() {
         </motion.div>
         <div className="flex flex-col items-center gap-4 sm:flex-row my-10">
           <motion.div
-            className="w-full max-w-container relative"
+            className="w-full max-w-[1126px] relative"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{ duration: 0.5, delay: 0.6 }}
           >
-            <img src={mainDashboard} alt="Main Dashboard" />
-            <img src={mainMobile} alt="Main Mobile" className="w-[222px] absolute right-0 top-0" />
+            <motion.img 
+              src={mainDashboard} 
+              alt="Main Dashboard" 
+              className="w-full"
+              style={{
+                y: dashboardPosY,
+                opacity: dashboardOpacity
+              }}
+            />
+            <motion.img 
+              src={mainMobile} 
+              alt="Main Mobile" 
+              className="w-[222px] absolute right-0 top-0"
+              style={{
+                y: mobilePosY,
+                opacity: mobileOpacity
+              }}
+            />
           </motion.div>
         </div>
       </CardContent>
