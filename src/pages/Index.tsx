@@ -49,8 +49,8 @@ const Index = () => {
     }
   }, [scrollRef.current]);
 
-  const rightCirclePosY = useTransform(scrollYProgress, [0, .2], [200, -1000]);
-  const leftCirclePosY = useTransform(scrollYProgress, [0, .2], [-100, -500]);
+  const rightCirclePosY = useTransform(scrollYProgress, [0, .5], [200, -1000]);
+  const leftCirclePosY = useTransform(scrollYProgress, [0, .5], [-100, -500]);
   return (
     <div className="relative overflow-hidden" >
       <Header />
