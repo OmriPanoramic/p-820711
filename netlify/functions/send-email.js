@@ -64,7 +64,7 @@ exports.handler = async function(event, context) {
       from: 'onboarding@resend.dev',
       to: 'guy.tzaban@centrica.com',
       subject: template.subject,
-      html: template.html,
+      //html: template.html,
       react: template.react,
       reply_to: formData.email
     });
