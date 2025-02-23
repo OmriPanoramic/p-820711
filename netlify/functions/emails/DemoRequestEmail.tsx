@@ -72,7 +72,7 @@ const DemoRequestEmail: React.FC<DemoRequestProps> = ({
 };
 
 const main = {
-  backgroundColor: "#ffffff",
+  backgroundColor: '#efeef1',
   fontFamily:
     '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif',
 };
