@@ -1,5 +1,5 @@
-import * as React from "react";
-import {
+const React = require("react");
+const {
   Html,
   Head,
   Body,
@@ -7,7 +7,7 @@ import {
   Section,
   Heading,
   Text,
-} from "@react-email/components";
+} = require("@react-email/components");
 
 const DemoRequestEmail = ({ fullName, phone, email, account, partner }) => {
   return (
