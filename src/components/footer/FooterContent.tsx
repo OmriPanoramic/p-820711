@@ -18,7 +18,7 @@ const FooterContent: React.FC = () => {
   return (
     <>
       <div className="relative z-10">
-        <h2 className="mb-12 text-[56px] font-medium leading-[1.2] text-white">
+        <h2 className="mb-12 text-h3 font-medium leading-[1.2] text-white lg:text-h1">
           Get started today.
           <br />
           Manage energy with Panoramic
