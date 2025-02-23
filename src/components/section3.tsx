@@ -5,10 +5,9 @@ import {
   MonitorCheck,
   UserRoundCog,
 } from "lucide-react";
-import nodeGroupBg from "@/assets/node-group-bg.png";
-import nodeGroup1 from "@/assets/node-group1.png";
-import nodeGroup2 from "@/assets/node-group2.png";
+import lines from "@/assets/lines.png";
 import { motion } from "motion/react";
+import ImageCard from "./ImageCard";
 
 const FeatureCard = ({
   icon,
@@ -30,9 +29,9 @@ const FeatureCard = ({
 
 export const Section3 = () => {
   return (
-    <div className="flex flex-1 shrink-0 flex-col self-stretch w-full mb-20">
+    <div className="mb-20 flex w-full flex-1 shrink-0 flex-col self-stretch">
       <div className="flex flex-1 shrink-0 flex-col self-stretch">
-        <div className="flex flex-1 shrink-0 items-center self-stretch flex-col lg:flex-row">
+        <div className="flex flex-1 shrink-0 flex-col items-center self-stretch lg:flex-row">
           <div className="flex flex-1 flex-col gap-4">
             <p className="text-sm text-primary">Effortless migration</p>
             <div className="text-h2">
@@ -47,9 +46,9 @@ export const Section3 = () => {
             </p>
           </div>
           <div className="relative flex flex-1 shrink-0 items-center justify-center self-stretch overflow-hidden">
-            <div className="relative h-[470px] w-[470px] lg:w-full lg:overflow-hidden lg:h-full">
+            <div className="relative h-[470px] w-[470px] lg:h-full lg:w-full lg:overflow-hidden items-center flex justify-center">
               <motion.img
-                src={nodeGroupBg}
+                src={lines}
                 alt="bg"
                 className="absolute left-0 top-0 w-full max-w-[470px] object-cover"
                 initial={{ opacity: 0, y: 20 }}
@@ -57,24 +56,7 @@ export const Section3 = () => {
                 viewport={{ once: false }}
                 transition={{ duration: 0.5 }}
               />
-              <motion.img
-                src={nodeGroup2}
-                alt="node2"
-                className="absolute left-0 top-[90px] w-full max-w-[340px] object-cover"
-                initial={{ opacity: 0, y: 100 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false }}
-                transition={{ duration: 0.5, ease: "easeInOut" }}
-              />
-              <motion.img
-                src={nodeGroup1}
-                alt="node1"
-                className="absolute left-[120px] top-[158px] w-full max-w-[340px] object-cover"
-                initial={{ opacity: 0, y: -100 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false }}
-                transition={{ duration: 0.5, ease: "easeInOut" }}
-              />
+              <ImageCard />
             </div>
           </div>
         </div>
