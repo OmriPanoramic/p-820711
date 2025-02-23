@@ -20,7 +20,9 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
 
+import Stars from "./Stars";
 const formSchema = z.object({
   fullName: z.string().min(2, {
     message: "Full name must be at least 2 characters.",
@@ -49,6 +51,7 @@ interface UpgradeModalProps {
 
 export function UpgradeModal({ isOpen, onClose }: UpgradeModalProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
 
   const form = useForm<UpgradeFormValues>({
     resolver: zodResolver(formSchema),
@@ -77,7 +80,8 @@ export function UpgradeModal({ isOpen, onClose }: UpgradeModalProps) {
         throw new Error("Failed to send email");
       }
 
-      onClose();
+      setShowSuccess(true);
+      // Don't close the modal immediately, let user see success state
     } catch (error) {
       console.error(error);
       // You might want to show an error message to the user here
@@ -89,123 +93,165 @@ export function UpgradeModal({ isOpen, onClose }: UpgradeModalProps) {
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-[640px]">
-        <DialogHeader>
-          <DialogTitle>Upgrade to Optimize</DialogTitle>
-          <DialogDescription>
-            Take the next step towards smarter energy management
-          </DialogDescription>
-        </DialogHeader>
-        <Form {...form}>
-          <form
-            onSubmit={form.handleSubmit(onSubmit)}
-            className="flex flex-col gap-4"
-          >
-            <div className="flex grow flex-col gap-4 sm:flex-row">
-              <FormField
-                control={form.control}
-                name="fullName"
-                render={({ field }) => (
-                  <FormItem className="grow">
-                    <FormLabel>Full Name</FormLabel>
-                    <FormControl>
-                      <Input placeholder="John Doe" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="jobTitle"
-                render={({ field }) => (
-                  <FormItem className="grow">
-                    <FormLabel>Job title</FormLabel>
-                    <FormControl>
-                      <Input placeholder="i.e Senior Engineer" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-            </div>
-            <div className="flex grow flex-col gap-4 sm:flex-row">
-              <FormField
-                control={form.control}
-                name="phone"
-                render={({ field }) => (
-                  <FormItem className="grow">
-                    <FormLabel>Phone Number</FormLabel>
-                    <FormControl>
-                      <Input placeholder="+1 (555) 000-0000" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-
-              <FormField
-                control={form.control}
-                name="email"
-                render={({ field }) => (
-                  <FormItem className="grow">
-                    <FormLabel>Email</FormLabel>
-                    <FormControl>
-                      <Input
-                        placeholder="john.smith@company.com"
-                        type="email"
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-            </div>
-
-            <FormField
-              control={form.control}
-              name="accountName"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Account/Site Name</FormLabel>
-                  <FormControl>
-                    <Input
-                      placeholder="Your existing PowerRadar account name"
-                      {...field}
+        <AnimatePresence mode="wait">
+          {showSuccess ? (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              className="flex flex-col items-center justify-center py-8 text-center"
+            >
+              <Stars />
+              <motion.h2
+                className="mb-2 text-2xl font-semibold"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.3 }}
+              >
+                You're on your way to Optimize!
+              </motion.h2>
+              <motion.p
+                className="mb-6 text-muted-foreground"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.4 }}
+              >
+                Someone from our team will reach out shortly to get your upgrade rolling
+              </motion.p>
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.5 }}
+              >
+                <Button onClick={onClose}>Got it</Button>
+              </motion.div>
+            </motion.div>
+          ) : (
+            <motion.div
+              initial={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="flex flex-col"
+            >
+              <DialogHeader>
+                <DialogTitle>Upgrade to Optimize</DialogTitle>
+                <DialogDescription>
+                  Take the next step towards smarter energy management
+                </DialogDescription>
+              </DialogHeader>
+              <Form {...form}>
+                <form
+                  onSubmit={form.handleSubmit(onSubmit)}
+                  className="flex flex-col gap-4"
+                >
+                  <div className="flex grow flex-col gap-4 sm:flex-row">
+                    <FormField
+                      control={form.control}
+                      name="fullName"
+                      render={({ field }) => (
+                        <FormItem className="grow">
+                          <FormLabel>Full Name</FormLabel>
+                          <FormControl>
+                            <Input placeholder="John Doe" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
                     />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="moreInfo"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Additional Information</FormLabel>
-                  <FormControl>
-                    <Textarea
-                      placeholder="Tell us about your energy management needs (optional)"
-                      className="min-h-[100px]"
-                      {...field}
+                    <FormField
+                      control={form.control}
+                      name="jobTitle"
+                      render={({ field }) => (
+                        <FormItem className="grow">
+                          <FormLabel>Job title</FormLabel>
+                          <FormControl>
+                            <Input placeholder="i.e Senior Engineer" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
                     />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
+                  </div>
+                  <div className="flex grow flex-col gap-4 sm:flex-row">
+                    <FormField
+                      control={form.control}
+                      name="phone"
+                      render={({ field }) => (
+                        <FormItem className="grow">
+                          <FormLabel>Phone Number</FormLabel>
+                          <FormControl>
+                            <Input placeholder="+1 (555) 000-0000" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
 
-            <div className="flex justify-end gap-4 pt-4">
-              <Button type="button" variant="outline" onClick={onClose}>
-                Cancel
-              </Button>
-              <Button type="submit" disabled={isSubmitting}>
-                {isSubmitting ? "Submitting..." : "Request Upgrade"}
-              </Button>
-            </div>
-          </form>
-        </Form>
+                    <FormField
+                      control={form.control}
+                      name="email"
+                      render={({ field }) => (
+                        <FormItem className="grow">
+                          <FormLabel>Email</FormLabel>
+                          <FormControl>
+                            <Input
+                              placeholder="john.smith@company.com"
+                              type="email"
+                              {...field}
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  </div>
+
+                  <FormField
+                    control={form.control}
+                    name="accountName"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Account/Site Name</FormLabel>
+                        <FormControl>
+                          <Input
+                            placeholder="Your existing PowerRadar account name"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="moreInfo"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Additional Information</FormLabel>
+                        <FormControl>
+                          <Textarea
+                            placeholder="Tell us about your energy management needs (optional)"
+                            className="min-h-[100px]"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
+                  <div className="flex justify-end gap-4 pt-4">
+                    <Button type="button" variant="outline" onClick={onClose}>
+                      Cancel
+                    </Button>
+                    <Button type="submit" disabled={isSubmitting}>
+                      {isSubmitting ? "Submitting..." : "Request Upgrade"}
+                    </Button>
+                  </div>
+                </form>
+              </Form>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </DialogContent>
     </Dialog>
   );
