@@ -207,12 +207,12 @@ const ConfigurationSection = ({
   setInput,
 }: ConfigurationSectionProps) => {
   return (
-    <div className="flex w-full flex-col">
+    <div className="flex w-full flex-col pb-6">
       <h3 className="font-jakarta p-4 text-[16px] font-semibold leading-[150%] text-[#222] sm:p-8">
         Configure your plan
       </h3>
 
-      <div className="flex flex-col gap-8 px-4 sm:gap-12 sm:px-8">
+      <div className="flex flex-col gap-8 px-4 sm:gap-16 sm:px-8">
         <div className="flex w-full flex-col gap-4 sm:flex-row sm:items-center sm:justify-between sm:gap-0">
           <label className="text-base text-[#171717]">Number of devices</label>
           <Input
@@ -229,10 +229,9 @@ const ConfigurationSection = ({
           <Slider
             className="w-full"
             min={1}
-            max={1000}
+            max={10000}
             value={[input]}
             onValueChange={(value) => {
-              console.log(value)
               setInput(value[0])
             }}
           />

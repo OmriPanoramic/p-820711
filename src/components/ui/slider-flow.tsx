@@ -15,8 +15,8 @@ export default function Slider({
         "relative flex h-5 w-full touch-none select-none items-center",
       )}
     >
-      <RadixSlider.Track className="relative h-[4px] grow rounded-full bg-zinc-100 dark:bg-zinc-800">
-        <RadixSlider.Range className="absolute h-full rounded-full bg-[#EBEBEB] dark:bg-white" />
+      <RadixSlider.Track className="relative h-[6px] grow rounded-full bg-zinc-100 dark:bg-zinc-800">
+        <RadixSlider.Range className="absolute h-full rounded-full bg-primary dark:bg-white" />
       </RadixSlider.Track>
       <RadixSlider.Thumb
         className="relative block h-5 w-5 rounded-[1rem] bg-white shadow-md ring ring-black/10"
