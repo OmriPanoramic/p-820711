@@ -2,8 +2,8 @@ const { Resend } = require('resend');
 const { renderAsync } = require('@react-email/render');
 
 // Import the email templates
-const { default: DemoRequestEmail } = require('../../src/emails/DemoRequestEmail');
-const { default: UpgradeRequestEmail } = require('../../src/emails/UpgradeRequestEmail');
+const DemoRequestEmail = require('./emails/DemoRequestEmail');
+const UpgradeRequestEmail = require('./emails/UpgradeRequestEmail');
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
