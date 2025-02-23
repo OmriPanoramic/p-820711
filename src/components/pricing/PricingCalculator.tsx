@@ -212,7 +212,7 @@ const ConfigurationSection = ({
         Configure your plan
       </h3>
 
-      <div className="flex flex-col gap-8 px-4 sm:gap-16 sm:px-8">
+      <div className="flex flex-col gap-14 px-4 sm:gap-16 sm:px-8">
         <div className="flex w-full flex-col gap-4 sm:flex-row sm:items-center sm:justify-between sm:gap-0">
           <label className="text-base text-[#171717]">Number of devices</label>
           <Input
