@@ -136,7 +136,7 @@ export function Section6() {
     <div className="flex flex-col items-center gap-4 pb-20 w-full">
       <div className="flex flex-col items-center gap-4">
         <h3 className="text-sm text-primary">Compare your options</h3>
-        <h2 className="mb-4 text-h2 text-center leading-[50px]">What upgrading really means</h2>
+        <h2 className="mb-4 text-h2 text-center leading-[50px]">What upgrading to Optimize really means</h2>
       </div>
       <div className="relative flex flex-col lg:flex-row ">
         <div className="grow  z-[1] mr-0 lg:grow lg:-mr-5 lg:max-w-[760px]">
