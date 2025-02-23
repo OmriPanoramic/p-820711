@@ -123,7 +123,10 @@ export function UpgradeModal({ isOpen, onClose }: UpgradeModalProps) {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5 }}
               >
-                <Button onClick={onClose}>Got it</Button>
+                <Button onClick={() => {
+                    setShowSuccess(false);
+                    onClose();
+                  }}>Got it</Button>
               </motion.div>
             </motion.div>
           ) : (
