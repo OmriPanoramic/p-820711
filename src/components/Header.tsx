@@ -99,7 +99,7 @@ export const Header = () => {
               Pricing
             </button>
             <button
-              onClick={() => scrollToSection("section7")}
+              onClick={() => scrollToSection("footer")}
               className="text-sm text-muted-foreground transition-colors hover:text-primary"
             >
               Contact
@@ -156,7 +156,7 @@ export const Header = () => {
                 Pricing
               </button>
               <button
-                onClick={() => scrollToSection("section7")}
+                onClick={() => scrollToSection("footer")}
                 className="text-sm text-muted-foreground transition-colors hover:text-primary"
               >
                 Contact
