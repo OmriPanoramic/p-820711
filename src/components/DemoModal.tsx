@@ -46,13 +46,22 @@ export function DemoModal({ isOpen, onClose }: DemoModalProps) {
   const onSubmit = async (data: DemoFormValues) => {
     setIsSubmitting(true);
     try {
-      // Here you would typically send the data to your backend
-      console.log(data);
-      // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      const response = await fetch('/.netlify/functions/send-email', {
+        method: 'POST',
+        body: JSON.stringify({
+          formType: 'demo',
+          formData: data
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send email');
+      }
+
       onClose();
     } catch (error) {
       console.error(error);
+      // You might want to show an error message to the user here
     } finally {
       setIsSubmitting(false);
     }

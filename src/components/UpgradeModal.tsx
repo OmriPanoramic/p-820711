@@ -19,6 +19,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { useState } from "react";
 
 const formSchema = z.object({
   fullName: z.string().min(2, {
@@ -47,6 +48,8 @@ interface UpgradeModalProps {
 }
 
 export function UpgradeModal({ isOpen, onClose }: UpgradeModalProps) {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  
   const form = useForm<UpgradeFormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -59,10 +62,28 @@ export function UpgradeModal({ isOpen, onClose }: UpgradeModalProps) {
     },
   });
 
-  function onSubmit(values: UpgradeFormValues) {
-    // Handle form submission
-    console.log(values);
-    onClose();
+  async function onSubmit(values: UpgradeFormValues) {
+    setIsSubmitting(true);
+    try {
+      const response = await fetch('/.netlify/functions/send-email', {
+        method: 'POST',
+        body: JSON.stringify({
+          formType: 'upgrade',
+          formData: values
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send email');
+      }
+
+      onClose();
+    } catch (error) {
+      console.error(error);
+      // You might want to show an error message to the user here
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -168,7 +189,9 @@ export function UpgradeModal({ isOpen, onClose }: UpgradeModalProps) {
               <Button type="button" variant="outline" onClick={onClose}>
                 Cancel
               </Button>
-              <Button type="submit">Submit Upgrade Request</Button>
+              <Button type="submit" disabled={isSubmitting}>
+                {isSubmitting ? "Submitting..." : "Submit Upgrade Request"}
+              </Button>
             </div>
           </form>
         </Form>
