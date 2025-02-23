@@ -57,7 +57,7 @@ exports.handler = async function(event, context) {
     }
 
     const data = await resend.emails.send({
-      from: 'guy.tzaban@centrica.com',
+      from: 'onboarding@resend.dev',
       to: 'guy.tzaban@centrica.com', // Email where you want to receive notifications
       subject: template.subject,
       html: template.html,
