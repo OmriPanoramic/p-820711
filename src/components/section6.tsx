@@ -138,8 +138,8 @@ export function Section6() {
         <h3 className="text-sm text-primary">Compare your options</h3>
         <h2 className="mb-4 text-h2 text-center leading-[50px]">What upgrading really means</h2>
       </div>
-      <div className="relative flex flex-col lg:flex-row">
-        <div className="flex-2 z-[1] -mr-5">
+      <div className="relative flex flex-col lg:flex-row ">
+        <div className="grow  z-[1] mr-0 lg:grow lg:-mr-5 lg:max-w-[760px]">
           <PricingCard
             title="Optimize"
             description="Optimize your energy consumption and reduce your costs with our advanced optimization tools"
@@ -151,7 +151,7 @@ export function Section6() {
             features={optimizeFeatures}
           />
         </div>
-        <div className="sticky top-4 ml-3 flex-1 self-start py-6">
+        <div className="sticky top-4 ml-0 flex-1 self-start py-6 lg:ml-3">
           <PricingCard
             title="Visualize"
             description="Visualize your data in a way that makes sense to you"

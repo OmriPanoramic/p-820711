@@ -99,7 +99,7 @@ export const PricingCard = ({
                   className="my-auto aspect-[1] w-6 shrink-0 self-stretch object-contain"
                   alt=""
                 />
-                <div className="flex flex-1 flex-row justify-between gap-2">
+                <div className="flex flex-1 flex-col justify-between gap-2 lg:flex-row">
                   <div className="flex flex-col justify-between gap-2">
                     <p className="my-auto flex-1 shrink basis-[0%] self-stretch font-semibold text-[#222]">
                       Get 60% off if you purchase by June 30, 2025
@@ -113,7 +113,9 @@ export const PricingCard = ({
                       </li>
                     </ul>
                   </div>
-                  <CountdownTimer targetDate={new Date("2025-06-30")} />
+                  <div className="flex flex-1 items-center justify-center lg:justify-end">
+                    <CountdownTimer targetDate={new Date("2025-06-30")} />
+                  </div>
                 </div>
               </div>
             )}

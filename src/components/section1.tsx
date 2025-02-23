@@ -89,7 +89,7 @@ export function Section1({ scrollRef }: { scrollRef: React.RefObject<HTMLDivElem
             <motion.img 
               src={mainMobile} 
               alt="Main Mobile" 
-              className="w-[222px] absolute right-0 top-0"
+              className="w-[100px] absolute right-0 top-0 lg:w-[222px]"
               style={{
                 y: mobilePosY,
                 opacity: mobileOpacity
