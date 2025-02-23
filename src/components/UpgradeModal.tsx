@@ -34,8 +34,8 @@ const formSchema = z.object({
   accountName: z.string().min(2, {
     message: "Account/Site name must be at least 2 characters.",
   }),
-  supportPartner: z.string().min(2, {
-    message: "Support partner must be at least 2 characters.",
+  jobTitle: z.string().min(2, {
+    message: "Job title must be at least 2 characters.",
   }),
   moreInfo: z.string().optional(),
 });
@@ -49,7 +49,7 @@ interface UpgradeModalProps {
 
 export function UpgradeModal({ isOpen, onClose }: UpgradeModalProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  
+
   const form = useForm<UpgradeFormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -57,7 +57,7 @@ export function UpgradeModal({ isOpen, onClose }: UpgradeModalProps) {
       phone: "",
       email: "",
       accountName: "",
-      supportPartner: "",
+      jobTitle: "",
       moreInfo: "",
     },
   });
@@ -65,16 +65,16 @@ export function UpgradeModal({ isOpen, onClose }: UpgradeModalProps) {
   async function onSubmit(values: UpgradeFormValues) {
     setIsSubmitting(true);
     try {
-      const response = await fetch('/.netlify/functions/send-email', {
-        method: 'POST',
+      const response = await fetch("/.netlify/functions/send-email", {
+        method: "POST",
         body: JSON.stringify({
-          formType: 'upgrade',
-          formData: values
+          formType: "upgrade",
+          formData: values,
         }),
       });
 
       if (!response.ok) {
-        throw new Error('Failed to send email');
+        throw new Error("Failed to send email");
       }
 
       onClose();
@@ -88,56 +88,79 @@ export function UpgradeModal({ isOpen, onClose }: UpgradeModalProps) {
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-[500px]">
+      <DialogContent className="sm:max-w-[640px]">
         <DialogHeader>
-          <DialogTitle>Upgrade Your Account</DialogTitle>
+          <DialogTitle>Upgrade to Optimize</DialogTitle>
           <DialogDescription>
-            Fill out the form below to start your upgrade process.
+            Take the next step towards smarter energy management
           </DialogDescription>
         </DialogHeader>
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-            <FormField
-              control={form.control}
-              name="fullName"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Full Name</FormLabel>
-                  <FormControl>
-                    <Input placeholder="John Doe" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
+          <form
+            onSubmit={form.handleSubmit(onSubmit)}
+            className="flex flex-col gap-4"
+          >
+            <div className="flex grow flex-col gap-4 sm:flex-row">
+              <FormField
+                control={form.control}
+                name="fullName"
+                render={({ field }) => (
+                  <FormItem className="grow">
+                    <FormLabel>Full Name</FormLabel>
+                    <FormControl>
+                      <Input placeholder="John Doe" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="jobTitle"
+                render={({ field }) => (
+                  <FormItem className="grow">
+                    <FormLabel>Job title</FormLabel>
+                    <FormControl>
+                      <Input placeholder="i.e Senior Engineer" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
+            <div className="flex grow flex-col gap-4 sm:flex-row">
+              <FormField
+                control={form.control}
+                name="phone"
+                render={({ field }) => (
+                  <FormItem className="grow">
+                    <FormLabel>Phone Number</FormLabel>
+                    <FormControl>
+                      <Input placeholder="+1 (555) 000-0000" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
 
-            <FormField
-              control={form.control}
-              name="phone"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Phone Number</FormLabel>
-                  <FormControl>
-                    <Input placeholder="+1 (555) 000-0000" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            <FormField
-              control={form.control}
-              name="email"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Email</FormLabel>
-                  <FormControl>
-                    <Input placeholder="john@example.com" type="email" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
+              <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                  <FormItem className="grow">
+                    <FormLabel>Email</FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder="john.smith@company.com"
+                        type="email"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
 
             <FormField
               control={form.control}
@@ -146,27 +169,15 @@ export function UpgradeModal({ isOpen, onClose }: UpgradeModalProps) {
                 <FormItem>
                   <FormLabel>Account/Site Name</FormLabel>
                   <FormControl>
-                    <Input placeholder="Your account or site name" {...field} />
+                    <Input
+                      placeholder="Your existing PowerRadar account name"
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
             />
-
-            <FormField
-              control={form.control}
-              name="supportPartner"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Support Partner</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Your support partner" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
             <FormField
               control={form.control}
               name="moreInfo"
@@ -175,7 +186,7 @@ export function UpgradeModal({ isOpen, onClose }: UpgradeModalProps) {
                   <FormLabel>Additional Information</FormLabel>
                   <FormControl>
                     <Textarea
-                      placeholder="Please provide any additional information..."
+                      placeholder="Tell us about your energy management needs (optional)"
                       className="min-h-[100px]"
                       {...field}
                     />
@@ -190,7 +201,7 @@ export function UpgradeModal({ isOpen, onClose }: UpgradeModalProps) {
                 Cancel
               </Button>
               <Button type="submit" disabled={isSubmitting}>
-                {isSubmitting ? "Submitting..." : "Submit Upgrade Request"}
+                {isSubmitting ? "Submitting..." : "Request Upgrade"}
               </Button>
             </div>
           </form>
@@ -198,4 +209,4 @@ export function UpgradeModal({ isOpen, onClose }: UpgradeModalProps) {
       </DialogContent>
     </Dialog>
   );
-} 
+}

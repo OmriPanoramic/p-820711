@@ -3,8 +3,10 @@ import { Card, CardContent } from "@/components/ui/card";
 import { motion, useScroll, useTransform } from "framer-motion";
 import mainDashboard from "@/assets/main-image-dashboard.png";
 import mainMobile from "@/assets/main-mobile-app.png";
-
+import { UpgradeModal } from "./UpgradeModal";
+import { useState } from "react";
 export function Section1({ scrollRef }: { scrollRef: React.RefObject<HTMLDivElement> }) {
+  const [isUpgradeModalOpen, setIsUpgradeModalOpen] = useState(false);
   const { scrollYProgress } = useScroll({
     container: scrollRef,
     target: scrollRef,
@@ -20,7 +22,7 @@ export function Section1({ scrollRef }: { scrollRef: React.RefObject<HTMLDivElem
   const dashboardPosY = useTransform(scrollYProgress, [0, 0.1], [0, -100]);
   const dashboardOpacity = useTransform(scrollYProgress, [0, 0.1], [1, 0]);
 
-  return (
+  return (<>
     <Card className="w-full border-none  shadow-none bg-transparent">
       <CardContent className="p-0 flex flex-col items-center justify-center">
         <motion.div
@@ -59,7 +61,7 @@ export function Section1({ scrollRef }: { scrollRef: React.RefObject<HTMLDivElem
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.6 }}
           >
-            <Button size="lg" className="w-full sm:w-auto">
+            <Button size="lg" className="w-full sm:w-auto" onClick={() => setIsUpgradeModalOpen(true)}>
               Upgrade to Optimize
             </Button>
             <Button variant="ghost" className="w-full sm:w-auto">
@@ -99,5 +101,9 @@ export function Section1({ scrollRef }: { scrollRef: React.RefObject<HTMLDivElem
         </div>
       </CardContent>
     </Card>
+    <UpgradeModal
+    isOpen={isUpgradeModalOpen}
+    onClose={() => setIsUpgradeModalOpen(false)}
+  /></>
   );
 }

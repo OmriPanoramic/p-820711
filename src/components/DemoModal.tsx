@@ -6,8 +6,15 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
@@ -15,11 +22,21 @@ import { useState } from "react";
 
 // Define the form schema with Zod
 const demoFormSchema = z.object({
-  fullName: z.string().min(2, "Full name is required"),
-  phone: z.string().min(10, "Valid phone number is required"),
-  email: z.string().email("Valid email is required"),
-  account: z.string().min(1, "Account name is required"),
-  partner: z.string().min(1, "Partner name is required"),
+  fullName: z.string().min(2, {
+    message: "Full name must be at least 2 characters.",
+  }),
+  jobTitle: z.string().min(2, {
+    message: "Job title must be at least 2 characters.",
+  }),
+  phone: z.string().min(10, {
+    message: "Phone number must be at least 10 digits.",
+  }),
+  email: z.string().email({
+    message: "Please enter a valid email address.",
+  }),
+  companyName: z.string().min(2, {
+    message: "Company name must be at least 2 characters.",
+  }),
 });
 
 type DemoFormValues = z.infer<typeof demoFormSchema>;
@@ -36,10 +53,10 @@ export function DemoModal({ isOpen, onClose }: DemoModalProps) {
     resolver: zodResolver(demoFormSchema),
     defaultValues: {
       fullName: "",
+      jobTitle: "",
       phone: "",
       email: "",
-      account: "",
-      partner: "",
+      companyName: "",
     },
   });
 
@@ -69,97 +86,104 @@ export function DemoModal({ isOpen, onClose }: DemoModalProps) {
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-[425px]">
+      <DialogContent className="sm:max-w-[640px]">
         <DialogHeader>
           <DialogTitle>Book a Demo</DialogTitle>
           <DialogDescription>
-            Schedule a demo to see how our platform can help your business.
+          See how Panoramic Optimize can transform your energy future
           </DialogDescription>
         </DialogHeader>
-        <form
-          onSubmit={form.handleSubmit(onSubmit)}
-          className="grid gap-4 py-4"
-        >
-          <div className="grid gap-2">
-            <Label htmlFor="fullName">Full Name</Label>
-            <Input
-              id="fullName"
-              {...form.register("fullName")}
-              placeholder="John Doe"
-            />
-            {form.formState.errors.fullName && (
-              <p className="text-sm text-red-500">
-                {form.formState.errors.fullName.message}
-              </p>
-            )}
-          </div>
+        <Form {...form}>
+          <form
+            onSubmit={form.handleSubmit(onSubmit)}
+            className="flex flex-col gap-4"
+          >
+            <div className="flex grow flex-col gap-4 sm:flex-row">
+              <FormField
+                control={form.control}
+                name="fullName"
+                render={({ field }) => (
+                  <FormItem className="grow">
+                    <FormLabel>Full Name</FormLabel>
+                    <FormControl>
+                      <Input placeholder="John Doe" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="jobTitle"
+                render={({ field }) => (
+                  <FormItem className="grow">
+                    <FormLabel>Job title</FormLabel>
+                    <FormControl>
+                      <Input placeholder="i.e Senior Engineer" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
 
-          <div className="grid gap-2">
-            <Label htmlFor="phone">Phone Number</Label>
-            <Input
-              id="phone"
-              {...form.register("phone")}
-              placeholder="+1 (555) 000-0000"
-            />
-            {form.formState.errors.phone && (
-              <p className="text-sm text-red-500">
-                {form.formState.errors.phone.message}
-              </p>
-            )}
-          </div>
+            <div className="flex grow flex-col gap-4 sm:flex-row">
+              <FormField
+                control={form.control}
+                name="phone"
+                render={({ field }) => (
+                  <FormItem className="grow">
+                    <FormLabel>Phone Number</FormLabel>
+                    <FormControl>
+                      <Input placeholder="+1 (555) 000-0000" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                  <FormItem className="grow">
+                    <FormLabel>Email</FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder="john.smith@company.com"
+                        type="email"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
 
-          <div className="grid gap-2">
-            <Label htmlFor="email">Email</Label>
-            <Input
-              id="email"
-              type="email"
-              {...form.register("email")}
-              placeholder="john@example.com"
+            <FormField
+              control={form.control}
+              name="companyName"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Company Name</FormLabel>
+                  <FormControl>
+                    <Input placeholder="Your company name" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
             />
-            {form.formState.errors.email && (
-              <p className="text-sm text-red-500">
-                {form.formState.errors.email.message}
-              </p>
-            )}
-          </div>
 
-          <div className="grid gap-2">
-            <Label htmlFor="account">Account Name</Label>
-            <Input
-              id="account"
-              {...form.register("account")}
-              placeholder="Your company name"
-            />
-            {form.formState.errors.account && (
-              <p className="text-sm text-red-500">
-                {form.formState.errors.account.message}
-              </p>
-            )}
-          </div>
-
-          <div className="grid gap-2">
-            <Label htmlFor="partner">Partner Name</Label>
-            <Input
-              id="partner"
-              {...form.register("partner")}
-              placeholder="Partner name"
-            />
-            {form.formState.errors.partner && (
-              <p className="text-sm text-red-500">
-                {form.formState.errors.partner.message}
-              </p>
-            )}
-          </div>
-
-          <div className="flex justify-end gap-4">
-            <Button type="button" variant="outline" onClick={onClose}>
-              Cancel
-            </Button>
-            <Button type="submit" disabled={isSubmitting}>
-              {isSubmitting ? "Submitting..." : "Submit"}
-            </Button>
-          </div>
-        </form>
+            <div className="flex justify-end gap-4 pt-4">
+              <Button type="button" variant="outline" onClick={onClose}>
+                Cancel
+              </Button>
+              <Button type="submit" disabled={isSubmitting}>
+                {isSubmitting ? "Submitting..." : "Schedule Demo"}
+              </Button>
+            </div>
+          </form>
+        </Form>
       </DialogContent>
     </Dialog>
   );
