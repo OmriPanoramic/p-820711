@@ -26,18 +26,11 @@ const PRICING_CONFIG = {
 } as const;
 
 export const PricingCalculator = () => {
-  const [sites, setSites] = useState([1]);
-  const [inputs, setInputs] = useState<number[]>([10]);
-
-  const handleInputChange = (index: number, value: number) => {
-    const newInputs = [...inputs];
-    newInputs[index] = value;
-    setInputs(newInputs);
-  };
+  const [input, setInput] = useState<number>(10);
 
   const totalMonthlyPrice = Math.max(
     PRICING_CONFIG.BASE_PRICE,
-    inputs.reduce((sum, input) => sum + input, 0) *
+    input *
       PRICING_CONFIG.PRICE_PER_INPUT,
   );
   const totalAnnualPrice = totalMonthlyPrice * 12;
@@ -46,21 +39,14 @@ export const PricingCalculator = () => {
   const discountedMonthlyPrice =
     totalMonthlyPrice * PRICING_CONFIG.ANNUAL_DISCOUNT;
 
-  const endDate = new Date("2025-06-30T23:59:59");
-  const today = new Date();
-  const daysRemaining = Math.ceil(
-    (endDate.getTime() - today.getTime()) / (1000 * 60 * 60 * 24),
-  );
 
   return (
     <div className="flex w-full max-w-[1440px] flex-col items-center pb-10 sm:px-6 sm:pb-20 lg:px-20">
       <div className="flex w-full flex-col gap-8 lg:flex-row lg:gap-20">
         <PricingFeatures />
         <PricingConfigurator
-          sites={sites}
-          setSites={setSites}
-          inputs={inputs}
-          setInputs={setInputs}
+          input={input}
+          setInput={setInput}
           totalMonthlyPrice={totalMonthlyPrice}
           totalAnnualPrice={totalAnnualPrice}
           discountedMonthlyPrice={discountedMonthlyPrice}
@@ -128,10 +114,8 @@ const PricingFeatures = () => (
 );
 
 interface PricingConfiguratorProps {
-  sites: number[];
-  setSites: (sites: number[]) => void;
-  inputs: number[];
-  setInputs: (inputs: number[]) => void;
+  input: number;
+  setInput: (inputs: number) => void;
   totalMonthlyPrice: number;
   totalAnnualPrice: number;
   discountedMonthlyPrice: number;
@@ -139,10 +123,8 @@ interface PricingConfiguratorProps {
 }
 
 const PricingConfigurator = ({
-  sites,
-  setSites,
-  inputs,
-  setInputs,
+  input,
+  setInput,
   totalMonthlyPrice,
   totalAnnualPrice,
   discountedMonthlyPrice,
@@ -150,10 +132,8 @@ const PricingConfigurator = ({
 }: PricingConfiguratorProps) => (
   <div className="flex w-full max-w-[665px] flex-col items-start overflow-hidden rounded-xl border border-[#FFEDD4] bg-white shadow-[0px_24px_40px_0px_rgba(104,75,37,0.04),0px_56px_56px_-32px_rgba(104,75,37,0.06),0px_32px_40px_-24px_rgba(104,75,37,0.05)]">
     <ConfigurationSection
-      sites={sites}
-      setSites={setSites}
-      inputs={inputs}
-      setInputs={setInputs}
+      input={input}
+      setInput={setInput}
     />
     <PricingSummary
       totalMonthlyPrice={totalMonthlyPrice}
@@ -218,39 +198,14 @@ const FeatureList = ({ features }: { features: readonly string[] }) => (
 );
 
 interface ConfigurationSectionProps {
-  sites: number[];
-  setSites: (sites: number[]) => void;
-  inputs: number[];
-  setInputs: (inputs: number[]) => void;
+  input: number;
+  setInput: (input: number) => void;
 }
 
 const ConfigurationSection = ({
-  sites,
-  setSites,
-  inputs,
-  setInputs,
+  input,
+  setInput,
 }: ConfigurationSectionProps) => {
-  const handleAddSite = () => {
-    if (sites.length >= 10) return; // Prevent adding more than 10 sites
-    setSites([...sites, 1]);
-    setInputs([...inputs, 10]);
-  };
-
-  const handleRemoveSite = (index: number) => {
-    const newSites = sites.filter((_, i) => i !== index);
-    const newInputs = inputs.filter((_, i) => i !== index);
-    setSites(newSites);
-    setInputs(newInputs);
-  };
-
-  const handleInputChange = (index: number, value: number) => {
-    const newInputs = [...inputs];
-    newInputs[index] = value;
-    setInputs(newInputs);
-  };
-
-  const isMultiSite = sites.length <= 10;
-
   return (
     <div className="flex w-full flex-col">
       <h3 className="font-jakarta p-4 text-[16px] font-semibold leading-[150%] text-[#222] sm:p-8">
@@ -259,18 +214,12 @@ const ConfigurationSection = ({
 
       <div className="flex flex-col gap-8 px-4 sm:gap-12 sm:px-8">
         <div className="flex w-full flex-col gap-4 sm:flex-row sm:items-center sm:justify-between sm:gap-0">
-          <label className="text-base text-[#171717]">Number of sites</label>
+          <label className="text-base text-[#171717]">Number of devices</label>
           <Input
             type="number"
-            value={sites.length}
+            value={input}
             onChange={(e) => {
-              const count = Math.max(1, Number(e.target.value));
-              setSites(Array(count).fill(1));
-              if (count > 10) {
-                setInputs([inputs[0] || 10]);
-              } else {
-                setInputs(Array(count).fill(10));
-              }
+              setInput(Number(e.target.value))
             }}
             className="h-[40px] w-full rounded-lg border-[#E5E5E5] px-8 text-center [appearance:textfield] sm:w-[180px] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
             min={1}
@@ -280,104 +229,13 @@ const ConfigurationSection = ({
           <Slider
             className="w-full"
             min={1}
-            max={100}
-            value={[sites.length]}
+            max={1000}
+            value={[input]}
             onValueChange={(value) => {
-              setSites(Array(value[0]).fill(1));
-              if (value[0] > 10) {
-                setInputs([inputs[0] || 10]);
-              } else {
-                setInputs(Array(value[0]).fill(10));
-              }
+              console.log(value)
+              setInput(value[0])
             }}
           />
-        </div>
-      </div>
-
-      <div className="mt-[32px] flex flex-col gap-6 px-4 pb-4 sm:px-8 sm:pb-8">
-        <label className="text-base text-[#171717]">
-          Number of data inputs
-        </label>
-        <div className="flex w-full flex-col gap-6">
-          {isMultiSite ? (
-            sites.map((_, index) => (
-              <div
-                key={index}
-                className="flex w-full flex-col gap-4 sm:flex-row sm:items-center sm:gap-0"
-              >
-                <span className="text-[#171717] sm:mr-auto">
-                  Site {index + 1}
-                </span>
-                <div className="flex w-full items-center sm:w-auto">
-                  <Input
-                    type="number"
-                    value={inputs[index]}
-                    onChange={(e) =>
-                      handleInputChange(
-                        index,
-                        Math.max(1, Number(e.target.value)),
-                      )
-                    }
-                    className="h-[40px] w-full rounded-lg border-[#E5E5E5] px-8 text-center [appearance:textfield] sm:w-[180px] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
-                    min={1}
-                  />
-                  {sites.length > 1 && (
-                    <button
-                      onClick={() => handleRemoveSite(index)}
-                      className="ml-4 text-[#6D6D6D] transition-colors hover:text-[#222]"
-                    >
-                      <svg
-                        width="20"
-                        height="20"
-                        viewBox="0 0 20 20"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M15 5L5 15M5 5L15 15"
-                          stroke="currentColor"
-                          strokeWidth="1.5"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </button>
-                  )}
-                </div>
-              </div>
-            ))
-          ) : (
-            <div className="flex w-full flex-col gap-4 sm:flex-row sm:items-center sm:gap-0">
-              <span className="text-[#171717] sm:mr-auto">
-                Total number of devices
-              </span>
-              <Input
-                type="number"
-                value={inputs[0]}
-                onChange={(e) =>
-                  setInputs([Math.max(1, Number(e.target.value))])
-                }
-                className="h-[40px] w-full rounded-lg border-[#E5E5E5] px-3 text-right sm:w-[180px]"
-                min={1}
-              />
-            </div>
-          )}
-          {isMultiSite && sites.length < 10 && (
-            <button
-              onClick={handleAddSite}
-              className="flex h-[40px] items-center justify-center gap-[8px] self-start rounded-[4px] border-[1.5px] border-[#EBEBEB] px-[16px] pl-[12px] text-[#0073BA] transition-colors hover:bg-[#F5F5F5]"
-            >
-              <span className="inline-flex translate-y-[-2px] text-2xl font-light leading-none text-[#0073BA]">
-                +
-              </span>
-              <span
-                className="font-jakarta text-[14px] font-semibold leading-[150%] text-[#0073BA]"
-                style={{ fontFeatureSettings: "'liga' off, 'calt' off" }}
-              >
-                Add site
-              </span>
-            </button>
-          )}
         </div>
       </div>
     </div>
