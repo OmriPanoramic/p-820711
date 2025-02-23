@@ -29,26 +29,26 @@ export const CountdownTimer = ({ targetDate }: CountdownTimerProps) => {
 
     return () => clearInterval(timer);
   }, [targetDate]);
-
+  
   return (
     <div className="flex items-center gap-[2px] self-stretch">
       <div className="flex h-[24px] items-center justify-center gap-[2px] rounded-[3px] bg-[rgba(37,31,31,0.05)] px-[5px]">
-        <NumberFormat value={timeLeft.days} />
+        <NumberFormat value={timeLeft.days} trend={-1} format={{  minimumIntegerDigits: 2 }} digits={{ 1: { max: 5 } }} />
         <span className="text-[#6D6D6D]">d</span>
       </div>
       <span className="text-[#6D6D6D]">:</span>
       <div className="flex h-[24px] items-center justify-center gap-[2px] rounded-[3px] bg-[rgba(37,31,31,0.05)] px-[5px]">
-        <NumberFormat value={timeLeft.hours} />
+        <NumberFormat value={timeLeft.hours} trend={-1} format={{  minimumIntegerDigits: 2 }} digits={{ 1: { max: 5 } }} />
         <span className="text-[#6D6D6D]">h</span>
       </div>
       <span className="text-[#6D6D6D]">:</span>
       <div className="flex h-[24px] items-center justify-center gap-[2px] rounded-[3px] bg-[rgba(37,31,31,0.05)] px-[5px]">
-        <NumberFormat value={timeLeft.minutes} />
+        <NumberFormat value={timeLeft.minutes} trend={-1} format={{  minimumIntegerDigits: 2 }} digits={{ 1: { max: 5 } }}/>
         <span className="text-[#6D6D6D]">m</span>
       </div>
       <span className="text-[#6D6D6D]">:</span>
       <div className="flex h-[24px] items-center justify-center gap-[2px] rounded-[3px] bg-[rgba(37,31,31,0.05)] px-[5px]">
-        <NumberFormat value={timeLeft.seconds} />
+        <NumberFormat value={timeLeft.seconds} trend={-1} format={{  minimumIntegerDigits: 2 }} digits={{ 1: { max: 5 } }}  />
         <span className="text-[#6D6D6D]">s</span>
       </div>
     </div>

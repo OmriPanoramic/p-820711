@@ -53,7 +53,7 @@ export const PricingCalculator = () => {
   );
 
   return (
-    <div className="flex w-full max-w-[1440px] flex-col items-center px-4 pb-10 sm:px-6 sm:pb-20 lg:px-20">
+    <div className="flex w-full max-w-[1440px] flex-col items-center pb-10 sm:px-6 sm:pb-20 lg:px-20">
       <div className="flex w-full flex-col gap-8 lg:flex-row lg:gap-20">
         <PricingFeatures />
         <PricingConfigurator
@@ -406,21 +406,23 @@ const PricingSummary = ({
   return (
     <div className="w-full">
       <div className="flex w-full flex-col bg-[#FFF7ED] px-8 py-4">
-        <div className="flex items-center gap-3">
-          <img
-            src="https://cdn.builder.io/api/v1/image/assets/4b8bee12bead4b66b573187d8e419c5d/eefecd56a897a32835976d67c57d09015a18ddd1b5685d7a336048586db07823"
-            alt=""
-            className="h-6 w-6"
-          />
-          <div className="flex flex-col">
-            <span className="text-lg font-semibold text-[#FF6B00]">
-              Save 60% today
-            </span>
-            <span className="text-sm text-[#222222]">
-              Decide in the next {daysRemaining} days and save!
-            </span>
+        <div className="flex items-center gap-3 flex-col lg:flex-row">
+          <div className="flex items-center gap-3">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/4b8bee12bead4b66b573187d8e419c5d/eefecd56a897a32835976d67c57d09015a18ddd1b5685d7a336048586db07823"
+              alt=""
+              className="h-6 w-6"
+            />
+            <div className="flex flex-col">
+              <span className="text-lg font-semibold text-primary">
+                Save 60% today
+              </span>
+              <span className="text-sm text-[#222222]">
+                Decide in the next {daysRemaining} days and save!
+              </span>
+            </div>
           </div>
-          <div className="ml-auto">
+          <div className="flex flex-1 items-center justify-center lg:justify-end">
             <CountdownTimer targetDate={endDate} />
           </div>
         </div>
@@ -435,12 +437,13 @@ const PricingSummary = ({
                 value={totalMonthlyPrice}
                 suffix="/month"
                 className="line-through"
+                trend={-1}
               />
               <div className="absolute inset-0 top-1/2 h-[1px] w-full -translate-y-1/2 bg-[#6D6D6D]" />
             </div>
             <div className="relative flex items-center gap-1">
               <span className="text-xl text-[#6D6D6D]">
-                <NumberFlow value={totalAnnualPrice} />
+                <NumberFlow value={totalAnnualPrice} trend={-1} />
               </span>
               <span className="text-sm text-[#6D6D6D]">/year</span>
               <div className="absolute inset-0 top-1/2 h-[1px] w-full -translate-y-1/2 bg-[#6D6D6D]" />
@@ -452,12 +455,12 @@ const PricingSummary = ({
           <div className="text-base text-[#171717]">Your price</div>
           <div className="mt-1 flex items-baseline justify-between">
             <div className="text-base text-[#6D6D6D]">
-              <NumberFlow value={discountedMonthlyPrice} />
+              <NumberFlow value={discountedMonthlyPrice} trend={-1} />
               /month
             </div>
             <div className="flex items-baseline gap-1">
               <span className="text-[32px] font-medium text-[#171717]">
-                <NumberFlow value={discountedAnnualPrice} />
+                <NumberFlow value={discountedAnnualPrice} trend={-1} />
               </span>
               <span className="text-sm font-normal text-[#6D6D6D]">/year</span>
             </div>
