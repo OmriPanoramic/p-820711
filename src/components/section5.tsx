@@ -9,7 +9,7 @@ export function Section5() {
       <h2 className="mb-16 text-center text-h2">
         The <span className="text-primary">Optimize</span> experience
       </h2>
-      <div className="flex flex-col gap-20">
+      <div className="flex flex-col gap-8 lg:gap-20">
         <div className="flex flex-col md:flex-row gap-10">
           <div className="flex flex-1 flex-col gap-2 py-10">
             <span className="text-sm text-primary">Dashboard Pro</span>
