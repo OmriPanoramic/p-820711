@@ -6,11 +6,13 @@ import mainMobile from "@/assets/main-mobile-app.png";
 
 export function Section1({ scrollRef }: { scrollRef: React.RefObject<HTMLDivElement> }) {
   const { scrollYProgress } = useScroll({
-    offset: ["start start", "end end"],
     container: scrollRef,
+    target: scrollRef,
+    offset: ["start start", "end end"],
+    layoutEffect: true
   });
 
-  //console.log(scrollYProgress);
+  console.log(scrollYProgress);
   
   const mobilePosY = useTransform(scrollYProgress, [0, .1], [0, 100]);
   const mobileOpacity = useTransform(scrollYProgress, [0.1, 0.2], [1, 0]);
@@ -19,7 +21,7 @@ export function Section1({ scrollRef }: { scrollRef: React.RefObject<HTMLDivElem
   const dashboardOpacity = useTransform(scrollYProgress, [0, 0.1], [1, 0]);
 
   return (
-    <Card className="w-full border-none bg-background shadow-none">
+    <Card className="w-full border-none  shadow-none bg-transparent">
       <CardContent className="p-0 flex flex-col items-center justify-center">
         <motion.div
           className="max-w-full sm:max-w-3xl flex flex-col items-center justify-center mt-16"
@@ -77,6 +79,8 @@ export function Section1({ scrollRef }: { scrollRef: React.RefObject<HTMLDivElem
               src={mainDashboard} 
               alt="Main Dashboard" 
               className="w-full"
+              initial={{ opacity: 1}}
+              whileInView={{ opacity: 1}}
               style={{
                 y: dashboardPosY,
                 opacity: dashboardOpacity
