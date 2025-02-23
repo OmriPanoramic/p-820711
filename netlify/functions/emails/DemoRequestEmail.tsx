@@ -22,8 +22,6 @@ interface DemoRequestProps {
   partner: string;
 }
 
-const baseUrl = 'https://optimize.powerradar.energy';
-
 const DemoRequestEmail: React.FC<DemoRequestProps> = ({
   fullName,
   phone,
