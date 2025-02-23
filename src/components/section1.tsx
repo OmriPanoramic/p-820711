@@ -14,7 +14,7 @@ export function Section1({ scrollRef }: { scrollRef: React.RefObject<HTMLDivElem
 
   console.log(scrollYProgress);
   
-  const mobilePosY = useTransform(scrollYProgress, [0, .1], [0, 100]);
+  const mobilePosY = useTransform(scrollYProgress, [0, .1], [60, 100]);
   const mobileOpacity = useTransform(scrollYProgress, [0.1, 0.2], [1, 0]);
   
   const dashboardPosY = useTransform(scrollYProgress, [0, 0.1], [0, -100]);

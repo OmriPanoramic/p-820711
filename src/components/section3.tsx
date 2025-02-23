@@ -5,6 +5,10 @@ import {
   MonitorCheck,
   UserRoundCog,
 } from "lucide-react";
+import nodeGroupBg from "@/assets/node-group-bg.png";
+import nodeGroup1 from "@/assets/node-group1.png";
+import nodeGroup2 from "@/assets/node-group2.png";
+import { motion } from "motion/react";
 
 const FeatureCard = ({
   icon,
@@ -41,6 +45,37 @@ export const Section3 = () => {
               effortless. Your experience with Optimize will be just as smooth
               and rewarding
             </p>
+          </div>
+          <div className="relative flex flex-1 shrink-0 items-center justify-center self-stretch">
+            <div className="relative h-full w-[470px]">
+              <motion.img
+                src={nodeGroupBg}
+                alt="bg"
+                className="absolute left-0 top-0 w-full max-w-[470px] object-cover"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false }}
+                transition={{ duration: 0.5 }}
+              />
+              <motion.img
+                src={nodeGroup2}
+                alt="node2"
+                className="absolute left-0 top-[90px] w-full max-w-[340px] object-cover"
+                initial={{ opacity: 0, y: 100 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false }}
+                transition={{ duration: 0.5, ease: "easeInOut" }}
+              />
+              <motion.img
+                src={nodeGroup1}
+                alt="node1"
+                className="absolute left-[120px] top-[158px] w-full max-w-[340px] object-cover"
+                initial={{ opacity: 0, y: -100 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false }}
+                transition={{ duration: 0.5, ease: "easeInOut" }}
+              />
+            </div>
           </div>
         </div>
         <div className="flex flex-1 shrink-0 items-center self-stretch">
