@@ -2,10 +2,138 @@ import OptimizeIcon from "@/assets/optimize-icon.png";
 import prize from "@/assets/prize.svg";
 import { CountdownTimer } from "./pricing/CountdownTimer";
 import { Button } from "./ui/button";
+import check from "@/assets/check.svg";
+import legacyFill from "@/assets/legacy-fill.svg";
+
+const optimizeFeatures = [
+  {
+    id: 1,
+    feature: "Real-time data readings",
+  },
+  {
+    id: 2,
+    feature: "2-year historical data",
+  },
+  {
+    id: 3,
+    feature: "Unlimited users",
+  },
+  {
+    id: 4,
+    feature: "Energy flows: Map energy sources and consumers",
+  },
+  {
+    id: 5,
+    feature: "Manual data export to CSV",
+  },
+  {
+    id: 6,
+    feature: "Auto data exports (HTTPS/FTP)",
+  },
+  {
+    id: 7,
+    feature: "Customizable reports for usage, performance and decarbonization",
+  },
+  {
+    id: 8,
+    feature: "Mobile application for iOS and Android",
+  },
+  {
+    id: 9,
+    feature: "Heatmap: Instant waste identification",
+  },
+  {
+    id: 10,
+    feature: "Device benchmarking",
+  },
+];
+
+const newOptimizeFeatures = [
+  {
+    id: 1,
+    feature: "Enhanced, clear user interface with a new, intuitive navigation",
+    isNew: true,
+    isBeta: false,
+    showSoon: false,
+  },
+  {
+    id: 2,
+    feature: "Unlimited customizable dashboards",
+    isNew: true,
+    isBeta: false,
+    showSoon: false,
+  },
+  {
+    id: 3,
+    feature: "Event lifecycle management and collaboration",
+    isNew: true,
+    isBeta: false,
+    showSoon: false,
+  },
+  {
+    id: 4,
+    feature: "Customizable categories and device types",
+    isNew: true,
+    isBeta: false,
+    showSoon: false,
+  },
+  {
+    id: 5,
+    feature: "Schedules: Manage multiple schedules and work shifts",
+    isNew: true,
+    isBeta: false,
+    showSoon: false,
+  },
+  {
+    id: 6,
+    feature: "Groups: Create custom groups and apply them to dashboard widgets",
+    isNew: true,
+    isBeta: false,
+    showSoon: false,
+  },
+  {
+    id: 7,
+    feature: "Real-time custom alerts",
+    isNew: true,
+    isBeta: false,
+    showSoon: false,
+  },
+  {
+    id: 8,
+    feature: "The new Timeview",
+    description:
+      "Clean and clear interface, multiple tabs with different views, tailored presets library, present and compare any meter, multi-axis support",
+    isNew: true,
+    isBeta: true,
+    showSoon: false,
+  },
+  {
+    id: 9,
+    feature: "Auto data exports",
+    isNew: true,
+    isBeta: false,
+    showSoon: false,
+  },
+  {
+    id: 10,
+    feature: "Auto reporting",
+    isNew: true,
+    isBeta: false,
+    showSoon: false,
+  },
+  {
+    id: 11,
+    feature:
+      "Unlimited data integrations for sensors & meters (4-20mA, 0-5V, more)",
+    isNew: false,
+    isBeta: false,
+    showSoon: true,
+  },
+];
 
 const OptimizePricingTable = () => {
   return (
-    <div className="relative flex h-full flex-col items-start gap-8 overflow-hidden rounded-2xl border border-[#FFEDD4] bg-white shadow-[0px_-2px_8px_-1px_rgba(23,23,23,0.04),0px_14px_40px_-4px_rgba(23,23,23,0.06)]">
+    <div className="relative flex h-full w-full max-w-[765px] flex-col items-start gap-8 overflow-hidden rounded-2xl border border-[#FFEDD4] bg-white shadow-[0px_-2px_8px_-1px_rgba(23,23,23,0.04),0px_14px_40px_-4px_rgba(23,23,23,0.06)]">
       <div className="absolute h-full w-full overflow-hidden opacity-10">
         <div className="absolute left-0 top-[50px] h-[1767px] w-[1767px] shrink-0 rounded-[1767.744px] border border-[#FFD7A8] bg-gradient-to-b from-[rgba(255,144,55,0.56)] to-[rgba(255,247,237,0.20)]" />
         <div className="to-[rgba(255, 144, 55, 0.08)] absolute right-0 top-[-300px] h-[1767px] w-[1767px] shrink-0 rounded-[1767.744px] border border-none bg-gradient-to-b from-[rgba(255,144,55,0.56)]" />
@@ -30,13 +158,14 @@ const OptimizePricingTable = () => {
             </span>
           </div>
         </header>
-        <div className="flex flex-row items-baseline gap-4 self-stretch">
+        <div className="flex flex-col items-baseline gap-4 self-stretch lg:flex-row">
           <div className="text-h2 text-[#222]">$5</div>
           <div className="flex-1 text-lg text-[#222]">per device/month*</div>
           <div className="text-lg text-[#6D6D6D]">Min. $50/month</div>
-          <Button variant="ghost" className="text-sm">See full pricing</Button>
+          <Button variant="ghost" className="text-sm">
+            See full pricing
+          </Button>
         </div>
-
         <div className="flex w-full flex-wrap items-center gap-3 rounded-lg border border-[rgba(37,31,31,0.08)] bg-[rgba(37,31,31,0.04)] py-3 pl-3 pr-4 text-base">
           <img
             src={prize}
@@ -58,6 +187,84 @@ const OptimizePricingTable = () => {
               <CountdownTimer targetDate={new Date("2025-06-30")} />
             </div>
           </div>
+        </div>
+        <div className="my-1 h-[1px] w-full rounded-lg bg-[#2222221a]" />
+        <div className="flex flex-col gap-7">
+          {optimizeFeatures.map((feature) => (
+            <div
+              key={feature.id}
+              className="flex items-center gap-[16px] self-stretch"
+            >
+              <div className="flex min-h-[26px] min-w-[26px] items-center justify-center rounded-full border border-[#2222221a]">
+                <img
+                  src={check}
+                  alt="Check"
+                  className="h-[18px] w-[18px] text-[#222222]"
+                />
+              </div>
+              <p className="text-sm font-normal text-[#222222]">
+                {feature.feature}
+              </p>
+            </div>
+          ))}
+        </div>
+        <div className="my-1 h-[1px] w-full rounded-lg bg-[#2222221a]" />
+        <div className="flex flex-col gap-7">
+          <span className="text-[16px] font-semibold text-[#222222]">
+            New in Optimize
+          </span>
+          {newOptimizeFeatures.map((feature) => (
+            <div
+              key={feature.id}
+              className="flex items-center gap-[16px] self-stretch"
+            >
+              <div className="flex min-h-[26px] min-w-[26px] items-center justify-center rounded-full border border-[#2222221a]">
+                <img
+                  src={check}
+                  alt="Check"
+                  className="h-[18px] w-[18px] text-[#222222]"
+                />
+              </div>
+              <div className="flex flex-col gap-2">
+                <div className="flex items-center gap-2">
+                  <p className="text-sm font-normal text-[#222222]">
+                    {feature.feature}
+                  </p>
+                  {feature.isNew && (
+                    <span className="flex items-center gap-1 rounded bg-[#48b8f021] px-1.5 py-0.5 text-xs font-semibold text-[#1195D6]">
+                      <img
+                        src={legacyFill}
+                        alt="New"
+                        className="h-[12px] w-[12px]"
+                      />
+                      NEW
+                    </span>
+                  )}
+                  {feature.isBeta && (
+                    <span className="rounded bg-gray-100 px-1.5 py-0.5 text-xs font-semibold text-[#464646]">
+                      BETA
+                    </span>
+                  )}
+                  {feature.showSoon && (
+                    <span className="flex items-center gap-1 rounded bg-purple-100 px-1.5 py-0.5 text-xs font-semibold text-[#BE3DD1]">
+                      <img
+                        src={legacyFill}
+                        alt="New"
+                        className="h-[12px] w-[12px]"
+                        style={{ filter: "invert(37%) sepia(74%) saturate(1795%) hue-rotate(277deg) brightness(89%) contrast(92%)" }}
+                      />
+                      SOON
+                    </span>
+                  )}
+                </div>
+                {feature.description && (
+                  <p className="text-sm font-normal text-[#909090]">
+                    {feature.description}
+                  </p>
+                )}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
