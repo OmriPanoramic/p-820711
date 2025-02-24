@@ -1,7 +1,7 @@
-import { PricingCalculator } from "./pricing/PricingCalculator";
+
 import OptimizePricingTable from "./OptimizePricingTable";
 import VisualizePricingTable from "./VisualizePricingTable";
-
+import PricingCalculator from "./PricingCalculator";
 
 export function Section6() {
   return (

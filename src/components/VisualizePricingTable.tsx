@@ -71,9 +71,7 @@ function VisualizePricingTable() {
             </span>
           </div>
         </header>
-        <div className="text-h5 text-[#222] h-8">
-            Free
-        </div>
+        <div className="h-8 text-h5 text-[#222]">Free</div>
         <div className="my-1 h-[1px] w-full rounded-lg bg-[#2222221a]" />
         <div className="flex flex-col gap-7">
           {visualizeFeatures.map((feature) => (
@@ -96,8 +94,8 @@ function VisualizePricingTable() {
         </div>
         <div className="my-1 h-[1px] w-full rounded-lg bg-[#2222221a]" />
         <div className="flex flex-col gap-7">
-        <span className="text-[16px] font-semibold text-[#222222]">
-        Paid add-ons
+          <span className="text-[16px] font-semibold text-[#222222]">
+            Paid add-ons
           </span>
           {paidAddOns.map((feature) => (
             <div
