@@ -21,6 +21,7 @@ import * as z from "zod";
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Stars from "./Stars";
+import { FullStory } from "@fullstory/browser";
 
 // Define the form schema with Zod
 const demoFormSchema = z.object({
@@ -64,6 +65,17 @@ export function DemoModal({ isOpen, onClose }: DemoModalProps) {
   });
 
   const onSubmit = async (data: DemoFormValues) => {
+    FullStory("setIdentity", {
+      anonymous: true,
+      properties: {
+        email: data.email,
+        displayName: data.fullName,
+        company: data.companyName,
+        jobTitle: data.jobTitle,
+        phone: data.phone,
+      },
+    });
+
     setIsSubmitting(true);
     try {
       const response = await fetch("/.netlify/functions/send-email", {
@@ -105,7 +117,7 @@ export function DemoModal({ isOpen, onClose }: DemoModalProps) {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3 }}
               >
-               Demo request locked in!
+                Demo request locked in!
               </motion.h2>
               <motion.p
                 className="mb-6 text-muted-foreground"

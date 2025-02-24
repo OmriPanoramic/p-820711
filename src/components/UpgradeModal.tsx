@@ -23,6 +23,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 
 import Stars from "./Stars";
+import { FullStory } from "@fullstory/browser";
 const formSchema = z.object({
   fullName: z.string().min(2, {
     message: "Full name must be at least 2 characters.",
@@ -66,6 +67,16 @@ export function UpgradeModal({ isOpen, onClose }: UpgradeModalProps) {
   });
 
   async function onSubmit(values: UpgradeFormValues) {
+    FullStory("setIdentity", {
+      anonymous: true,
+      properties: {
+        email: values.email,
+        displayName: values.fullName,
+        company: values.accountName,
+        jobTitle: values.jobTitle,
+        phone: values.phone,
+      },
+    });
     setIsSubmitting(true);
     try {
       const response = await fetch("/.netlify/functions/send-email", {

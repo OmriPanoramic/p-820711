@@ -10,6 +10,7 @@ import {
 import { useState } from "react";
 import { CountdownTimer } from "./CountdownTimer";
 import NumberFlow from "@number-flow/react";
+import { FullStory } from "@fullstory/browser";
 
 const PRICING_CONFIG = {
   BASE_PRICE: 50,
@@ -206,6 +207,17 @@ const ConfigurationSection = ({
   input,
   setInput,
 }: ConfigurationSectionProps) => {
+
+  const updateDeviceCount = (count: number) => {
+    setInput(count)
+    FullStory('trackEvent', {
+      name: 'price_calculator_update',
+      properties: {
+        devices: count,
+      },
+    });
+  };
+
   return (
     <div className="flex w-full flex-col pb-6 grow">
       <h3 className="font-jakarta p-4 text-[16px] font-semibold leading-[150%] text-[#222] sm:p-8">
@@ -219,7 +231,7 @@ const ConfigurationSection = ({
             type="number"
             value={input}
             onChange={(e) => {
-              setInput(Number(e.target.value))
+              updateDeviceCount(Number(e.target.value))
             }}
             className="h-[40px] w-full rounded-lg border-[#E5E5E5] px-8 text-center [appearance:textfield] sm:w-[180px] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
             min={1}
@@ -232,7 +244,7 @@ const ConfigurationSection = ({
             max={10000}
             value={[input]}
             onValueChange={(value) => {
-              setInput(value[0])
+              updateDeviceCount(value[0])
             }}
           />
         </div>
