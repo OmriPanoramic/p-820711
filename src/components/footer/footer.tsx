@@ -24,7 +24,7 @@ export const Footer = () => {
             backgroundImage: `url(${footerImage})`,
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
-            backgroundColor: "black",
+            backgroundColor: "#222",
             backgroundBlendMode: "luminosity",
           }}
         />
