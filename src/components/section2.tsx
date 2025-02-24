@@ -1,49 +1,108 @@
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
+import { ChevronDown } from "lucide-react";
 import enhancedExperience from "../assets/Computer-Imac-Smiley-Face--Streamline-Cyber-Duotone.svg";
-import customizedInsights from "../assets/Alarm-Snooze--Streamline-Cyber-Duotone.svg";
-import sustainability from "../assets/Globe-1--Streamline-Cyber-Duotone.svg";
 import teamCollaboration from "../assets/Business-Chat-4--Streamline-Cyber-Duotone.svg";
 import performanceSecurity from "../assets/Shield-3--Streamline-Cyber-Duotone.svg";
+import cyber from "../assets/cyber.svg";
+import target from "../assets/target.svg";
+import smart from "../assets/smart.svg";
+import support from "../assets/support.svg";
+import business from "../assets/Business.svg";
 
-const FeatureItem = ({ icon, title }: { icon: string; title: string }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5 }}
-    className="flex items-center gap-6 border-b border-border/50 py-8 last:border-0"
-  >
-    <img src={icon} alt={title} className="h-12 w-12" />
-    <h3 className="text-xl text-muted-foreground">{title}</h3>
-  </motion.div>
-);
+import { useState } from "react";
+
+const FeatureItem = ({ 
+  icon, 
+  title, 
+  description 
+}: { 
+  icon: string; 
+  title: string;
+  description: string;
+}) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="flex flex-col border-b border-border/50 py-8 last:border-0"
+    >
+      <div 
+        className="flex items-center gap-6 cursor-pointer"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <img src={icon} alt={title} className="h-12 w-12" />
+        <h3 className="text-xl text-muted-foreground flex-1">{title}</h3>
+        <motion.div
+          animate={{ rotate: isOpen ? 180 : 0 }}
+          transition={{ duration: 0.2 }}
+        >
+          <ChevronDown className="w-6 h-6 text-muted-foreground" />
+        </motion.div>
+      </div>
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="overflow-hidden"
+          >
+            <p className="mt-4 pl-[4.5rem] text-muted-foreground">
+              {description}
+            </p>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.div>
+  );
+};
 
 export const Section2 = () => {
   const features = [
     {
       icon: enhancedExperience,
-      title: "Enhanced & easy user experience",
+      title: "Enhanced user experience",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     },
     {
-      icon: customizedInsights,
-      title: "Customized insights, alerts & notifications",
-    },
-    {
-      icon: sustainability,
-      title: "Sustainability widgets & reports",
-    },
-    {
-      icon: teamCollaboration,
-      title: "Enhanced team collaboration",
+      icon: cyber,
+      title: "End-to-end personalization",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     },
     {
       icon: performanceSecurity,
-      title: "Improved performance & security",
+      title: "Improved performance and security",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    },
+    {
+      icon: target,
+      title: "Continuous innovation and visionary roadmap",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    },
+    {
+      icon: smart,
+      title: "Smarter energy intelligence",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    },
+    {
+      icon: support,
+      title: "Superior support",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    },
+    {
+      icon: business,
+      title: "Empowered team performance",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     },
   ];
 
   return (
-    <div className="w-full">
-      <div className="grid items-center gap-12 md:grid-cols-2">
+    <div className="w-full mb-10 lg:mb-32">
+      <div className="flex flex-col items-start gap-12">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -55,12 +114,13 @@ export const Section2 = () => {
             <span className="text-primary">Panoramic Optimize</span>
           </h2>
         </motion.div>
-        <div className="space-y-2">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 w-full">
           {features.map((feature, index) => (
             <FeatureItem
               key={index}
               icon={feature.icon}
               title={feature.title}
+              description={feature.description}
             />
           ))}
         </div>
