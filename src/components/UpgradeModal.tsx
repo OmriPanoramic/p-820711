@@ -81,10 +81,8 @@ export function UpgradeModal({ isOpen, onClose }: UpgradeModalProps) {
       }
 
       setShowSuccess(true);
-      // Don't close the modal immediately, let user see success state
     } catch (error) {
       console.error(error);
-      // You might want to show an error message to the user here
     } finally {
       setIsSubmitting(false);
     }

@@ -2,6 +2,7 @@ import { PricingCard } from "./pricing/PricingCard";
 import { PricingCalculator } from "./pricing/PricingCalculator";
 import Opt from "@/img/Opt.png";
 import Vis from "@/img/Vis.png";
+import OptimizePricingTable from "./OptimizePricingTable";
 
 const optimizeFeatures = [
   {
@@ -140,7 +141,7 @@ export function Section6() {
       </div>
       <div className="relative flex flex-col lg:flex-row ">
         <div className="grow  z-[1] mr-0 lg:grow lg:-mr-5 lg:max-w-[760px]">
-          <PricingCard
+          {/* <PricingCard
             title="Optimize"
             description="Optimize your energy consumption and reduce your costs with our advanced optimization tools"
             icon={Opt}
@@ -149,7 +150,8 @@ export function Section6() {
             minPrice="Min. $50/mo"
             variant="primary"
             features={optimizeFeatures}
-          />
+          /> */}
+          <OptimizePricingTable />
         </div>
         <div className="sticky top-4 ml-0 flex-1 self-start py-6 lg:ml-3">
           <PricingCard

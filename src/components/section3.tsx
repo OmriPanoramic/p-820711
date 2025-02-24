@@ -40,7 +40,7 @@ export const Section3 = () => {
               maximum value
             </div>
             <p className="max-w-2xl text-xl">
-              Your migration to Panoramic Optimize was automatic, secure, and
+              Your migration to Panoramic Optimize will be automatic, secure, and
               effortless. Your experience with Optimize will be just as smooth
               and rewarding
             </p>
@@ -65,7 +65,7 @@ export const Section3 = () => {
             <FeatureCard
               icon={<UserRoundCog />}
               title="All set, all yours"
-              description="Processes, benchmarks, and alerts from PowerRadar are already active"
+              description="Processes, benchmarks, and alerts from Panoramic are already active"
             />
             <FeatureCard
               icon={<Lightbulb />}

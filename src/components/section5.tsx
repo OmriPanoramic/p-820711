@@ -39,7 +39,7 @@ export function Section5() {
           <div className="flex flex-1 flex-col gap-2 py-10">
             <span className="text-sm text-primary">Advanced alerting</span>
             <h3 className="text-h3">
-              Collaborate alerts and insights for better teamwork
+              Event & Incident Management for better teamwork
             </h3>
           </div>
           <div className="flex flex-1">
