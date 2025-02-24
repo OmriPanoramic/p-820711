@@ -67,7 +67,7 @@ export const Header = () => {
           </button>
 
           {/* Desktop Navigation */}
-          <nav className="hidden items-center gap-6 lg:flex">
+          <nav className="hidden items-center gap-2 lg:flex lg:gap-6">
             <button
               onClick={() => scrollToSection("section2")}
               className="text-sm text-muted-foreground transition-colors hover:text-primary"
@@ -107,7 +107,7 @@ export const Header = () => {
           </nav>
 
           {/* Desktop Action Buttons */}
-          <div className="hidden items-center gap-4 lg:flex">
+          <div className="hidden items-center gap-2 lg:flex">
             <Button variant="ghost" asChild>
               <a onClick={handleDemoClick} href="#">
                 Book a Demo
