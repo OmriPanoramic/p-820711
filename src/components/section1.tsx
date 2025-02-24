@@ -5,6 +5,8 @@ import mainDashboard from "@/assets/main-image-dashboard.png";
 import mainMobile from "@/assets/main-mobile-app.png";
 import { UpgradeModal } from "./UpgradeModal";
 import { useState } from "react";
+import trendUp from "@/assets/trend-up.svg";
+
 export function Section1({ scrollRef }: { scrollRef: React.RefObject<HTMLDivElement> }) {
   const [isUpgradeModalOpen, setIsUpgradeModalOpen] = useState(false);
   const { scrollYProgress } = useScroll({
@@ -20,7 +22,7 @@ export function Section1({ scrollRef }: { scrollRef: React.RefObject<HTMLDivElem
   const mobileOpacity = useTransform(scrollYProgress, [0.1, 0.2], [1, 0]);
   
   const dashboardPosY = useTransform(scrollYProgress, [0, 0.1], [0, -100]);
-  const dashboardOpacity = useTransform(scrollYProgress, [0, 0.1], [1, 0]);
+  const dashboardOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
 
   return (<>
     <Card className="w-full border-none  shadow-none bg-transparent">
@@ -64,8 +66,8 @@ export function Section1({ scrollRef }: { scrollRef: React.RefObject<HTMLDivElem
             <Button size="lg" className="w-full sm:w-auto" onClick={() => setIsUpgradeModalOpen(true)}>
               Upgrade to Optimize
             </Button>
-            <Button variant="ghost" className="w-full sm:w-auto">
-              Why We Transformed →
+            <Button variant="ghost" className="w-full sm:w-auto border border-[#EBEBEB]">
+              Why We Transformed <img src={trendUp} alt="Trend Up" className="w-4 h-4" />
             </Button>
           </motion.div>
         </motion.div>
