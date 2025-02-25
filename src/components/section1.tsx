@@ -51,9 +51,7 @@ export function Section1({ scrollRef }: { scrollRef: React.RefObject<HTMLDivElem
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            Smarter tools, deeper insights, greater savings — discover how
-            upgrading to Panoramic Optimize can transform your future of energy
-            management.
+           Smarter tools, deeper insights, better decision making — discover how upgrading to Panoramic Optimize can transform your future of energy management
           </motion.p>
 
           <motion.div
