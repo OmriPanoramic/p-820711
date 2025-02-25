@@ -21,8 +21,95 @@ export default function Slider({
         )}
       >
         <RadixSlider.Track className="relative h-[10px] grow rounded-full bg-[#EBEBEB] dark:bg-zinc-800">
+          <div className="absolute h-12 w-full top-4">
+            <div className="absolute w-full">
+              <div className="relative w-full">
+                <div
+                  style={{ left: "0%" }}
+                  className="absolute flex -translate-x-1/2 flex-col items-center"
+                >
+                  <span className="text-[11px] text-[#909090]">1</span>
+                  <span
+                    className={clsx(
+                      "text-[11px]",
+                      currentValue >= 1 ? "text-primary" : "text-[#222222]",
+                    )}
+                  >
+                    $5
+                  </span>
+                </div>
+                <div
+                  style={{ left: "10%" }}
+                  className="absolute flex -translate-x-1/2 flex-col items-center"
+                >
+                  <span className="absolute -top-[12px] h-1 w-1 rounded-full bg-[#909090]" />
+                  <span className="text-[11px] text-[#909090]">50</span>
+                  <span
+                    className={clsx(
+                      "text-[11px]",
+                      currentValue >= 50 ? "text-primary" : "text-[#222222]",
+                    )}
+                  >
+                    $4
+                  </span>
+                </div>
+                <div
+                  style={{ left: "20%" }}
+                  className="absolute flex -translate-x-1/2 flex-col items-center"
+                >
+                  <span className="absolute -top-[12px] h-1 w-1 rounded-full bg-[#909090]" />
+                  <span className="text-[11px] text-[#909090]">100</span>
+                  <span
+                    className={clsx(
+                      "text-[11px]",
+                      currentValue >= 100 ? "text-primary" : "text-[#222222]",
+                    )}
+                  >
+                    $3
+                  </span>
+                </div>
+                <div
+                  style={{ left: "40%" }}
+                  className="absolute flex -translate-x-1/2 flex-col items-center"
+                >
+                  <span className="absolute -top-[12px] h-1 w-1 rounded-full bg-[#909090]" />
+                  <span className="text-[11px] text-[#909090]">200</span>
+                  <span
+                    className={clsx(
+                      "text-[11px]",
+                      currentValue >= 200 ? "text-primary" : "text-[#222222]",
+                    )}
+                  >
+                    $2
+                  </span>
+                </div>
+                <div
+                  style={{ left: "60%" }}
+                  className="absolute flex -translate-x-1/2 flex-col items-center"
+                >
+                  <span className="absolute -top-[12px] h-1 w-1 rounded-full bg-[#909090]" />
+                  <span className="text-[11px] text-[#909090]">300</span>
+                  <span
+                    className={clsx(
+                      "text-[11px]",
+                      currentValue >= 300 ? "text-primary" : "text-[#222222]",
+                    )}
+                  >
+                    $1
+                  </span>
+                </div>
+                <div
+                  style={{ left: "100%" }}
+                  className="absolute flex -translate-x-1/2 flex-col items-center"
+                >
+                  <span className="text-[11px] text-[#909090]">500</span>
+                </div>
+              </div>
+            </div>
+          </div>
           <RadixSlider.Range className="absolute h-full rounded-full bg-primary dark:bg-white" />
         </RadixSlider.Track>
+
         <RadixSlider.Thumb
           className="relative block h-5 w-5 rounded-[1rem] border border-[#EBEBEB] bg-white shadow-md"
           aria-label="Volume"
@@ -47,50 +134,6 @@ export default function Slider({
           )}
         </RadixSlider.Thumb>
       </RadixSlider.Root>
-      <div className="relative h-12 w-full">
-        <div className="absolute w-full">
-          <div className="relative w-full">
-            <div style={{ left: '0%' }} className="absolute -translate-x-1/2 flex flex-col items-center">
-              <span className="text-[11px] text-[#909090]">1</span>
-              <span className={clsx(
-                "text-[11px]",
-                currentValue >= 1 ? "text-primary" : "text-[#222222]"
-              )}>$5</span>
-            </div>
-            <div style={{ left: '10%' }} className="absolute -translate-x-1/2 flex flex-col items-center">
-              <span className="text-[11px] text-[#909090]">50</span>
-              <span className={clsx(
-                "text-[11px]",
-                currentValue >= 50 ? "text-primary" : "text-[#222222]"
-              )}>$4</span>
-            </div>
-            <div style={{ left: '20%' }} className="absolute -translate-x-1/2 flex flex-col items-center">
-              <span className="text-[11px] text-[#909090]">100</span>
-              <span className={clsx(
-                "text-[11px]",
-                currentValue >= 100 ? "text-primary" : "text-[#222222]"
-              )}>$3</span>
-            </div>
-            <div style={{ left: '40%' }} className="absolute -translate-x-1/2 flex flex-col items-center">
-              <span className="text-[11px] text-[#909090]">200</span>
-              <span className={clsx(
-                "text-[11px]",
-                currentValue >= 200 ? "text-primary" : "text-[#222222]"
-              )}>$2</span>
-            </div>
-            <div style={{ left: '60%' }} className="absolute -translate-x-1/2 flex flex-col items-center">
-              <span className="text-[11px] text-[#909090]">300</span>
-              <span className={clsx(
-                "text-[11px]",
-                currentValue >= 300 ? "text-primary" : "text-[#222222]"
-              )}>$1</span>
-            </div>
-            <div style={{ left: '100%' }} className="absolute -translate-x-1/2 flex flex-col items-center">
-              <span className="text-[11px] text-[#909090]">500</span>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   );
 }
