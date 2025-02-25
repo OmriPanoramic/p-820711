@@ -63,7 +63,7 @@ const Calculator = () => {
         </div>
       </div>
       <div className="w-full shrink-0 pt-10">
-        <div className="flex w-full shrink-0 bg-[#FFF7ED] px-7 py-5">
+        <div className="flex w-full shrink-0 bg-[#FFF7ED] px-7 py-5 flex-col items-center md:flex-row md:items-start">
           <div className="flex flex-1 items-center gap-4">
             <div className="flex items-center">
               <img src={prize} alt="prize" className="h-10 w-10" />
@@ -83,7 +83,7 @@ const Calculator = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-1 shrink-0 flex-col gap-8 self-stretch px-8 py-9">
+      <div className="flex flex-1 shrink-0 flex-col gap-8 self-stretch px-5 py-9 md:px-8">
         <div className="flex flex-1 shrink-0 justify-between">
           <div className="flex flex-col gap-1">
             <div className="text-lg text-[#222]">Total annual price</div>
@@ -123,7 +123,7 @@ const Calculator = () => {
             <div className="text-lg text-[#909090]">/year</div>
           </div>
         </div>
-        <div className="flex flex-1 shrink-0 justify-between">
+        <div className="flex flex-1 shrink-0 justify-between items-center">
           <div className="flex flex-col gap-1">
             <div className="text-lg text-[#222]">Your price</div>
             <div className="text-sm text-[#6D6D6D]">
@@ -144,7 +144,7 @@ const Calculator = () => {
             </div>
           </div>
           <div className="flex flex-row items-baseline gap-1">
-            <div className="text-h3 text-[#222]">
+            <div className="text-[30px] font-semibold text-[#222] md:text-h3">
               <NumberFlow
                 value={yourPricePerYear}
                 format={{
