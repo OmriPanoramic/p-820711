@@ -6,7 +6,7 @@ import prize from "../assets/prize.svg";
 import NumberFlow from "@number-flow/react";
 
 const Calculator = () => {
-  const [deviceCount, setDeviceCount] = useState(1);
+  const [deviceCount, setDeviceCount] = useState(10);
 
   // if deviceCount is let the 50, price pre device id $5
   // if deviceCount is 50-100, price pre device id $4

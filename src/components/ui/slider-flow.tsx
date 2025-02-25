@@ -111,7 +111,7 @@ export default function Slider({
         </RadixSlider.Track>
 
         <RadixSlider.Thumb
-          className="relative block h-5 w-5 rounded-[1rem] border border-[#EBEBEB] bg-white shadow-md"
+          className="relative block h-5 w-5 rounded-[1rem] border border-[#EBEBEB] bg-white shadow-md ring-primary focus:ring-1 focus:ring-primary focus-within::outline-none"
           aria-label="Volume"
         >
           {value?.[0] != null && (
