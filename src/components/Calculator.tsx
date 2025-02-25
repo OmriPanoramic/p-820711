@@ -98,6 +98,9 @@ const Calculator = () => {
                   trailingZeroDisplay: "stripIfInteger",
                 }}
                 suffix=" /month"
+                style={{
+                  fontVariantNumeric: "tabular-nums",
+                }}
               />
             </div>
           </div>
@@ -111,6 +114,9 @@ const Calculator = () => {
                   maximumFractionDigits: 2,
                   currencySign: "standard",
                   trailingZeroDisplay: "stripIfInteger",
+                }}
+                style={{
+                  fontVariantNumeric: "tabular-nums",
                 }}
               />
             </div>
@@ -131,6 +137,9 @@ const Calculator = () => {
                   trailingZeroDisplay: "stripIfInteger",
                 }}
                 suffix=" /month"
+                style={{
+                  fontVariantNumeric: "tabular-nums",
+                }}
               />
             </div>
           </div>
@@ -144,6 +153,9 @@ const Calculator = () => {
                   maximumFractionDigits: 2,
                   currencySign: "standard",
                   trailingZeroDisplay: "stripIfInteger",
+                }}
+                style={{
+                  fontVariantNumeric: "tabular-nums",
                 }}
               />
             </div>
