@@ -93,9 +93,9 @@ const Index = () => {
         <Section color="container" id="section3">
           <Section3 />
         </Section>
-        <Section color="container" id="section4">
+        {/* <Section color="container" id="section4">
           <Section4 />
-        </Section>
+        </Section> */}
         <Section color="container" id="section5">
           <Section5 />
         </Section>

@@ -80,12 +80,12 @@ export const Header = () => {
             >
               Effortless Migration
             </button>
-            <button
+            {/* <button
               onClick={() => scrollToSection("section4")}
               className="text-sm text-muted-foreground transition-colors hover:text-primary"
             >
               Testimonials
-            </button>
+            </button> */}
             <button
               onClick={() => scrollToSection("section5")}
               className="text-sm text-muted-foreground transition-colors hover:text-primary"
@@ -137,12 +137,12 @@ export const Header = () => {
               >
                 Effortless Migration
               </button>
-              <button
+             {/*  <button
                 onClick={() => scrollToSection("section4")}
                 className="text-left text-sm text-muted-foreground transition-colors hover:text-primary"
               >
                 Testimonials
-              </button>
+              </button> */}
               <button
                 onClick={() => scrollToSection("section5")}
                 className="text-left text-sm text-muted-foreground transition-colors hover:text-primary"

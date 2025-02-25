@@ -35,7 +35,7 @@ export function Section1({ scrollRef }: { scrollRef: React.RefObject<HTMLDivElem
           transition={{ duration: 0.5 }}
         >
           <motion.h1
-            className="mb-4 text-h1 text-center"
+            className="mb-4 text-h3 text-center md:text-h1"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
