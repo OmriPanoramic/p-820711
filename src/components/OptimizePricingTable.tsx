@@ -142,7 +142,7 @@ const OptimizePricingTable = () => {
         <div className="absolute left-0 top-[50px] h-[1767px] w-[1767px] shrink-0 rounded-[1767.744px] border border-[#FFD7A8] bg-gradient-to-b from-[rgba(255,144,55,0.56)] to-[rgba(255,247,237,0.20)]" />
         <div className="to-[rgba(255, 144, 55, 0.08)] absolute right-0 top-[-300px] h-[1767px] w-[1767px] shrink-0 rounded-[1767.744px] border border-none bg-gradient-to-b from-[rgba(255,144,55,0.56)]" />
       </div>
-      <div className="relative z-10 flex w-full flex-1 flex-col gap-2 p-10 pb-12">
+      <div className="relative z-10 flex w-full flex-1 flex-col gap-2 px-4 pb-12 md:px-10">
         <header className="mt-4 flex w-full items-center gap-4">
           <div className="flex h-[56px] w-[56px] flex-shrink-0 items-center justify-center">
             <img
@@ -167,15 +167,15 @@ const OptimizePricingTable = () => {
           <div className="flex-1 text-lg text-[#222]">per device/month*</div>
           <div className="text-lg text-[#6D6D6D]">Min. $50/month</div>
         </div>
-        <div className="mb-5 flex items-center justify-between flex-col md:flex-row">
-          <div className="flex items-center text-xs md:text-sm text-[#6D6D6D]">
+        <div className="mb-5 flex flex-col items-center justify-between md:flex-row">
+          <div className="flex items-center text-xs text-[#6D6D6D] md:text-sm">
             Min. $50/month <span className="mx-2">|</span> Find device count{" "}
             <HoverCard>
               <HoverCardTrigger>
                 <InfoIcon className="ml-2 h-4 w-4" />
               </HoverCardTrigger>
               <HoverCardContent className="w-[340px]">
-                <div className="flex items-center flex-col gap-4">
+                <div className="flex flex-col items-center gap-4">
                   <div className="text-sm font-bold">
                     You can find the device count in the:
                     <ul className="list-disc text-sm font-normal">
@@ -185,7 +185,7 @@ const OptimizePricingTable = () => {
                     </ul>
                   </div>
 
-                  <div className="w-[300px] rounded-md overflow-hidden">
+                  <div className="w-[300px] overflow-hidden rounded-md">
                     <img src={deviceCount} alt="device count" />
                   </div>
                 </div>
@@ -278,7 +278,7 @@ const OptimizePricingTable = () => {
                     {feature.feature}
                   </p>
                   {feature.isNew && (
-                    <span className="flex items-center gap-1 rounded bg-[#48b8f021] px-1.5 py-0.5 text-xs font-semibold text-[#1195D6]">
+                    <span className="flex shrink-0 items-center gap-1 rounded bg-[#48b8f021] px-1.5 py-0.5 text-xs font-semibold text-[#1195D6]">
                       <img
                         src={legacyFill}
                         alt="New"
@@ -293,7 +293,7 @@ const OptimizePricingTable = () => {
                     </span>
                   )}
                   {feature.showSoon && (
-                    <span className="flex items-center gap-1 rounded bg-purple-100 px-1.5 py-0.5 text-xs font-semibold text-[#BE3DD1]">
+                    <span className="flex shrink-0 items-center gap-1 rounded bg-purple-100 px-1.5 py-0.5 text-xs font-semibold text-[#BE3DD1]">
                       <img
                         src={legacyFill}
                         alt="New"
