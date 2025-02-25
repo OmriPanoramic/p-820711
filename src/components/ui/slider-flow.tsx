@@ -39,7 +39,7 @@ export default function Slider({
                   </span>
                 </div>
                 <div
-                  style={{ left: "10%" }}
+                  style={{ left: "11.5%" }}
                   className="absolute flex -translate-x-1/2 flex-col items-center"
                 >
                   <span className="absolute -top-[12px] h-1 w-1 rounded-full bg-[#909090]" />
@@ -54,7 +54,7 @@ export default function Slider({
                   </span>
                 </div>
                 <div
-                  style={{ left: "20%" }}
+                  style={{ left: "21%" }}
                   className="absolute flex -translate-x-1/2 flex-col items-center"
                 >
                   <span className="absolute -top-[12px] h-1 w-1 rounded-full bg-[#909090]" />
@@ -84,7 +84,7 @@ export default function Slider({
                   </span>
                 </div>
                 <div
-                  style={{ left: "60%" }}
+                  style={{ left: "59.5%" }}
                   className="absolute flex -translate-x-1/2 flex-col items-center"
                 >
                   <span className="absolute -top-[12px] h-1 w-1 rounded-full bg-[#909090]" />
