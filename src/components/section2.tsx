@@ -14,7 +14,8 @@ import { useState } from "react";
 const FeatureItem = ({ 
   icon, 
   title, 
-  description 
+  description,
+  ...props
 }: { 
   icon: string; 
   title: string;
@@ -28,6 +29,7 @@ const FeatureItem = ({
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       className="flex flex-col border-b border-border/50 py-8 last:border-0"
+      {...props}
     >
       <div 
         className="flex items-center gap-6 cursor-pointer"
@@ -121,6 +123,7 @@ export const Section2 = () => {
               icon={feature.icon}
               title={feature.title}
               description={feature.description}
+              data-fs-track={`feature-${feature.title.toLowerCase().replace(/\s+/g, '-')}`}
             />
           ))}
         </div>
