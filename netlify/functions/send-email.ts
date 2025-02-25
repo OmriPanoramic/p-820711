@@ -60,11 +60,10 @@ exports.handler = async function(event, context) {
     const template = await templateFn(formData);
 
     const data = await resend.emails.send({
-      from: 'onboarding@resend.dev',
-      to: 'guy.tzaban@centrica.com',
+      from: 'noreply@panoramicpower.com',
+      to: 'productmarketing@centrica.com',
       subject: template.subject,
       html: template.html,
-      //react: template.react,
       reply_to: formData.email
     });
 
