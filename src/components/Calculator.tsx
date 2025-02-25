@@ -75,7 +75,7 @@ const Calculator = () => {
         <div className="flex flex-1 shrink-0 justify-between">
           <div className="flex flex-col gap-1">
             <div className="text-lg text-[#222]">Total annual price</div>
-            <div className="text-sm text-[#6D6D6D]">${totalPricePerMonth}/month</div>
+            <div className="text-sm text-[#6D6D6D]">${parseFloat(totalPricePerMonth.toString()).toFixed(2)}/month</div>
           </div>
           <div className="flex flex-row items-baseline gap-1">
             <div className="text-h5 text-[#909090]">${totalPricePerYear}</div>
@@ -85,10 +85,10 @@ const Calculator = () => {
         <div className="flex flex-1 shrink-0 justify-between">
           <div className="flex flex-col gap-1">
             <div className="text-lg text-[#222]">Your price</div>
-            <div className="text-sm text-[#6D6D6D]">${yourPricePerMonth}/month</div>
+            <div className="text-sm text-[#6D6D6D]">${parseFloat(yourPricePerMonth.toString()).toFixed(2)}/month</div>
           </div>
           <div className="flex flex-row items-baseline gap-1">
-            <div className="text-h3 text-[#222]">${yourPricePerYear}</div>
+            <div className="text-h3 text-[#222]">${parseFloat(yourPricePerYear.toString()).toFixed(2)}</div>
             <div className="text-lg text-[#222]">/year</div>
           </div>
         </div>
