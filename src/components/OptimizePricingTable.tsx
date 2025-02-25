@@ -3,8 +3,14 @@ import prize from "@/assets/prize.svg";
 import { CountdownTimer } from "./pricing/CountdownTimer";
 import { Button } from "./ui/button";
 import check from "@/assets/check.svg";
+import deviceCount from "@/assets/deviceCount.png";
 import legacyFill from "@/assets/legacy-fill.svg";
 import { InfoIcon } from "lucide-react";
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card";
 
 const optimizeFeatures = [
   {
@@ -136,8 +142,8 @@ const OptimizePricingTable = () => {
         <div className="absolute left-0 top-[50px] h-[1767px] w-[1767px] shrink-0 rounded-[1767.744px] border border-[#FFD7A8] bg-gradient-to-b from-[rgba(255,144,55,0.56)] to-[rgba(255,247,237,0.20)]" />
         <div className="to-[rgba(255, 144, 55, 0.08)] absolute right-0 top-[-300px] h-[1767px] w-[1767px] shrink-0 rounded-[1767.744px] border border-none bg-gradient-to-b from-[rgba(255,144,55,0.56)]" />
       </div>
-      <div className="relative z-10 flex w-full flex-1 flex-col gap-7 p-10 pb-12">
-        <header className="flex w-full items-center gap-4">
+      <div className="relative z-10 flex w-full flex-1 flex-col gap-2 p-10 pb-12">
+        <header className="mt-4 flex w-full items-center gap-4">
           <div className="flex h-[56px] w-[56px] flex-shrink-0 items-center justify-center">
             <img
               src={OptimizeIcon}
@@ -156,28 +162,54 @@ const OptimizePricingTable = () => {
             </span>
           </div>
         </header>
-        <div className="flex flex-col items-baseline gap-4 self-stretch lg:flex-row">
+        <div className="mt-4 flex flex-col items-baseline gap-4 self-stretch lg:flex-row">
           <div className="text-h2 text-[#222]">$5</div>
           <div className="flex-1 text-lg text-[#222]">per device/month*</div>
           <div className="text-lg text-[#6D6D6D]">Min. $50/month</div>
         </div>
-        <div className="flex justify-between items-center">
-            <div className="flex items-center text-sm text-[#6D6D6D]">Min. $50/month <span className="mx-2">|</span> Find device count <InfoIcon className="ml-2 w-4 h-4" /></div>
-           <Button variant="ghost" className="text-sm" onClick={() => {
-            const element = document.getElementById('PricingCalculator');
-            if (element) {
-              element.scrollIntoView({ behavior: "smooth", block: "start" });
-              const headerOffset = 100; // 16 * 4 = 64px (h-16 class)
-              const elementPosition = element.getBoundingClientRect().top;
-              const offsetPosition =
-                elementPosition + window.pageYOffset - headerOffset;
-              window.scrollTo({
-                top: offsetPosition,
-                behavior: "smooth",
-              });
-           
-            }
-           }}>
+        <div className="mb-5 flex items-center justify-between">
+          <div className="flex items-center text-sm text-[#6D6D6D]">
+            Min. $50/month <span className="mx-2">|</span> Find device count{" "}
+            <HoverCard>
+              <HoverCardTrigger>
+                <InfoIcon className="ml-2 h-4 w-4" />
+              </HoverCardTrigger>
+              <HoverCardContent className="w-[340px]">
+                <div className="flex items-center flex-col gap-4">
+                  <div className="text-sm font-bold">
+                    You can find the device count in the:
+                    <ul className="list-disc text-sm font-normal">
+                      <li>Account dashboard - overview KPIs</li>
+                      <li>Account dashboard - sites list</li>
+                      <li>Site dashboard - in the Summary widget</li>
+                    </ul>
+                  </div>
+
+                  <div className="w-[300px] rounded-md overflow-hidden">
+                    <img src={deviceCount} alt="device count" />
+                  </div>
+                </div>
+              </HoverCardContent>
+            </HoverCard>
+          </div>
+          <Button
+            variant="ghost"
+            className="text-sm"
+            onClick={() => {
+              const element = document.getElementById("PricingCalculator");
+              if (element) {
+                element.scrollIntoView({ behavior: "smooth", block: "start" });
+                const headerOffset = 100; // 16 * 4 = 64px (h-16 class)
+                const elementPosition = element.getBoundingClientRect().top;
+                const offsetPosition =
+                  elementPosition + window.pageYOffset - headerOffset;
+                window.scrollTo({
+                  top: offsetPosition,
+                  behavior: "smooth",
+                });
+              }
+            }}
+          >
             See full pricing
           </Button>
         </div>
@@ -266,7 +298,10 @@ const OptimizePricingTable = () => {
                         src={legacyFill}
                         alt="New"
                         className="h-[12px] w-[12px]"
-                        style={{ filter: "invert(37%) sepia(74%) saturate(1795%) hue-rotate(277deg) brightness(89%) contrast(92%)" }}
+                        style={{
+                          filter:
+                            "invert(37%) sepia(74%) saturate(1795%) hue-rotate(277deg) brightness(89%) contrast(92%)",
+                        }}
                       />
                       SOON
                     </span>
