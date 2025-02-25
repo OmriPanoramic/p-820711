@@ -61,7 +61,7 @@ exports.handler = async function(event, context) {
 
     const data = await resend.emails.send({
       from: 'noreply@panoramicpower.com',
-      to: 'devops-panoramic@centrica.com',
+      to: 'panproductmarketing@centrica.com',
       subject: template.subject,
       html: template.html,
       reply_to: formData.email
