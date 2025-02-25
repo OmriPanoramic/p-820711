@@ -167,8 +167,8 @@ const OptimizePricingTable = () => {
           <div className="flex-1 text-lg text-[#222]">per device/month*</div>
           <div className="text-lg text-[#6D6D6D]">Min. $50/month</div>
         </div>
-        <div className="mb-5 flex items-center justify-between">
-          <div className="flex items-center text-sm text-[#6D6D6D]">
+        <div className="mb-5 flex items-center justify-between flex-col md:flex-row">
+          <div className="flex items-center text-xs md:text-sm text-[#6D6D6D]">
             Min. $50/month <span className="mx-2">|</span> Find device count{" "}
             <HoverCard>
               <HoverCardTrigger>
