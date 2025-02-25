@@ -73,6 +73,9 @@ export function Section1({ scrollRef }: { scrollRef: React.RefObject<HTMLDivElem
               Why We Transformed <img src={trendUp} alt="Trend Up" className="w-4 h-4" />
             </Button>
           </motion.div>
+          <div className="text-[12px] text-[#6D6D6D] text-center mt-6">
+            Special offer for existing customers on Panoramic Optimize trial
+          </div>
         </motion.div>
         <div className="flex flex-col items-center gap-4 sm:flex-row my-10">
           <motion.div

@@ -125,7 +125,7 @@ export function UpgradeModal({ isOpen, onClose }: UpgradeModalProps) {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.4 }}
               >
-                Someone from our team will reach out shortly to get your upgrade rolling
+                Your Support Partner will reach out shortly to get your upgrade rolling
               </motion.p>
               <motion.div
                 initial={{ opacity: 0 }}
