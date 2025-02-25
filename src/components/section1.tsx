@@ -64,7 +64,11 @@ export function Section1({ scrollRef }: { scrollRef: React.RefObject<HTMLDivElem
             <Button size="lg" className="w-full sm:w-auto" onClick={() => setIsUpgradeModalOpen(true)}>
               Upgrade to Optimize
             </Button>
-            <Button variant="ghost" className="w-full sm:w-auto border border-[#EBEBEB]">
+            <Button 
+              variant="ghost" 
+              className="w-full sm:w-auto border border-[#EBEBEB]"
+              onClick={() => window.open('/The world has changed and so must we.pdf', '_blank')}
+            >
               Why We Transformed <img src={trendUp} alt="Trend Up" className="w-4 h-4" />
             </Button>
           </motion.div>

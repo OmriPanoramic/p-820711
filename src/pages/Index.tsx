@@ -11,11 +11,9 @@ import { Section6 } from "@/components/section6";
 import { Footer } from "@/components/footer/footer";
 
 const Section = ({
-  color,
   children,
   id,
 }: {
-  color: string;
   children?: React.ReactNode;
   id?: string;
 }) => {
@@ -26,8 +24,7 @@ const Section = ({
       whileInView={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -50 }}
       transition={{ duration: 0.5 }}
-      //viewport={{ amount: "all" }}
-      className={`min-h-auto ${color} flex items-center justify-center lg:min-h-screen`}
+      className="min-h-auto container flex items-center justify-center lg:min-h-screen"
     >
       {children}
     </motion.section>
@@ -38,68 +35,90 @@ const Index = () => {
   const [isRefReady, setIsRefReady] = useState(false);
 
   const scrollRef = useRef(null);
+
+  useEffect(() => {
+    // Extract URL parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const username = urlParams.get("username");
+    const scope = urlParams.get("scope");
+    const scopeId = urlParams.get("scopeId");
+    const userId = urlParams.get("userId");
+
+    // Log the parameters
+    console.log("URL Parameters:", {
+      username,
+      scope,
+      scopeId,
+      userId,
+    });
+  }, []); // Run once when component mounts
+
   const { scrollYProgress } = useScroll({
-      offset: ["start start", "end end"],
+    offset: ["start start", "end end"],
     container: scrollRef,
   });
-  
+
   useEffect(() => {
     if (scrollRef.current) {
       setIsRefReady(true);
     }
   }, [scrollRef.current]);
 
-  const rightCirclePosY = useTransform(scrollYProgress, [0, .5], [200, -1000]);
-  const leftCirclePosY = useTransform(scrollYProgress, [0, .5], [-100, -500]);
+  const rightCirclePosY = useTransform(scrollYProgress, [0, 0.5], [200, -1000]);
+  const leftCirclePosY = useTransform(scrollYProgress, [0, 0.5], [-100, -500]);
   return (
-    <div className="relative overflow-hidden h-screen" >
+    <div className="relative h-screen overflow-hidden">
       <Header />
       <motion.div
         style={{ scaleX: scrollYProgress }}
         className="fixed left-0 right-0 top-0 z-[51] h-0.5 bg-primary"
       />
-      <div className="absolute w-full h-full overflow-hidden pointer-events-none opacity-10">
+      <div className="pointer-events-none absolute h-full w-full overflow-hidden opacity-10">
         {/* Right circle */}
-        <motion.div 
-          className="absolute  w-[1767.744px] h-[1767.744px] rounded-[1767.744px] border border-[#FFAA46]"
+        <motion.div
+          className="absolute h-[1767.744px] w-[1767.744px] rounded-[1767.744px] border border-[#FFAA46]"
           style={{
-            background: 'linear-gradient(180deg, rgba(255, 144, 55, 0.50) 0%, rgba(255, 144, 55, 0.08) 100%)',
+            background:
+              "linear-gradient(180deg, rgba(255, 144, 55, 0.50) 0%, rgba(255, 144, 55, 0.08) 100%)",
             zIndex: -1,
             top: rightCirclePosY,
-            left: '50%',
-            transform: 'translateX(-30%)'
+            left: "50%",
+            transform: "translateX(-30%)",
           }}
         />
-        
-        <motion.div 
-          className="absolute w-[1767.744px] h-[1767.744px] rounded-[1767.744px] border border-[#FFB45C]"
+
+        <motion.div
+          className="absolute h-[1767.744px] w-[1767.744px] rounded-[1767.744px] border border-[#FFB45C]"
           style={{
-            background: 'linear-gradient(180deg, rgba(255, 144, 55, 0.56) 0%, rgba(255, 247, 237, 0.20) 100%)',
+            background:
+              "linear-gradient(180deg, rgba(255, 144, 55, 0.56) 0%, rgba(255, 247, 237, 0.20) 100%)",
             top: leftCirclePosY,
-            right: '50%',
-            transform: 'translateX(0%)'
+            right: "50%",
+            transform: "translateX(0%)",
           }}
         />
       </div>
-      <main className="h-[calc(100vh)] absolute top-0 pt-[64px] overflow-y-auto w-full" ref={scrollRef} id="main">
-      
-
-        <Section color="container" id="section1">
+      <main
+        className="absolute top-0 h-[calc(100vh)] w-full overflow-y-auto pt-[64px]"
+        ref={scrollRef}
+        id="main"
+      >
+        <Section id="section1">
           {isRefReady && <Section1 scrollRef={scrollRef} />}
         </Section>
-        <Section color="container" id="section2">
+        <Section id="section2">
           <Section2 />
         </Section>
-        <Section color="container" id="section3">
+        <Section id="section3">
           <Section3 />
         </Section>
-        {/* <Section color="container" id="section4">
+        {/* <Section  id="section4">
           <Section4 />
         </Section> */}
-        <Section color="container" id="section5">
+        <Section id="section5">
           <Section5 />
         </Section>
-        <Section color="container" id="section6">
+        <Section id="section6">
           <Section6 />
         </Section>
         <Footer />
