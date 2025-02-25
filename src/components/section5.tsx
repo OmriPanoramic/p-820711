@@ -37,9 +37,9 @@ export function Section5() {
 
         <div className="flex flex-col gap-10 md:flex-row">
           <div className="flex flex-1 flex-col gap-2 py-10">
-            <span className="text-sm text-primary">Advanced alerting</span>
+            <span className="text-sm text-primary">Advanced Incident management</span>
             <h3 className="text-h3">
-              Event & Incident Management for better teamwork
+            Incident management for better teamwork
             </h3>
           </div>
           <div className="flex flex-1">
