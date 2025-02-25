@@ -9,6 +9,7 @@ import { Section4 } from "@/components/section4";
 import { Section5 } from "@/components/section5";
 import { Section6 } from "@/components/section6";
 import { Footer } from "@/components/footer/footer";
+import { FullStory } from "@fullstory/browser";
 
 const Section = ({
   children,
@@ -39,17 +40,30 @@ const Index = () => {
   useEffect(() => {
     // Extract URL parameters
     const urlParams = new URLSearchParams(window.location.search);
-    const username = urlParams.get("username");
+    const name = urlParams.get("name");
     const scope = urlParams.get("scope");
     const scopeId = urlParams.get("scopeId");
     const userId = urlParams.get("userId");
-
+    const email = urlParams.get("email");
+    // if we have the data  can we update Fullstory 
+    if (name && scope && scopeId && userId && email) {
+      FullStory('setIdentity', {
+        uid: userId,
+        properties: {
+          displayName: name,
+          email: email,
+          baseScope: scope,
+          baseScopeId: scopeId,
+        },
+      });
+    }
     // Log the parameters
     console.log("URL Parameters:", {
-      username,
+      name,
       scope,
       scopeId,
       userId,
+      email,
     });
   }, []); // Run once when component mounts
 
