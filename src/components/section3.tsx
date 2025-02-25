@@ -40,9 +40,7 @@ export const Section3 = () => {
               maximum value
             </div>
             <p className="max-w-2xl text-xl">
-              Your migration to Panoramic Optimize will be automatic, secure, and
-              effortless. Your experience with Optimize will be just as smooth
-              and rewarding
+            Your migration to Panoramic Optimize will be automatic, secure, and effortless. 
             </p>
           </div>
           <div className="relative flex flex-1 shrink-0 items-center justify-center self-stretch overflow-hidden">
