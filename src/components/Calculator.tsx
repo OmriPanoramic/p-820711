@@ -1,6 +1,8 @@
+import { CountdownTimer } from "./pricing/CountdownTimer";
 import { Input } from "./ui/input";
-import  Slider  from "./ui/slider-flow";
+import Slider from "./ui/slider-flow";
 import { useState } from "react";
+import prize from "../assets/prize.svg";
 
 const Calculator = () => {
   const [deviceCount, setDeviceCount] = useState(1);
@@ -20,19 +22,61 @@ const Calculator = () => {
               }}
             />
           </div>
-          
         </div>
         <div>
-            <Slider
-              className="w-full"
-              min={1}
-              max={500}
-              value={[deviceCount]}
-              onValueChange={(value) => {
-                setDeviceCount(value[0]);
-              }}
-            />
+          <Slider
+            className="w-full"
+            min={1}
+            max={500}
+            value={[deviceCount]}
+            onValueChange={(value) => {
+              setDeviceCount(value[0]);
+            }}
+          />
+        </div>
+      </div>
+      <div className="w-full shrink-0 pt-10">
+        <div className="flex w-full shrink-0 bg-[#FFF7ED] px-7 py-5">
+          <div className="flex flex-1 items-center gap-4">
+            <div className="flex items-center">
+              <img src={prize} alt="prize" className="h-10 w-10" />
+            </div>
+            <div className="flex flex-col gap-0 pb-1">
+              <div className="text-lg text-primary">50% off for 3 years!</div>
+              <div className="text-sm text-[#222]">
+                Decide in the next 12 days and save
+              </div>
+            </div>
           </div>
+          <div className="flex flex-col gap-2">
+            <div className="text-sm text-[#6D6D6D]">This offer expires in</div>
+            <div>
+              <CountdownTimer targetDate={new Date(2025, 3, 1)} />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="flex flex-1 shrink-0 flex-col gap-8 px-8 py-9 self-stretch">
+        <div className="flex flex-1 shrink-0 justify-between">
+          <div className="flex flex-col gap-1">
+            <div className="text-lg text-[#222]">Total annual price</div>
+            <div className="text-sm text-[#6D6D6D]">$256/month</div>
+          </div>
+          <div className="flex flex-row items-baseline gap-1">
+            <div className="text-h5 text-[#909090]">$3,072</div>
+            <div className="text-lg text-[#909090]">/year</div>
+          </div>
+        </div>
+        <div className="flex flex-1 shrink-0 justify-between">
+          <div className="flex flex-col gap-1">
+            <div className="text-lg text-[#222]">Your price</div>
+            <div className="text-sm text-[#6D6D6D]">$128/month</div>
+          </div>
+          <div className="flex flex-row items-baseline gap-1">
+            <div className="text-h3 text-[#222]">$1,536</div>
+            <div className="text-lg text-[#222]">/year</div>
+          </div>
+        </div>
       </div>
     </div>
   );
