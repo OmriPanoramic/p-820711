@@ -13,13 +13,13 @@ const ImageCard = () => (
           filter="url(#filter0_dd_260_14306)" 
           data-name="panoramic"
           animate={{
-            y: [-2, 2],
-            rotate: [-1, 1]
+            y: [-5, 5],
+            rotate: [-3, 3]
           }}
           transition={{
             repeat: Infinity,
             repeatType: "reverse",
-            duration: 2,
+            duration: 3,
             ease: "easeInOut"
           }}
         >
@@ -53,13 +53,13 @@ const ImageCard = () => (
           filter="url(#filter1_dd_260_14306)" 
           data-name="optimize"
           animate={{
-            y: [0, 3],
-            rotate: [-0.5, 0.5]
+            y: [0, 10],
+            rotate: [-0.5, 0.7]
           }}
           transition={{
             repeat: Infinity,
             repeatType: "reverse",
-            duration: 2.5,
+            duration: 3,
             ease: "easeInOut",
             delay: 0.5
           }}
