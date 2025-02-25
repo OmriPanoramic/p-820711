@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { DemoModal } from "@/components/DemoModal";
 import { UpgradeModal } from "@/components/UpgradeModal";
 import logo from '@/assets/logo-header.svg'
+import { AnimatePresence, motion } from "motion/react";
 
 export const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -38,7 +39,7 @@ export const Header = () => {
 
   return (
     <>
-      <header className="sticky top-0 z-50 border-b border-border/40 bg-background/50 backdrop-blur supports-[backdrop-filter]:bg-background/50 w-[calc(100%-12px)]">
+      <header className="sticky top-0 z-50 border-b border-border/40 bg-background/50 backdrop-blur supports-[backdrop-filter]:bg-background/50 w-full md:w-[calc(100%-12px)]">
         <div className="container flex h-16 items-center justify-between">
           {/* Logo */}
           <div className="flex items-center gap-2">
@@ -122,30 +123,36 @@ export const Header = () => {
         </div>
 
         {/* Mobile Menu */}
+        <AnimatePresence>
         {isMobileMenuOpen && (
-          <div className="lg:hidden">
-            <nav className="flex flex-col space-y-4 border-b bg-background px-4 py-6">
+          <motion.div 
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.2 }}
+          >
+            <nav className="flex flex-col space-y-4 border-b bg-background px-4 py-6 shadow-lg border-t border-border/40">
               <button
                 onClick={() => scrollToSection("section2")}
-                className="text-left text-sm text-muted-foreground transition-colors hover:text-primary"
+                className="text-sm text-muted-foreground transition-colors hover:text-primary"
               >
                 What's New?
               </button>
               <button
                 onClick={() => scrollToSection("section3")}
-                className="text-left text-sm text-muted-foreground transition-colors hover:text-primary"
+                className="text-sm text-muted-foreground transition-colors hover:text-primary"
               >
                 Effortless Migration
               </button>
              {/*  <button
                 onClick={() => scrollToSection("section4")}
-                className="text-left text-sm text-muted-foreground transition-colors hover:text-primary"
+                className="text-sm text-muted-foreground transition-colors hover:text-primary"
               >
                 Testimonials
               </button> */}
               <button
                 onClick={() => scrollToSection("section5")}
-                className="text-left text-sm text-muted-foreground transition-colors hover:text-primary"
+                className="text-sm text-muted-foreground transition-colors hover:text-primary"
               >
                 Optimize Experience
               </button>
@@ -174,8 +181,8 @@ export const Header = () => {
                 </Button>
               </div>
             </nav>
-          </div>
-        )}
+          </motion.div>
+        )}</AnimatePresence>
       </header>
 
       <DemoModal
