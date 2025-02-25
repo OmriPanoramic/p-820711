@@ -66,37 +66,37 @@ export const Section2 = () => {
     {
       icon: enhancedExperience,
       title: "Enhanced user experience",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      description: "A fresh, intuitive design with faster navigation, a sleek new look, and AI-powered quick search delivering better results in seconds.",
     },
     {
       icon: cyber,
       title: "End-to-end personalization",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      description: "Fully customizable dashboards, widgets, device grouping, and naming. Tailor benchmarks, thresholds, and visualizations to match your unique needs effortlessly.",
     },
     {
       icon: performanceSecurity,
       title: "Improved performance and security",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      description: "Built on a robust cloud infrastructure for 80% faster load times, 50% fewer network errors, and top-tier data security—ensuring stability, scalability, and privacy.",
     },
     {
       icon: target,
       title: "Continuous innovation and visionary roadmap",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      description: "Regularly benefit from feature updates, cutting-edge improvements, AI-powered features, and a forward-looking roadmap, designed to keep you ahead of the curve.",
     },
     {
       icon: smart,
       title: "Smarter energy intelligence",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      description: "Deeper insights into energy patterns, custom benchmarks, and enhanced proactive maintenance with AI-powered tools, tailored to your KPIs and workflows.",
     },
     {
       icon: support,
       title: "Superior support",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      description: "Experience top-tier assistance with faster response times, expert guidance, and a dedicated team to ensure your success with Optimize.",
     },
     {
       icon: business,
       title: "Empowered team performance",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      description: "Engage more stakeholders—across production, operations, sustainability, and beyond. Collaborate with every team member through powerful tools for teamwork, task delegation, and complete incident lifecycle management.",
     },
   ];
 
