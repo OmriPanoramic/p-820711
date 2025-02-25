@@ -61,10 +61,11 @@ export function Section1({ scrollRef }: { scrollRef: React.RefObject<HTMLDivElem
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.6 }}
           >
-            <Button size="lg" className="w-full sm:w-auto" onClick={() => setIsUpgradeModalOpen(true)}>
+            <Button size="lg" className="w-full sm:w-auto" onClick={() => setIsUpgradeModalOpen(true)} data-fs-track="upgrade-button">
               Upgrade to Optimize
             </Button>
-            <Button 
+            <Button
+              data-fs-track="why-we-transformed-button"
               variant="ghost" 
               className="w-full sm:w-auto border border-[#EBEBEB]"
               onClick={() => window.open('/The world has changed and so must we.pdf', '_blank')}

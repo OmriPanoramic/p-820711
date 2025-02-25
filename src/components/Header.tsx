@@ -44,6 +44,7 @@ export const Header = () => {
           {/* Logo */}
           <div className="flex items-center gap-2">
             <button
+              data-fs-track="logo-click"
               onClick={() => scrollToSection("section1")}
               className="flex items-center space-x-2 gap-2"
             >
@@ -57,6 +58,7 @@ export const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
+            data-fs-track="mobile-menu-click"
             className="lg:hidden"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
@@ -70,36 +72,42 @@ export const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden items-center gap-2 lg:flex lg:gap-6">
             <button
+              data-fs-track="whats-new-button"
               onClick={() => scrollToSection("section2")}
               className="text-sm text-muted-foreground transition-colors hover:text-primary"
             >
               What's New?
             </button>
             <button
+              data-fs-track="effortless-migration-button"
               onClick={() => scrollToSection("section3")}
               className="text-sm text-muted-foreground transition-colors hover:text-primary"
             >
               Effortless Migration
             </button>
             {/* <button
+              data-fs-track="testimonials-button"
               onClick={() => scrollToSection("section4")}
               className="text-sm text-muted-foreground transition-colors hover:text-primary"
             >
               Testimonials
             </button> */}
             <button
+              data-fs-track="optimize-experience-button"
               onClick={() => scrollToSection("section5")}
               className="text-sm text-muted-foreground transition-colors hover:text-primary"
             >
               Optimize Experience
             </button>
             <button
+              data-fs-track="pricing-button"
               onClick={() => scrollToSection("section6")}
               className="text-sm text-muted-foreground transition-colors hover:text-primary"
             >
               Pricing
             </button>
             <button
+              data-fs-track="contact-button"
               onClick={() => scrollToSection("footer")}
               className="text-sm text-muted-foreground transition-colors hover:text-primary"
             >
@@ -109,12 +117,12 @@ export const Header = () => {
 
           {/* Desktop Action Buttons */}
           <div className="hidden items-center gap-2 lg:flex">
-            <Button variant="ghost" asChild>
+            <Button variant="ghost" asChild data-fs-track="book-demo-button">
               <a onClick={handleDemoClick} href="#">
                 Book a Demo
               </a>
             </Button>
-            <Button asChild>
+            <Button asChild data-fs-track="upgrade-now-button">
               <a onClick={handleUpgradeClick} href="#">
                 Upgrade Now
               </a>
@@ -133,12 +141,14 @@ export const Header = () => {
           >
             <nav className="flex flex-col space-y-4 border-b bg-background px-4 py-6 shadow-lg border-t border-border/40">
               <button
+                data-fs-track="whats-new-button"
                 onClick={() => scrollToSection("section2")}
                 className="text-sm text-muted-foreground transition-colors hover:text-primary"
               >
                 What's New?
               </button>
               <button
+                data-fs-track="effortless-migration-button"
                 onClick={() => scrollToSection("section3")}
                 className="text-sm text-muted-foreground transition-colors hover:text-primary"
               >
@@ -151,30 +161,33 @@ export const Header = () => {
                 Testimonials
               </button> */}
               <button
+                data-fs-track="optimize-experience-button"
                 onClick={() => scrollToSection("section5")}
                 className="text-sm text-muted-foreground transition-colors hover:text-primary"
               >
                 Optimize Experience
               </button>
               <button
+                data-fs-track="pricing-button"
                 onClick={() => scrollToSection("section6")}
                 className="text-sm text-muted-foreground transition-colors hover:text-primary"
               >
                 Pricing
               </button>
               <button
+                data-fs-track="contact-button"
                 onClick={() => scrollToSection("footer")}
                 className="text-sm text-muted-foreground transition-colors hover:text-primary"
               >
                 Contact
               </button>
               <div className="flex flex-col space-y-4 pt-4">
-                <Button variant="ghost" asChild className="w-full">
+                <Button variant="ghost" asChild className="w-full" data-fs-track="book-demo-button">
                   <a onClick={handleDemoClick} href="#">
                     Book a Demo
                   </a>
                 </Button>
-                <Button asChild className="w-full">
+                <Button asChild className="w-full" data-fs-track="upgrade-now-button">
                   <a onClick={handleUpgradeClick} href="#">
                     Upgrade Now
                   </a>

@@ -239,10 +239,10 @@ export function DemoModal({ isOpen, onClose }: DemoModalProps) {
                   />
 
                   <div className="flex justify-end gap-4 pt-4">
-                    <Button type="button" variant="outline" onClick={onClose}>
+                    <Button type="button" variant="outline" onClick={onClose} data-fs-track="cancel-demo-button">
                       Cancel
                     </Button>
-                    <Button type="submit" disabled={isSubmitting}>
+                    <Button type="submit" disabled={isSubmitting} data-fs-track="schedule-demo-button">
                       {isSubmitting ? "Submitting..." : "Schedule Demo"}
                     </Button>
                   </div>

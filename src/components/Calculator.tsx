@@ -44,6 +44,7 @@ const Calculator = () => {
               type="number"
               className="flex h-[44px] flex-1 items-center gap-2 border-[#EBEBEB] px-3 outline-none"
               value={deviceCount}
+              data-fs-track="device-count-input"
               onChange={(e) => {
                 setDeviceCount(Number(e.target.value));
               }}
@@ -55,6 +56,7 @@ const Calculator = () => {
             className="w-full"
             min={1}
             max={500}
+            data-fs-track="slider"
             value={[deviceCount]}
             onValueChange={(value) => {
               setDeviceCount(value[0]);

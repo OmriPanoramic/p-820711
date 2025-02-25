@@ -252,10 +252,10 @@ export function UpgradeModal({ isOpen, onClose }: UpgradeModalProps) {
                   />
 
                   <div className="flex justify-end gap-4 pt-4">
-                    <Button type="button" variant="outline" onClick={onClose}>
+                    <Button type="button" variant="outline" onClick={onClose} data-fs-track="cancel-upgrade-button">
                       Cancel
                     </Button>
-                    <Button type="submit" disabled={isSubmitting}>
+                    <Button type="submit" disabled={isSubmitting} data-fs-track="request-upgrade-button">
                       {isSubmitting ? "Submitting..." : "Request Upgrade"}
                     </Button>
                   </div>

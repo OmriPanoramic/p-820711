@@ -89,7 +89,7 @@ const PricingCalculator = () => {
             </div>
           ))}
           <div>
-          <Button variant="ghost" className="p-2">Full Feature List <ChevronRight className="w-4 h-4" /></Button>
+          <Button variant="ghost" className="p-2" data-fs-track="full-feature-list-button">Full Feature List <ChevronRight className="w-4 h-4" /></Button>
           </div>
         </div>
       </div>

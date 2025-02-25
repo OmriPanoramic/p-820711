@@ -193,6 +193,7 @@ const OptimizePricingTable = () => {
             </HoverCard>
           </div>
           <Button
+            data-fs-track="see-full-pricing-button"
             variant="ghost"
             className="text-sm"
             onClick={() => {
