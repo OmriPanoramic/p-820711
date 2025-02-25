@@ -24,9 +24,9 @@ export function Section5() {
 
         <div className="flex flex-col gap-10 md:flex-row-reverse">
           <div className="flex flex-1 flex-col gap-2 py-10">
-            <span className="text-sm text-primary">New Timeview</span>
+            <span className="text-sm text-primary">The new Timeview</span>
             <h3 className="text-h3">
-              The New Timeview: Multiple Views, Smarter Insights, and Deep Data
+              Multiple Views, Smarter Insights, and Deep Data
               Exploration
             </h3>
           </div>
