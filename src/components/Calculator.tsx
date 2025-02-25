@@ -3,6 +3,7 @@ import { Input } from "./ui/input";
 import Slider from "./ui/slider-flow";
 import { useState } from "react";
 import prize from "../assets/prize.svg";
+import NumberFlow from "@number-flow/react";
 
 const Calculator = () => {
   const [deviceCount, setDeviceCount] = useState(1);
@@ -13,8 +14,19 @@ const Calculator = () => {
   // if deviceCount is 200-300, price pre device id $2
   // if deviceCount is more than 300, price pre device id $1
 
-  const pricePerDevice = deviceCount <= 50 ? 5 : deviceCount <= 100 ? 4 : deviceCount <= 200 ? 3 : deviceCount <= 300 ? 2 : 1;
+  const pricePerDevice =
+    deviceCount <= 50
+      ? 5
+      : deviceCount <= 100
+        ? 4
+        : deviceCount <= 200
+          ? 3
+          : deviceCount <= 300
+            ? 2
+            : 1;
+
   const totalPrice = deviceCount * pricePerDevice;
+  console.log({totalPrice});
 
   const totalPricePerYear = totalPrice * 12;
   const totalPricePerMonth = totalPrice / 12;
@@ -71,24 +83,70 @@ const Calculator = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-1 shrink-0 flex-col gap-8 px-8 py-9 self-stretch">
+      <div className="flex flex-1 shrink-0 flex-col gap-8 self-stretch px-8 py-9">
         <div className="flex flex-1 shrink-0 justify-between">
           <div className="flex flex-col gap-1">
             <div className="text-lg text-[#222]">Total annual price</div>
-            <div className="text-sm text-[#6D6D6D]">${parseFloat(totalPricePerMonth.toString()).toFixed(2)}/month</div>
+            <div className="text-sm text-[#6D6D6D]">
+              <NumberFlow
+                value={totalPrice}
+                format={{
+                  style: "currency",
+                  currency: "USD",
+                  maximumFractionDigits: 2,
+                  currencySign: "standard",
+                  trailingZeroDisplay: "stripIfInteger",
+                }}
+                suffix=" /month"
+              />
+            </div>
           </div>
           <div className="flex flex-row items-baseline gap-1">
-            <div className="text-h5 text-[#909090]">${totalPricePerYear}</div>
+            <div className="text-h5 text-[#909090]">
+              <NumberFlow
+                value={totalPricePerYear}
+                format={{
+                  style: "currency",
+                  currency: "USD",
+                  maximumFractionDigits: 2,
+                  currencySign: "standard",
+                  trailingZeroDisplay: "stripIfInteger",
+                }}
+              />
+            </div>
             <div className="text-lg text-[#909090]">/year</div>
           </div>
         </div>
         <div className="flex flex-1 shrink-0 justify-between">
           <div className="flex flex-col gap-1">
             <div className="text-lg text-[#222]">Your price</div>
-            <div className="text-sm text-[#6D6D6D]">${parseFloat(yourPricePerMonth.toString()).toFixed(2)}/month</div>
+            <div className="text-sm text-[#6D6D6D]">
+              <NumberFlow
+                value={yourPricePerMonth}
+                format={{
+                  style: "currency",
+                  currency: "USD",
+                  maximumFractionDigits: 2,
+                  currencySign: "standard",
+                  trailingZeroDisplay: "stripIfInteger",
+                }}
+                suffix=" /month"
+              />
+            </div>
           </div>
           <div className="flex flex-row items-baseline gap-1">
-            <div className="text-h3 text-[#222]">${parseFloat(yourPricePerYear.toString()).toFixed(2)}</div>
+            <div className="text-h3 text-[#222]">
+              <NumberFlow
+                value={yourPricePerYear}
+                format={{
+                  style: "currency",
+                  currency: "USD",
+                  maximumFractionDigits: 2,
+                  currencySign: "standard",
+                  trailingZeroDisplay: "stripIfInteger",
+                }}
+              />
+            </div>
             <div className="text-lg text-[#222]">/year</div>
           </div>
         </div>
