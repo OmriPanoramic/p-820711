@@ -44,6 +44,10 @@ const optimizeFeatures = [
   },
   {
     id: 10,
+    feature: "Auto reporting",
+  },
+  {
+    id: 11,
     feature: "Device benchmarking",
   },
 ];
@@ -109,14 +113,7 @@ const newOptimizeFeatures = [
   },
   {
     id: 9,
-    feature: "Auto data exports",
-    isNew: true,
-    isBeta: false,
-    showSoon: false,
-  },
-  {
-    id: 10,
-    feature: "Auto reporting",
+    feature: "New automated data export mechanism",
     isNew: true,
     isBeta: false,
     showSoon: false,
