@@ -4,6 +4,7 @@ import { CountdownTimer } from "./pricing/CountdownTimer";
 import { Button } from "./ui/button";
 import check from "@/assets/check.svg";
 import legacyFill from "@/assets/legacy-fill.svg";
+import { InfoIcon } from "lucide-react";
 
 const optimizeFeatures = [
   {
@@ -159,7 +160,24 @@ const OptimizePricingTable = () => {
           <div className="text-h2 text-[#222]">$5</div>
           <div className="flex-1 text-lg text-[#222]">per device/month*</div>
           <div className="text-lg text-[#6D6D6D]">Min. $50/month</div>
-          <Button variant="ghost" className="text-sm">
+        </div>
+        <div className="flex justify-between items-center">
+            <div className="flex items-center text-sm text-[#6D6D6D]">Min. $50/month <span className="mx-2">|</span> Find device count <InfoIcon className="ml-2 w-4 h-4" /></div>
+           <Button variant="ghost" className="text-sm" onClick={() => {
+            const element = document.getElementById('PricingCalculator');
+            if (element) {
+              element.scrollIntoView({ behavior: "smooth", block: "start" });
+              const headerOffset = 100; // 16 * 4 = 64px (h-16 class)
+              const elementPosition = element.getBoundingClientRect().top;
+              const offsetPosition =
+                elementPosition + window.pageYOffset - headerOffset;
+              window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth",
+              });
+           
+            }
+           }}>
             See full pricing
           </Button>
         </div>
