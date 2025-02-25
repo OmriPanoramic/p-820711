@@ -132,7 +132,7 @@ export function UpgradeModal({ isOpen, onClose }: UpgradeModalProps) {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5 }}
               >
-                <Button onClick={() => {
+                <Button data-fs-track="got-it-button-upgrade-modal" onClick={() => {
                     setShowSuccess(false);
                     onClose();
                   }}>Got it</Button>

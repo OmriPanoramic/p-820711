@@ -133,6 +133,7 @@ export function DemoModal({ isOpen, onClose }: DemoModalProps) {
                 transition={{ delay: 0.5 }}
               >
                 <Button
+                  data-fs-track="got-it-button-demo-modal"
                   onClick={() => {
                     setShowSuccess(false);
                     onClose();
