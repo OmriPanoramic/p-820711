@@ -24,10 +24,10 @@ const FooterContent: React.FC = () => {
           Manage energy with Panoramic
         </h2>
         <div className="flex justify-center gap-4 flex-col md:flex-row">
-          <button onClick={handleDemoClick} className="flex h-[48px] items-center justify-center gap-[12px] rounded-[4px] border border-white/60 px-[16px] text-white transition-colors hover:bg-white/30">
+          <button data-fs-track="footer-demo-button" onClick={handleDemoClick} className="flex h-[48px] items-center justify-center gap-[12px] rounded-[4px] border border-white/60 px-[16px] text-white transition-colors hover:bg-white/30">
             Book a demo
           </button>
-          <button onClick={handleUpgradeClick} className="flex h-[48px] items-center justify-center gap-[12px] rounded-[4px] bg-[#FF7110] px-[20px] text-white transition-colors hover:bg-[#ff5b15]">
+          <button data-fs-track="footer-upgrade-button" onClick={handleUpgradeClick} className="flex h-[48px] items-center justify-center gap-[12px] rounded-[4px] bg-[#FF7110] px-[20px] text-white transition-colors hover:bg-[#ff5b15]">
             Upgrade now
           </button>
         </div>
