@@ -82,7 +82,7 @@ const Index = () => {
   const leftCirclePosY = useTransform(scrollYProgress, [0, 0.5], [-100, -500]);
   return (
     <div className="relative h-screen overflow-hidden">
-      <Header />
+      {isRefReady && <Header scrollRef={scrollRef} />}
       <motion.div
         style={{ scaleX: scrollYProgress }}
         className="fixed left-0 right-0 top-0 z-[51] h-0.5 bg-primary"

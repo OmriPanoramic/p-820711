@@ -6,7 +6,7 @@ import { UpgradeModal } from "@/components/UpgradeModal";
 import logo from '@/assets/logo-header.svg'
 import { AnimatePresence, motion } from "motion/react";
 
-export const Header = () => {
+export const Header = ({ scrollRef }: { scrollRef: React.RefObject<HTMLDivElement> }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
   const [isUpgradeModalOpen, setIsUpgradeModalOpen] = useState(false);
@@ -14,12 +14,12 @@ export const Header = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
+      console.log({element})
       const headerOffset = 100; // 16 * 4 = 64px (h-16 class)
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition =
         elementPosition + window.pageYOffset - headerOffset;
-      window.scrollTo({
+      scrollRef.current?.scrollTo({
         top: offsetPosition,
         behavior: "smooth",
       });

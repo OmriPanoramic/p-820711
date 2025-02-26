@@ -65,6 +65,7 @@ export function Section1({ scrollRef }: { scrollRef: React.RefObject<HTMLDivElem
               Upgrade to Optimize
             </Button>
             <Button
+              size="lg"
               data-fs-track="why-we-transformed-button"
               variant="ghost" 
               className="w-full sm:w-auto border border-[#EBEBEB]"
