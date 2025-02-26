@@ -42,8 +42,7 @@ const FooterLinks: React.FC = () => (
         not guarantee the completeness, reliability, or suitability of the
         content for any specific purpose. Any testimonials or results shared are
         individual experiences and may not reflect typical outcomes. Your use of
-        this website and reliance on any information is at your own risk. We
-        encourage you to review our{" "}
+        this website and reliance on any information is at your own risk. We encourage you to discuss this content with your support provider and review our{" "}
         <a
           data-fs-track="footer-link-privacy"
           href="https://support.powerradar.energy/kb/guide/en/privacy-notice-IyF6Tl9NVp/Steps/2356295"
