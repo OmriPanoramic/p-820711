@@ -276,7 +276,7 @@ const OptimizePricingTable = () => {
               </div>
               <div className="flex flex-col gap-2">
                 <div className="flex items-center gap-2">
-                  <p className="text-lg font-normal text-[#222222] whitespace-nowrap">
+                  <p className="text-lg font-normal text-[#222222]">
                     {feature.feature}
                   </p>
                   {feature.isNew && (
