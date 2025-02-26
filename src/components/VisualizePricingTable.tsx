@@ -77,7 +77,7 @@ function VisualizePricingTable() {
           {visualizeFeatures.map((feature) => (
             <div
               key={feature.id}
-              className="flex items-center gap-[16px] self-stretch"
+              className="flex items-start gap-[16px] self-stretch"
             >
               <div className="flex min-h-[26px] min-w-[26px] items-center justify-center rounded-full border border-[#2222221a]">
                 <img
@@ -100,7 +100,7 @@ function VisualizePricingTable() {
           {paidAddOns.map((feature) => (
             <div
               key={feature.id}
-              className="flex items-center gap-[16px] self-stretch"
+              className="flex items-start gap-[16px] self-stretch"
             >
               <div className="flex min-h-[26px] min-w-[26px] items-center justify-center rounded-full bg-[#afe0cc33]">
                 <img

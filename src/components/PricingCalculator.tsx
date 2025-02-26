@@ -2,6 +2,7 @@ import check from "@/assets/check.svg";
 import { Button } from "./ui/button";
 import {ChevronRight } from "lucide-react";
 import Calculator from "./Calculator";
+import { Info } from "lucide-react";
 
 
 const features = [
@@ -39,9 +40,11 @@ const PricingCalculator = () => {
   return (
     <div className="flex w-full flex-col self-stretch lg:flex-row">
       <div className="flex flex-1 flex-col gap-12">
-        <h2 className="text-h2 text-[#222222]">
+        <div>
+        <span className="text-sm text-[#909090]">Special offer for Panoramic Optimize trial customers</span>
+        <h2 className="text-h2 text-[#222222] max-w-[460px]">
           Calculate your<span className="text-primary"> Optimize </span> savings
-        </h2>
+        </h2></div>
 
         <div className="flex-start border-[#EBEBEB flex max-w-[460px] flex-col rounded-md border">
           <div className="flex flex-col justify-center gap-2 self-stretch px-6 py-5">
@@ -51,7 +54,7 @@ const PricingCalculator = () => {
                 per device/month (billed anually)
               </span>
             </div>
-            <span className="text-sm text-[#909090]">Min. $50/month</span>
+            <span className="text-sm text-[#909090] flex items-center gap-1">Min. $50/month <Info className="w-4 h-4" /></span>
           </div>
           <div className="relative h-[1px] w-full bg-[#EBEBEB]">
             <div className="absolute left-1/2 top-1/2 flex h-[20px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-[100px] border border-[#EBEBEB] bg-[#fffbf8] px-4 pb-1 text-sm text-[#909090]">
@@ -83,7 +86,7 @@ const PricingCalculator = () => {
                   className="h-[18px] w-[18px] text-[#222222]"
                 />
               </div>
-              <p className="text-sm font-normal text-[#222222]">
+              <p className="text-lg font-normal text-[#222222]">
                 {feature.feature}
               </p>
             </div>

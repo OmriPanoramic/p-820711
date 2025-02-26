@@ -29,7 +29,7 @@ export function Section6() {
           <VisualizePricingTable />
         </div>
       </div>
-      <div className="flex flex-col items-center pt-20 w-full" id="PricingCalculator">
+      <div className="flex flex-col items-center pt-32 w-full" id="PricingCalculator">
         <PricingCalculator />
       </div>
     </div>

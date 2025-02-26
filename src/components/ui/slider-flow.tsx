@@ -20,12 +20,12 @@ export default function Slider({
           "relative flex h-5 w-full touch-none select-none items-center",
         )}
       >
-        <RadixSlider.Track className="relative h-[10px] grow rounded-full bg-[#EBEBEB] dark:bg-zinc-800">
+        <RadixSlider.Track className="relative h-[10px] grow rounded-full bg-[#F4F4F5] dark:bg-zinc-800">
           <div className="absolute h-12 w-full top-4">
             <div className="absolute w-full">
               <div className="relative w-full">
                 <div
-                  style={{ left: "0%" }}
+                  style={{ left: "2%" }}
                   className="absolute flex -translate-x-1/2 flex-col items-center"
                 >
                   <span className="text-[11px] text-[#909090]">1</span>
@@ -99,7 +99,7 @@ export default function Slider({
                   </span>
                 </div>
                 <div
-                  style={{ left: "100%" }}
+                  style={{ left: "98%" }}
                   className="absolute flex -translate-x-1/2 flex-col items-center"
                 >
                   <span className="text-[11px] text-[#909090]">500</span>
