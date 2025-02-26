@@ -28,7 +28,7 @@ const FeatureItem = ({
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="flex flex-col border-b border-border/50 py-8 last:border-0"
+      className="flex flex-col border-b border-border/50 last:border-0 py-[40px]"
       {...props}
     >
       <div 
@@ -116,7 +116,7 @@ export const Section2 = () => {
             <span className="text-primary">Panoramic Optimize</span>
           </h2>
         </motion.div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 gap-y-0 w-full">
           {features.map((feature, index) => (
             <FeatureItem
               key={index}
