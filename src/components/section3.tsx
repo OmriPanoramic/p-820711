@@ -39,7 +39,7 @@ export const Section3 = () => {
               <br />
               maximum value
             </div>
-            <p className="max-w-2xl text-xl">
+            <p className="max-w-xl text-xl">
             Your migration to Panoramic Optimize will be automatic, secure, and effortless. 
             </p>
           </div>
@@ -48,7 +48,7 @@ export const Section3 = () => {
               <motion.img
                 src={lines}
                 alt="bg"
-                className="absolute left-0 top-0 w-full max-w-[470px] object-cover"
+                className="absolute left-[100px] top-10 w-full max-w-[470px] object-cover"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false }}
