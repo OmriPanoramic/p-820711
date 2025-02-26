@@ -12,13 +12,13 @@ const FooterLinks: React.FC = () => (
     </div>
     <div className="flex flex-col items-center gap-8 lg:flex-row">
       <a
-        href="#"
+        href="https://support.powerradar.energy/kb/guide/en/powerradar-terms-and-conditions-for-data-services-V5LSLeWNWh/Steps/2356143"
         className="text-sm text-[#6D6D6D] transition-colors hover:text-[#171717]"
       >
         Terms & Conditions
       </a>
       <a
-        href="#"
+        href="https://support.powerradar.energy/kb/guide/en/privacy-notice-IyF6Tl9NVp/Steps/2356295"
         className="text-sm text-[#6D6D6D] transition-colors hover:text-[#171717]"
       >
         Privacy Policy
