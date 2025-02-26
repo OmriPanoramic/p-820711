@@ -45,10 +45,15 @@ const Index = () => {
     const scopeId = urlParams.get("scopeId");
     const userId = urlParams.get("userId");
     const email = urlParams.get("email");
+
+    // remove commas from userId
+    const userIdWithoutCommas = userId?.replace(/,/g, "");
+
+
     // if we have the data  can we update Fullstory 
     if (name && scope && scopeId && userId && email) {
       FullStory('setIdentity', {
-        uid: userId,
+        uid: userIdWithoutCommas,
         properties: {
           displayName: name,
           email: email,
@@ -62,7 +67,7 @@ const Index = () => {
       name,
       scope,
       scopeId,
-      userId,
+      userId: userIdWithoutCommas,
       email,
     });
   }, []); // Run once when component mounts
