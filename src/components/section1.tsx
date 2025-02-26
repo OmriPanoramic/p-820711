@@ -25,8 +25,6 @@ export function Section1({
     layoutEffect: true,
   });
 
-  console.log(scrollYProgress);
-
   const mobilePosY = useTransform(scrollYProgress, [0, 0.1], [60, 100]);
   const mobileOpacity = useTransform(scrollYProgress, [0.1, 0.2], [1, 0]);
 
@@ -40,8 +38,6 @@ export function Section1({
       setCurrentAlertValue(newValue);
     });
   }, [scrollYProgress]);
-
-  console.log(currentAlertValue);
 
   return (
     <>

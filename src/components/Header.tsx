@@ -13,14 +13,20 @@ export const Header = ({ scrollRef }: { scrollRef: React.RefObject<HTMLDivElemen
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
-    if (element) {
-      console.log({element})
-      const headerOffset = 100; // 16 * 4 = 64px (h-16 class)
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition =
-        elementPosition + window.pageYOffset - headerOffset;
-      scrollRef.current?.scrollTo({
-        top: offsetPosition,
+    if (element && scrollRef.current) {
+      const headerOffset = 110;
+      
+      // Get the element's position relative to the scrollable container
+      const containerRect = scrollRef.current.getBoundingClientRect();
+      const elementRect = element.getBoundingClientRect();
+      const relativePosition = elementRect.top - containerRect.top;
+      
+      // Calculate the final scroll position
+      const scrollPosition = scrollRef.current.scrollTop + relativePosition - headerOffset;
+      
+      // Perform the scroll
+      scrollRef.current.scrollTo({
+        top: scrollPosition,
         behavior: "smooth",
       });
       setIsMobileMenuOpen(false);

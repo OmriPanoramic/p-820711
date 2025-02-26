@@ -26,7 +26,6 @@ const Calculator = () => {
             : 1;
 
   const totalPrice = deviceCount * pricePerDevice;
-  console.log({ totalPrice });
 
   const totalPricePerYear = totalPrice * 12;
   const totalPricePerMonth = totalPrice / 12;
