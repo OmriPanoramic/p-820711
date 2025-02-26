@@ -50,7 +50,7 @@ const paidAddOns = [
 
 function VisualizePricingTable() {
   return (
-    <div className="flex max-w-[547px] flex-col items-start gap-8 rounded-2xl border border-[#EBEBEB] bg-white px-4 md:px-16 py-10">
+    <div className="flex w-full flex-col items-start gap-8 rounded-2xl border border-[#EBEBEB] bg-white px-4 md:px-10 py-10">
       <div className="flex flex-col gap-8">
         <header className="flex w-full items-center gap-4">
           <div className="flex h-[56px] w-[56px] flex-shrink-0 items-center justify-center">
@@ -86,7 +86,7 @@ function VisualizePricingTable() {
                   className="h-[18px] w-[18px] text-[#222222]"
                 />
               </div>
-              <p className="text-sm font-normal text-[#222222]">
+              <p className="text-lg font-normal text-[#222222]">
                 {feature.feature}
               </p>
             </div>
@@ -109,7 +109,7 @@ function VisualizePricingTable() {
                   className="h-[18px] w-[18px] text-[#3C9076]"
                 />
               </div>
-              <p className="text-sm font-normal text-[#222222]">
+              <p className="text-lg font-normal text-[#222222]">
                 {feature.feature}
               </p>
             </div>

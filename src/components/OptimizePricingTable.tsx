@@ -137,12 +137,12 @@ const newOptimizeFeatures = [
 
 const OptimizePricingTable = () => {
   return (
-    <div className="relative flex h-full w-full max-w-[765px] flex-col items-start gap-8 overflow-hidden rounded-2xl border border-[#FFEDD4] bg-white shadow-[0px_-2px_8px_-1px_rgba(23,23,23,0.04),0px_14px_40px_-4px_rgba(23,23,23,0.06)]">
+    <div className="relative flex h-full w-full max-w-[775px] flex-col items-start gap-8 overflow-hidden rounded-2xl border border-[#FFEDD4] bg-white shadow-[0px_-2px_8px_-1px_rgba(23,23,23,0.04),0px_14px_40px_-4px_rgba(23,23,23,0.06)]">
       <div className="absolute h-full w-full overflow-hidden opacity-10">
         <div className="absolute left-0 top-[50px] h-[1767px] w-[1767px] shrink-0 rounded-[1767.744px] border border-[#FFD7A8] bg-gradient-to-b from-[rgba(255,144,55,0.56)] to-[rgba(255,247,237,0.20)]" />
         <div className="to-[rgba(255, 144, 55, 0.08)] absolute right-0 top-[-300px] h-[1767px] w-[1767px] shrink-0 rounded-[1767.744px] border border-none bg-gradient-to-b from-[rgba(255,144,55,0.56)]" />
       </div>
-      <div className="relative z-10 flex w-full flex-1 flex-col gap-2 px-4 pb-12 md:px-10">
+      <div className="relative z-10 flex w-full flex-1 flex-col gap-2 px-4 py-10 md:px-10">
         <header className="mt-4 flex w-full items-center gap-4">
           <div className="flex h-[56px] w-[56px] flex-shrink-0 items-center justify-center">
             <img
@@ -165,7 +165,7 @@ const OptimizePricingTable = () => {
         <div className="mt-4 flex flex-col items-baseline gap-4 self-stretch lg:flex-row">
           <div className="text-h2 text-[#222]">$5</div>
           <div className="flex-1 text-lg text-[#222]">per device/month*</div>
-          <div className="text-lg text-[#6D6D6D]">Min. $50/month</div>
+          
         </div>
         <div className="mb-5 flex flex-col items-center justify-between md:flex-row">
           <div className="flex items-center text-xs text-[#6D6D6D] md:text-sm">
@@ -195,7 +195,8 @@ const OptimizePricingTable = () => {
           <Button
             data-fs-track="see-full-pricing-button"
             variant="ghost"
-            className="text-sm"
+            size="sm"
+            className="text-sm h-5"
             onClick={() => {
               const element = document.getElementById("PricingCalculator");
               if (element) {
@@ -236,7 +237,7 @@ const OptimizePricingTable = () => {
             </div>
           </div>
         </div>
-        <div className="my-1 h-[1px] w-full rounded-lg bg-[#2222221a]" />
+        <div className="h-[1px] w-full rounded-lg bg-[#2222221a] my-5"  />
         <div className="flex flex-col gap-7">
           {optimizeFeatures.map((feature) => (
             <div
@@ -250,13 +251,13 @@ const OptimizePricingTable = () => {
                   className="h-[18px] w-[18px] text-[#222222]"
                 />
               </div>
-              <p className="text-sm font-normal text-[#222222]">
+              <p className="text-lg font-normal text-[#222222]">
                 {feature.feature}
               </p>
             </div>
           ))}
         </div>
-        <div className="my-1 h-[1px] w-full rounded-lg bg-[#2222221a]" />
+        <div className="h-[1px] w-full rounded-lg bg-[#2222221a] my-5"  />
         <div className="flex flex-col gap-7">
           <span className="text-[16px] font-semibold text-[#222222]">
             New in Optimize
@@ -275,11 +276,11 @@ const OptimizePricingTable = () => {
               </div>
               <div className="flex flex-col gap-2">
                 <div className="flex items-center gap-2">
-                  <p className="text-sm font-normal text-[#222222]">
+                  <p className="text-lg font-normal text-[#222222] whitespace-nowrap">
                     {feature.feature}
                   </p>
                   {feature.isNew && (
-                    <span className="flex shrink-0 items-center gap-1 rounded bg-[#48b8f021] px-1.5 py-0.5 text-xs font-semibold text-[#1195D6]">
+                    <span className="flex shrink-0 items-center gap-1 rounded-full bg-[#48b8f021] px-1.5 py-0.5 text-xs font-semibold text-[#1195D6]">
                       <img
                         src={legacyFill}
                         alt="New"
@@ -289,19 +290,19 @@ const OptimizePricingTable = () => {
                     </span>
                   )}
                   {feature.isBeta && (
-                    <span className="rounded bg-gray-100 px-1.5 py-0.5 text-xs font-semibold text-[#464646]">
+                    <span className=" bg-gray-100 px-1.5 py-0.5 text-xs  rounded-full font-semibold text-[#464646]">
                       BETA
                     </span>
                   )}
                   {feature.showSoon && (
-                    <span className="flex shrink-0 items-center gap-1 rounded bg-purple-100 px-1.5 py-0.5 text-xs font-semibold text-[#BE3DD1]">
+                    <span className="flex shrink-0 items-center gap-1 rounded-full bg-purple-100 px-1.5 py-0.5 text-xs font-semibold text-[#BE3DD1]">
                       <img
                         src={legacyFill}
                         alt="New"
                         className="h-[12px] w-[12px]"
                         style={{
                           filter:
-                            "invert(37%) sepia(74%) saturate(1795%) hue-rotate(277deg) brightness(89%) contrast(92%)",
+                            "invert(41%) sepia(74%) saturate(1795%) hue-rotate(256deg) brightness(83%) contrast(96%)",
                         }}
                       />
                       SOON
