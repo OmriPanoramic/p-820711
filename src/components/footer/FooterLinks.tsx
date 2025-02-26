@@ -13,18 +13,21 @@ const FooterLinks: React.FC = () => (
       </div>
       <div className="flex flex-col items-center gap-8 lg:flex-row">
         <a
+          data-fs-track="footer-link-terms"
           href="https://support.powerradar.energy/kb/guide/en/powerradar-terms-and-conditions-for-data-services-V5LSLeWNWh/Steps/2356143"
           className="text-sm text-[#6D6D6D] transition-colors hover:text-[#171717]"
         >
           Terms & Conditions
         </a>
         <a
+          data-fs-track="footer-link-privacy"
           href="https://support.powerradar.energy/kb/guide/en/privacy-notice-IyF6Tl9NVp/Steps/2356295"
           className="text-sm text-[#6D6D6D] transition-colors hover:text-[#171717]"
         >
           Privacy Policy
         </a>
         <a
+          data-fs-track="footer-link-login"
           href="https://powerradar.energy"
           className="text-sm text-[#6D6D6D] transition-colors hover:text-[#171717]"
         >
@@ -42,6 +45,7 @@ const FooterLinks: React.FC = () => (
         this website and reliance on any information is at your own risk. We
         encourage you to review our{" "}
         <a
+          data-fs-track="footer-link-privacy"
           href="https://support.powerradar.energy/kb/guide/en/privacy-notice-IyF6Tl9NVp/Steps/2356295"
           className="text-primary hover:underline"
         >
@@ -49,6 +53,7 @@ const FooterLinks: React.FC = () => (
         </a>{" "}
         and{" "}
         <a
+          data-fs-track="footer-link-terms"
           href="https://support.powerradar.energy/kb/guide/en/powerradar-terms-and-conditions-for-data-services-V5LSLeWNWh/Steps/2356143"
           className="text-primary hover:underline"
         >
