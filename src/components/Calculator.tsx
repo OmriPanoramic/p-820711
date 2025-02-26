@@ -35,7 +35,7 @@ const Calculator = () => {
   const yourPricePerMonth = yourPricePerYear / 12;
 
   return (
-    <div className="flex min-w-full max-w-[624px] flex-col items-start rounded-2xl border border-[#FFEDD4] bg-white shadow-[0px_24px_40px_0px_rgba(104,75,37,0.04),_0px_56px_56px_-32px_rgba(104,75,37,0.06),_0px_32px_40px_-24px_rgba(104,75,37,0.05)]">
+    <div className="flex min-w-full max-w-[624px] flex-col items-start rounded-2xl overflow-hidden border border-[#FFEDD4] bg-white shadow-[0px_24px_40px_0px_rgba(104,75,37,0.04),_0px_56px_56px_-32px_rgba(104,75,37,0.06),_0px_32px_40px_-24px_rgba(104,75,37,0.05)]">
       <div className="flex flex-col gap-12 self-stretch px-6 py-10">
         <div className="flex flex-1 items-center justify-between gap-2 self-stretch">
           <div className="text-lg text-[#222222]">Number of devices </div>
@@ -85,7 +85,7 @@ const Calculator = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-1 shrink-0 flex-col gap-8 self-stretch px-5 py-9 md:px-8">
+      <div className="flex flex-1 shrink-0 flex-col gap-8 self-stretch px-5 py-9 md:px-8 bg-[#FFFCF9]">
         <div className="flex flex-1 shrink-0 justify-between">
           <div className="flex flex-col gap-1">
             <div className="text-lg text-[#222]">Total annual price</div>

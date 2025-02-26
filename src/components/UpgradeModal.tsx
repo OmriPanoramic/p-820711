@@ -144,7 +144,7 @@ export function UpgradeModal({ isOpen, onClose }: UpgradeModalProps) {
               exit={{ opacity: 0 }}
               className="flex flex-col"
             >
-              <DialogHeader>
+              <DialogHeader className="mb-6">
                 <DialogTitle>Upgrade to Optimize</DialogTitle>
                 <DialogDescription>
                   Take the next step towards smarter energy management

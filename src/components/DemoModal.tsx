@@ -149,7 +149,7 @@ export function DemoModal({ isOpen, onClose }: DemoModalProps) {
               exit={{ opacity: 0 }}
               className="flex flex-col"
             >
-              <DialogHeader>
+              <DialogHeader className="mb-6">
                 <DialogTitle>Book a Demo</DialogTitle>
                 <DialogDescription>
                   See how Panoramic Optimize can transform your energy future

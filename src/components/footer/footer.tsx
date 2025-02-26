@@ -10,7 +10,7 @@ export const Footer = () => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="container flex flex-col items-center max-md:px-5"
+      className="container flex flex-col items-center max-md:px-5 lg:mt-20"
       id="footer"
     >
       <div className="relative mb-20 flex w-full flex-col items-center overflow-hidden rounded-[32px] px-8 py-[120px] text-center">
