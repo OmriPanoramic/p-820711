@@ -109,7 +109,7 @@ function VisualizePricingTable() {
                   className="h-[18px] w-[18px] text-[#3C9076]"
                 />
               </div>
-              <p className="text-lg font-normal text-[#222222]">
+              <p className="text-lg font-normal  leading-[1.3] text-[#222222]">
                 {feature.feature}
               </p>
             </div>
