@@ -38,6 +38,14 @@ const features = [
 ];
 
 const PricingCalculator = () => {
+
+  const scrollToOptimizeFeatures = () => {
+    const optimizeFeaturesSection = document.getElementById("OptimizeFeatures");
+    if (optimizeFeaturesSection) {
+      optimizeFeaturesSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="flex w-full flex-col self-stretch lg:flex-row">
       <div className="flex flex-1 flex-col gap-12">
@@ -132,7 +140,7 @@ const PricingCalculator = () => {
             </div>
           ))}
           <div>
-          <Button variant="ghost" className="p-2" data-fs-track="full-feature-list-button">Full Feature List <ChevronRight className="w-4 h-4" /></Button>
+          <Button variant="ghost" className="p-2" data-fs-track="full-feature-list-button" onClick={scrollToOptimizeFeatures}>Full Feature List <ChevronRight className="w-4 h-4" /></Button>
           </div>
         </div>
       </div>
