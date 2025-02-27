@@ -88,7 +88,8 @@ const Calculator = () => {
         <div className="flex flex-1 shrink-0 justify-between">
           <div className="flex flex-col gap-1">
             <div className="text-lg text-[#222]">Total annual price</div>
-            <div className="text-sm text-[#6D6D6D]">
+            <div className="text-sm text-[#6D6D6D] relative">
+              <div className="absolute top-[10px] w-[30px] left-0  h-[1px] bg-[#909090]" />
               <NumberFlow
                 value={totalPrice}
                 format={{
@@ -106,7 +107,8 @@ const Calculator = () => {
             </div>
           </div>
           <div className="flex flex-row items-baseline gap-1">
-            <div className="text-h5 text-[#909090]">
+            <div className="text-h5 text-[#909090] relative">
+            <div className="absolute top-[20px] w-[60px] left-0  h-[2px] bg-[#909090]" />
               <NumberFlow
                 value={totalPricePerYear}
                 format={{
