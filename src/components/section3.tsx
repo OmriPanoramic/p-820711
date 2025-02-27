@@ -40,11 +40,12 @@ export const Section3 = () => {
               maximum value
             </div>
             <p className="max-w-xl text-xl">
-            Your migration to Panoramic Optimize will be automatic, secure, and effortless. 
+              Your migration to Panoramic Optimize will be automatic, secure,
+              and effortless.
             </p>
           </div>
           <div className="relative flex flex-1 shrink-0 items-center justify-center self-stretch overflow-hidden">
-            <div className="relative h-[470px] w-[470px] lg:h-full lg:w-full lg:overflow-hidden items-center flex justify-center">
+            <div className="relative flex h-[470px] w-[470px] items-center justify-center lg:h-full lg:w-full lg:overflow-hidden">
               <motion.img
                 src={lines}
                 alt="bg"
@@ -59,7 +60,7 @@ export const Section3 = () => {
           </div>
         </div>
         <div className="flex flex-1 shrink-0 items-center self-stretch">
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-12 md:grid-cols-2 md:gap-8 lg:grid-cols-4">
             <FeatureCard
               icon={<UserRoundCog />}
               title="All set, all yours"
