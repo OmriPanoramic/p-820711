@@ -34,7 +34,7 @@ const Calculator = () => {
   const yourPricePerMonth = yourPricePerYear / 12;
 
   return (
-    <div className="flex min-w-full max-w-[624px] flex-col items-start rounded-2xl overflow-hidden border border-[#FFEDD4] bg-white shadow-[0px_24px_40px_0px_rgba(104,75,37,0.04),_0px_56px_56px_-32px_rgba(104,75,37,0.06),_0px_32px_40px_-24px_rgba(104,75,37,0.05)]">
+    <div className="flex min-w-full max-w-[624px] flex-col items-start overflow-hidden rounded-2xl border border-[#FFEDD4] bg-white shadow-[0px_24px_40px_0px_rgba(104,75,37,0.04),_0px_56px_56px_-32px_rgba(104,75,37,0.06),_0px_32px_40px_-24px_rgba(104,75,37,0.05)]">
       <div className="flex flex-col gap-12 self-stretch px-6 py-10">
         <div className="flex flex-1 items-center justify-between gap-2 self-stretch">
           <div className="text-lg text-[#222222]">Number of devices </div>
@@ -45,7 +45,7 @@ const Calculator = () => {
               value={deviceCount}
               data-fs-track="device-count-input"
               onChange={(e) => {
-                setDeviceCount(Number(e.target.value));
+                setDeviceCount(e.target.value);
               }}
             />
           </div>
@@ -64,7 +64,7 @@ const Calculator = () => {
         </div>
       </div>
       <div className="w-full shrink-0 pt-10">
-        <div className="flex w-full shrink-0 bg-[#FFF7ED] px-7 py-5 flex-col items-center md:flex-row md:items-start">
+        <div className="flex w-full shrink-0 flex-col items-center bg-[#FFF7ED] px-7 py-5 md:flex-row md:items-start">
           <div className="flex flex-1 items-center gap-4">
             <div className="flex items-center">
               <img src={prize} alt="prize" className="h-10 w-10" />
@@ -84,12 +84,15 @@ const Calculator = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-1 shrink-0 flex-col gap-8 self-stretch px-5 py-9 md:px-8 bg-[#FFFCF9]">
+      <div className="flex flex-1 shrink-0 flex-col gap-8 self-stretch bg-[#FFFCF9] px-5 py-9 md:px-8">
         <div className="flex flex-1 shrink-0 justify-between">
           <div className="flex flex-col gap-1">
-            <div className="text-lg text-[#222]">Total annual price</div>
-            <div className="text-sm text-[#6D6D6D] relative">
-              <div className="absolute top-[10px] w-[30px] left-0  h-[1px] bg-[#909090]" />
+            <div className="flex items-center text-lg text-[#222]">
+              Total annual price
+            </div>
+            <div className="flex items-center">
+            <div className="relative text-sm text-[#6D6D6D]">
+              <div className="absolute left-0 top-[10px] h-[1px] w-full bg-[#909090]" />
               <NumberFlow
                 value={totalPrice}
                 format={{
@@ -99,16 +102,17 @@ const Calculator = () => {
                   currencySign: "standard",
                   trailingZeroDisplay: "stripIfInteger",
                 }}
-                suffix=" /month"
+                //suffix=" /month"
                 style={{
                   fontVariantNumeric: "tabular-nums",
                 }}
               />
             </div>
+            <div className="text-sm text-[#909090]">/month</div></div>
           </div>
           <div className="flex flex-row items-baseline gap-1">
-            <div className="text-h5 text-[#909090] relative">
-            <div className="absolute top-[20px] w-[60px] left-0  h-[2px] bg-[#909090]" />
+            <div className="relative text-h5 text-[#909090]">
+              <div className="absolute left-0 top-[20px] h-[2px] w-full bg-[#909090]" />
               <NumberFlow
                 value={totalPricePerYear}
                 format={{
@@ -126,7 +130,7 @@ const Calculator = () => {
             <div className="text-lg text-[#909090]">/year</div>
           </div>
         </div>
-        <div className="flex flex-1 shrink-0 justify-between items-center">
+        <div className="flex flex-1 shrink-0 items-center justify-between">
           <div className="flex flex-col gap-1">
             <div className="text-lg text-[#222]">Your price</div>
             <div className="text-sm text-[#6D6D6D]">
