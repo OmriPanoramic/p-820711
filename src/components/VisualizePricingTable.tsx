@@ -16,6 +16,7 @@ const visualizeFeatures = [
   {
     id: 2,
     feature: "Timeview: basic one view setup",
+    info: "Basic view of current, power and voltage for Panoramic sensors only. Limited to up to 10 devices at a time.",
   },
   {
     id: 3,
@@ -94,8 +95,18 @@ function VisualizePricingTable() {
                   className="h-[18px] w-[18px] text-[#222222]"
                 />
               </div>
-              <p className="text-lg font-normal leading-[1.3] text-[#222222]">
-                {feature.feature}
+              <p className="flex items-center text-lg font-normal leading-[1.3] text-[#222222]">
+                {feature.feature}{" "}
+                {feature.info ? (
+                  <HoverCard>
+                    <HoverCardTrigger>
+                      <InfoIcon className="ml-2 h-4 w-4 cursor-pointer text-[##909090]" color="#909090" />
+                    </HoverCardTrigger>
+                    <HoverCardContent>
+                      <div className="text-sm">{feature.info}</div>
+                    </HoverCardContent>
+                  </HoverCard>
+                ) : null}
               </p>
             </div>
           ))}
@@ -117,11 +128,11 @@ function VisualizePricingTable() {
                   className="h-[18px] w-[18px] text-[#3C9076]"
                 />
               </div>
-              <p className="text-lg font-normal leading-[1.3] text-[#222222] flex items-center">
+              <p className="flex items-center text-lg font-normal leading-[1.3] text-[#222222]">
                 {feature.feature}{" "}
                 <HoverCard>
                   <HoverCardTrigger>
-                    <InfoIcon className="ml-2 h-4 w-4 cursor-pointer" />
+                    <InfoIcon className="ml-2 h-4 w-4 cursor-pointer text-[##909090]" color="#909090" />
                   </HoverCardTrigger>
                   <HoverCardContent>
                     <div className="text-sm">{feature.info}</div>
@@ -135,5 +146,7 @@ function VisualizePricingTable() {
     </div>
   );
 }
+
+
 
 export default VisualizePricingTable;
