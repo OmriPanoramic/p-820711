@@ -165,7 +165,6 @@ const OptimizePricingTable = () => {
         <div className="mt-4 flex flex-col items-baseline gap-4 self-stretch lg:flex-row">
           <div className="text-h2 text-[#222]">$5</div>
           <div className="flex-1 text-lg text-[#222]">per device/month*</div>
-          
         </div>
         <div className="mb-5 flex flex-col items-center justify-between md:flex-row">
           <div className="flex items-center text-xs text-[#6D6D6D] md:text-sm">
@@ -196,7 +195,7 @@ const OptimizePricingTable = () => {
             data-fs-track="see-full-pricing-button"
             variant="ghost"
             size="sm"
-            className="text-sm h-5"
+            className="h-5 text-sm"
             onClick={() => {
               const element = document.getElementById("PricingCalculator");
               if (element) {
@@ -237,7 +236,7 @@ const OptimizePricingTable = () => {
             </div>
           </div>
         </div>
-        <div className="h-[1px] w-full rounded-lg bg-[#2222221a] my-5"  />
+        <div className="my-5 h-[1px] w-full rounded-lg bg-[#2222221a]" />
         <div className="flex flex-col gap-7">
           {optimizeFeatures.map((feature) => (
             <div
@@ -257,7 +256,7 @@ const OptimizePricingTable = () => {
             </div>
           ))}
         </div>
-        <div className="h-[1px] w-full rounded-lg bg-[#2222221a] my-5"  />
+        <div className="my-5 h-[1px] w-full rounded-lg bg-[#2222221a]" />
         <div className="flex flex-col gap-7">
           <span className="text-[16px] font-semibold text-[#222222]">
             New in Optimize
@@ -275,37 +274,43 @@ const OptimizePricingTable = () => {
                 />
               </div>
               <div className="flex flex-col gap-2">
-                <div className="flex items-center gap-2">
-                  <p className="text-lg font-normal text-[#222222]">
+                <div className="flex items-start gap-2">
+                  <p className="text-lg font-normal leading-[1.3] text-[#222222]">
                     {feature.feature}
                   </p>
                   {feature.isNew && (
-                    <span className="flex shrink-0 items-center gap-1 rounded-full bg-[#48b8f021] px-1.5 py-0.5 text-xs font-semibold text-[#1195D6]">
-                      <img
-                        src={legacyFill}
-                        alt="New"
-                        className="h-[12px] w-[12px]"
-                      />
-                      NEW
+                    <span className="flex min-h-[26px] items-center">
+                      <span className="flex shrink-0 items-center gap-1 rounded-full bg-[#48b8f021] px-1.5 py-0.5 text-xs font-semibold text-[#1195D6]">
+                        <img
+                          src={legacyFill}
+                          alt="New"
+                          className="h-[12px] w-[12px]"
+                        />
+                        NEW
+                      </span>
                     </span>
                   )}
                   {feature.isBeta && (
-                    <span className=" bg-gray-100 px-1.5 py-0.5 text-xs  rounded-full font-semibold text-[#464646]">
-                      BETA
+                    <span className="flex min-h-[26px] items-center">
+                      <span className="rounded-full bg-gray-100 px-1.5 py-0.5 text-xs font-semibold text-[#464646]">
+                        BETA
+                      </span>
                     </span>
                   )}
                   {feature.showSoon && (
-                    <span className="flex shrink-0 items-center gap-1 rounded-full bg-purple-100 px-1.5 py-0.5 text-xs font-semibold text-[#BE3DD1]">
-                      <img
-                        src={legacyFill}
-                        alt="New"
-                        className="h-[12px] w-[12px]"
-                        style={{
-                          filter:
-                            "invert(41%) sepia(74%) saturate(1795%) hue-rotate(256deg) brightness(83%) contrast(96%)",
-                        }}
-                      />
-                      SOON
+                    <span className="flex min-h-[26px] items-center">
+                      <span className="flex shrink-0 items-center gap-1 rounded-full bg-purple-100 px-1.5 py-0.5 text-xs font-semibold text-[#BE3DD1]">
+                        <img
+                          src={legacyFill}
+                          alt="New"
+                          className="h-[12px] w-[12px]"
+                          style={{
+                            filter:
+                              "invert(41%) sepia(74%) saturate(1795%) hue-rotate(256deg) brightness(83%) contrast(96%)",
+                          }}
+                        />
+                        SOON
+                      </span>
                     </span>
                   )}
                 </div>

@@ -18,7 +18,7 @@ const FooterContent: React.FC = () => {
   return (
     <>
       <div className="relative z-10">
-        <h2 className="mb-12 text-[35px] font-medium leading-[1.2] text-white lg:text-h1">
+        <h2 className="mb-12 text-[35px] font-medium leading-[1.2] text-white lg:text-h1 max-w-[850px]">
         Get started on your new energy journey today
           
         </h2>
