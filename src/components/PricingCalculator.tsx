@@ -145,7 +145,7 @@ const PricingCalculator = () => {
         </div>
       </div>
 
-      <div className="flex flex-1 flex-col items-end">
+      <div className="flex flex-1 flex-col items-end mt-20 md:mt-0">
         <Calculator />
       </div>
     </div>
