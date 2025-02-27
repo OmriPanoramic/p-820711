@@ -19,7 +19,7 @@ const optimizeFeatures = [
   },
   {
     id: 2,
-    feature: "2-year historical data",
+    feature: "5-year historical data",
   },
   {
     id: 3,
