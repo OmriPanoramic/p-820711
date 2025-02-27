@@ -35,7 +35,7 @@ const optimizeFeatures = [
   },
   {
     id: 6,
-    feature: "Auto data exports (HTTPS/FTP)",
+    feature: "Auto data exports (HTTPS/SFTP)",
   },
   {
     id: 7,
