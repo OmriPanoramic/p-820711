@@ -1,6 +1,12 @@
 import VisualizeIcon from "@/assets/visualize-icon.png";
 import check from "@/assets/check.svg";
 import plus from "@/assets/plus.svg";
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card";
+import { InfoIcon } from "lucide-react";
 
 const visualizeFeatures = [
   {
@@ -41,16 +47,18 @@ const paidAddOns = [
   {
     id: 1,
     feature: "Auto data exports (HTTPS/FTP)",
+    info: "$1/device per month",
   },
   {
     id: 2,
     feature: "Customized reports",
+    info: "$50/report per month regardless of its frequency",
   },
 ];
 
 function VisualizePricingTable() {
   return (
-    <div className="flex w-full flex-col items-start gap-8 rounded-2xl border border-[#EBEBEB] bg-white px-4 md:px-10 py-10">
+    <div className="flex w-full flex-col items-start gap-8 rounded-2xl border border-[#EBEBEB] bg-white px-4 py-10 md:px-10">
       <div className="flex flex-col gap-8">
         <header className="flex w-full items-center gap-4">
           <div className="flex h-[56px] w-[56px] flex-shrink-0 items-center justify-center">
@@ -109,8 +117,16 @@ function VisualizePricingTable() {
                   className="h-[18px] w-[18px] text-[#3C9076]"
                 />
               </div>
-              <p className="text-lg font-normal  leading-[1.3] text-[#222222]">
-                {feature.feature}
+              <p className="text-lg font-normal leading-[1.3] text-[#222222] flex items-center">
+                {feature.feature}{" "}
+                <HoverCard>
+                  <HoverCardTrigger>
+                    <InfoIcon className="ml-2 h-4 w-4 cursor-pointer" />
+                  </HoverCardTrigger>
+                  <HoverCardContent>
+                    <div className="text-sm">{feature.info}</div>
+                  </HoverCardContent>
+                </HoverCard>
               </p>
             </div>
           ))}
