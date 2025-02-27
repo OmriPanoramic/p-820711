@@ -232,7 +232,7 @@ const OptimizePricingTable = () => {
               </ul>
             </div>
             <div className="flex flex-1 items-center justify-center lg:justify-end">
-              <CountdownTimer targetDate={new Date("2025-06-30")} />
+              <CountdownTimer targetDate={new Date("2025-07-31")} />
             </div>
           </div>
         </div>

@@ -79,7 +79,7 @@ const Calculator = () => {
           <div className="flex flex-col gap-2">
             <div className="text-sm text-[#6D6D6D]">This offer expires in</div>
             <div>
-              <CountdownTimer targetDate={new Date(2025, 3, 1)} />
+              <CountdownTimer targetDate={new Date(2025, 7, 31)} />
             </div>
           </div>
         </div>
