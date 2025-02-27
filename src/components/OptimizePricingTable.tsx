@@ -142,7 +142,7 @@ const OptimizePricingTable = () => {
         <div className="absolute left-0 top-[50px] h-[1767px] w-[1767px] shrink-0 rounded-[1767.744px] border border-[#FFD7A8] bg-gradient-to-b from-[rgba(255,144,55,0.56)] to-[rgba(255,247,237,0.20)]" />
         <div className="to-[rgba(255, 144, 55, 0.08)] absolute right-0 top-[-300px] h-[1767px] w-[1767px] shrink-0 rounded-[1767.744px] border border-none bg-gradient-to-b from-[rgba(255,144,55,0.56)]" />
       </div>
-      <div className="relative z-10 flex w-full flex-1 flex-col gap-2 px-4 py-10 md:px-10">
+      <div className="relative z-10 flex w-full flex-1 flex-col gap-2 px-4 py-10 md:px-8">
         <header className="mt-4 flex w-full items-center gap-4">
           <div className="flex h-[56px] w-[56px] flex-shrink-0 items-center justify-center">
             <img
