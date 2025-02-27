@@ -72,28 +72,28 @@ const PricingCalculator = () => {
                   <h3 className="text-lg font-semibold">Pricing tiers:</h3>
                   <div className="w-full">
                     <div className="grid grid-cols-2 bg-gray-100 p-2">
-                      <div className="font-medium text-sm  text-[#6D6D6D]">No. of devices</div>
-                      <div className="font-medium text-sm text-[#6D6D6D]">Price per device</div>
+                      <div className="font-medium text-xs  text-[#6D6D6D]">No. of devices</div>
+                      <div className="font-medium text-xs text-[#6D6D6D]">Price per device</div>
                     </div>
                     <div className="grid grid-cols-2 border-b p-2">
-                      <div className="text-sm text-[#222]">1 - 49</div>
-                      <div className="text-sm text-[#222]">$5</div>
+                      <div className="text-xs text-[#222]">1 - 49</div>
+                      <div className="text-xs text-[#222]">$5</div>
                     </div>
                     <div className="grid grid-cols-2 border-b p-2">
-                      <div className="text-sm text-[#6D6D6D]">50 - 99</div>
-                      <div className="text-sm text-[#6D6D6D]">$4</div>
+                      <div className="text-xs text-[#222]">50 - 99</div>
+                      <div className="text-xs text-[#222]">$4</div>
                     </div>
                     <div className="grid grid-cols-2 border-b p-2">
-                      <div className="text-sm text-[#6D6D6D]">100 - 199</div>
-                      <div className="text-sm text-[#6D6D6D]">$3</div>
+                      <div className="text-xs text-[#222]">100 - 199</div>
+                      <div className="text-xs text-[#222]">$3</div>
                     </div>
                     <div className="grid grid-cols-2 border-b p-2">
-                      <div className="text-sm text-[#6D6D6D]">200 - 299</div>
-                      <div className="text-sm text-[#6D6D6D]">$2</div>
+                      <div className="text-xs text-[#222]">200 - 299</div>
+                      <div className="text-xs text-[#222]">$2</div>
                     </div>
                     <div className="grid grid-cols-2 border-b p-2">
-                      <div className="text-sm text-[#6D6D6D]">300+</div>
-                      <div className="text-sm text-[#6D6D6D]">$1</div>
+                      <div className="text-xs text-[#222]">300+</div>
+                      <div className="text-xs text-[#222]">$1</div>
                     </div>
                   </div>
                   <div className="bg-blue-50 p-3 rounded-md mt-2">
