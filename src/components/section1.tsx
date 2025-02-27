@@ -25,7 +25,10 @@ export function Section1({
     layoutEffect: true,
   });
 
-  const mobilePosY = useTransform(scrollYProgress, [0, 0.1], [60, 100]);
+  // if the screen is mobile width we need to change the amount of move on y axis
+  const isMobile = window.innerWidth < 768;
+
+  const mobilePosY = useTransform(scrollYProgress, [0, 0.1], isMobile ? [-10, 10] : [60, 100]);
   const mobileOpacity = useTransform(scrollYProgress, [0.1, 0.2], [1, 0]);
 
   const dashboardPosY = useTransform(scrollYProgress, [0, 0.1], [0, -100]);
