@@ -43,10 +43,9 @@ const Calculator = () => {
               className="flex h-[44px] flex-1 items-center gap-2 border-[#EBEBEB] px-3 outline-none"
               value={deviceCount}
               min={1}
-              max={500}
               data-fs-track="device-count-input"
               onChange={(e) => {
-                const value = Math.min(500, Math.max(1, Math.floor(Number(e.target.value) || 0)));
+                const value = Math.max(1, Math.floor(Number(e.target.value) || 0));
                 setDeviceCount(value);
               }}
             />
