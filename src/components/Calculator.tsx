@@ -8,27 +8,26 @@ import NumberFlow from "@number-flow/react";
 const Calculator = () => {
   const [deviceCount, setDeviceCount] = useState(10);
 
-  // if deviceCount is let the 50, price pre device id $5
-  // if deviceCount is 50-100, price pre device id $4
-  // if deviceCount is 100-200, price pre device id $3
-  // if deviceCount is 200-300, price pre device id $2
-  // if deviceCount is more than 300, price pre device id $1
+  // Validate and clean input
+  const validatedDeviceCount = Math.max(1, Math.floor(Number(deviceCount) || 0));
 
+  // Pricing tiers with correct boundaries
   const pricePerDevice =
-    deviceCount <= 50
+    validatedDeviceCount < 50
       ? 5
-      : deviceCount <= 100
+      : validatedDeviceCount < 100
         ? 4
-        : deviceCount <= 200
+        : validatedDeviceCount < 200
           ? 3
-          : deviceCount <= 300
+          : validatedDeviceCount < 300
             ? 2
             : 1;
 
-  const totalPrice = deviceCount * pricePerDevice;
+  // Apply minimum price of $50/month
+  const totalPrice = Math.max(50, validatedDeviceCount * pricePerDevice);
 
   const totalPricePerYear = totalPrice * 12;
-  const totalPricePerMonth = totalPrice / 12;
+  const totalPricePerMonth = totalPrice;
   //  50% off for 3 years
   const yourPricePerYear = totalPricePerYear * 0.5;
   const yourPricePerMonth = yourPricePerYear / 12;
@@ -43,9 +42,12 @@ const Calculator = () => {
               type="number"
               className="flex h-[44px] flex-1 items-center gap-2 border-[#EBEBEB] px-3 outline-none"
               value={deviceCount}
+              min={1}
+              max={500}
               data-fs-track="device-count-input"
               onChange={(e) => {
-                setDeviceCount(e.target.value);
+                const value = Math.min(500, Math.max(1, Math.floor(Number(e.target.value) || 0)));
+                setDeviceCount(value);
               }}
             />
           </div>
@@ -72,14 +74,14 @@ const Calculator = () => {
             <div className="flex flex-col gap-0 pb-1">
               <div className="text-lg text-primary">50% off for 3 years!</div>
               <div className="text-sm text-[#222]">
-                Decide in the next 12 days and save
+                Decide in the next {Math.ceil((new Date("2025-06-30").getTime() - new Date().getTime()) / (1000 * 60 * 60 * 24))} days and save
               </div>
             </div>
           </div>
           <div className="flex flex-col gap-2">
             <div className="text-sm text-[#6D6D6D]">This offer expires in</div>
             <div>
-              <CountdownTimer targetDate={new Date("2025-07-31")} />
+              <CountdownTimer targetDate={new Date("2025-06-30")} />
             </div>
           </div>
         </div>
@@ -99,10 +101,8 @@ const Calculator = () => {
                   style: "currency",
                   currency: "USD",
                   maximumFractionDigits: 2,
-                  currencySign: "standard",
-                  trailingZeroDisplay: "stripIfInteger",
+                  currencySign: "standard"
                 }}
-                //suffix=" /month"
                 style={{
                   fontVariantNumeric: "tabular-nums",
                 }}
@@ -119,8 +119,7 @@ const Calculator = () => {
                   style: "currency",
                   currency: "USD",
                   maximumFractionDigits: 2,
-                  currencySign: "standard",
-                  trailingZeroDisplay: "stripIfInteger",
+                  currencySign: "standard"
                 }}
                 style={{
                   fontVariantNumeric: "tabular-nums",
@@ -140,8 +139,7 @@ const Calculator = () => {
                   style: "currency",
                   currency: "USD",
                   maximumFractionDigits: 2,
-                  currencySign: "standard",
-                  trailingZeroDisplay: "stripIfInteger",
+                  currencySign: "standard"
                 }}
                 suffix=" /month"
                 style={{
@@ -158,8 +156,7 @@ const Calculator = () => {
                   style: "currency",
                   currency: "USD",
                   maximumFractionDigits: 2,
-                  currencySign: "standard",
-                  trailingZeroDisplay: "stripIfInteger",
+                  currencySign: "standard"
                 }}
                 style={{
                   fontVariantNumeric: "tabular-nums",
