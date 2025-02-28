@@ -114,7 +114,7 @@ const PricingCalculator = () => {
             <span className="text-sm text-[#222222] flex-1">
               of your measured consumption
             </span>
-            <span className="text-sm text-[#909090]">Ask your partner</span>
+            <span className="text-sm text-[#909090]">ask your partner</span>
           </div>
         </div>
 

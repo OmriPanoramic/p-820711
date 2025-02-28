@@ -106,7 +106,7 @@ export const PricingCard = ({
                     </p>
                     <ul className="disc-list text-sm font-normal text-[#6D6D6D]">
                       <li className="text-sm font-light">
-                        Price locked for 3 years after purchase
+                      Discount secured for 3 years
                       </li>
                       <li className="text-sm font-light">
                         30-day money-back guarantee
