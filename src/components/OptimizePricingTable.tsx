@@ -76,7 +76,7 @@ const newOptimizeFeatures = [
   },
   {
     id: 3,
-    feature: "Event lifecycle management and collaboration",
+    feature: "Incident lifecycle management and collaboration",
     isNew: true,
     isBeta: false,
     showSoon: false,
