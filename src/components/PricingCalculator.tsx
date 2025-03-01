@@ -60,7 +60,7 @@ const PricingCalculator = () => {
             <div className="flex items-baseline gap-1">
               <span className="text-h3 text-[#222222]">$5</span>
               <span className="flex-1 text-lg text-[#222222]">
-                per device/month (billed anually)
+                per device/month (billed annually)
               </span>
             </div>
             <span className="text-sm text-[#909090] flex items-center gap-1">Min. $50/month <HoverCard>
