@@ -80,7 +80,7 @@ const Calculator = () => {
             <div className="flex flex-col gap-0 pb-1">
               <div className="text-lg text-primary">50% off for 3 years!</div>
               <div className="text-sm text-[#222]">
-                Decide in the next {Math.ceil((new Date("2025-06-30").getTime() - new Date().getTime()) / (1000 * 60 * 60 * 24))} days and save
+                Decide in the next {Math.ceil((new Date("2025-06-29").getTime() - new Date().getTime()) / (1000 * 60 * 60 * 24))} days and save
               </div>
             </div>
           </div>
