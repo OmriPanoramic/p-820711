@@ -124,7 +124,7 @@ const Calculator = () => {
           </div>
           <div className="flex flex-row items-baseline gap-1">
             <div className="relative text-[18px] text-[#909090] sm:text-h5">
-              <div className="absolute left-0 top-[10px] h-[2px] w-full bg-[#909090] sm:top-[20px]" />
+              <div className="absolute left-0 top-[12px] h-[2px] w-full bg-[#909090] sm:top-[20px]" />
               <NumberFlow
                 value={totalPricePerYear}
                 format={{
