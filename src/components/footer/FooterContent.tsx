@@ -19,9 +19,9 @@ const FooterContent: React.FC = () => {
     <>
       <div className="relative z-10">
         <h2 className="mb-12 text-[35px] font-medium leading-[1.2] text-white lg:text-h1 max-w-[850px]">
-        Get started on your new energy journey today
-          
+        Begin your new energy journey today
         </h2>
+        <p className="text-white text-sm pb-4">Get in touch with your support provider to:</p>
         <div className="flex justify-center gap-4 flex-col md:flex-row">
           <button data-fs-track="footer-demo-button" onClick={handleDemoClick} className="flex h-[48px] items-center justify-center gap-[12px] rounded-[4px] border border-white/60 px-[16px] text-white transition-colors hover:bg-white/30">
             Book a demo
