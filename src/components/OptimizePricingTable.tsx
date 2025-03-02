@@ -243,7 +243,7 @@ const OptimizePricingTable = () => {
               key={feature.id}
               className="flex items-center gap-[16px] self-stretch"
             >
-              <div className="flex min-h-[26px] min-w-[26px] items-start justify-center rounded-full border border-[#2222221a]">
+              <div className="flex min-h-[26px] min-w-[26px] items-center justify-center rounded-full border border-[#2222221a]">
                 <img
                   src={check}
                   alt="Check"
