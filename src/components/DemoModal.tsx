@@ -152,7 +152,7 @@ export function DemoModal({ isOpen, onClose }: DemoModalProps) {
               <DialogHeader className="mb-6">
                 <DialogTitle>Book a Demo</DialogTitle>
                 <DialogDescription>
-                  See how Panoramic Optimize can transform your energy future
+                  Get in touch with your support provider to see how Panoramic Optimize can transform your energy future
                 </DialogDescription>
               </DialogHeader>
               <Form {...form}>

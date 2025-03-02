@@ -125,17 +125,23 @@ export function UpgradeModal({ isOpen, onClose }: UpgradeModalProps) {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.4 }}
               >
-                Your Support Partner will reach out shortly to get your upgrade rolling
+                Your Support Partner will reach out shortly to get your upgrade
+                rolling
               </motion.p>
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5 }}
               >
-                <Button data-fs-track="got-it-button-upgrade-modal" onClick={() => {
+                <Button
+                  data-fs-track="got-it-button-upgrade-modal"
+                  onClick={() => {
                     setShowSuccess(false);
                     onClose();
-                  }}>Got it</Button>
+                  }}
+                >
+                  Got it
+                </Button>
               </motion.div>
             </motion.div>
           ) : (
@@ -147,7 +153,8 @@ export function UpgradeModal({ isOpen, onClose }: UpgradeModalProps) {
               <DialogHeader className="mb-6">
                 <DialogTitle>Upgrade to Optimize</DialogTitle>
                 <DialogDescription>
-                  Take the next step towards smarter energy management
+                  Get in touch with your support provider to take the next step
+                  towards smarter energy management
                 </DialogDescription>
               </DialogHeader>
               <Form {...form}>
@@ -176,7 +183,10 @@ export function UpgradeModal({ isOpen, onClose }: UpgradeModalProps) {
                         <FormItem className="grow">
                           <FormLabel>Job title</FormLabel>
                           <FormControl>
-                            <Input placeholder="i.e Senior Engineer" {...field} />
+                            <Input
+                              placeholder="i.e Senior Engineer"
+                              {...field}
+                            />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -252,10 +262,19 @@ export function UpgradeModal({ isOpen, onClose }: UpgradeModalProps) {
                   />
 
                   <div className="flex justify-end gap-4 pt-4">
-                    <Button type="button" variant="outline" onClick={onClose} data-fs-track="cancel-upgrade-button">
+                    <Button
+                      type="button"
+                      variant="outline"
+                      onClick={onClose}
+                      data-fs-track="cancel-upgrade-button"
+                    >
                       Cancel
                     </Button>
-                    <Button type="submit" disabled={isSubmitting} data-fs-track="request-upgrade-button">
+                    <Button
+                      type="submit"
+                      disabled={isSubmitting}
+                      data-fs-track="request-upgrade-button"
+                    >
                       {isSubmitting ? "Submitting..." : "Request Upgrade"}
                     </Button>
                   </div>
