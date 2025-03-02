@@ -43,12 +43,12 @@ const Calculator = () => {
   return (
     <div className="flex min-w-full max-w-[624px] flex-col items-start overflow-hidden rounded-2xl border border-[#FFEDD4] bg-white shadow-[0px_24px_40px_0px_rgba(104,75,37,0.04),_0px_56px_56px_-32px_rgba(104,75,37,0.06),_0px_32px_40px_-24px_rgba(104,75,37,0.05)]">
       <div className="flex flex-col gap-12 self-stretch px-6 py-10">
-        <div className="flex flex-1 items-center justify-between gap-2 self-stretch">
-          <div className="text-lg text-[#222222]">Number of devices </div>
-          <div>
+        <div className="flex flex-1 items-start justify-between gap-2 self-stretch flex-col sm:flex-row sm:items-center">
+          <div className="text-lg text-[#222222]">Number of devices</div>
+          <div className="w-full sm:w-auto">
             <Input
               type="number"
-              className="flex h-[44px] flex-1 items-center gap-2 border-[#EBEBEB] px-3 outline-none"
+              className="flex h-[44px] flex-1 items-center gap-2 border-[#EBEBEB] px-3 outline-none max-w-full w-full sm:w-auto"
               value={deviceCount}
               min={1}
               data-fs-track="device-count-input"
@@ -135,7 +135,7 @@ const Calculator = () => {
             <div className="text-lg text-[#909090]">/year</div>
           </div>
         </div>
-        <div className="flex flex-1 shrink-0 items-center justify-between flex-col sm:flex-row sm:items-start">
+        <div className="flex flex-1 shrink-0 items-start justify-between flex-col sm:flex-row sm:items-center">
           <div className="flex flex-col gap-1">
             <div className="text-lg text-[#222]">Your price</div>
             <div className="text-sm text-[#6D6D6D]">
