@@ -21,7 +21,7 @@ const FooterLinks: React.FC = () => (
         </a>
       </div>
     </div>
-    <div className="mt-6 w-full text-left text-[10px] text-[#6D6D6D] pb-12 md:pb-8">
+    <div className="flex flex-col gap-4 min-h-[150px] mt-6 w-full text-left text-[10px] text-[#6D6D6D] pb-12 md:pb-8">
       <p className="">
         The information provided on this page is for promotional and
         informational purposes only. While we strive to ensure accuracy, we do
