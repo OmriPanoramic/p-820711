@@ -1,12 +1,8 @@
 import VisualizeIcon from "@/assets/visualize-icon.png";
 import check from "@/assets/check.svg";
 import plus from "@/assets/plus.svg";
-import {
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
-} from "@/components/ui/hover-card";
 import { InfoIcon } from "lucide-react";
+import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
 
 const visualizeFeatures = [
   {
@@ -98,14 +94,14 @@ function VisualizePricingTable() {
               <p className="flex items-center text-lg font-normal leading-[1.3] text-[#222222]">
                 {feature.feature}{" "}
                 {feature.info ? (
-                  <HoverCard>
-                    <HoverCardTrigger>
+                  <Popover>
+                    <PopoverTrigger>
                       <InfoIcon className="ml-2 h-4 w-4 cursor-pointer text-[##909090]" color="#909090" />
-                    </HoverCardTrigger>
-                    <HoverCardContent>
+                    </PopoverTrigger>
+                    <PopoverContent>
                       <div className="text-sm">{feature.info}</div>
-                    </HoverCardContent>
-                  </HoverCard>
+                    </PopoverContent>
+                  </Popover>
                 ) : null}
               </p>
             </div>
@@ -130,14 +126,14 @@ function VisualizePricingTable() {
               </div>
               <p className="flex items-center text-lg font-normal leading-[1.3] text-[#222222]">
                 {feature.feature}{" "}
-                <HoverCard>
-                  <HoverCardTrigger>
+                <Popover>
+                  <PopoverTrigger>
                     <InfoIcon className="ml-2 h-4 w-4 cursor-pointer text-[##909090]" color="#909090" />
-                  </HoverCardTrigger>
-                  <HoverCardContent>
+                  </PopoverTrigger>
+                  <PopoverContent>
                     <div className="text-sm">{feature.info}</div>
-                  </HoverCardContent>
-                </HoverCard>
+                  </PopoverContent>
+                </Popover>
               </p>
             </div>
           ))}

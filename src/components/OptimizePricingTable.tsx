@@ -6,11 +6,7 @@ import check from "@/assets/check.svg";
 import deviceCount from "@/assets/deviceCount.png";
 import legacyFill from "@/assets/legacy-fill.svg";
 import { InfoIcon } from "lucide-react";
-import {
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
-} from "@/components/ui/hover-card";
+import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
 
 const optimizeFeatures = [
   {
@@ -169,11 +165,11 @@ const OptimizePricingTable = () => {
         <div className="mb-5 flex flex-col items-center justify-between md:flex-row">
           <div className="flex items-center text-xs text-[#6D6D6D] md:text-sm">
             Min. $50/month <span className="mx-2">|</span> Find device count{" "}
-            <HoverCard>
-              <HoverCardTrigger>
+            <Popover>
+              <PopoverTrigger>
                 <InfoIcon className="ml-2 h-4 w-4" />
-              </HoverCardTrigger>
-              <HoverCardContent className="w-[340px]">
+              </PopoverTrigger>
+              <PopoverContent className="w-[340px]">
                 <div className="flex flex-col items-center gap-4">
                   <div className="text-sm font-bold">
                     You can find the device count in the:
@@ -188,8 +184,8 @@ const OptimizePricingTable = () => {
                     <img src={deviceCount} alt="device count" />
                   </div>
                 </div>
-              </HoverCardContent>
-            </HoverCard>
+              </PopoverContent>
+            </Popover>
           </div>
           <Button
             data-fs-track="see-full-pricing-button"
