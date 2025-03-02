@@ -12,20 +12,6 @@ const FooterLinks: React.FC = () => (
         </span>
       </div>
       <div className="flex flex-col items-center gap-8 lg:flex-row">
-       {/*  <a
-          data-fs-track="footer-link-terms"
-          href="https://support.powerradar.energy/kb/guide/en/powerradar-terms-and-conditions-for-data-services-V5LSLeWNWh/Steps/2356143"
-          className="text-sm text-[#6D6D6D] transition-colors hover:text-[#171717]"
-        >
-          Terms & Conditions
-        </a>
-        <a
-          data-fs-track="footer-link-privacy"
-          href="https://support.powerradar.energy/kb/guide/en/privacy-notice-IyF6Tl9NVp/Steps/2356295"
-          className="text-sm text-[#6D6D6D] transition-colors hover:text-[#171717]"
-        >
-          Privacy Policy
-        </a> */}
         <a
           data-fs-track="footer-link-login"
           href="https://powerradar.energy"
@@ -35,8 +21,8 @@ const FooterLinks: React.FC = () => (
         </a>
       </div>
     </div>
-    <div className="mt-6 w-full text-left text-[10px] text-[#6D6D6D] pb-4">
-      <p>
+    <div className="mt-6 w-full text-left text-[10px] text-[#6D6D6D] pb-12 md:pb-8">
+      <p className="">
         The information provided on this page is for promotional and
         informational purposes only. While we strive to ensure accuracy, we do
         not guarantee the completeness, reliability, or suitability of the
