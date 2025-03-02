@@ -105,7 +105,7 @@ const Calculator = () => {
             </div>
             <div className="flex items-center">
               <div className="relative text-sm text-[#6D6D6D]">
-                <div className="absolute left-0 top-[10px] h-[1px] w-full bg-[#909090]" />
+                <div className="absolute left-0 top-[5px] h-[1px] w-full bg-[#909090] sm:top-[10px]" />
                 <NumberFlow
                   value={totalPrice}
                   format={{
