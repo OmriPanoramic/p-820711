@@ -9,28 +9,36 @@ const Calculator = () => {
   const [deviceCount, setDeviceCount] = useState(10);
 
   // Validate and clean input
-  const validatedDeviceCount = Math.max(1, Math.floor(Number(deviceCount) || 0));
+  //const validatedDeviceCount = Math.max(1, Math.floor(Number(deviceCount) || 0));
 
   // Pricing tiers with correct boundaries
   const pricePerDevice =
-    validatedDeviceCount < 50
+  deviceCount < 50
       ? 5
-      : validatedDeviceCount < 100
+      : deviceCount < 100
         ? 4
-        : validatedDeviceCount < 200
+        : deviceCount < 200
           ? 3
-          : validatedDeviceCount < 300
+          : deviceCount < 300
             ? 2
             : 1;
 
   // Apply minimum price of $50/month
-  const totalPrice = Math.max(50, validatedDeviceCount * pricePerDevice);
+  const totalPrice = Math.max(50, deviceCount * pricePerDevice);
 
   const totalPricePerYear = totalPrice * 12;
   const totalPricePerMonth = totalPrice;
   //  50% off for 3 years
   const yourPricePerYear = totalPricePerYear * 0.5;
   const yourPricePerMonth = yourPricePerYear / 12;
+
+  const changeDeviceCount = (value: number) => {
+    // device can't be less than 1
+    if (value < 1) {
+      value = 1;
+    }
+    setDeviceCount(value);
+  };
 
   return (
     <div className="flex min-w-full max-w-[624px] flex-col items-start overflow-hidden rounded-2xl border border-[#FFEDD4] bg-white shadow-[0px_24px_40px_0px_rgba(104,75,37,0.04),_0px_56px_56px_-32px_rgba(104,75,37,0.06),_0px_32px_40px_-24px_rgba(104,75,37,0.05)]">
@@ -45,8 +53,7 @@ const Calculator = () => {
               min={1}
               data-fs-track="device-count-input"
               onChange={(e) => {
-                const value = Math.max(1, Math.floor(Number(e.target.value) || 0));
-                setDeviceCount(value);
+                changeDeviceCount(Number(e.target.value));
               }}
             />
           </div>
@@ -59,7 +66,7 @@ const Calculator = () => {
             data-fs-track="slider"
             value={[deviceCount]}
             onValueChange={(value) => {
-              setDeviceCount(value[0]);
+              changeDeviceCount(value[0]);
             }}
           />
         </div>
