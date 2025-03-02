@@ -97,7 +97,7 @@ export function Section1({
                 className="w-full border border-[#EBEBEB] sm:w-auto"
                 onClick={() =>
                   window.open(
-                    "/The world has changed and so must we.pdf",
+                    "/Panoramic_to_legacy_customers_letter.pdf",
                     "_blank",
                   )
                 }

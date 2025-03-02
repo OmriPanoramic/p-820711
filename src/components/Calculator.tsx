@@ -93,7 +93,7 @@ const Calculator = () => {
         </div>
       </div>
       <div className="flex flex-1 shrink-0 flex-col gap-8 self-stretch bg-[#FFFCF9] px-5 py-9 md:px-8">
-        <div className="flex flex-1 shrink-0 justify-between">
+        <div className="flex flex-1 shrink-0 justify-between  flex-col sm:flex-row">
           <div className="flex flex-col gap-1">
             <div className="flex items-center text-lg text-[#222]">
               Total annual price
@@ -116,7 +116,7 @@ const Calculator = () => {
             </div>
             <div className="text-sm text-[#909090]">/month</div></div>
           </div>
-          <div className="flex flex-row items-baseline gap-1">
+          <div className="flex flex-row items-baseline gap-1 ">
             <div className="relative text-h5 text-[#909090]">
               <div className="absolute left-0 top-[20px] h-[2px] w-full bg-[#909090]" />
               <NumberFlow
@@ -135,7 +135,7 @@ const Calculator = () => {
             <div className="text-lg text-[#909090]">/year</div>
           </div>
         </div>
-        <div className="flex flex-1 shrink-0 items-center justify-between">
+        <div className="flex flex-1 shrink-0 items-center justify-between flex-col sm:flex-row sm:items-start">
           <div className="flex flex-col gap-1">
             <div className="text-lg text-[#222]">Your price</div>
             <div className="text-sm text-[#6D6D6D]">
