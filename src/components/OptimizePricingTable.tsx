@@ -47,7 +47,7 @@ const optimizeFeatures = [
   },
   {
     id: 10,
-    feature: "Auto reporting",
+    feature: "Automated Reports",
   },
   {
     id: 11,
