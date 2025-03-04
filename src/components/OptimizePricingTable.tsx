@@ -154,7 +154,7 @@ const OptimizePricingTable = () => {
               Optimize
             </h5>
             <span className="text-lg font-normal leading-[1.3] text-[#6D6D6D]">
-              Optimize energy consumption and reduce costs with advanced tools
+              Optimize your energy infrastructure and reduce costs, with advanced tools and unlimited data sources
             </span>
           </div>
         </header>

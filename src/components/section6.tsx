@@ -12,14 +12,7 @@ export function Section6() {
           What upgrading to Optimize really means
         </h2>
       </div>
-      <div className="relative left-0 flex flex-col justify-center gap-2 md:left-20 lg:-left-40">
-        <div className="flex items-start gap-2">
-          <img src={annotation} alt="annotation" />
-          <span className="w-[225px] text-lg font-semibold text-[#1195D6]">
-            Upgrade your trial version early and save big!
-          </span>
-        </div>
-      </div>
+
       <div className="relative flex w-full flex-col lg:flex-row">
         <div className="z-[1] mr-0 grow lg:-mr-5 lg:max-w-[775px] lg:grow" id="OptimizeFeatures">
           <OptimizePricingTable />

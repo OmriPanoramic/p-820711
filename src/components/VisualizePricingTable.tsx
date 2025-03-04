@@ -72,7 +72,7 @@ function VisualizePricingTable() {
               Visualize
             </h5>
             <span className="text-lg font-normal leading-[1.3] text-[#6D6D6D]">
-              Visualize your data from Panoramic Sensors
+              Visualize and download your data from Panoramic Sensors only
             </span>
           </div>
         </header>

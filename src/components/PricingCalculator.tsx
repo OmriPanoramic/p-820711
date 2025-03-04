@@ -133,9 +133,7 @@ const PricingCalculator = () => {
         </div>
 
         <div className="flex flex-col gap-7">
-          <span className="text-[16px] font-semibold text-[#222222]">
-            Enjoy:
-          </span>
+
           {features.map((feature) => (
             <div
               key={feature.id}
