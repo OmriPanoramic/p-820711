@@ -28,7 +28,7 @@ const FeatureItem = ({
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="flex flex-col border-b border-border/50 last:border-0 py-[40px]"
+      className="flex flex-col border-b border-border/50 py-[40px]"
       {...props}
     >
       <div 
@@ -70,6 +70,11 @@ export const Section2 = () => {
       title: "Enhanced user experience",
       description: "A fresh, intuitive design with faster navigation, a sleek new look, and AI-powered quick search delivering better results in seconds.",
     },
+        {
+      icon: business,
+      title: "Empowered team performance",
+      description: "Engage more stakeholders—across production, operations, sustainability, and beyond. Collaborate with every team member through powerful tools for teamwork, task delegation, and complete incident lifecycle management.",
+    },
     {
       icon: cyber,
       title: "End-to-end personalization",
@@ -90,16 +95,7 @@ export const Section2 = () => {
       title: "Smarter energy intelligence",
       description: "Deeper insights into energy patterns, custom benchmarks, and enhanced proactive maintenance with AI-powered tools, tailored to your KPIs and workflows.",
     },
-    {
-      icon: support,
-      title: "Superior support",
-      description: "Experience top-tier assistance with faster response times, expert guidance, and a dedicated team to ensure your success with Optimize.",
-    },
-    {
-      icon: business,
-      title: "Empowered team performance",
-      description: "Engage more stakeholders—across production, operations, sustainability, and beyond. Collaborate with every team member through powerful tools for teamwork, task delegation, and complete incident lifecycle management.",
-    },
+
   ];
 
   return (
