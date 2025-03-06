@@ -6,8 +6,6 @@ import {
   Head,
   Heading,
   Html,
-  Img,
-  Link,
   Preview,
   Row,
   Section,
@@ -20,6 +18,7 @@ interface DemoRequestProps {
   email: string;
   account: string;
   partner: string;
+  jobTitle: string;
 }
 
 const DemoRequestEmail: React.FC<DemoRequestProps> = ({
@@ -28,6 +27,7 @@ const DemoRequestEmail: React.FC<DemoRequestProps> = ({
   email,
   account,
   partner,
+  jobTitle
 }) => {
   return (
     <Html>
@@ -49,6 +49,9 @@ const DemoRequestEmail: React.FC<DemoRequestProps> = ({
             <Heading style={heading}>New Demo Request</Heading>
             <Text style={text}>
               <strong>Full Name:</strong> {fullName}
+            </Text>
+            <Text style={text}>
+              <strong>Job Title:</strong> {jobTitle}
             </Text>
             <Text style={text}>
               <strong>Phone:</strong> {phone}
