@@ -10,11 +10,6 @@ const visualizeFeatures = [
     feature: "Real-time data readings",
   },
   {
-    id: 2,
-    feature: "Timeview: basic one view setup",
-    info: "Basic view of current, power and voltage for Panoramic sensors only. Limited to up to 10 devices at a time.",
-  },
-  {
     id: 3,
     feature: "1 year historical data",
   },
@@ -23,16 +18,21 @@ const visualizeFeatures = [
     feature: "Unlimited users",
   },
   {
-    id: 5,
-    feature: "1 pre-defined dashboard",
-  },
-  {
     id: 6,
     feature: "Energy flow application",
   },
   {
     id: 7,
     feature: "Manual data export to CSV of individual sites",
+  },
+  {
+    id: 2,
+    feature: "Timeview: basic one view setup",
+    info: "Basic view of current, power and voltage for Panoramic sensors only. Limited to up to 10 devices at a time.",
+  },
+  {
+    id: 5,
+    feature: "1 pre-defined dashboard",
   },
   {
     id: 8,
@@ -55,8 +55,8 @@ const paidAddOns = [
 
 function VisualizePricingTable() {
   return (
-    <div className="flex w-full flex-col items-start gap-8 rounded-2xl border border-[#EBEBEB] bg-white px-4 py-10 md:px-10">
-      <div className="flex flex-col gap-8">
+    <div className="flex w-full flex-col items-start gap-8 rounded-2xl border border-[#EBEBEB] bg-white px-4 py-10 md:px-8">
+      <div className="flex flex-col gap-0">
         <header className="flex w-full items-center gap-4">
           <div className="flex h-[56px] w-[56px] flex-shrink-0 items-center justify-center">
             <img
@@ -72,12 +72,12 @@ function VisualizePricingTable() {
               Visualize
             </h5>
             <span className="text-lg font-normal leading-[1.3] text-[#6D6D6D]">
-              Visualize and download your data from Panoramic Sensors only
+             Visualize your data with basic monitoring tools
             </span>
           </div>
         </header>
-        <div className="h-8 text-h5 text-[#222]">Free</div>
-        <div className="my-1 h-[1px] w-full rounded-lg bg-[#2222221a]" />
+        {/* <div className="h-8 text-h5 text-[#222]">Free</div> */}
+        <div className="my-8 h-[1px] w-full rounded-lg bg-[#2222221a]" />
         <div className="flex flex-col gap-7">
           {visualizeFeatures.map((feature) => (
             <div
@@ -107,7 +107,7 @@ function VisualizePricingTable() {
             </div>
           ))}
         </div>
-        <div className="my-1 h-[1px] w-full rounded-lg bg-[#2222221a]" />
+        <div className="my-6 h-[1px] w-full rounded-lg bg-[#2222221a]" />
         <div className="flex flex-col gap-7">
           <span className="text-[16px] font-semibold text-[#222222]">
             Paid add-ons

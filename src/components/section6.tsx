@@ -13,11 +13,11 @@ export function Section6() {
         </h2>
       </div>
 
-      <div className="relative flex w-full flex-col lg:flex-row">
-        <div className="z-[1] mr-0 grow lg:-mr-5 lg:max-w-[775px] lg:grow" id="OptimizeFeatures">
+      <div className="relative flex w-full flex-col lg:flex-row gap-5">
+        <div className="grow lg:max-w-[775px] lg:grow" id="OptimizeFeatures">
           <OptimizePricingTable />
         </div>
-        <div className="sticky right-0 top-4 ml-0 flex-1 self-start py-6">
+        <div className="flex-1 self-start">
           <VisualizePricingTable />
         </div>
       </div>
