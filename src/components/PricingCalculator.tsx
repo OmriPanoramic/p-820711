@@ -26,10 +26,6 @@ const features = [
     feature: "End-to-end personalization",
   },
   {
-    id: 6,
-    feature: "Superior support",
-  },
-  {
     id: 7,
     feature: "Continuous innovation and visionary roadmap",
   },
@@ -61,14 +57,16 @@ const PricingCalculator = () => {
             <div className="flex items-baseline gap-1">
               <span className="text-h3 text-[#222222]">$5</span>
               <span className="flex-1 text-lg text-[#222222]">
-                per device/month (billed annually)
+                per device/month, per site
               </span>
             </div>
             <span className="flex items-center gap-1 text-sm text-[#909090]">
-              Min. $50/month{" "}
+              Min. $50/month <span className="mx-2">|</span>
               <Popover>
                 <PopoverTrigger>
-                  <InfoIcon className="ml-2 h-4 w-4 cursor-pointer" />
+                  <span className="text-sm text-[#0073BA]">
+                    see pricing tiers
+                  </span>
                 </PopoverTrigger>
                 <PopoverContent className="w-[340px]">
                   <div className="flex flex-col gap-4">
@@ -125,15 +123,65 @@ const PricingCalculator = () => {
             <span className="text-[20px] text-[#222222]">1%</span>
             <span className="flex-1 text-sm text-[#222222]">
               of your measured consumption
-            </span>
-            <span className="text-sm text-[#909090]">
-              ask your support provider
+              <Popover>
+                <PopoverTrigger>
+                  <InfoIcon className="ml-2 h-4 w-4 cursor-pointer text-[#6D6D6D]" />
+                </PopoverTrigger>
+                <PopoverContent className="w-[370px]">
+                  <div className="flex flex-col gap-4">
+                    <div className="flex flex-col gap-2">
+                      <div className="flex items-center gap-2">
+                        <div>
+                          <p className="flex items-center gap-2 font-semibold">
+                            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#F5F5F5] text-sm font-semibold text-[#6D6D6D]">
+                              1
+                            </span>
+                            Monthly energy consumption
+                          </p>
+                          <p className="ml-7 text-sm text-[#6D6D6D] font-light">
+                            Avg measured usage over past 12 months
+                          </p>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <div>
+                          <p className="font-semibold flex gap-2"><span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#F5F5F5] text-sm font-semibold text-[#6D6D6D]">
+                              2
+                            </span>
+                            1% of consumption applied
+                          </p>
+                          <p className="ml-7 text-sm text-[#6D6D6D] font-light">
+                            Contributes to Optimize plan price
+                          </p>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-2">
+                          <div>
+                          <p className="font-semibold flex gap-2"><span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#F5F5F5] text-sm font-semibold text-[#6D6D6D]">
+                              3
+                            </span>
+                            Assigned rate: $0.15 per kWh
+                          </p>
+                          <p className="ml-7 text-sm text-[#6D6D6D] font-light">
+                            Cost = kWh × $0.15
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="mt-2 rounded-md bg-gray-100 p-3">
+                      <p className="font-semibold">Example:</p>
+                      <p className="text-sm">
+                        1% of 34,000 kWh = 340 × $0.15 = $51/month
+                      </p>
+                    </div>
+                  </div>
+                </PopoverContent>
+              </Popover>
             </span>
           </div>
         </div>
 
         <div className="flex flex-col gap-7">
-
           {features.map((feature) => (
             <div
               key={feature.id}

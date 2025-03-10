@@ -53,6 +53,10 @@ const optimizeFeatures = [
     id: 11,
     feature: "Device benchmarking",
   },
+  {
+    id: 7,
+    feature: "Real-time custom alerts",
+  },
 ];
 
 const newOptimizeFeatures = [
@@ -98,13 +102,7 @@ const newOptimizeFeatures = [
     isBeta: false,
     showSoon: false,
   },
-  {
-    id: 7,
-    feature: "Real-time custom alerts",
-    isNew: true,
-    isBeta: false,
-    showSoon: false,
-  },
+ 
   {
     id: 8,
     feature: "The new Timeview",
