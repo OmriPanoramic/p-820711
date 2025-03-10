@@ -52,8 +52,9 @@ const PricingCalculator = () => {
           </h2>
         </div>
 
-        <div className="flex-start border-[#EBEBEB flex max-w-[460px] flex-col rounded-md border">
-          <div className="flex flex-col justify-center gap-2 self-stretch px-6 py-5">
+        <div className="flex-start border-[#EBEBEB flex max-w-[460px] flex-col rounded-xl border overflow-hidden">
+          <div className="text-sm text-[#6D6D6D] px-6 bg-[#FBFBFB] py-3">Optimize pricing:</div>
+          <div className="flex flex-col justify-center gap-2 self-stretch px-6 py-5 bg-white">
             <div className="flex items-baseline gap-1">
               <span className="text-h3 text-[#222222]">$5</span>
               <span className="flex-1 text-lg text-[#222222]">
@@ -119,7 +120,7 @@ const PricingCalculator = () => {
               or
             </div>
           </div>
-          <div className="flex items-baseline gap-2 self-stretch px-6 py-5">
+          <div className="flex items-baseline gap-2 self-stretch px-6 py-5 bg-white">
             <span className="text-[20px] text-[#222222]">1%</span>
             <span className="flex-1 text-sm text-[#222222]">
               of your measured consumption
