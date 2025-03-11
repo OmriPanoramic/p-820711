@@ -171,7 +171,7 @@ const PricingCalculator = () => {
                     </div>
                     <div className="mt-2 rounded-md bg-gray-100 p-3">
                       <p className="font-semibold">Example:</p>
-                      <p className="text-sm">
+                      <p className="text-sm text-[#6D6D6D]">
                         1% of 34,000 kWh = 340 × $0.15 = $51/month
                       </p>
                     </div>
