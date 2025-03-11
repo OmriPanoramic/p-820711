@@ -107,7 +107,7 @@ export const Header = ({ scrollRef }: { scrollRef: React.RefObject<HTMLDivElemen
             </button>
             <button
               data-fs-track="pricing-button"
-              onClick={() => scrollToSection("section6")}
+              onClick={() => scrollToSection("PricingCalculator")}
               className="text-sm text-muted-foreground transition-colors hover:text-primary"
             >
               Pricing
