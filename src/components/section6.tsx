@@ -13,7 +13,7 @@ export function Section6() {
         </h2>
       </div>
 
-      <div className="relative flex w-full flex-col lg:flex-row gap-5">
+      <div className="relative flex w-full flex-col gap-5 lg:flex-row">
         <div className="grow lg:max-w-[775px] lg:grow" id="OptimizeFeatures">
           <OptimizePricingTable />
         </div>
@@ -21,12 +21,12 @@ export function Section6() {
           <VisualizePricingTable />
         </div>
       </div>
-      <div
+      {/* <div
         className="flex w-full flex-col items-center pt-32"
         id="PricingCalculator"
       >
         <PricingCalculator />
-      </div>
+      </div> */}
     </div>
   );
 }
