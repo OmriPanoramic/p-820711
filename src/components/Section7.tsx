@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 // Import images
 import imgNavigation from "@/assets/section7/img-navigation.png";
@@ -14,12 +14,12 @@ import imgSchedulesMobile from "@/assets/section7/img-schedules-mobile.png";
 import imgTimeviewDesktop from "@/assets/section7/img-timeview-desktop.png";
 import imgTimeviewMobile from "@/assets/section7/img-timeview-mobile.png";
 
-// Feature items matching the image
+// Feature items matching the image with detailed descriptions
 const featureItems = [
   {
     title: "Enhanced user interface and navigation",
     description:
-      "Streamlined navigation with improved accessibility and user experience.",
+      "The new Panoramic Optimize interface has been reimagined to offer a smoother, faster, and more intuitive experience.",
     gridClass: "col-span-1 row-span-1 md:col-span-1",
     image: imgNavigation,
     mobileImage: imgNavigation, // Same image for both
@@ -27,7 +27,7 @@ const featureItems = [
   {
     title: "Unlimited customizable dashboards",
     description:
-      "Create and personalize multiple dashboards to monitor your key metrics.",
+      "1. Transform any category, group, or device type into a dynamic, real-time widget tailored to your needs\n2. Easily design dashboards with drag-and-drop widgets to match your requirements and daily processes\n3. Share dashboards seamlessly with team members and executives for enhanced collaboration and efficiency\n4. Display dashboards automatically for public viewing and broadcast them to large screens for all employees to watch",
     gridClass: "col-span-1 row-span-1 md:col-span-2",
     image: imgDashboardsDesktop,
     mobileImage: imgDashboardsMobile,
@@ -35,7 +35,7 @@ const featureItems = [
   {
     title: "Collaborate on event management",
     description:
-      "Work together with your team to handle events and incidents efficiently.",
+      "1. Create actionable alerts and assign tasks to the right team members\n2. Add important notes\n3. Track events with real-time status updates, and document lessons learned for future reference",
     gridClass: "col-span-1 row-span-1 md:col-span-2",
     image: imgEventsDesktop,
     mobileImage: imgEventsMobile,
@@ -43,7 +43,7 @@ const featureItems = [
   {
     title: "Customizable categories and device types",
     description:
-      "Organize and filter your devices with custom categories and types.",
+      "Add new categories and device types completely customized to your needs. Adapt the system to your unique operational requirements.\n\nCreate widgets that serve your categories and device types. Display relevant data, enabling real-time monitoring and actionable insights specific to your customized setup.",
     gridClass: "col-span-1 row-span-1 md:col-span-1",
     image: imgCategories,
     mobileImage: imgCategories, // Same image for both
@@ -51,7 +51,7 @@ const featureItems = [
   {
     title: "Groups: New ways to manage your assets",
     description:
-      "Manage your assets more effectively with enhanced grouping features.",
+      "Organize devices into tailored groups—based on shifts, line numbers, production lines, or any operational need.\n\nGenerate actionable analytics for your tailored groups—track consumption, costs, carbon footprints, and more for each group.",
     gridClass: "col-span-1 row-span-1 md:col-span-1",
     image: imgGroups,
     mobileImage: imgGroups, // Same image for both
@@ -59,7 +59,7 @@ const featureItems = [
   {
     title: "Schedules: New ways for time management and data presentation",
     description:
-      "Schedule and visualize your data with improved time management tools.",
+      "1. Create personalized time schedules for various needs, including shifts, working hours, off-work hours, and more. Take full control to design schedules that fit your workflow\n2. Display time-sensitive data across schedules. Effortlessly align your Timeview insights with your schedules, making data and decision-making easier than ever",
     gridClass: "col-span-1 row-span-1 md:col-span-2",
     image: imgSchedulesDesktop,
     mobileImage: imgSchedulesMobile,
@@ -67,7 +67,7 @@ const featureItems = [
   {
     title: "The new Timeview: Real-time insights for your daily needs",
     description:
-      "Get instant insights and real-time data visualization for daily operations.",
+      "1. Dive into detailed data insights, including energy consumption, costs, carbon emissions, and more\n2. See device performance across different time frames, see the power type and communication quality of every device\n3. Interact seamlessly with data and compare metrics for deeper, actionable insights\n4. Click on any point to instantly view a consolidated breakdown of that specific moment\n5. Save any screen view as a personalized or group preset, to share and use across your people and teams",
     gridClass: "col-span-1 row-span-1 md:col-span-3",
     image: imgTimeviewDesktop,
     mobileImage: imgTimeviewMobile,
@@ -127,23 +127,42 @@ export const Section7 = () => {
             <h3 className="mb-4 p-6 text-h5 text-[#222222]">{item.title}</h3>
 
             <div className="relative flex h-full w-full items-center justify-center overflow-hidden rounded-md">
-              {/* Display appropriate image based on screen size */}
-              <img
-                src={isMobile ? item.mobileImage : item.image}
-                alt={item.title}
-                className="h-full w-full object-contain"
-              />
-
-              {/* Description that appears on hover */}
+              {/* Container for image with slide down animation */}
               <motion.div
-                className="absolute inset-0 flex items-center justify-center rounded-md bg-white/90 p-4 backdrop-blur-sm"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: hoveredIndex === index ? 1 : 0 }}
-                transition={{ duration: 0.2 }}
+                className="h-full w-full"
+                animate={{
+                  y: hoveredIndex === index ? "30%" : 0,
+                  opacity: hoveredIndex === index ? 0.6 : 1,
+                }}
+                transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
               >
-                <p className="text-center text-sm text-gray-700">
-                  {item.description}
-                </p>
+                <img
+                  src={isMobile ? item.mobileImage : item.image}
+                  alt={item.title}
+                  className="h-full w-full object-contain"
+                />
+              </motion.div>
+
+              {/* Description that slides in from top */}
+              <motion.div
+                className="absolute inset-0 flex items-start justify-start px-2"
+                initial={{ opacity: 0, y: "-100%" }}
+                animate={{
+                  opacity: hoveredIndex === index ? 1 : 0,
+                  y: hoveredIndex === index ? "0%" : "-100%",
+                }}
+                transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+              >
+                <div className="rounded-lg p-4 text-[#222222] backdrop-blur-sm">
+                  {item.description.split("\n").map((line, i) => (
+                    <p
+                      key={i}
+                      className={`${line.match(/^\d+\./) ? "mt-1 text-left font-medium" : ""} ${i > 0 && !line.match(/^\d+\./) ? "mt-4" : ""}`}
+                    >
+                      {line}
+                    </p>
+                  ))}
+                </div>
               </motion.div>
             </div>
           </motion.div>
