@@ -128,7 +128,7 @@ const PricingCalculator = () => {
                   </Popover>
                 </span>
               </div>
-              <div className="flex flex-col items-center justify-center border-t border-[#FFEDD4] p-12">
+              <div className="flex flex-col items-center justify-center border-t border-[#FFEDD4] bg-gradient-to-br from-[#e6f7f5] via-[#fffbf8] to-[#ffebd8] p-12">
                 <div className="flex flex-col items-center justify-center gap-2">
                   <p className="text-sm text-[#6D6D6D]">
                     For loyal customer limited time offer:
