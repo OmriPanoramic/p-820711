@@ -27,7 +27,7 @@ const visualizeFeatures = [
   },
   {
     id: 2,
-    feature: "Timeview: basic one view setup",
+    feature: "Timeview: basic, one view setup",
     info: "Basic view of current, power and voltage for Panoramic sensors only. Limited to up to 10 devices at a time.",
   },
   {
@@ -44,12 +44,17 @@ const paidAddOns = [
   {
     id: 1,
     feature: "Auto data exports (HTTPS/FTP)",
-    info: "$1/device per month",
+    info: "$1 per sensor or meter / month",
   },
   {
     id: 2,
-    feature: "Customized reports",
+    feature: "Automated reports",
     info: "$50/report per month regardless of its frequency",
+  },
+  {
+    id: 3,
+    feature: "Integration with third party meters",
+    info: "$25 per 3rd party meter / month. Minimum of 2 meters",
   },
 ];
 
@@ -69,10 +74,11 @@ function VisualizePricingTable() {
           </div>
           <div className="flex flex-1 flex-col gap-2">
             <h5 className="text-h5 font-medium leading-[1.3] text-[#222]">
-              Visualize
+              Visualize{" "}
+              <span className="text-sm text-[#6D6D6D]">Free basic version</span>
             </h5>
             <span className="text-lg font-normal leading-[1.3] text-[#6D6D6D]">
-             Visualize your data with basic monitoring tools
+              Visualize sensor data with basic monitoring tools
             </span>
           </div>
         </header>
@@ -96,7 +102,10 @@ function VisualizePricingTable() {
                 {feature.info ? (
                   <Popover>
                     <PopoverTrigger>
-                      <InfoIcon className="ml-2 h-4 w-4 cursor-pointer text-[##909090]" color="#909090" />
+                      <InfoIcon
+                        className="ml-2 h-4 w-4 cursor-pointer text-[##909090]"
+                        color="#909090"
+                      />
                     </PopoverTrigger>
                     <PopoverContent>
                       <div className="text-sm">{feature.info}</div>
@@ -128,7 +137,10 @@ function VisualizePricingTable() {
                 {feature.feature}{" "}
                 <Popover>
                   <PopoverTrigger>
-                    <InfoIcon className="ml-2 h-4 w-4 cursor-pointer text-[##909090]" color="#909090" />
+                    <InfoIcon
+                      className="ml-2 h-4 w-4 cursor-pointer text-[##909090]"
+                      color="#909090"
+                    />
                   </PopoverTrigger>
                   <PopoverContent>
                     <div className="text-sm">{feature.info}</div>
@@ -142,7 +154,5 @@ function VisualizePricingTable() {
     </div>
   );
 }
-
-
 
 export default VisualizePricingTable;

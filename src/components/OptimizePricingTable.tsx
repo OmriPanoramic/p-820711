@@ -31,7 +31,7 @@ const optimizeFeatures = [
   },
   {
     id: 6,
-    feature: "Auto data exports (HTTPS/SFTP)",
+    feature: "Customizable, automated reports (HTTPS/FTP)",
   },
   {
     id: 7,
@@ -43,7 +43,7 @@ const optimizeFeatures = [
   },
   {
     id: 9,
-    feature: "Heatmap: Instant waste identification",
+    feature: "Energy Heatmap",
   },
   {
     id: 10,
@@ -56,6 +56,10 @@ const optimizeFeatures = [
   {
     id: 7,
     feature: "Real-time custom alerts",
+  },
+  {
+    id: 8,
+    feature: "Deployment tool",
   },
 ];
 
@@ -102,7 +106,7 @@ const newOptimizeFeatures = [
     isBeta: false,
     showSoon: false,
   },
- 
+
   {
     id: 8,
     feature: "The new Timeview",
@@ -149,107 +153,39 @@ const OptimizePricingTable = () => {
           </div>
           <div className="flex flex-1 flex-col gap-2">
             <h5 className="text-h5 font-medium leading-[1.3] text-[#222]">
-              Optimize<Button
-            data-fs-track="see-full-pricing-button"
-            variant="ghost"
-            size="sm"
-            className="h-5 text-sm"
-            onClick={() => {
-              const element = document.getElementById("PricingCalculator");
-              if (element) {
-                element.scrollIntoView({ behavior: "smooth", block: "start" });
-                const headerOffset = 100; // 16 * 4 = 64px (h-16 class)
-                const elementPosition = element.getBoundingClientRect().top;
-                const offsetPosition =
-                  elementPosition + window.pageYOffset - headerOffset;
-                window.scrollTo({
-                  top: offsetPosition,
-                  behavior: "smooth",
-                });
-              }
-            }}
-          >
-            See full pricing
-          </Button>
+              Optimize
+              <Button
+                data-fs-track="see-full-pricing-button"
+                variant="ghost"
+                size="sm"
+                className="h-5 text-sm"
+                onClick={() => {
+                  const element = document.getElementById("PricingCalculator");
+                  if (element) {
+                    element.scrollIntoView({
+                      behavior: "smooth",
+                      block: "start",
+                    });
+                    const headerOffset = 100; // 16 * 4 = 64px (h-16 class)
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const offsetPosition =
+                      elementPosition + window.pageYOffset - headerOffset;
+                    window.scrollTo({
+                      top: offsetPosition,
+                      behavior: "smooth",
+                    });
+                  }
+                }}
+              >
+                See Pricing
+              </Button>
             </h5>
             <span className="text-lg font-normal leading-[1.3] text-[#6D6D6D]">
-            Optimize energy consumption and reduce costs with advanced tools            </span>
+              Optimize energy consumption and reduce costs with advanced
+              tools{" "}
+            </span>
           </div>
         </header>
-        {/* <div className="mt-4 flex flex-col items-baseline gap-4 self-stretch lg:flex-row">
-          <div className="text-h2 text-[#222]">$5</div>
-          <div className="flex-1 text-lg text-[#222]">per device/month*</div>
-        </div>
-        <div className="mb-5 flex flex-col items-center justify-between md:flex-row">
-          <div className="flex items-center text-xs text-[#6D6D6D] md:text-sm">
-            Min. $50/month <span className="mx-2">|</span> Find device count{" "}
-            <Popover>
-              <PopoverTrigger>
-                <InfoIcon className="ml-2 h-4 w-4" />
-              </PopoverTrigger>
-              <PopoverContent className="w-[340px]">
-                <div className="flex flex-col items-center gap-4">
-                  <div className="text-sm font-bold">
-                    You can find the device count in the:
-                    <ul className="list-disc text-sm font-normal">
-                      <li>Account dashboard - overview KPIs</li>
-                      <li>Account dashboard - sites list</li>
-                      <li>Site dashboard - in the Summary widget</li>
-                    </ul>
-                  </div>
-
-                  <div className="w-[300px] overflow-hidden rounded-md">
-                    <img src={deviceCount} alt="device count" />
-                  </div>
-                </div>
-              </PopoverContent>
-            </Popover>
-          </div>
-          <Button
-            data-fs-track="see-full-pricing-button"
-            variant="ghost"
-            size="sm"
-            className="h-5 text-sm"
-            onClick={() => {
-              const element = document.getElementById("PricingCalculator");
-              if (element) {
-                element.scrollIntoView({ behavior: "smooth", block: "start" });
-                const headerOffset = 100; // 16 * 4 = 64px (h-16 class)
-                const elementPosition = element.getBoundingClientRect().top;
-                const offsetPosition =
-                  elementPosition + window.pageYOffset - headerOffset;
-                window.scrollTo({
-                  top: offsetPosition,
-                  behavior: "smooth",
-                });
-              }
-            }}
-          >
-            See full pricing
-          </Button>
-        </div>
-        <div className="flex w-full flex-wrap items-center gap-3 rounded-lg border border-[rgba(37,31,31,0.08)] bg-[rgba(37,31,31,0.04)] py-3 pl-3 pr-4 text-base">
-          <img
-            src={prize}
-            className="my-auto aspect-[1] h-[32px] min-w-[32px] shrink-0 self-stretch"
-            alt=""
-          />
-          <div className="flex flex-1 flex-col justify-between gap-2 lg:flex-row">
-            <div className="flex flex-col justify-between gap-2">
-              <p className="my-auto flex-1 shrink basis-[0%] self-stretch font-semibold text-[#222]">
-                Get 50% off if you purchase by June 30, 2025
-              </p>
-              <ul className="disc-list text-sm font-normal text-[#6D6D6D]">
-                <li className="text-sm font-light">
-                  Discount secured for 3 years
-                </li>
-              </ul>
-            </div>
-            <div className="flex flex-1 items-center justify-center lg:justify-end">
-              <CountdownTimer targetDate={new Date("2025-07-31")} />
-            </div>
-          </div>
-        </div> */}
         <div className="my-8 h-[1px] w-full rounded-lg bg-[#2222221a]" />
         <div className="flex flex-col gap-7">
           {optimizeFeatures.map((feature) => (
