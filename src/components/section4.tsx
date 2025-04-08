@@ -22,12 +22,21 @@ export function Section4() {
   return (
     <div className="mb-20 flex w-full flex-1 shrink-0 flex-col gap-4 self-stretch">
       <div className="mb-6 text-center lg:mb-12">
-        <h3 className="mb-2 text-sm text-primary">The Panoramic Optimize</h3>
-        <h2 className="mb-4 text-h2">Panoramic Optimize: Premium insights,<br />peak performance. See how.</h2>
+        <h3 className="mb-2 text-sm text-primary">Panoramic Optimize Video</h3>
+        <h2 className="mb-4 text-h2">
+          Panoramic Optimize: Premium insights,
+          <br />
+          peak performance
+        </h2>
       </div>
       <AspectRatio ratio={16 / 9}>
         <div className="ac flex h-full w-full items-center justify-center overflow-hidden rounded-lg bg-[#D5D5D5]">
-          <Player className="h-full w-full" fluid autoPlay={false} showControls={false}>
+          <Player
+            className="h-full w-full"
+            fluid
+            autoPlay={false}
+            showControls={false}
+          >
             <source src={video} />
             <BigPlayButton
               position="center"
