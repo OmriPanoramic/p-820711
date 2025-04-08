@@ -21,12 +21,6 @@ export function Section6() {
           <VisualizePricingTable />
         </div>
       </div>
-      <div
-        className="flex w-full flex-col items-center pt-32"
-        id="PricingCalculator"
-      >
-        <PricingCalculator />
-      </div>
     </div>
   );
 }

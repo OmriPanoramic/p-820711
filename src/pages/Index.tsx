@@ -8,6 +8,9 @@ import { Section3 } from "@/components/section3";
 import { Section4 } from "@/components/section4";
 import { Section5 } from "@/components/section5";
 import { Section6 } from "@/components/section6";
+import { Section7 } from "@/components/Section7";
+import { Section8 } from "@/components/Section8";
+import { Section9 } from "@/components/Section9";
 import { Footer } from "@/components/footer/footer";
 import { FullStory } from "@fullstory/browser";
 
@@ -49,10 +52,9 @@ const Index = () => {
     // remove commas from userId
     const userIdWithoutCommas = userId?.replace(/,/g, "");
 
-
-    // if we have the data  can we update Fullstory 
+    // if we have the data  can we update Fullstory
     if (name && scope && scopeId && userId && email) {
-      FullStory('setIdentity', {
+      FullStory("setIdentity", {
         uid: userIdWithoutCommas,
         properties: {
           displayName: name,
@@ -131,14 +133,23 @@ const Index = () => {
         <Section id="section3">
           <Section3 />
         </Section>
-        <Section  id="section4">
+        <Section id="section4">
           <Section4 />
-        </Section> 
+        </Section>
         <Section id="section5">
           <Section5 />
         </Section>
         <Section id="section6">
           <Section6 />
+        </Section>
+        <Section id="section7">
+          <Section7 />
+        </Section>
+        <Section id="section8">
+          <Section8 />
+        </Section>
+        <Section id="section9">
+          <Section9 />
         </Section>
         <Footer />
       </main>
