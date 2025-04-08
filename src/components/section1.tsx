@@ -17,7 +17,6 @@ export function Section1({
 
   const [isUpgradeModalOpen, setIsUpgradeModalOpen] = useState(false);
 
-  
   const { scrollYProgress } = useScroll({
     container: scrollRef,
     target: scrollRef,
@@ -28,16 +27,19 @@ export function Section1({
   // if the screen is mobile width we need to change the amount of move on y axis
   const isMobile = window.innerWidth < 768;
 
-  const mobilePosY = useTransform(scrollYProgress, [0, 0.1], isMobile ? [-10, 10] : [60, 100]);
+  const mobilePosY = useTransform(
+    scrollYProgress,
+    [0, 0.1],
+    isMobile ? [-10, 10] : [60, 100],
+  );
   const mobileOpacity = useTransform(scrollYProgress, [0.1, 0.2], [1, 0]);
 
   const dashboardPosY = useTransform(scrollYProgress, [0, 0.1], [0, -100]);
   const dashboardOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
 
-
   useEffect(() => {
     scrollYProgress.on("change", (value) => {
-      const newValue = Math.round(99 - (value * 99));
+      const newValue = Math.round(99 - value * 99);
       setCurrentAlertValue(newValue);
     });
   }, [scrollYProgress]);
@@ -53,6 +55,9 @@ export function Section1({
             viewport={{ once: false }}
             transition={{ duration: 0.5 }}
           >
+            <p className="text-[18px] text-[#FF7110]">
+              From PowerRadar to Panoramic Optimize
+            </p>
             <motion.h1
               className="mb-4 text-center text-h3 md:text-h1"
               initial={{ opacity: 0, y: 20 }}
@@ -60,7 +65,7 @@ export function Section1({
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              The next step in your energy management journey
+              Unlock the Power of Smarter Energy Management
             </motion.h1>
 
             <motion.p
@@ -70,9 +75,10 @@ export function Section1({
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              Smarter tools, deeper insights, better decision making — discover
-              how upgrading to Panoramic Optimize can transform your future of
-              energy management
+              As a valued PowerRadar user, you’re now using the trial version of
+              Panoramic Optimize—our enhanced platform with smarter tools,
+              deeper insights, and improved decision-making. See how it can
+              transform the future of your energy management
             </motion.p>
 
             <motion.div
@@ -88,7 +94,7 @@ export function Section1({
                 onClick={() => setIsUpgradeModalOpen(true)}
                 data-fs-track="upgrade-button"
               >
-                Upgrade to Optimize
+                Upgrade Early
               </Button>
               <Button
                 size="lg"
@@ -106,13 +112,10 @@ export function Section1({
                 <img src={trendUp} alt="Trend Up" className="h-4 w-4" />
               </Button>
             </motion.div>
-            <div className="mt-6 text-center text-[12px] text-[#6D6D6D]">
-              Special offer for existing customers on Panoramic Optimize trial
-            </div>
           </motion.div>
           <div className="my-10 flex w-full flex-col items-center gap-4 sm:flex-row">
             <motion.div
-              className="relative w-full max-w-[1126px] items-center flex  mx-auto"
+              className="relative mx-auto flex w-full max-w-[1126px] items-center"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false }}
@@ -134,19 +137,21 @@ export function Section1({
                   className="w-full"
                   initial={{ opacity: 0 }}
                 />
-                <motion.div 
-                  className="absolute top-0 left-0 w-full h-full origin-left hidden xl:block"
-                >
-                  <div className="absolute left-[67px] top-[130px]  text-[71px] bg-white leading-none h-[88px] overflow-hidden">
-                   <NumberFlow value={currentAlertValue} />
+                <motion.div className="absolute left-0 top-0 hidden h-full w-full origin-left xl:block">
+                  <div className="absolute left-[67px] top-[130px] h-[88px] overflow-hidden bg-white text-[71px] leading-none">
+                    <NumberFlow value={currentAlertValue} />
                   </div>
-                  <div className="absolute left-[127px] top-[350px]  text-[32px] bg-white leading-none  overflow-hidden">
-                    <NumberFlow value={currentAlertValue * Math.random()} format={{
-                      maximumFractionDigits: 1,
-                      minimumFractionDigits: 1,
-                    }}  style={{
-                      fontVariantNumeric: "tabular-nums",
-                    }} />
+                  <div className="absolute left-[127px] top-[350px] overflow-hidden bg-white text-[32px] leading-none">
+                    <NumberFlow
+                      value={currentAlertValue * Math.random()}
+                      format={{
+                        maximumFractionDigits: 1,
+                        minimumFractionDigits: 1,
+                      }}
+                      style={{
+                        fontVariantNumeric: "tabular-nums",
+                      }}
+                    />
                   </div>
                 </motion.div>
               </motion.div>
