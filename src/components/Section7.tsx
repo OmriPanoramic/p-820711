@@ -19,7 +19,7 @@ const featureItems = [
   {
     title: "Enhanced user interface and navigation",
     description:
-      "The new Panoramic Optimize interface has been reimagined to offer a smoother, faster, and more intuitive experience.",
+      "Enjoy a smoother, faster, and more intuitive user experience across the platform.",
     gridClass: "col-span-1 row-span-1 md:col-span-1",
     image: imgNavigation,
     mobileImage: imgNavigation, // Same image for both
@@ -27,7 +27,7 @@ const featureItems = [
   {
     title: "Unlimited customizable dashboards",
     description:
-      "1. Transform any category, group, or device type into a dynamic, real-time widget tailored to your needs\n2. Easily design dashboards with drag-and-drop widgets to match your requirements and daily processes\n3. Share dashboards seamlessly with team members and executives for enhanced collaboration and efficiency\n4. Display dashboards automatically for public viewing and broadcast them to large screens for all employees to watch",
+        "Easily design, personalize, and distribute dynamic dashboards, suited to your requirements.\n Create tailored dashboards for team collaboration and display performance dashboards for public access",
     gridClass: "col-span-1 row-span-1 md:col-span-2",
     image: imgDashboardsDesktop,
     mobileImage: imgDashboardsMobile,
@@ -35,7 +35,7 @@ const featureItems = [
   {
     title: "Collaborate on event management",
     description:
-      "1. Create actionable alerts and assign tasks to the right team members\n2. Add important notes\n3. Track events with real-time status updates, and document lessons learned for future reference",
+      "Enhance event management by delegating tasks, overseeing alerts, and capturing insights in real-time across multiple team members",
     gridClass: "col-span-1 row-span-1 md:col-span-2",
     image: imgEventsDesktop,
     mobileImage: imgEventsMobile,
@@ -43,7 +43,7 @@ const featureItems = [
   {
     title: "Customizable categories and device types",
     description:
-      "Add new categories and device types completely customized to your needs. Adapt the system to your unique operational requirements.\n\nCreate widgets that serve your categories and device types. Display relevant data, enabling real-time monitoring and actionable insights specific to your customized setup.",
+      "Adapt categories and build widgets to perfectly match your unique operational requirements for targeted monitoring and management.",
     gridClass: "col-span-1 row-span-1 md:col-span-1",
     image: imgCategories,
     mobileImage: imgCategories, // Same image for both
@@ -51,7 +51,7 @@ const featureItems = [
   {
     title: "Groups: New ways to manage your assets",
     description:
-      "Organize devices into tailored groups—based on shifts, line numbers, production lines, or any operational need.\n\nGenerate actionable analytics for your tailored groups—track consumption, costs, carbon footprints, and more for each group.",
+      "Easily organize assets into meaningful groups and track tailored analytics in specialized widgets, for informed, strategic decisions.",
     gridClass: "col-span-1 row-span-1 md:col-span-1",
     image: imgGroups,
     mobileImage: imgGroups, // Same image for both
@@ -59,7 +59,7 @@ const featureItems = [
   {
     title: "Schedules: New ways for time management and data presentation",
     description:
-      "1. Create personalized time schedules for various needs, including shifts, working hours, off-work hours, and more. Take full control to design schedules that fit your workflow\n2. Display time-sensitive data across schedules. Effortlessly align your Timeview insights with your schedules, making data and decision-making easier than ever",
+      "Create customized schedules, working hours, and shifts, and overlay them onto your Timeview insights for more informed and effective decision-making.",
     gridClass: "col-span-1 row-span-1 md:col-span-2",
     image: imgSchedulesDesktop,
     mobileImage: imgSchedulesMobile,
@@ -67,7 +67,7 @@ const featureItems = [
   {
     title: "The new Timeview: Real-time insights for your daily needs",
     description:
-      "1. Dive into detailed data insights, including energy consumption, costs, carbon emissions, and more\n2. See device performance across different time frames, see the power type and communication quality of every device\n3. Interact seamlessly with data and compare metrics for deeper, actionable insights\n4. Click on any point to instantly view a consolidated breakdown of that specific moment\n5. Save any screen view as a personalized or group preset, to share and use across your people and teams",
+      "Dive deeper into detailed metrics, live device data, and save custom views for easy team sharing and collaboration.",
     gridClass: "col-span-1 row-span-1 md:col-span-3",
     image: imgTimeviewDesktop,
     mobileImage: imgTimeviewMobile,
