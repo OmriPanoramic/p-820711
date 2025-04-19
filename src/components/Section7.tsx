@@ -131,7 +131,7 @@ export const Section7 = () => {
             onHoverStart={() => setHoveredIndex(index)}
             onHoverEnd={() => setHoveredIndex(null)}
           >
-            <h3 className="px-6 pt-6 text-h5 text-[#222222]">{item.title}</h3>
+            <h3 className="px-6 pt-6 text-h5 text-[#222222] max-w-[480px]">{item.title}</h3>
 
             <div className={`relative flex h-full w-full ${item.title === "Enhanced user interface and navigation" || item.title === "Unlimited customizable dashboards" ? "items-end" : "items-center"} justify-center overflow-hidden rounded-md`}>
               {/* Container for image with slide down animation */}
