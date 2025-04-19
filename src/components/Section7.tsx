@@ -28,7 +28,7 @@ const featureItems = [
   {
     title: "Unlimited customizable dashboards",
     description:
-        "Easily design, personalize, and distribute dynamic dashboards, suited to your requirements.\n Create tailored dashboards for team collaboration and display performance dashboards for public access",
+        "Easily design, personalize, and distribute dynamic dashboards, suited to your requirements. Create tailored dashboards for team collaboration and display performance dashboards for public access",
     gridClass: "col-span-1 row-span-1 md:col-span-2",
     image: imgDashboardsDesktop,
     mobileImage: imgDashboardsMobile,
@@ -127,7 +127,7 @@ export const Section7 = () => {
               opacity:
                 hoveredIndex === null ? 1 : hoveredIndex === index ? 1 : 0.85,
             }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
             onHoverStart={() => setHoveredIndex(index)}
             onHoverEnd={() => setHoveredIndex(null)}
           >
@@ -140,7 +140,7 @@ export const Section7 = () => {
                 animate={{
                   y: hoveredIndex === index ? `${item.slidePercentage}%` : 0,
                 }}
-                transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
               >
                 <img
                   src={isMobile ? item.mobileImage : item.image}
@@ -157,9 +157,9 @@ export const Section7 = () => {
                   opacity: hoveredIndex === index ? 1 : 0,
                   y: hoveredIndex === index ? "0%" : "-100%",
                 }}
-                transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               >
-                <div className="rounded-lg p-4 text-[#222222] backdrop-blur-sm max-w-[512px]">
+                <div className="rounded-lg p-4 text-[#222222] backdrop-blur-sm max-w-[620px]">
                   {item.description.split("\n").map((line, i) => (
                     <p
                       key={i}
