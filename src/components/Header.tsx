@@ -120,6 +120,13 @@ export const Header = ({
               Pricing
             </button>
             <button
+              data-fs-track="faqs-button"
+              onClick={() => scrollToSection("section9")}
+              className="text-sm text-muted-foreground transition-colors hover:text-primary"
+            >
+              FAQs
+            </button>
+            <button
               data-fs-track="contact-button"
               onClick={() => scrollToSection("footer")}
               className="text-sm text-muted-foreground transition-colors hover:text-primary"
@@ -186,6 +193,13 @@ export const Header = ({
                   className="text-sm text-muted-foreground transition-colors hover:text-primary"
                 >
                   Pricing
+                </button>
+                <button
+                  data-fs-track="faqs-button"
+                  onClick={() => scrollToSection("section9")}
+                  className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                >
+                  FAQs
                 </button>
                 <button
                   data-fs-track="contact-button"

@@ -254,7 +254,7 @@ export const Section9 = () => {
   });
 
   return (
-    <div className="mx-auto w-full max-w-7xl px-4 py-12 md:px-8 lg:px-16">
+    <div id="section9" className="mx-auto w-full max-w-7xl px-4 py-12 md:px-8 lg:px-16">
       <div className="flex flex-col">
         {/* Header */}
         <div className="mb-8">
