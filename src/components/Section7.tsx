@@ -124,7 +124,7 @@ export const Section7 = () => {
             onHoverStart={() => setHoveredIndex(index)}
             onHoverEnd={() => setHoveredIndex(null)}
           >
-            <h3 className="mb-4 p-6 text-h5 text-[#222222]">{item.title}</h3>
+            <h3 className="px-6 pt-6 text-h5 text-[#222222]">{item.title}</h3>
 
             <div className="relative flex h-full w-full items-center justify-center overflow-hidden rounded-md">
               {/* Container for image with slide down animation */}
@@ -152,7 +152,7 @@ export const Section7 = () => {
                 }}
                 transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
               >
-                <div className="rounded-lg p-4 text-[#222222] backdrop-blur-sm">
+                <div className="rounded-lg p-4 text-[#222222] backdrop-blur-sm max-w-[512px]">
                   {item.description.split("\n").map((line, i) => (
                     <p
                       key={i}
