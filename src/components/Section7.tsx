@@ -23,6 +23,7 @@ const featureItems = [
     gridClass: "col-span-1 row-span-1 md:col-span-1",
     image: imgNavigation,
     mobileImage: imgNavigation, // Same image for both
+    slidePercentage: 10,
   },
   {
     title: "Unlimited customizable dashboards",
@@ -31,6 +32,7 @@ const featureItems = [
     gridClass: "col-span-1 row-span-1 md:col-span-2",
     image: imgDashboardsDesktop,
     mobileImage: imgDashboardsMobile,
+    slidePercentage: 28,
   },
   {
     title: "Collaborate on event management",
@@ -39,6 +41,7 @@ const featureItems = [
     gridClass: "col-span-1 row-span-1 md:col-span-2",
     image: imgEventsDesktop,
     mobileImage: imgEventsMobile,
+    slidePercentage: 25,
   },
   {
     title: "Customizable categories and device types",
@@ -47,6 +50,7 @@ const featureItems = [
     gridClass: "col-span-1 row-span-1 md:col-span-1",
     image: imgCategories,
     mobileImage: imgCategories, // Same image for both
+    slidePercentage: 24,
   },
   {
     title: "Groups: New ways to manage your assets",
@@ -55,6 +59,7 @@ const featureItems = [
     gridClass: "col-span-1 row-span-1 md:col-span-1",
     image: imgGroups,
     mobileImage: imgGroups, // Same image for both
+    slidePercentage: 24,
   },
   {
     title: "Schedules: New ways for time management and data presentation",
@@ -63,6 +68,7 @@ const featureItems = [
     gridClass: "col-span-1 row-span-1 md:col-span-2",
     image: imgSchedulesDesktop,
     mobileImage: imgSchedulesMobile,
+    slidePercentage: 25,
   },
   {
     title: "The new Timeview: Real-time insights for your daily needs",
@@ -71,6 +77,7 @@ const featureItems = [
     gridClass: "col-span-1 row-span-1 md:col-span-3",
     image: imgTimeviewDesktop,
     mobileImage: imgTimeviewMobile,
+    slidePercentage: 15,
   },
 ];
 
@@ -126,19 +133,19 @@ export const Section7 = () => {
           >
             <h3 className="px-6 pt-6 text-h5 text-[#222222]">{item.title}</h3>
 
-            <div className="relative flex h-full w-full items-center justify-center overflow-hidden rounded-md">
+            <div className={`relative flex h-full w-full ${item.title === "Enhanced user interface and navigation" || item.title === "Unlimited customizable dashboards" ? "items-end" : "items-center"} justify-center overflow-hidden rounded-md`}>
               {/* Container for image with slide down animation */}
               <motion.div
-                className="h-full w-full"
+                className={`h-full w-full ${item.title === "Unlimited customizable dashboards" ? "mt-6 flex justify-center items-end" : ""} ${item.title === "Enhanced user interface and navigation" ? "flex justify-center items-end" : ""}`}
                 animate={{
-                  y: hoveredIndex === index ? "25%" : 0,
+                  y: hoveredIndex === index ? `${item.slidePercentage}%` : 0,
                 }}
                 transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
               >
                 <img
                   src={isMobile ? item.mobileImage : item.image}
                   alt={item.title}
-                  className="h-full w-full object-contain"
+                  className={`w-full ${item.title === "Enhanced user interface and navigation" || item.title === "Unlimited customizable dashboards" ? "mb-0" : ""} object-contain`}
                 />
               </motion.div>
 
