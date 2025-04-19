@@ -103,7 +103,7 @@ export const Section7 = () => {
         {featureItems.map((item, index) => (
           <motion.div
             key={index}
-            className={`relative flex min-h-[240px] cursor-pointer flex-col overflow-hidden rounded-lg bg-[#F7F7F5] ${item.gridClass}`}
+            className={`relative flex min-h-[240px] cursor-pointer flex-col overflow-hidden rounded-lg bg-[#F7F7F5] border border-[#222222]/10 ${item.gridClass}`}
             initial={{ scale: 1 }}
             animate={{
               scale:
@@ -131,8 +131,7 @@ export const Section7 = () => {
               <motion.div
                 className="h-full w-full"
                 animate={{
-                  y: hoveredIndex === index ? "30%" : 0,
-                  opacity: hoveredIndex === index ? 0.6 : 1,
+                  y: hoveredIndex === index ? "25%" : 0,
                 }}
                 transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
               >
