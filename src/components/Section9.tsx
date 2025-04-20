@@ -6,87 +6,204 @@ import { motion, AnimatePresence } from "framer-motion";
 
 // FAQ data with questions, answers, and tags
 const faqData = [
+  // Popular Questions
   {
     id: 1,
-    title: "What/ why the change?",
+    title: "What's happening to \"PowerRadar\"?",
     answer:
-      "Why is Centrica making changes in the provision of PowerRadar PowerRadar is a mature and intuitive energy management software used by 1,000s of users globally. For it to continue to meet the expectations and cater to the evolving requirements of our userbase as well is ensure we keep up (and ahead) of the market need for smarter intelligence tools, we need to invest in its develop.",
+      "The software that you know as PowerRadar is now simply Panoramic Power, which consists of 2 packages; Panoramic Visualize (freemium) and Panoramic Optimize (Premium). This transformation allows us to deliver smarter tools, better performance, and enhanced usability. Panoramic Optimize is designed to help you achieve your energy management and decarbonization goals more effectively, enabling you to make informed decisions with ease.",
     tag: "Popular Questions",
   },
   {
     id: 2,
-    title: "What's in it for me?",
+    title: "What will happen to my current account?",
     answer:
-      "As someone in your organization that has a role in impacting or managing energy and/or your organization's decarbonization goals, you will start to experience the tool as something more personable, customisable and smarter in order to help you be better at what you do.",
+      "All the sites within your account will automatically migrate to a free trial of Panoramic Optimize on 4th May which means that all your users will have access to Panoramic Optimize without any cost until 31st December 2025. During this trial period, you can choose to subscribe to Optimize. Should you decide not to subscribe, your site(s) will be automatically moved to Visualize.",
     tag: "Popular Questions",
   },
   {
     id: 3,
-    title: "What is changing in PowerRadar?",
+    title: "What's the difference between Visualize and Optimize?",
     answer:
-      "We have been working hard over past year to modernise our platform infrastructure and development of new value-added features. We are going live with all this on May 4, 2025. The new software consists of 2 packages. Visualize is a freemium site licence that provides basic access to and visibility of data from Panoramic sensors. Optimize is our premium paid for product that incorporates Vizualize features and includes all other existing, new and future capabilities.",
+      "Visualize provides basic visibility and access to your electrical energy data provided by Panoramic Power sensors. Optimize incorporates Visualize features and includes all the new and soon to be developed features that enhance your ability to unlock deeper intelligence, improve operational efficiency, and proactively manage energy costs and sustainability goals.",
     tag: "Popular Questions",
   },
   {
     id: 4,
-    title: "What is happening on May 4th?",
+    title: "What is the cost of Optimize after the trial period?",
     answer:
-      "On May 4, we are migrating all sites in PowerRadar over to our new software infrastructure and, as an existing user, your site will automatically migrated to the Optimize license in which you will continue to enjoy all the features you have today plus more.",
+      "Panoramic Optimize costs $5 per device per month. A device is considered an electrical circuit monitored by Panoramic Power sensors or any other meter data input into the Panoramic Power platform. For sites that are on the platform for at least 1 year, you can choose to pay based on 1% of the cost of your measured electrical energy consumption.",
     tag: "Popular Questions",
   },
   {
     id: 5,
-    title: "What is the 'more' features referenced above?",
+    title: "How do I access the new platform?",
     answer:
-      "Our new features include enhanced dashboards, advanced analytics, smarter energy intelligence, and improved user experience. These features are designed to provide deeper insights into your energy consumption patterns and help you make more informed decisions.",
-    tag: "Features & Benefits",
+      "Your current login credentials will remain valid. Simply log in to the platform as you usually do to access the new system. This seamless transition ensures no disruption to your workflow while introducing a more intuitive and powerful interface.",
+    tag: "Popular Questions",
   },
   {
     id: 6,
-    title: "Do I need to pay for my site(s) to be on Optimize?",
+    title: "Can I revert to the old system?",
     answer:
-      "Recognizing that our existing userbase will need time to adapt to the changes and start to see the value of the new and upcoming features, all existing sites will start on a free trial of Optimize until 31st December 2025. The Optimize license will be payable from January 2026.",
-    tag: "Billing & Subscriptions",
+      "No, the old system is being discontinued as part of this migration. This upgrade ensures you benefit from the latest features and improvements.",
+    tag: "Popular Questions",
   },
   {
     id: 7,
-    title: "What is the cost of Optimize following the free trial period?",
+    title: "Will I lose any historical data or prior set configurations during this transition?",
     answer:
-      "The cost of upgrading to Optimize is dependent on the number of Devices deployed at your site. The cost per Device is $5.",
-    tag: "Billing & Subscriptions",
+      "No, all your historical data will remain intact and accessible. The migration process has been designed to preserve your data without any data loss or pre-existing configurations.",
+    tag: "Popular Questions",
   },
+  
+  // Getting Started
   {
     id: 8,
-    title: "What is considered a 'Device'?",
+    title: "What is Optimize?",
     answer:
-      "A Device is defined as an electrical circuit (3phase or single phase) measured by Panoramic sensors or a meter or sensor whose data is ingested into our software. You can see the number of devices deployed at your site here [add link to navatic demo]",
+      "Optimize is the next generation of energy management software, offering smarter and intelligent tools, real-time insights, and a customizable interface. All new and upcoming product roadmap developments will be available in Optimize.",
     tag: "Getting Started",
   },
   {
     id: 9,
-    title:
-      "If Visualize is sufficient for our needs but we currently using the automatic data export tool?",
+    title: "How do I know how many devices I have?",
     answer:
-      "If the features of Visualize are sufficient for you and you require only the additional capability of the automatic data export tool, then this feature is provided as an add-on to Visualise at a cost of $1/ month per sensor.",
-    tag: "Billing & Subscriptions",
+      "You can view the number of deployed devices on your site summary within the dashboard or at the account level on the sites table.",
+    tag: "Getting Started",
   },
   {
     id: 10,
-    title:
-      "The only thing I use Panoramic for is to export data for generating reports. Will I need to pay for this going forward?",
-    answer: "No.",
-    tag: "Billing & Subscriptions",
+    title: "Will I have continued access to all my current features?",
+    answer:
+      "Yes, Optimize retains all the features you currently use, along with additional tools to enhance your experience. This ensures continuity while unlocking new possibilities for smarter energy management.",
+    tag: "Getting Started",
   },
   {
     id: 11,
-    title:
-      "Is there any incentive to convert from my free trial of Optimize to a paid subscription of Optimize prior to the end of the free trial period?",
+    title: "Is there training available for the new platform?",
     answer:
-      "Yes. The earlier you upgrade to a paid subscription of Optimize the higher the discount you will receive and the length of time that the discounted price is guaranteed.",
-    tag: "Billing & Subscriptions",
+      "Yes, our knowledge center (https://panoramic.helpjuice.com/en_US) contains onboarding materials, including comprehensive video tutorials and step-by-step guides. These resources are designed to help you, and your team quickly familiarize yourselves with the platform's features and capabilities. Please also feel free to reach out to your company's Panoramic Support Provider if you require more personal assistance.",
+    tag: "Getting Started",
   },
   {
     id: 12,
+    title: "Do I need to reconfigure anything to continue using the pre-existing features?",
+    answer:
+      "No. The migration process has been designed to ensure a seamless transition, so you won't need to make any adjustments.",
+    tag: "Getting Started",
+  },
+  {
+    id: 13,
+    title: "Will there be downtime during migration?",
+    answer:
+      "We are carrying out the migration of all existing sites and accounts on the 4th May, which is a Sunday, which is when there is minimal user activity in the platform. By Sunday evening (European time) you should be able to start working in the new system.",
+    tag: "Getting Started",
+  },
+  
+  // Features & Benefits
+  {
+    id: 14,
+    title: "What new features are available in Optimize?",
+    answer:
+      "Optimize offers a range of enhanced as well as new features. Please see the 'New in Optimize' section above for a list of new features.",
+    tag: "Features & Benefits",
+  },
+  {
+    id: 15,
+    title: "Can I track energy costs and carbon emissions?",
+    answer:
+      "Yes, Optimize provides detailed insights into energy consumption, costs, and estimated carbon footprints. This enables you to align energy management with your sustainability targets and reduce your environmental impact.",
+    tag: "Features & Benefits",
+  },
+  {
+    id: 16,
+    title: "What is The New Timeview?",
+    answer:
+      "The new Timeview is an upgrade of the current Timeview that introduces a faster, more intuitive interface for analyzing energy and device data. It includes improved performance and responsiveness, a flexible layout for better data comparison, enhanced device tree with search and metrics, new visualization options such as carbon impact, layering tools like schedules and baselines and AI & Forecasting (not in the first stage).",
+    tag: "Features & Benefits",
+  },
+  {
+    id: 17,
+    title: "Can I create custom dashboards?",
+    answer:
+      "Yes! Optimize allows you to create your own personalized dashboards. This flexibility lets you focus on the metrics that matter most to you, ensuring you always have the right data at your fingertips.",
+    tag: "Features & Benefits",
+  },
+  {
+    id: 18,
+    title: "What's new in scheduling?",
+    answer:
+      "The platform includes advanced scheduling tools for managing operational hours, shifts, and energy consumption patterns. This helps you plan and optimize energy use, reducing waste and improving efficiency.",
+    tag: "Features & Benefits",
+  },
+  {
+    id: 19,
+    title: "Can I personalize the platform for each user in my organization?",
+    answer:
+      "Yes, every user can create their own dashboards, set up custom alerts and preset views, and adjust preferences to match their role and workflow. This level of personalization ensures that each team member can focus on the data and insights most relevant to their responsibilities.",
+    tag: "Features & Benefits",
+  },
+  {
+    id: 20,
+    title: "Is the cloud infrastructure of Optimize better than before?",
+    answer:
+      "Yes, Optimize's cloud infrastructure has been completely upgraded to deliver enhanced performance, scalability and reliability. By leveraging cutting-edge cloud technology enables us to execute on an exciting roadmap of features that provides unparalleled intelligence into your energy management. The improved infrastructure ensures faster data processing, seamless integrations, and robust security, allowing you to make data-driven decisions with confidence.",
+    tag: "Features & Benefits",
+  },
+  {
+    id: 21,
+    title: "Will there be new features added in the future?",
+    answer:
+      "Yes, we are committed to continuous development. Over the coming months you will see new capabilities for ingesting data from 3rd party meters into Panoramic and the incorporation of AI tools. All new features that we are developing will be released to Optimize.",
+    tag: "Features & Benefits",
+  },
+  
+  // Billing & Subscriptions
+  {
+    id: 22,
+    title: "What is the cost of Optimize after the free trial?",
+    answer:
+      "After December 31, 2025, you can choose to continue with the Optimize package at $5 per device per month or elect to pay based on 1% of the cost of your site's measured electrical energy consumption. The latter is calculated by looking at your average monthly energy consumption over the preceding 12 months and assuming $0.15/ kWh.",
+    tag: "Billing & Subscriptions",
+  },
+  {
+    id: 23,
+    title: "Is there a discount for early upgrades?",
+    answer:
+      "Yes. Subscribing to Optimize before the trial period expires on 31st December 2025 will entitle you to preferential commercial terms. The earlier you subscribe the better the commercial terms. Please reach out to your Panoramic support provider to give you the options available.",
+    tag: "Billing & Subscriptions",
+  },
+  {
+    id: 24,
+    title: "What if I only need one of the features in Optimize?",
+    answer:
+      "If you require automatic data export, automated reports, or access to third-party meters, each of these features is available as an add-on to Visualize. See the pricing of these add-ons in the \"Compare your options\" section above.",
+    tag: "Billing & Subscriptions",
+  },
+  {
+    id: 25,
+    title: "Do I have to pay for the full year in advance?",
+    answer:
+      "Yes. Your Optimize or Visualize add-ons subscriptions are billed annually upfront. If cancel any time during a contract period, you will retain access to your paid subscription package until the end of the subscription period, after which your site will be moved to Visualize.",
+    tag: "Billing & Subscriptions",
+  },
+  {
+    id: 26,
+    title: "What happens if I add more devices in the middle of a subscription year?",
+    answer:
+      "When adding devices during the subscription period, you will be charged for any additional devices pro-rated up to the end of your site's subscription period.",
+    tag: "Billing & Subscriptions",
+  },
+  {
+    id: 27,
+    title: "Is there a limit to the number of users?",
+    answer:
+      "No. Whether your sites are on Optimize or Visualize, you can add as many users at the account or site level as you wish without any additional costs.",
+    tag: "Billing & Subscriptions",
+  },
+  {
+    id: 28,
     title:
       "Who should I speak to if I wish to upgrade from the Optimize free trial to the paid subscription?",
     answer:
