@@ -199,7 +199,7 @@ export const Header = ({
                   onClick={() => scrollToSection("section9")}
                   className="text-sm text-muted-foreground transition-colors hover:text-primary"
                 >
-                  FAQs
+                  FAQ
                 </button>
                 <button
                   data-fs-track="contact-button"
