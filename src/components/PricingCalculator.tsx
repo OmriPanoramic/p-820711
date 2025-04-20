@@ -3,6 +3,8 @@ import { Button } from "./ui/button";
 import { ChevronRight, InfoIcon } from "lucide-react";
 import Calculator from "./Calculator";
 import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
+import { useState } from "react";
+import { UpgradeModal } from "./UpgradeModal";
 
 const features = [
   {
@@ -32,6 +34,8 @@ const features = [
 ];
 
 const PricingCalculator = () => {
+  const [isUpgradeModalOpen, setIsUpgradeModalOpen] = useState(false);
+  
   const scrollToOptimizeFeatures = () => {
     const optimizeFeaturesSection = document.getElementById("OptimizeFeatures");
     if (optimizeFeaturesSection) {
@@ -47,7 +51,7 @@ const PricingCalculator = () => {
             Panoramic <span className="text-primary">Optimize</span> Pricing
           </h2>
         </div>
-        <div className="flex gap-5">
+        <div className="flex flex-col gap-8 lg:flex-row lg:gap-5">
           <div className="flex flex-1 items-start justify-start">
             <div className="flex-start flex w-full flex-col overflow-hidden rounded-xl border border-[#FFEDD4]">
               <div className="self-stretc flex flex-col justify-center gap-2 px-6 py-5">
@@ -133,7 +137,11 @@ const PricingCalculator = () => {
                   <p className="text-sm text-[#6D6D6D]">
                     For loyal customer limited time offer:
                   </p>
-                  <button className="flex h-[40px] items-center justify-center gap-2 self-stretch rounded bg-[#FF7110] px-4 text-white">
+                  <button 
+                    className="flex h-[40px] items-center justify-center gap-2 self-stretch rounded bg-[#FF7110] px-4 text-white"
+                    onClick={() => setIsUpgradeModalOpen(true)}
+                    data-fs-track="contact-support-button"
+                  >
                     Contact your Support Provider
                   </button>
                 </div>
@@ -174,6 +182,10 @@ const PricingCalculator = () => {
           </div>
         </div>
       </div>
+      <UpgradeModal
+        isOpen={isUpgradeModalOpen}
+        onClose={() => setIsUpgradeModalOpen(false)}
+      />
     </div>
   );
 };
