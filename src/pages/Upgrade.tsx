@@ -24,7 +24,7 @@ const formSchema = z.object({
     message: "Please enter a valid email address.",
   }),
   accountName: z.string().min(2, {
-    message: "Account/Site name must be at least 2 characters.",
+    message: "Account name must be at least 2 characters.",
   }),
   supportPartner: z.string().min(2, {
     message: "Support partner must be at least 2 characters.",
@@ -105,7 +105,7 @@ export default function Upgrade() {
             name="accountName"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Account/Site Name</FormLabel>
+                <FormLabel>Account Name</FormLabel>
                 <FormControl>
                   <Input placeholder="Your account or site name" {...field} />
                 </FormControl>

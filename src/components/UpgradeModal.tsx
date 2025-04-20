@@ -35,7 +35,7 @@ const formSchema = z.object({
     message: "Please enter a valid email address.",
   }),
   accountName: z.string().min(2, {
-    message: "Account/Site name must be at least 2 characters.",
+    message: "Account name must be at least 2 characters.",
   }),
   jobTitle: z.string().min(2, {
     message: "Job title must be at least 2 characters.",
@@ -232,7 +232,7 @@ export function UpgradeModal({ isOpen, onClose }: UpgradeModalProps) {
                     name="accountName"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Account/Site Name</FormLabel>
+                        <FormLabel>Account Name</FormLabel>
                         <FormControl>
                           <Input
                             placeholder="Your existing PowerRadar account name"

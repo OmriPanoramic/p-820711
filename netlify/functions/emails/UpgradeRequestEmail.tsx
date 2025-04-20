@@ -57,7 +57,7 @@ const UpgradeRequestEmail: React.FC<UpgradeRequestProps> = ({
               <strong>Email:</strong> {email}
             </Text>
             <Text style={text}>
-              <strong>Account/Site Name:</strong> {accountName}
+              <strong>Account Name:</strong> {accountName}
             </Text>
             <Text style={text}>
               <strong>Support Partner:</strong> {supportPartner}

@@ -36,7 +36,7 @@ export const UpgradeRequestEmail: React.FC<UpgradeRequestEmailProps> = ({
             <Text style={text}><strong>Full Name:</strong> {fullName}</Text>
             <Text style={text}><strong>Phone:</strong> {phone}</Text>
             <Text style={text}><strong>Email:</strong> {email}</Text>
-            <Text style={text}><strong>Account/Site Name:</strong> {accountName}</Text>
+            <Text style={text}><strong>Account Name:</strong> {accountName}</Text>
             <Text style={text}><strong>Support Partner:</strong> {supportPartner}</Text>
             <Text style={text}><strong>Additional Information:</strong> {moreInfo || 'N/A'}</Text>
           </Section>
