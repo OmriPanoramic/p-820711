@@ -376,7 +376,7 @@ export const Section9 = () => {
         {/* Header */}
         <div className="mb-8">
           <span className="mb-2 block font-medium text-orange-500">FAQ</span>
-          <div className="mb-6 text-h2 leading-tight">
+          <div className="mb-6 text-h2 leading-tight max-w-[405px]">
             All your questions answered
           </div>
         </div>

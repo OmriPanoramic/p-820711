@@ -21,6 +21,7 @@ const Section = ({
   children?: React.ReactNode;
   id?: string;
 }) => {
+  // We'll set consistent spacing for all sections
   return (
     <motion.section
       id={id}
@@ -28,7 +29,7 @@ const Section = ({
       whileInView={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -50 }}
       transition={{ duration: 0.5 }}
-      className="min-h-auto container flex items-center justify-center lg:min-h-screen"
+      className="container flex items-center justify-center mb-[100px]"
     >
       {children}
     </motion.section>
