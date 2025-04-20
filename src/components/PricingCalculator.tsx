@@ -3,6 +3,8 @@ import { Button } from "./ui/button";
 import { ChevronRight, InfoIcon } from "lucide-react";
 import Calculator from "./Calculator";
 import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
+import { useState } from "react";
+import { UpgradeModal } from "./UpgradeModal";
 
 const features = [
   {
@@ -32,6 +34,8 @@ const features = [
 ];
 
 const PricingCalculator = () => {
+  const [isUpgradeModalOpen, setIsUpgradeModalOpen] = useState(false);
+  
   const scrollToOptimizeFeatures = () => {
     const optimizeFeaturesSection = document.getElementById("OptimizeFeatures");
     if (optimizeFeaturesSection) {
@@ -133,7 +137,11 @@ const PricingCalculator = () => {
                   <p className="text-sm text-[#6D6D6D]">
                     For loyal customer limited time offer:
                   </p>
-                  <button className="flex h-[40px] items-center justify-center gap-2 self-stretch rounded bg-[#FF7110] px-4 text-white">
+                  <button 
+                    className="flex h-[40px] items-center justify-center gap-2 self-stretch rounded bg-[#FF7110] px-4 text-white"
+                    onClick={() => setIsUpgradeModalOpen(true)}
+                    data-fs-track="pricing-contact-support-button"
+                  >
                     Contact your Support Provider
                   </button>
                 </div>
@@ -174,6 +182,11 @@ const PricingCalculator = () => {
           </div>
         </div>
       </div>
+      
+      <UpgradeModal 
+        isOpen={isUpgradeModalOpen}
+        onClose={() => setIsUpgradeModalOpen(false)}
+      />
     </div>
   );
 };
