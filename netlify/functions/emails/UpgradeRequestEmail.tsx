@@ -11,7 +11,7 @@ import {
   Column,
   Preview,
 } from "@react-email/components";
-
+ 
 interface UpgradeRequestProps {
   fullName: string;
   phone: string;
@@ -60,7 +60,7 @@ const UpgradeRequestEmail: React.FC<UpgradeRequestProps> = ({
               <strong>Account Name:</strong> {accountName}
             </Text>
             <Text style={text}>
-              <strong>Support Partner:</strong> {supportPartner}
+              <strong>Support Provider:</strong> {supportPartner}
             </Text>
             <Text style={text}>
               <strong>Additional Information:</strong> {moreInfo || "N/A"}

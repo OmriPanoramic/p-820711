@@ -64,12 +64,12 @@ export const Section3 = () => {
             <FeatureCard
               icon={<UserRoundCog />}
               title="All set, all yours"
-              description="Processes, benchmarks, and alerts from Panoramic are already active"
+              description="Your configurations, settings and alerts are already in place"
             />
             <FeatureCard
               icon={<Lightbulb />}
               title="Guided transformation"
-              description="Access tips and guides to maximize your Optimize experience"
+              description="Access instruction guides in our new AI enabled knowledge base"
             />
             <FeatureCard
               icon={<MonitorCheck />}
@@ -79,7 +79,7 @@ export const Section3 = () => {
             <FeatureCard
               icon={<MessageCircleQuestion />}
               title="Always supported"
-              description="Continuous help from your trusted partner every step of the way"
+              description="Continuous help from your trusted support provider every step of the way"
             />
           </div>
         </div>

@@ -94,7 +94,7 @@ export function Section1({
                 onClick={() => setIsUpgradeModalOpen(true)}
                 data-fs-track="upgrade-button"
               >
-                Upgrade Early
+                Contact your Support Provider
               </Button>
               <Button
                 size="lg"

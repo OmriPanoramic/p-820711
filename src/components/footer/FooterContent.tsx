@@ -27,7 +27,7 @@ const FooterContent: React.FC = () => {
             Book a demo
           </button>
           <button data-fs-track="footer-upgrade-button" onClick={handleUpgradeClick} className="flex h-[48px] items-center justify-center gap-[12px] rounded-[4px] bg-[#FF7110] px-[20px] text-white transition-colors hover:bg-[#ff5b15]">
-            Upgrade now
+            Subscribe Early
           </button>
         </div>
       </div>

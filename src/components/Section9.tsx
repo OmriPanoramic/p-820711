@@ -83,7 +83,7 @@ const faqData = [
     id: 11,
     title: "Is there training available for the new platform?",
     answer:
-      "Yes, our knowledge center (https://panoramic.helpjuice.com/en_US) contains onboarding materials, including comprehensive video tutorials and step-by-step guides. These resources are designed to help you, and your team quickly familiarize yourselves with the platform's features and capabilities. Please also feel free to reach out to your company's Panoramic Support Provider if you require more personal assistance.",
+      "Yes, our knowledge center (https://panoramic.helpjuice.com/en_US) contains onboarding materials and step-by-step guides, including comprehensive video tutorials and step-by-step guides. These resources are designed to help you, and your team quickly familiarize yourselves with the platform's features and capabilities. Please also feel free to reach out to your company's Panoramic Support Provider if you require more personal assistance.",
     tag: "Getting Started",
   },
   {
@@ -134,7 +134,7 @@ const faqData = [
     id: 18,
     title: "What's new in scheduling?",
     answer:
-      "The platform includes advanced scheduling tools for managing operational hours, shifts, and energy consumption patterns. This helps you plan and optimize energy use, reducing waste and improving efficiency.",
+      "The platform includes advanced scheduling tools for managing operational hours, shifts, and energy consumption patterns. This helps you plan and Optimize energy use, reducing waste and improving efficiency.",
     tag: "Features & Benefits",
   },
   {
@@ -164,7 +164,7 @@ const faqData = [
     id: 22,
     title: "What is the cost of Optimize after the free trial?",
     answer:
-      "After December 31, 2025, you can choose to continue with the Optimize package at $5 per device per month or elect to pay based on 1% of the cost of your site's measured electrical energy consumption. The latter is calculated by looking at your average monthly energy consumption over the preceding 12 months and assuming $0.15/ kWh.",
+      "After December 31, 2025, you can choose to continue with the Optimize package at $5 per device per month or elect to pay based on 1% of the cost of your site's measured electrical energy consumption. The latter is calculated by looking at your average monthly energy consumption over the preceding 12 months and applying an electricity cost of $0.15/kWh.",
     tag: "Billing & Subscriptions",
   },
   {
@@ -207,7 +207,7 @@ const faqData = [
     title:
       "Who should I speak to if I wish to upgrade from the Optimize free trial to the paid subscription?",
     answer:
-      "Centrica provide both our technology and software to customers through our accredited partners. Your company is likely already working with one of our partners, who may have initially helped you get set up and/ or providing you ongoing support. Please let us know you need us to direct you to the most suitable accredited partner.",
+      "We provide both our technology and software to customers through our accredited partners. Your company is likely already working with one of our partners, who may have initially helped you get set up and/ or providing you ongoing support. Please let us know you need us to direct you to the most suitable accredited partner.",
     tag: "Getting Started",
   },
 ];

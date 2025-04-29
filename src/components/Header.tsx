@@ -144,7 +144,7 @@ export const Header = ({
             </Button>
             <Button asChild data-fs-track="upgrade-now-button">
               <a onClick={handleUpgradeClick} href="#">
-                Upgrade Now
+                Subscribe Early
               </a>
             </Button>
           </div>
@@ -225,7 +225,7 @@ export const Header = ({
                     data-fs-track="upgrade-now-button"
                   >
                     <a onClick={handleUpgradeClick} href="#">
-                      Upgrade Now
+                      Subscribe Early
                     </a>
                   </Button>
                 </div>

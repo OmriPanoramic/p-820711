@@ -135,7 +135,7 @@ const PricingCalculator = () => {
               <div className="flex flex-col items-center justify-center border-t border-[#FFEDD4] bg-gradient-to-br from-[#e6f7f5] via-[#fffbf8] to-[#ffebd8] p-12">
                 <div className="flex flex-col items-center justify-center gap-2">
                   <p className="text-sm text-[#6D6D6D]">
-                    For loyal customer limited time offer:
+                    Early subscription special offer:
                   </p>
                   <button 
                     className="flex h-[40px] items-center justify-center gap-2 self-stretch rounded bg-[#FF7110] px-4 text-white"

@@ -151,7 +151,7 @@ export function UpgradeModal({ isOpen, onClose }: UpgradeModalProps) {
               className="flex flex-col"
             >
               <DialogHeader className="mb-6">
-                <DialogTitle>Upgrade to Optimize</DialogTitle>
+                <DialogTitle>Subscribe to Optimize</DialogTitle>
                 <DialogDescription>
                   Get in touch with your support provider to take the next step
                   towards smarter energy management
@@ -275,7 +275,7 @@ export function UpgradeModal({ isOpen, onClose }: UpgradeModalProps) {
                       disabled={isSubmitting}
                       data-fs-track="request-upgrade-button"
                     >
-                      {isSubmitting ? "Submitting..." : "Request Upgrade"}
+                      {isSubmitting ? "Submitting..." : "Request to Subscribe"}
                     </Button>
                   </div>
                 </form>
