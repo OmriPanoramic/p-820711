@@ -125,7 +125,7 @@ export function DemoModal({ isOpen, onClose }: DemoModalProps) {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.4 }}
               >
-                We’ll schedule your demo shortly and reveal what Optimize can do
+                We'll schedule your demo shortly and reveal what Optimize can do
               </motion.p>
               <motion.div
                 initial={{ opacity: 0 }}
@@ -239,11 +239,11 @@ export function DemoModal({ isOpen, onClose }: DemoModalProps) {
                     )}
                   />
 
-                  <div className="flex justify-end gap-4 pt-4">
-                    <Button type="button" variant="outline" onClick={onClose} data-fs-track="cancel-demo-button">
+                  <div className="flex flex-col sm:flex-row justify-end gap-4 pt-4">
+                    <Button type="button" variant="outline" onClick={onClose} data-fs-track="cancel-demo-button" className="w-full sm:w-auto">
                       Cancel
                     </Button>
-                    <Button type="submit" disabled={isSubmitting} data-fs-track="schedule-demo-button">
+                    <Button type="submit" disabled={isSubmitting} data-fs-track="schedule-demo-button" className="w-full sm:w-auto">
                       {isSubmitting ? "Submitting..." : "Submit"}
                     </Button>
                   </div>
