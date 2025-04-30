@@ -147,7 +147,7 @@ export function DemoModal({ isOpen, onClose }: DemoModalProps) {
             <motion.div
               initial={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="flex flex-col overflow-y-auto"
+              className="flex flex-col overflow-y-auto p-1"
             >
               <DialogHeader className="mb-6">
                 <DialogTitle>Book a Demo</DialogTitle>

@@ -148,7 +148,7 @@ export function UpgradeModal({ isOpen, onClose }: UpgradeModalProps) {
             <motion.div
               initial={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="flex flex-col overflow-y-auto"
+              className="flex flex-col overflow-y-auto p-1"
             >
               <DialogHeader className="mb-6">
                 <DialogTitle>Subscribe to Optimize</DialogTitle>
