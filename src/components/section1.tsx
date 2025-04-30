@@ -55,7 +55,7 @@ export function Section1({
             viewport={{ once: false }}
             transition={{ duration: 0.5 }}
           >
-            <p className="text-[18px] text-[#FF7110]">
+            <p className="text-[18px] text-[#FF7110]" translate="no">
               From PowerRadar to Panoramic Optimize
             </p>
             <motion.h1

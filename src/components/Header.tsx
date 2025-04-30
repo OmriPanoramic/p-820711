@@ -108,7 +108,7 @@ export const Header = ({
             <button
               data-fs-track="optimize-experience-button"
               onClick={() => scrollToSection("section5")}
-              className="text-sm text-muted-foreground transition-colors hover:text-primary"
+              className="text-sm text-muted-foreground transition-colors hover:text-primary" translate="no"
             >
               The Optimize Experience
             </button>
@@ -183,7 +183,7 @@ export const Header = ({
                 <button
                   data-fs-track="optimize-experience-button"
                   onClick={() => scrollToSection("section5")}
-                  className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                  className="text-sm text-muted-foreground transition-colors hover:text-primary" translate="no"
                 >
                   The Optimize Experience
                 </button>

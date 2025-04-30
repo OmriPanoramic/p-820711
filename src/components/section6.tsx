@@ -8,7 +8,7 @@ export function Section6() {
     <div className="flex w-full flex-col items-center gap-4 pb-20">
       <div className="mb-[60px] flex flex-col items-center gap-4">
         <h3 className="text-sm text-primary">Compare your options</h3>
-        <h2 className="mb-4 text-center text-h2 leading-[50px]">
+        <h2 className="mb-4 text-center text-h2 leading-[50px]" translate="no">
           What upgrading to Optimize really means
         </h2>
       </div>

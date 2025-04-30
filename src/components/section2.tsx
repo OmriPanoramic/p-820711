@@ -112,9 +112,9 @@ export const Section2 = () => {
           transition={{ duration: 0.5 }}
         >
           <h2 className="mb-4 text-h2">
-            What's new in
+            <span translate="no">What's new in</span>
             <br />
-            <span className="text-primary">Panoramic Optimize</span>
+            <span className="text-primary" translate="no">Panoramic Optimize</span>
           </h2>
         </motion.div>
         <div className="grid w-full grid-cols-1 gap-10 gap-y-0 lg:grid-cols-2">

@@ -101,7 +101,7 @@ export const Section7 = () => {
 
   return (
     <div className="flex w-full flex-col items-start gap-4 px-4 pb-20">
-      <h3 className="text-sm text-primary">New in Panoramic Optimize</h3>
+      <h3 className="text-sm text-primary" translate="no">New in Panoramic Optimize</h3>
       <h2 className="mb-12 w-full text-4xl text-h2 leading-[50px]">
         Seamless. Powerful. Intelligent.
       </h2>

@@ -22,8 +22,8 @@ export function Section4() {
   return (
     <div className="mb-20 flex w-full flex-1 shrink-0 flex-col gap-4 self-stretch">
       <div className="mb-6 text-center lg:mb-12">
-        <h3 className="mb-2 text-sm text-primary">Panoramic Optimize Video</h3>
-        <h2 className="mb-4 text-h2">
+        <h3 className="mb-2 text-sm text-primary" translate="no">Panoramic Optimize Video</h3>
+        <h2 className="mb-4 text-h2" translate="no">
           Panoramic Optimize: Premium insights,
           <br />
           peak performance
