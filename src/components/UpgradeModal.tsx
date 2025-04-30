@@ -232,7 +232,7 @@ export function UpgradeModal({ isOpen, onClose }: UpgradeModalProps) {
                     name="accountName"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Account Name</FormLabel>
+                        <FormLabel translate="no">Account Name</FormLabel>
                         <FormControl>
                           <Input
                             placeholder="Your existing PowerRadar account name"

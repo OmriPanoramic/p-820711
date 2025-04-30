@@ -54,7 +54,7 @@ export default function Upgrade() {
 
   return (
     <div className="container mx-auto max-w-2xl py-16">
-      <h1 className="mb-8 text-3xl font-bold">Upgrade Your Account</h1>
+      <h1 className="mb-8 text-3xl font-bold" translate="no">Upgrade Your Account</h1>
       
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -105,7 +105,7 @@ export default function Upgrade() {
             name="accountName"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Account Name</FormLabel>
+                <FormLabel translate="no">Account Name</FormLabel>
                 <FormControl>
                   <Input placeholder="Your account or site name" {...field} />
                 </FormControl>

@@ -4,7 +4,7 @@ const FooterLinks: React.FC = () => (
   <>
     <div className="flex w-full flex-col items-center justify-between gap-8 pt-8 lg:flex-row lg:items-end lg:pt-[48px]">
       <div className="flex flex-col gap-2 text-center lg:text-left">
-        <span className="text-lg font-medium text-primary">
+        <span className="text-lg font-medium text-primary" translate="no">
           Panoramic Power
         </span>
         <span className="text-sm text-[#6D6D6D]">
@@ -16,6 +16,7 @@ const FooterLinks: React.FC = () => (
           data-fs-track="footer-link-login"
           href="https://powerradar.energy"
           className="text-sm text-[#6D6D6D] transition-colors hover:text-[#171717]"
+          translate="no"
         >
           Login to your account
         </a>
