@@ -275,7 +275,7 @@ export function UpgradeModal({ isOpen, onClose }: UpgradeModalProps) {
                       disabled={isSubmitting}
                       data-fs-track="request-upgrade-button"
                     >
-                      {isSubmitting ? "Submitting..." : "Request to Subscribe"}
+                      {isSubmitting ? "Submitting..." : "Submit"}
                     </Button>
                   </div>
                 </form>

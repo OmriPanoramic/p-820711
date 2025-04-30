@@ -244,7 +244,7 @@ export function DemoModal({ isOpen, onClose }: DemoModalProps) {
                       Cancel
                     </Button>
                     <Button type="submit" disabled={isSubmitting} data-fs-track="schedule-demo-button">
-                      {isSubmitting ? "Submitting..." : "Schedule Demo"}
+                      {isSubmitting ? "Submitting..." : "Submit"}
                     </Button>
                   </div>
                 </form>
