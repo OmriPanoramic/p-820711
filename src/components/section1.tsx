@@ -75,7 +75,7 @@ export function Section1({
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              As a valued PowerRadar user, you’re now using the trial version of
+              As a valued PowerRadar user, you're now using the trial version of
               Panoramic Optimize—our enhanced platform with smarter tools,
               deeper insights, and improved decision-making. See how it can
               transform the future of your energy management
@@ -103,7 +103,7 @@ export function Section1({
                 className="w-full border border-[#EBEBEB] sm:w-auto"
                 onClick={() =>
                   window.open(
-                    "/Panoramic_to_legacy_customers_letter.pdf",
+                    "/Optimize Trial Customer Letter.pdf",
                     "_blank",
                   )
                 }
