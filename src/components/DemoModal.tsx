@@ -101,7 +101,7 @@ export function DemoModal({ isOpen, onClose }: DemoModalProps) {
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-[640px]">
+      <DialogContent className="sm:max-w-[640px] overflow-y-auto max-h-[90vh]">
         <AnimatePresence mode="wait">
           {showSuccess ? (
             <motion.div
@@ -147,7 +147,7 @@ export function DemoModal({ isOpen, onClose }: DemoModalProps) {
             <motion.div
               initial={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="flex flex-col"
+              className="flex flex-col overflow-y-auto"
             >
               <DialogHeader className="mb-6">
                 <DialogTitle>Book a Demo</DialogTitle>
