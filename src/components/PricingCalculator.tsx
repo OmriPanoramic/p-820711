@@ -56,23 +56,23 @@ const PricingCalculator = () => {
             <div className="flex-start flex w-full flex-col overflow-hidden rounded-xl border border-[#FFEDD4]">
               <div className="self-stretc flex flex-col justify-center gap-2 px-6 py-5">
                 <div className="flex items-baseline gap-1">
-                  <span className="text-h3 text-[#222222]">$5</span>
-                  <span className="flex-1 text-lg text-[#222222]">
+                  <span className="text-xl sm:text-h3 text-[#222222]">$5</span>
+                  <span className="flex-1 text-base sm:text-lg text-[#222222]">
                     per device/month, per site
                   </span>
                 </div>
-                <span className="flex items-center gap-1 text-sm text-[#909090]">
+                <span className="flex items-center gap-1 text-xs sm:text-sm text-[#909090]">
                   Minimum quantity applies
                 </span>
               </div>
               <div className="relative h-[1px] w-full bg-[#FFEDD4]">
-                <div className="absolute left-1/2 top-1/2 flex h-[20px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-[100px] border border-[#EBEBEB] bg-[#fffbf8] px-4 pb-1 text-sm text-[#909090]">
+                <div className="absolute left-1/2 top-1/2 flex h-[20px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-[100px] border border-[#EBEBEB] bg-[#fffbf8] px-4 pb-1 text-xs sm:text-sm text-[#909090]">
                   or
                 </div>
               </div>
               <div className="flex items-baseline gap-2 self-stretch px-6 py-5">
-                <span className="text-[20px] text-[#222222]">1%</span>
-                <span className="flex-1 text-sm text-[#222222]">
+                <span className="text-lg sm:text-[20px] text-[#222222]">1%</span>
+                <span className="flex-1 text-xs sm:text-sm text-[#222222]">
                   of your measured consumption
                   <Popover>
                     <PopoverTrigger>
@@ -138,7 +138,7 @@ const PricingCalculator = () => {
                     Early subscription special offer:
                   </p>
                   <button 
-                    className="flex h-[40px] items-center justify-center gap-2 self-stretch rounded bg-[#FF7110] px-4 text-white"
+                    className="flex h-[40px] items-center justify-center gap-2 self-stretch rounded bg-[#FF7110] px-4 text-white text-sm sm:text-base"
                     onClick={() => setIsUpgradeModalOpen(true)}
                     data-fs-track="pricing-contact-support-button"
                   >
