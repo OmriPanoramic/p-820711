@@ -73,7 +73,7 @@ function VisualizePricingTable() {
             />
           </div>
           <div className="flex flex-1 flex-col gap-2">
-            <h5 className="text-h5 font-medium leading-[1.3] text-[#222]">
+            <h5 className="text-h5 font-medium leading-[1.3] text-[#222]" translate="no">
               Visualize{" "}
               <span className="text-sm text-[#6D6D6D]">Free basic version</span>
             </h5>

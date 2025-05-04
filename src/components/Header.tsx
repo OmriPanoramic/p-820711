@@ -61,7 +61,7 @@ export const Header = ({
             >
               <img src={logo} alt="logo" />
               <div className="h-[28px] w-[1px] bg-[#EBEBEB]" />
-              <div className="text-start text-[16px] font-bold leading-[16px] text-primary">
+              <div className="text-start text-[16px] font-bold leading-[16px] text-primary" translate="no">
                 Panoramic
                 <br />
                 Power

@@ -152,7 +152,7 @@ const OptimizePricingTable = () => {
             />
           </div>
           <div className="flex flex-1 flex-col gap-2">
-            <h5 className="text-h5 font-medium leading-[1.3] text-[#222]">
+            <h5 className="text-h5 font-medium leading-[1.3] text-[#222]" translate="no">
               Optimize
               <Button
                 data-fs-track="see-full-pricing-button"
