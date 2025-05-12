@@ -32,7 +32,7 @@ const faqData = [
     id: 4,
     title: "What is the cost of Optimize after the trial period?",
     answer:
-      "Panoramic Optimize costs $5 per device per month. A device is considered an electrical circuit monitored by Panoramic Power sensors or any other meter data input into the Panoramic Power platform. For sites that are on the platform for at least 1 year, you can choose to pay based on 1% of the cost of your measured electrical energy consumption.",
+      "Panoramic Optimize costs $5 per device per month. A device is defined as per a 'device' in the deployment tool or any other meter data input into the Panoramic Power platform. For sites that are on the platform for at least 1 year, you can choose to pay based on 1% of the cost of your measured electrical energy consumption.",
     tag: "Popular Questions",
   },
   {
