@@ -158,52 +158,59 @@ const faqData = [
       "Yes, we are committed to continuous development. Over the coming months you will see new capabilities for ingesting data from 3rd party meters into Panoramic and the incorporation of AI tools. All new features that we are developing will be released to Optimize.",
     tag: "Features & Benefits",
   },
+  {
+    id: 22,
+    title: "Does the new platform support SSO?",
+    answer:
+      "SSO is supported solely for accounts where all sites are on Panoramic Optimize and subject to a one-time integration fee. Please reach out to your Panoramic support provider to give you the options available.",
+    tag: "Features & Benefits",
+  },
   
   // Billing & Subscriptions
   {
-    id: 22,
+    id: 23,
     title: "What is the cost of Optimize after the free trial?",
     answer:
       "After December 31, 2025, you can choose to continue with the Optimize package at $5 per device per month or elect to pay based on 1% of the cost of your site's measured electrical energy consumption. The latter is calculated by looking at your average monthly energy consumption over the preceding 12 months and applying an electricity cost of $0.15/kWh.",
     tag: "Billing & Subscriptions",
   },
   {
-    id: 23,
+    id: 24,
     title: "Is there a discount for early upgrades?",
     answer:
       "Yes. Subscribing to Optimize before the trial period expires on 31st December 2025 will entitle you to preferential commercial terms. The earlier you subscribe the better the commercial terms. Please reach out to your Panoramic support provider to give you the options available.",
     tag: "Billing & Subscriptions",
   },
   {
-    id: 24,
+    id: 25,
     title: "What if I only need one of the features in Optimize?",
     answer:
       "If you require automatic data export, automated reports, or access to third-party meters, each of these features is available as an add-on to Visualize. See the pricing of these add-ons in the \"Compare your options\" section above.",
     tag: "Billing & Subscriptions",
   },
   {
-    id: 25,
+    id: 26,
     title: "Do I have to pay for the full year in advance?",
     answer:
       "Yes. Your Optimize or Visualize add-ons subscriptions are billed annually upfront. If cancel any time during a contract period, you will retain access to your paid subscription package until the end of the subscription period, after which your site will be moved to Visualize.",
     tag: "Billing & Subscriptions",
   },
   {
-    id: 26,
+    id: 27,
     title: "What happens if I add more devices in the middle of a subscription year?",
     answer:
       "When adding devices during the subscription period, you will be charged for any additional devices pro-rated up to the end of your site's subscription period.",
     tag: "Billing & Subscriptions",
   },
   {
-    id: 27,
+    id: 28,
     title: "Is there a limit to the number of users?",
     answer:
       "No. Whether your sites are on Optimize or Visualize, you can add as many users at the account or site level as you wish without any additional costs.",
     tag: "Billing & Subscriptions",
   },
   {
-    id: 28,
+    id: 29,
     title:
       "Who should I speak to if I wish to upgrade from the Optimize free trial to the paid subscription?",
     answer:
